@@ -11,8 +11,8 @@
 		D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90EDB88214FD93900012383 /* AppDelegate.swift */; };
 		D90EDB8B214FD93900012383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90EDB8A214FD93900012383 /* ViewController.swift */; };
 		D90EDB8E214FD93900012383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB8C214FD93900012383 /* Main.storyboard */; };
-		D90EDB90214FD93A00012383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB8F214FD93A00012383 /* Assets.xcassets */; };
 		D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB91214FD93A00012383 /* LaunchScreen.storyboard */; };
+		D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB9A214FE53900012383 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +22,9 @@
 		D90EDB88214FD93900012383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90EDB8A214FD93900012383 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D90EDB8D214FD93900012383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D90EDB8F214FD93A00012383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D90EDB92214FD93A00012383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D90EDB94214FD93A00012383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D90EDB9A214FE53900012383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Desktop/Upwork/Money control/Assets.xcassets"; sourceTree = "<group>"; };
 		F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +81,7 @@
 				D90EDB88214FD93900012383 /* AppDelegate.swift */,
 				D90EDB8A214FD93900012383 /* ViewController.swift */,
 				D90EDB8C214FD93900012383 /* Main.storyboard */,
-				D90EDB8F214FD93A00012383 /* Assets.xcassets */,
+				D90EDB9A214FE53900012383 /* Assets.xcassets */,
 				D90EDB91214FD93A00012383 /* LaunchScreen.storyboard */,
 				D90EDB94214FD93A00012383 /* Info.plist */,
 			);
@@ -148,7 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
-				D90EDB90214FD93A00012383 /* Assets.xcassets in Resources */,
+				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
 				D90EDB8E214FD93900012383 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,11 +330,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pxtoday.MoneyControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -346,11 +350,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pxtoday.MoneyControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
