@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		874C9214D46A2969E42A48B2 /* Pods_MoneyControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97D8B7FB287C9B7A662C78 /* Pods_MoneyControl.framework */; };
 		D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90EDB88214FD93900012383 /* AppDelegate.swift */; };
 		D90EDB8B214FD93900012383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90EDB8A214FD93900012383 /* ViewController.swift */; };
 		D90EDB8E214FD93900012383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB8C214FD93900012383 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6CFAAB9EC7B78DE15D776C6B /* Pods-MoneyControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.release.xcconfig"; sourceTree = "<group>"; };
+		BE97D8B7FB287C9B7A662C78 /* Pods_MoneyControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90EDB85214FD93900012383 /* MoneyControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90EDB88214FD93900012383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90EDB8A214FD93900012383 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		D90EDB8F214FD93A00012383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D90EDB92214FD93A00012383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D90EDB94214FD93A00012383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				874C9214D46A2969E42A48B2 /* Pods_MoneyControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CAC83439B05DDC1CF2AAE14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */,
+				6CFAAB9EC7B78DE15D776C6B /* Pods-MoneyControl.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA5A7890D2781D85B9F16BB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE97D8B7FB287C9B7A662C78 /* Pods_MoneyControl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D90EDB7C214FD93900012383 = {
 			isa = PBXGroup;
 			children = (
 				D90EDB87214FD93900012383 /* MoneyControl */,
 				D90EDB86214FD93900012383 /* Products */,
+				1CAC83439B05DDC1CF2AAE14 /* Pods */,
+				AA5A7890D2781D85B9F16BB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D90EDB97214FD93A00012383 /* Build configuration list for PBXNativeTarget "MoneyControl" */;
 			buildPhases = (
+				72E4DDBA8E9EFFAAC23AD982 /* [CP] Check Pods Manifest.lock */,
 				D90EDB81214FD93900012383 /* Sources */,
 				D90EDB82214FD93900012383 /* Frameworks */,
 				D90EDB83214FD93900012383 /* Resources */,
@@ -129,6 +154,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72E4DDBA8E9EFFAAC23AD982 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneyControl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D90EDB81214FD93900012383 /* Sources */ = {
@@ -278,15 +324,13 @@
 		};
 		D90EDB98214FD93A00012383 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pxtoday.MoneyControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +340,13 @@
 		};
 		D90EDB99214FD93A00012383 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CFAAB9EC7B78DE15D776C6B /* Pods-MoneyControl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pxtoday.MoneyControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
