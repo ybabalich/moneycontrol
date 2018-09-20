@@ -13,6 +13,7 @@
 		D90EDB8E214FD93900012383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB8C214FD93900012383 /* Main.storyboard */; };
 		D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB91214FD93A00012383 /* LaunchScreen.storyboard */; };
 		D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB9A214FE53900012383 /* Assets.xcassets */; };
+		D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95F3FD7215435420039D714 /* Lato-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D90EDB92214FD93A00012383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D90EDB94214FD93A00012383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D90EDB9A214FE53900012383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Desktop/Upwork/Money control/Assets.xcassets"; sourceTree = "<group>"; };
+		D95F3FD7215435420039D714 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 		D90EDB87214FD93900012383 /* MoneyControl */ = {
 			isa = PBXGroup;
 			children = (
+				D95F3FD6215434FA0039D714 /* Fonts */,
 				D90EDB88214FD93900012383 /* AppDelegate.swift */,
 				D90EDB8A214FD93900012383 /* ViewController.swift */,
 				D90EDB8C214FD93900012383 /* Main.storyboard */,
@@ -86,6 +89,14 @@
 				D90EDB94214FD93A00012383 /* Info.plist */,
 			);
 			path = MoneyControl;
+			sourceTree = "<group>";
+		};
+		D95F3FD6215434FA0039D714 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D95F3FD7215435420039D714 /* Lato-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +161,7 @@
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
 				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
 				D90EDB8E214FD93900012383 /* Main.storyboard in Resources */,
+				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,14 +340,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 64LSU2S2FL;
+				DEVELOPMENT_TEAM = ZG9WMFCLTY;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pxtoday.MoneyControl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.TheMovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -348,14 +360,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 64LSU2S2FL;
+				DEVELOPMENT_TEAM = ZG9WMFCLTY;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pxtoday.MoneyControl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.TheMovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
