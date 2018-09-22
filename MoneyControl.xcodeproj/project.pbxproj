@@ -13,6 +13,12 @@
 		D90EDB8E214FD93900012383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB8C214FD93900012383 /* Main.storyboard */; };
 		D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB91214FD93A00012383 /* LaunchScreen.storyboard */; };
 		D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB9A214FE53900012383 /* Assets.xcassets */; };
+		D920A09B21562F8100ECA806 /* BottomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A09921562F8100ECA806 /* BottomPopupViewController.swift */; };
+		D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D920A09A21562F8100ECA806 /* BottomPopupViewController.xib */; };
+		D920A09E21562FDF00ECA806 /* bi8jswmy3ug01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D920A09D21562FDF00ECA806 /* bi8jswmy3ug01.jpg */; };
+		D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A02156306A00ECA806 /* UIViewExtensions.swift */; };
+		D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A12156306A00ECA806 /* UIViewControllerExtensions.swift */; };
+		D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A52156427300ECA806 /* UIWindowExtensions.swift */; };
 		D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95F3FD7215435420039D714 /* Lato-Bold.ttf */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +32,12 @@
 		D90EDB92214FD93A00012383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D90EDB94214FD93A00012383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D90EDB9A214FE53900012383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Desktop/Upwork/Money control/Assets.xcassets"; sourceTree = "<group>"; };
+		D920A09921562F8100ECA806 /* BottomPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupViewController.swift; sourceTree = "<group>"; };
+		D920A09A21562F8100ECA806 /* BottomPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomPopupViewController.xib; sourceTree = "<group>"; };
+		D920A09D21562FDF00ECA806 /* bi8jswmy3ug01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bi8jswmy3ug01.jpg; sourceTree = "<group>"; };
+		D920A0A02156306A00ECA806 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		D920A0A12156306A00ECA806 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		D920A0A52156427300ECA806 /* UIWindowExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
 		D95F3FD7215435420039D714 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +92,9 @@
 		D90EDB87214FD93900012383 /* MoneyControl */ = {
 			isa = PBXGroup;
 			children = (
+				D920A09521562F1900ECA806 /* Kit */,
 				D95F3FD6215434FA0039D714 /* Fonts */,
+				D920A09D21562FDF00ECA806 /* bi8jswmy3ug01.jpg */,
 				D90EDB88214FD93900012383 /* AppDelegate.swift */,
 				D90EDB8A214FD93900012383 /* ViewController.swift */,
 				D90EDB8C214FD93900012383 /* Main.storyboard */,
@@ -89,6 +103,50 @@
 				D90EDB94214FD93A00012383 /* Info.plist */,
 			);
 			path = MoneyControl;
+			sourceTree = "<group>";
+		};
+		D920A09521562F1900ECA806 /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				D920A09F2156303800ECA806 /* Extensions */,
+				D920A09621562F2F00ECA806 /* UI */,
+			);
+			path = Kit;
+			sourceTree = "<group>";
+		};
+		D920A09621562F2F00ECA806 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D920A09721562F3400ECA806 /* Popup's */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D920A09721562F3400ECA806 /* Popup's */ = {
+			isa = PBXGroup;
+			children = (
+				D920A09821562F5A00ECA806 /* BottomPopupViewController */,
+			);
+			path = "Popup's";
+			sourceTree = "<group>";
+		};
+		D920A09821562F5A00ECA806 /* BottomPopupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D920A09921562F8100ECA806 /* BottomPopupViewController.swift */,
+				D920A09A21562F8100ECA806 /* BottomPopupViewController.xib */,
+			);
+			path = BottomPopupViewController;
+			sourceTree = "<group>";
+		};
+		D920A09F2156303800ECA806 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D920A0A12156306A00ECA806 /* UIViewControllerExtensions.swift */,
+				D920A0A02156306A00ECA806 /* UIViewExtensions.swift */,
+				D920A0A52156427300ECA806 /* UIWindowExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D95F3FD6215434FA0039D714 /* Fonts */ = {
@@ -161,7 +219,9 @@
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
 				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
 				D90EDB8E214FD93900012383 /* Main.storyboard in Resources */,
+				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
 				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
+				D920A09E21562FDF00ECA806 /* bi8jswmy3ug01.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +255,10 @@
 			files = (
 				D90EDB8B214FD93900012383 /* ViewController.swift in Sources */,
 				D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */,
+				D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */,
+				D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */,
+				D920A09B21562F8100ECA806 /* BottomPopupViewController.swift in Sources */,
+				D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

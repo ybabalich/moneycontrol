@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Outlets
+    
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    // MARK: - Events
+    @IBAction func shopPopupEvent(_ sender: UIButton) {
+        let controller = BottomPopupViewController.controller()
+        controller.modalPresentationStyle = .custom
+        navigationController?.present(controller,
+                                      animated: true,
+                                      completion: nil)
+    }
+    
 
 }
 

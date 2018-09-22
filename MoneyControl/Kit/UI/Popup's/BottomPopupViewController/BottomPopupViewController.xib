@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomPopupViewController" customModule="MoneyControl" customModuleProvider="target">
+            <connections>
+                <outlet property="baseView" destination="5em-62-PPC" id="DSb-nf-Qxx"/>
+                <outlet property="bottomContentViewConstraint" destination="pn4-sV-5ym" id="PJc-Dn-mn0"/>
+                <outlet property="contentView" destination="nkS-1s-44l" id="PH8-oX-YJR"/>
+                <outlet property="view" destination="2B5-19-Xa4" id="6x6-bD-fZZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2B5-19-Xa4">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5em-62-PPC">
+                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkS-1s-44l">
+                            <rect key="frame" x="8" y="8" width="359" height="200"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="AOk-GL-DIT"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="nkS-1s-44l" secondAttribute="trailing" constant="8" id="fSK-2S-d45"/>
+                        <constraint firstItem="nkS-1s-44l" firstAttribute="top" secondItem="5em-62-PPC" secondAttribute="top" constant="8" id="jBg-ac-wnk"/>
+                        <constraint firstAttribute="bottom" secondItem="nkS-1s-44l" secondAttribute="bottom" constant="8" id="pn4-sV-5ym"/>
+                        <constraint firstItem="nkS-1s-44l" firstAttribute="leading" secondItem="5em-62-PPC" secondAttribute="leading" constant="8" id="xOD-YI-0FT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="5em-62-PPC" secondAttribute="trailing" id="5gl-nB-8Si"/>
+                <constraint firstAttribute="bottom" secondItem="5em-62-PPC" secondAttribute="bottom" id="iYF-ge-JXr"/>
+                <constraint firstItem="5em-62-PPC" firstAttribute="leading" secondItem="2B5-19-Xa4" secondAttribute="leading" id="jdF-ue-SRb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="U9B-hQ-z39"/>
+        </view>
+    </objects>
+</document>
