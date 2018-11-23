@@ -7,4 +7,7 @@ target 'MoneyControl' do
 
   # Pods for MoneyControl
 
+  pod 'RxSwift'
+  pod 'RxCocoa'
+	
 end

@@ -18,26 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bi8jswmy3ug01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IoG-i4-YBE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb6-M9-mhG">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb6-M9-mhG">
                                 <rect key="frame" x="122" y="318.5" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Tap to show popup"/>
                                 <connections>
-                                    <action selector="shopPopupEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FyG-Vw-fR1"/>
+                                    <segue destination="1Xo-Lw-bcd" kind="show" id="C7G-lU-M59"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="IoG-i4-YBE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5Sh-lx-3Ii"/>
-                            <constraint firstAttribute="trailing" secondItem="IoG-i4-YBE" secondAttribute="trailing" id="8Z0-vh-z2Z"/>
-                            <constraint firstAttribute="bottom" secondItem="IoG-i4-YBE" secondAttribute="bottom" id="LJH-1d-jgd"/>
-                            <constraint firstItem="IoG-i4-YBE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Zb3-WA-VQ4"/>
-                            <constraint firstItem="yb6-M9-mhG" firstAttribute="centerX" secondItem="IoG-i4-YBE" secondAttribute="centerX" id="k2k-aI-Nkx"/>
-                            <constraint firstItem="yb6-M9-mhG" firstAttribute="centerY" secondItem="IoG-i4-YBE" secondAttribute="centerY" id="yUj-X8-VIp"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Nf-2d-ptk"/>
@@ -45,6 +35,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="751" y="-672"/>
+        </scene>
+        <!--Day View Controller-->
+        <scene sceneID="MhN-Ue-gYT">
+            <objects>
+                <viewController id="1Xo-Lw-bcd" customClass="DayViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d2l-Tq-nPc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Uz-h6-Lgc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="308"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="308" id="5iw-wi-fMP"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgK-TA-UrT">
+                                <rect key="frame" x="120" y="621" width="135" height="30"/>
+                                <state key="normal" title="Add new circulation"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Th-Fp-4Jf" customClass="ValidTextField" customModule="MoneyControl" customModuleProvider="target">
+                                <rect key="frame" x="16" y="575" width="343" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.9829063133" blue="0.12518196700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFn-9Q-cZy" customClass="ValidTextField" customModule="MoneyControl" customModuleProvider="target">
+                                <rect key="frame" x="16" y="537" width="343" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.9829063133" blue="0.12518196700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NgK-TA-UrT" firstAttribute="centerX" secondItem="l89-UC-7ld" secondAttribute="centerX" id="4bi-fF-wIc"/>
+                            <constraint firstItem="l89-UC-7ld" firstAttribute="trailing" secondItem="gFn-9Q-cZy" secondAttribute="trailing" constant="16" id="97X-gx-9OS"/>
+                            <constraint firstItem="l89-UC-7ld" firstAttribute="bottom" secondItem="NgK-TA-UrT" secondAttribute="bottom" constant="16" id="BHp-uN-rDa"/>
+                            <constraint firstItem="l89-UC-7ld" firstAttribute="trailing" secondItem="8Th-Fp-4Jf" secondAttribute="trailing" constant="16" id="D4j-uY-nTC"/>
+                            <constraint firstItem="8Th-Fp-4Jf" firstAttribute="leading" secondItem="l89-UC-7ld" secondAttribute="leading" constant="16" id="VIq-Tm-lMu"/>
+                            <constraint firstItem="gFn-9Q-cZy" firstAttribute="leading" secondItem="l89-UC-7ld" secondAttribute="leading" constant="16" id="Vkk-zC-y6R"/>
+                            <constraint firstItem="NgK-TA-UrT" firstAttribute="top" secondItem="8Th-Fp-4Jf" secondAttribute="bottom" constant="16" id="g7F-9t-A2D"/>
+                            <constraint firstItem="l89-UC-7ld" firstAttribute="trailing" secondItem="4Uz-h6-Lgc" secondAttribute="trailing" id="j7Z-Ka-1ke"/>
+                            <constraint firstItem="8Th-Fp-4Jf" firstAttribute="top" secondItem="gFn-9Q-cZy" secondAttribute="bottom" constant="8" id="ji7-fD-Zhy"/>
+                            <constraint firstItem="4Uz-h6-Lgc" firstAttribute="top" secondItem="l89-UC-7ld" secondAttribute="top" id="udE-yc-xTw"/>
+                            <constraint firstItem="4Uz-h6-Lgc" firstAttribute="leading" secondItem="l89-UC-7ld" secondAttribute="leading" id="v5g-UY-8kh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l89-UC-7ld"/>
+                    </view>
+                    <connections>
+                        <outlet property="addBtn" destination="NgK-TA-UrT" id="fsK-cY-MO2"/>
+                        <outlet property="loginTextField" destination="gFn-9Q-cZy" id="dmI-z2-Yro"/>
+                        <outlet property="tableView" destination="4Uz-h6-Lgc" id="WOq-iB-ccA"/>
+                        <outlet property="textField" destination="8Th-Fp-4Jf" id="9W4-CZ-Yra"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAv-ob-L67" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464.8" y="-672.41379310344837"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1uX-Ja-g5B">
@@ -65,7 +116,4 @@
             <point key="canvasLocation" x="4" y="-671.51424287856082"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="bi8jswmy3ug01.jpg" width="1125" height="2436"/>
-    </resources>
 </document>

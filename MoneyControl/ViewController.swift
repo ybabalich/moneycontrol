@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     // MARK: - Events
     @IBAction func shopPopupEvent(_ sender: UIButton) {
-        let controller = BottomPopupViewController.controller()
+        let controller = LockViewController.controller()
         controller.modalPresentationStyle = .custom
         navigationController?.present(controller,
                                       animated: true,

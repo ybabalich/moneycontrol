@@ -1,3 +1,11 @@
+//
+//  UIViewControllerExtensions.swift
+//  MoneyControl
+//
+//  Created by Yaroslav Babalich on 2/5/18.
+//  Copyright © 2018 RxToday Co. All rights reserved.
+//
+
 import UIKit
 
 extension UIView {
@@ -110,12 +118,12 @@ extension UIView {
         
         currentView.translatesAutoresizingMaskIntoConstraints = false
         superView!.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-\(padding)-[currentView]-\(padding)-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["currentView" : currentView]))
         
         superView!.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-\(padding)-[currentView]-\(padding)-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views:["currentView" : currentView]))
     }
@@ -132,35 +140,35 @@ extension UIView {
     @discardableResult
     public func alignCenterY(toView view: UIView?) -> NSLayoutConstraint? {
         return self.alignToView(view: view,
-            attr: NSLayoutAttribute.centerY,
-            toAttr: NSLayoutAttribute.centerY,
-            padding: 0,
-            multiplier: 1);
+                                attr: NSLayoutConstraint.Attribute.centerY,
+                                toAttr: NSLayoutConstraint.Attribute.centerY,
+                                padding: 0,
+                                multiplier: 1);
     }
     
     @discardableResult
     public func alignTop(toView view: UIView?, toTop: Bool, padding: CGFloat) -> NSLayoutConstraint? {
         return self.alignToView(view: view,
-            attr: NSLayoutAttribute.top,
-            toAttr: (toTop) ? NSLayoutAttribute.top : NSLayoutAttribute.bottom,
-            padding: padding,
-            multiplier: 1);
+                                attr: .top,
+                                toAttr: (toTop) ? .top : .bottom,
+                                padding: padding,
+                                multiplier: 1);
     }
     
     @discardableResult
     public func alignLeft(toView view: UIView?, toLeft: Bool, padding: CGFloat) -> NSLayoutConstraint? {
         return self.alignToView(view: view,
-            attr: NSLayoutAttribute.left,
-            toAttr: (toLeft) ? NSLayoutAttribute.left : NSLayoutAttribute.right,
-            padding: padding,
-            multiplier: 1);
+                                attr: .left,
+                                toAttr: (toLeft) ? .left : .right,
+                                padding: padding,
+                                multiplier: 1);
     }
     
     @discardableResult
     public func alignRight(toView view: UIView?, toRight: Bool, padding: CGFloat) -> NSLayoutConstraint? {
         return self.alignToView(view: view,
-            attr: NSLayoutAttribute.right,
-            toAttr: (toRight) ? NSLayoutAttribute.right : NSLayoutAttribute.left,
+                                attr: .right,
+            toAttr: (toRight) ? .right : .left,
             padding: (toRight) ? -padding : padding,
             multiplier: 1);
     }
@@ -168,8 +176,8 @@ extension UIView {
     @discardableResult
     public func alignBottom(toView view: UIView?, toBottom: Bool, padding: CGFloat) -> NSLayoutConstraint? {
         return self.alignToView(view: view,
-            attr: NSLayoutAttribute.bottom,
-            toAttr: (toBottom) ? NSLayoutAttribute.bottom : NSLayoutAttribute.top,
+                                attr: .bottom,
+                                toAttr: (toBottom) ? .bottom : .top,
             padding: (toBottom) ? -padding : padding,
             multiplier: 1);
     }
@@ -184,17 +192,17 @@ extension UIView {
     }
     
     @discardableResult
-    public func alignToView(view: UIView?, attr: NSLayoutAttribute, toAttr: NSLayoutAttribute, padding: CGFloat, multiplier: CGFloat) -> NSLayoutConstraint? {
+    public func alignToView(view: UIView?, attr: NSLayoutConstraint.Attribute, toAttr: NSLayoutConstraint.Attribute, padding: CGFloat, multiplier: CGFloat) -> NSLayoutConstraint? {
         return self.align(
             attr1: attr,
             toView: view,
             attr2: toAttr,
-            relation: NSLayoutRelation.equal,
+            relation: NSLayoutConstraint.Relation.equal,
             padding: padding,
             multiplier: multiplier);
     }
     
-    public func align(attr1: NSLayoutAttribute, toView: UIView?, attr2: NSLayoutAttribute, relation: NSLayoutRelation, padding: CGFloat, multiplier: CGFloat) -> NSLayoutConstraint? {
+    public func align(attr1: NSLayoutConstraint.Attribute, toView: UIView?, attr2: NSLayoutConstraint.Attribute, relation: NSLayoutConstraint.Relation, padding: CGFloat, multiplier: CGFloat) -> NSLayoutConstraint? {
         var constraint: NSLayoutConstraint? = nil
         if toView != nil {
             self.translatesAutoresizingMaskIntoConstraints = false
@@ -224,7 +232,7 @@ extension UIView {
     
     public func widthConstraint(needCreate create: Bool, priority: UILayoutPriority) -> NSLayoutConstraint? {
         // try to find constraint
-        var constraint: NSLayoutConstraint? = self.constraintToSelf(withAttr: NSLayoutAttribute.width)
+        var constraint: NSLayoutConstraint? = self.constraintToSelf(withAttr: NSLayoutConstraint.Attribute.width)
         
         if create
             && constraint?.priority != priority
@@ -238,10 +246,10 @@ extension UIView {
         if constraint == nil && create {
             constraint = NSLayoutConstraint(
                 item: self,
-                attribute: NSLayoutAttribute.width,
-                relatedBy: NSLayoutRelation.equal,
+                attribute: NSLayoutConstraint.Attribute.width,
+                relatedBy: NSLayoutConstraint.Relation.equal,
                 toItem: nil,
-                attribute: NSLayoutAttribute.notAnAttribute,
+                attribute: .notAnAttribute,
                 multiplier: 1,
                 constant: self.frame.size.width)
             constraint!.priority = priority;
@@ -253,7 +261,7 @@ extension UIView {
     
     public func heightConstraint(needCreate create: Bool, priority: UILayoutPriority) -> NSLayoutConstraint? {
         // try to find constraint
-        var constraint: NSLayoutConstraint? = self.constraintToSelf(withAttr: NSLayoutAttribute.height)
+        var constraint: NSLayoutConstraint? = self.constraintToSelf(withAttr: NSLayoutConstraint.Attribute.height)
         
         if create
             && constraint?.priority != priority
@@ -267,10 +275,10 @@ extension UIView {
         if constraint == nil && create {
             constraint = NSLayoutConstraint(
                 item: self,
-                attribute: NSLayoutAttribute.height,
-                relatedBy: NSLayoutRelation.equal,
+                attribute: NSLayoutConstraint.Attribute.height,
+                relatedBy: NSLayoutConstraint.Relation.equal,
                 toItem: nil,
-                attribute: NSLayoutAttribute.notAnAttribute,
+                attribute: .notAnAttribute,
                 multiplier: 1,
                 constant: self.frame.size.height)
             constraint!.priority = priority;
@@ -280,7 +288,7 @@ extension UIView {
         return constraint;
     }
     
-    public func constraintToSelf(withAttr attr: NSLayoutAttribute) -> NSLayoutConstraint? {
+    public func constraintToSelf(withAttr attr: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
         var constraint: NSLayoutConstraint? = nil;
         for constraintTmp in self.constraints {
             if ((constraintTmp.firstAttribute == attr
@@ -297,7 +305,7 @@ extension UIView {
     }
     
     //if first item or second item constains constraint to each other
-    public func constraintBetween(second: UIView, attr: NSLayoutAttribute) -> NSLayoutConstraint? {
+    public func constraintBetween(second: UIView, attr: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
         var constraint: NSLayoutConstraint? = nil;
         var allConstraints: [NSLayoutConstraint] = []
         allConstraints.append(contentsOf: self.constraints)
@@ -318,7 +326,7 @@ extension UIView {
     }
     
     //searching in views superviews
-    static func constraintFromSuperviewBetween(view first: UIView, view second: UIView, attr: NSLayoutAttribute) -> NSLayoutConstraint? {
+    static func constraintFromSuperviewBetween(view first: UIView, view second: UIView, attr: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
         var constraint: NSLayoutConstraint? = nil;
         var allConstraints: [NSLayoutConstraint] = []
         if let superView = first.superview {
