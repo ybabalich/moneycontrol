@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityViewController: UIViewController {
+class ActivityViewController: BaseViewController {
 
     // MARK: - Outlets
     
@@ -18,6 +18,15 @@ class ActivityViewController: UIViewController {
         super.viewDidLoad()
 
         
+    }
+    
+    // navbar preparаtion
+    override func createLeftNavButton() -> UIBarButtonItem? {
+        return UIBarButtonItemFabric.titledBarButtonItem(title: "Today")
+    }
+    
+    override func createRightNavButton() -> UIBarButtonItem? {
+        return UIBarButtonItemFabric.chartBarItem()
     }
     
 

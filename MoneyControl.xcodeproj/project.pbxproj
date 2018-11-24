@@ -25,6 +25,11 @@
 		D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A02156306A00ECA806 /* UIViewExtensions.swift */; };
 		D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A12156306A00ECA806 /* UIViewControllerExtensions.swift */; };
 		D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A52156427300ECA806 /* UIWindowExtensions.swift */; };
+		D922148021A97DCB00A71CDB /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D922147F21A97DCB00A71CDB /* UICollectionViewExtensions.swift */; };
+		D92EEDF321A94F0E00A9C233 /* ActivityTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF221A94F0E00A9C233 /* ActivityTopViewController.swift */; };
+		D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */; };
+		D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */; };
+		D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */; };
 		D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CF25C2156523D001BEF1F /* LockViewController.swift */; };
 		D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D95CF25D2156523D001BEF1F /* LockViewController.xib */; };
 		D95CF261215775FF001BEF1F /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95CF260215775F8001BEF1F /* Lato-Light.ttf */; };
@@ -33,13 +38,13 @@
 		D95CF26A21577A9A001BEF1F /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CF26921577A9A001BEF1F /* UIColorExtensions.swift */; };
 		D95CF26D215782E9001BEF1F /* PinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CF26C215782E9001BEF1F /* PinButton.swift */; };
 		D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CF271215825A4001BEF1F /* BaseViewController.swift */; };
-		D95CF274215825A4001BEF1F /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D95CF272215825A4001BEF1F /* BaseViewController.xib */; };
 		D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95F3FD7215435420039D714 /* Lato-Bold.ttf */; };
 		D96483102162439400B2D880 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964830F2162439400B2D880 /* Category.swift */; };
 		D9648313216247DE00B2D880 /* DayViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9648312216247DE00B2D880 /* DayViewViewModel.swift */; };
 		D96483182162813D00B2D880 /* DayViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96483162162813D00B2D880 /* DayViewTableViewCell.swift */; };
 		D96483192162813D00B2D880 /* DayViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D96483172162813D00B2D880 /* DayViewTableViewCell.xib */; };
 		D964831B216287BE00B2D880 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964831A216287BE00B2D880 /* Constants.swift */; };
+		D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB3B2021A94BB100D8BADC /* UIBarButtonItemFabric.swift */; };
 		D9FC28F421623FBC00E57E1B /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC28F321623FBC00E57E1B /* Money.swift */; };
 		D9FC28F72162426E00E57E1B /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC28F62162426E00E57E1B /* DayViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +71,11 @@
 		D920A0A02156306A00ECA806 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		D920A0A12156306A00ECA806 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		D920A0A52156427300ECA806 /* UIWindowExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
+		D922147F21A97DCB00A71CDB /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
+		D92EEDF221A94F0E00A9C233 /* ActivityTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTopViewController.swift; sourceTree = "<group>"; };
+		D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBottomViewController.swift; sourceTree = "<group>"; };
+		D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D95CF25C2156523D001BEF1F /* LockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 		D95CF25D2156523D001BEF1F /* LockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockViewController.xib; sourceTree = "<group>"; };
 		D95CF260215775F8001BEF1F /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -74,13 +84,13 @@
 		D95CF26921577A9A001BEF1F /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		D95CF26C215782E9001BEF1F /* PinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinButton.swift; sourceTree = "<group>"; };
 		D95CF271215825A4001BEF1F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		D95CF272215825A4001BEF1F /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		D95F3FD7215435420039D714 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		D964830F2162439400B2D880 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D9648312216247DE00B2D880 /* DayViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewViewModel.swift; sourceTree = "<group>"; };
 		D96483162162813D00B2D880 /* DayViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewTableViewCell.swift; sourceTree = "<group>"; };
 		D96483172162813D00B2D880 /* DayViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayViewTableViewCell.xib; sourceTree = "<group>"; };
 		D964831A216287BE00B2D880 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D9DB3B2021A94BB100D8BADC /* UIBarButtonItemFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemFabric.swift; sourceTree = "<group>"; };
 		D9FC28F321623FBC00E57E1B /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		D9FC28F62162426E00E57E1B /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +174,7 @@
 		D911ECFA21A7F7B700C3A7B1 /* ActivityViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D92EEDF021A94EC900A9C233 /* InternalControllers */,
 				D911ECFB21A7F7EB00C3A7B1 /* ActivityViewController.swift */,
 			);
 			path = ActivityViewController;
@@ -188,6 +199,7 @@
 		D920A09521562F1900ECA806 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
+				D9DB3B1F21A94BA000D8BADC /* Helpers */,
 				D920A09F2156303800ECA806 /* Extensions */,
 				D920A09621562F2F00ECA806 /* UI */,
 			);
@@ -197,6 +209,7 @@
 		D920A09621562F2F00ECA806 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D92EEDF721A9514300A9C233 /* Cells */,
 				D911ED0121A801D500C3A7B1 /* Buttons */,
 				D95CF26221577803001BEF1F /* View's */,
 				D95CF25A21565212001BEF1F /* Screens */,
@@ -229,8 +242,51 @@
 				D920A0A02156306A00ECA806 /* UIViewExtensions.swift */,
 				D920A0A52156427300ECA806 /* UIWindowExtensions.swift */,
 				D95CF26921577A9A001BEF1F /* UIColorExtensions.swift */,
+				D922147F21A97DCB00A71CDB /* UICollectionViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D92EEDF021A94EC900A9C233 /* InternalControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D92EEDF121A94EF900A9C233 /* ActivityTopViewController */,
+				D92EEDF421A94F3200A9C233 /* ActivityBottomViewController */,
+			);
+			path = InternalControllers;
+			sourceTree = "<group>";
+		};
+		D92EEDF121A94EF900A9C233 /* ActivityTopViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D92EEDF221A94F0E00A9C233 /* ActivityTopViewController.swift */,
+			);
+			path = ActivityTopViewController;
+			sourceTree = "<group>";
+		};
+		D92EEDF421A94F3200A9C233 /* ActivityBottomViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */,
+			);
+			path = ActivityBottomViewController;
+			sourceTree = "<group>";
+		};
+		D92EEDF721A9514300A9C233 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D92EEDFC21A9518600A9C233 /* CategoryCollectionViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D92EEDFC21A9518600A9C233 /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */,
+				D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		D95CF25A21565212001BEF1F /* Screens */ = {
@@ -290,9 +346,9 @@
 		D95CF26F21582554001BEF1F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D95CF27021582562001BEF1F /* BaseViewController */,
 				D911ECFA21A7F7B700C3A7B1 /* ActivityViewController */,
 				D9FC28F52162424800E57E1B /* DayViewController */,
-				D95CF27021582562001BEF1F /* BaseViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -301,7 +357,6 @@
 			isa = PBXGroup;
 			children = (
 				D95CF271215825A4001BEF1F /* BaseViewController.swift */,
-				D95CF272215825A4001BEF1F /* BaseViewController.xib */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -346,6 +401,14 @@
 				D96483172162813D00B2D880 /* DayViewTableViewCell.xib */,
 			);
 			path = DayViewTableViewCell;
+			sourceTree = "<group>";
+		};
+		D9DB3B1F21A94BA000D8BADC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D9DB3B2021A94BB100D8BADC /* UIBarButtonItemFabric.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D9FC28EF21623F5100E57E1B /* Models */ = {
@@ -443,8 +506,8 @@
 				D96483192162813D00B2D880 /* DayViewTableViewCell.xib in Resources */,
 				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
 				D911ECF921A7EFFB00C3A7B1 /* ActivityFlow.storyboard in Resources */,
-				D95CF274215825A4001BEF1F /* BaseViewController.xib in Resources */,
 				D920A09E21562FDF00ECA806 /* bi8jswmy3ug01.jpg in Resources */,
+				D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */,
 				D95CF261215775FF001BEF1F /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,13 +564,16 @@
 				D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */,
 				D95CF26521577826001BEF1F /* PinCircleView.swift in Sources */,
 				D911ED0621A804FF00C3A7B1 /* Typealiases.swift in Sources */,
+				D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */,
 				D9FC28F421623FBC00E57E1B /* Money.swift in Sources */,
 				D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */,
 				D9FC28F72162426E00E57E1B /* DayViewController.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
 				D9648313216247DE00B2D880 /* DayViewViewModel.swift in Sources */,
 				D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */,
+				D92EEDF321A94F0E00A9C233 /* ActivityTopViewController.swift in Sources */,
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
+				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,
 				D911ED0021A7FC5500C3A7B1 /* Router.swift in Sources */,
 				D96483182162813D00B2D880 /* DayViewTableViewCell.swift in Sources */,
 				D95CF2682157796E001BEF1F /* App.swift in Sources */,
@@ -517,6 +583,8 @@
 				D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */,
 				D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */,
 				D911ECFC21A7F7EB00C3A7B1 /* ActivityViewController.swift in Sources */,
+				D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */,
+				D922148021A97DCB00A71CDB /* UICollectionViewExtensions.swift in Sources */,
 				D95CF26A21577A9A001BEF1F /* UIColorExtensions.swift in Sources */,
 				D911ED0421A8025800C3A7B1 /* CheckButton.swift in Sources */,
 				D964831B216287BE00B2D880 /* Constants.swift in Sources */,

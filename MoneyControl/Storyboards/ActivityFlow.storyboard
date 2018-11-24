@@ -10,15 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
         <array key="Lato-Light.ttf">
             <string>Lato-Light</string>
         </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Activity View Controller-->
         <scene sceneID="6Mm-36-EKg">
             <objects>
-                <viewController id="Lap-kz-unK" sceneMemberID="viewController">
+                <viewController id="Lap-kz-unK" customClass="ActivityViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HEF-Iv-uU5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,11 +54,29 @@
                                         <inset key="imageEdgeInsets" minX="35" minY="10" maxX="35" maxY="10"/>
                                         <state key="normal" image="ic_check"/>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-pw-yRM">
+                                        <rect key="frame" x="312" y="16" width="47" height="18"/>
+                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-g2-JiH">
+                                        <rect key="frame" x="16" y="12.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="PUm-g2-JiH" secondAttribute="height" multiplier="1:1" id="1hq-sX-nW7"/>
+                                            <constraint firstAttribute="width" constant="25" id="HCH-q3-X8J"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_history"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="sFm-Ne-ll1" firstAttribute="centerY" secondItem="MZ7-rK-DEH" secondAttribute="centerY" id="2fx-3Q-szr"/>
+                                    <constraint firstItem="PUm-g2-JiH" firstAttribute="leading" secondItem="MZ7-rK-DEH" secondAttribute="leading" constant="16" id="3Tp-qE-aVg"/>
                                     <constraint firstAttribute="height" constant="50" id="Bc4-Ok-aMu"/>
+                                    <constraint firstAttribute="trailing" secondItem="EcT-pw-yRM" secondAttribute="trailing" constant="16" id="ZOd-Jd-hmd"/>
+                                    <constraint firstItem="EcT-pw-yRM" firstAttribute="centerY" secondItem="MZ7-rK-DEH" secondAttribute="centerY" id="bJC-GW-JUJ"/>
+                                    <constraint firstItem="PUm-g2-JiH" firstAttribute="centerY" secondItem="MZ7-rK-DEH" secondAttribute="centerY" id="fOd-2K-uY4"/>
                                     <constraint firstItem="sFm-Ne-ll1" firstAttribute="centerX" secondItem="MZ7-rK-DEH" secondAttribute="centerX" id="rL7-wL-NcX"/>
                                 </constraints>
                             </view>
@@ -78,25 +102,83 @@
             </objects>
             <point key="canvasLocation" x="-180" y="146.17691154422789"/>
         </scene>
-        <!--View Controller-->
+        <!--Activity Top View Controller-->
         <scene sceneID="jAc-3v-4XW">
             <objects>
-                <viewController id="k2h-rm-it2" sceneMemberID="viewController">
+                <viewController id="k2h-rm-it2" customClass="ActivityTopViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nXy-Bf-BNa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="263.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NcI-JG-PSI">
+                                <rect key="frame" x="16" y="16" width="343" height="161.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incoming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9f-Vh-uA0">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.72156862745098038" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000.20" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaH-4U-zhz">
+                                        <rect key="frame" x="0.0" y="31.5" width="343" height="130"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="38"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e2U-RA-Wqa">
+                                <rect key="frame" x="0.0" y="193.5" width="375" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="kIN-gN-D1H"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X39-cU-wRn">
+                                    <size key="itemSize" width="50" height="70"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="nnn-I6-Vpw">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X5B-82-Rtl" firstAttribute="bottom" secondItem="e2U-RA-Wqa" secondAttribute="bottom" id="5q6-nu-fDw"/>
+                            <constraint firstItem="e2U-RA-Wqa" firstAttribute="leading" secondItem="X5B-82-Rtl" secondAttribute="leading" id="7Se-2g-sHL"/>
+                            <constraint firstItem="e2U-RA-Wqa" firstAttribute="top" secondItem="NcI-JG-PSI" secondAttribute="bottom" constant="16" id="BvK-uJ-3lY"/>
+                            <constraint firstItem="X5B-82-Rtl" firstAttribute="trailing" secondItem="e2U-RA-Wqa" secondAttribute="trailing" id="bkL-Dz-mfn"/>
+                            <constraint firstItem="NcI-JG-PSI" firstAttribute="leading" secondItem="X5B-82-Rtl" secondAttribute="leading" constant="16" id="mHc-K2-qnB"/>
+                            <constraint firstItem="X5B-82-Rtl" firstAttribute="trailing" secondItem="NcI-JG-PSI" secondAttribute="trailing" constant="16" id="pw8-hn-mHa"/>
+                            <constraint firstItem="NcI-JG-PSI" firstAttribute="top" secondItem="X5B-82-Rtl" secondAttribute="top" constant="16" id="zTN-LE-JqA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X5B-82-Rtl"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="categoriesCollectionView" destination="e2U-RA-Wqa" id="2aV-go-2co"/>
+                        <outlet property="spendingTypeLabel" destination="NcI-JG-PSI" id="dNa-2L-mrU"/>
+                        <outlet property="sumStackView" destination="NcI-JG-PSI" id="uX5-Tf-qAp"/>
+                        <outlet property="sumTextField" destination="xaH-4U-zhz" id="Umj-or-dRz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7r-6e-ikc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="590" y="-35"/>
+            <point key="canvasLocation" x="610" y="-35"/>
         </scene>
-        <!--View Controller-->
+        <!--Activity Bottom View Controller-->
         <scene sceneID="9Wa-Ky-2SE">
             <objects>
-                <viewController id="bd8-zM-IRE" sceneMemberID="viewController">
+                <viewController id="bd8-zM-IRE" customClass="ActivityBottomViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r3D-UT-NCo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,15 +310,17 @@
                             <constraint firstItem="8W1-gj-izp" firstAttribute="leading" secondItem="r3D-UT-NCo" secondAttribute="leadingMargin" id="Uvp-Ym-sdY"/>
                             <constraint firstItem="8W1-gj-izp" firstAttribute="top" secondItem="fWe-zr-7Bq" secondAttribute="bottom" id="gqj-8X-D8L"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Za-Yf-Y4w"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yml-su-eQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="309"/>
+            <point key="canvasLocation" x="609" y="296"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_check" width="192" height="139"/>
+        <image name="ic_history" width="510" height="484"/>
     </resources>
 </document>

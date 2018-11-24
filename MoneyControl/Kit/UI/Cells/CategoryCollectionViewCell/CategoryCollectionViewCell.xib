@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="0Ya-ba-Iz1" customClass="CategoryCollectionViewCell" customModule="MoneyControl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_category_fuel" translatesAutoresizingMaskIntoConstraints="NO" id="fMi-hT-AKd">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="fMi-hT-AKd" secondAttribute="height" multiplier="1:1" id="ucv-Nu-B6b"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJN-aF-IVF">
+                        <rect key="frame" x="0.0" y="52" width="50" height="14.5"/>
+                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="fMi-hT-AKd" firstAttribute="leading" secondItem="0Ya-ba-Iz1" secondAttribute="leading" id="F3B-Uc-n86"/>
+                <constraint firstAttribute="trailing" secondItem="fMi-hT-AKd" secondAttribute="trailing" id="MyY-d9-coK"/>
+                <constraint firstItem="VJN-aF-IVF" firstAttribute="leading" secondItem="0Ya-ba-Iz1" secondAttribute="leading" id="N6q-Qk-cWK"/>
+                <constraint firstItem="VJN-aF-IVF" firstAttribute="top" secondItem="fMi-hT-AKd" secondAttribute="bottom" constant="2" id="QRN-Ph-2h8"/>
+                <constraint firstItem="fMi-hT-AKd" firstAttribute="top" secondItem="0Ya-ba-Iz1" secondAttribute="top" id="Z7N-t7-E5q"/>
+                <constraint firstAttribute="trailing" secondItem="VJN-aF-IVF" secondAttribute="trailing" id="bbi-gg-CSj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ScI-dI-4V6"/>
+            <size key="customSize" width="86" height="161"/>
+            <point key="canvasLocation" x="-249.59999999999999" y="139.43028485757122"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_category_fuel" width="512" height="512"/>
+    </resources>
+</document>

@@ -31,7 +31,6 @@ class AppDelegate: UIResponder {
         
         let controller = UIViewController.by(flow: flowDataToShow)
         let navigationController = UINavigationController(rootViewController: controller)
-        navigationController.isNavigationBarHidden = true
         Router.instance.navigationViewController = navigationController
         
         window = UIWindow(frame: UIScreen.main.bounds)
