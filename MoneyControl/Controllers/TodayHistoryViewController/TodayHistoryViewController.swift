@@ -16,6 +16,7 @@ class TodayHistoryViewController: BaseViewController {
     
     // MARK: - Variables private
     private var viewModel = TodayHistoryViewViewModel()
+    private var navSegmentControl: UISegmentedControl!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,7 +27,14 @@ class TodayHistoryViewController: BaseViewController {
     
     // navbar preparаtion
     override func createLeftNavButton() -> UIBarButtonItem? {
-        return UIBarButtonItemFabric.titledBarButtonItem(title: "Expenses")
+        return UIBarButtonItemFabric.titledBarButtonItem(title: "Activity")
+    }
+    
+    override func createRightNavButton() -> UIBarButtonItem? {
+        let navSegmentBarButton = UIBarButtonItemFabric.segmentBar(items: ["Incoming", "Outcoming"])
+        self.navSegmentControl = navSegmentBarButton.customView as? UISegmentedControl
+        self.navSegmentControl.selectedSegmentIndex = self.viewModel.selectedTransationType.value.rawValue
+        return navSegmentBarButton
     }
     
     // MARK: - Private methods
@@ -44,6 +52,10 @@ class TodayHistoryViewController: BaseViewController {
     private func subscribeToEvents() {
         closeBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
             Router.instance.goBack()
+        }).disposed(by: disposeBag)
+        
+        navSegmentControl.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] (value) in
+            self.viewModel.selectedTransationType.value = Transaction.TransactionType(rawValue: self.navSegmentControl.selectedSegmentIndex)
         }).disposed(by: disposeBag)
     }
     

@@ -27,6 +27,8 @@ class ActivityViewViewModel {
     
     // MARK: - Variables public
     let value: PublishSubject<String> = PublishSubject<String>()
+    let totalValue: PublishSubject<Double> = PublishSubject<Double>()
+    let isActiveDoneButton: PublishSubject<Bool> = PublishSubject<Bool>()
     let isHiddenField: PublishSubject<Bool> = PublishSubject<Bool>()
     let categories: Variable<[CategoryViewModel]> = Variable<[CategoryViewModel]>([])
     let selectedCategory: Variable<CategoryViewModel?> = Variable<CategoryViewModel?>(nil)
@@ -48,12 +50,16 @@ class ActivityViewViewModel {
                 self.isHiddenField.onNext(true)
             }
         }).disposed(by: disposeBag)
+        
+        _transactionValue.asObservable().map { $0.count > 0 }.bind(to: isActiveDoneButton).disposed(by: disposeBag)
     }
     
     // MARK: - Public methods
     func loadData() {
+        _transactionValue.value = ""
         transactionType.onNext(_transactionType.value)
         fetchCategories()
+        fetchTransactionsSum()
     }
     
     func changeTransactionType() {
@@ -64,6 +70,7 @@ class ActivityViewViewModel {
         }
         
         transactionType.onNext(_transactionType.value)
+        fetchTransactionsSum()
     }
     
     func keyboardValue(_ type: KeyboardButtonType) {
@@ -113,6 +120,14 @@ class ActivityViewViewModel {
             
             strongSelf.categories.value = categories
             strongSelf.selectedCategory.value = categories[0]
+        }
+    }
+    
+    func fetchTransactionsSum() {
+        TransactionService.instance.fetchTodayTransactionsSum(type: _transactionType.value) { [weak self] (sum) in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.totalValue.onNext(sum)
         }
     }
     

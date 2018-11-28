@@ -23,7 +23,7 @@ class CheckButton: UIButton {
         }
     }
     
-    var isActive: Bool = true {
+    override var isEnabled: Bool {
         didSet {
             updateUI()
         }
@@ -73,9 +73,7 @@ class CheckButton: UIButton {
         default: backgroundColor = App.Color.main.rawValue
         }
         
-        backgroundColor = isActive ? backgroundColor.withAlphaComponent(1) : backgroundColor.withAlphaComponent(0.3)
-        
-        isEnabled = isActive
+        backgroundColor = isEnabled ? backgroundColor.withAlphaComponent(1) : backgroundColor.withAlphaComponent(0.3)
         
         self.backgroundColor = backgroundColor
     }

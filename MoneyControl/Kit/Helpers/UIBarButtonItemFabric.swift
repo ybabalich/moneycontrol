@@ -24,6 +24,12 @@ class UIBarButtonItemFabric {
         return UIBarButtonItem(customView: button)
     }
     
+    class func segmentBar(items: [Any]?) -> UIBarButtonItem {
+        let segment = UISegmentedControl(items: items)
+        segment.tintColor = App.Color.main.rawValue
+        return UIBarButtonItem(customView: segment)
+    }
+    
     // MARK: - Public Class Methods
     class func titledBarButtonItem(title: String) -> UIBarButtonItem {
         let label: UILabel = UILabel()

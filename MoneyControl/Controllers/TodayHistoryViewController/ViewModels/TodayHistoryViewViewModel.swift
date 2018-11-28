@@ -12,15 +12,21 @@ class TodayHistoryViewViewModel {
     
     // MARK: - Variables
     let transactions: PublishSubject<[TransactionViewModel]> = PublishSubject<[TransactionViewModel]>()
+    let selectedTransationType: Variable<Transaction.TransactionType> = Variable<Transaction.TransactionType>(.incoming)
+    
+    // MARK: - Variables private
+    private let disposeBag = DisposeBag()
     
     // MARK: - Initializers
     init() {
-        
+        selectedTransationType.asObservable().subscribe(onNext: { _ in
+            self.loadData()
+        }).disposed(by: disposeBag)
     }
     
     // MARK: - Public methods
     func loadData() {
-        TransactionService.instance.fetchMyTransactions { [unowned self] (transactions) in
+        TransactionService.instance.fetchTodayTransactions(type: selectedTransationType.value) { (transactions) in
             let transactions = transactions.map({ (transaction) -> TransactionViewModel in
                 return TransactionViewModel(transaction: transaction)
             })

@@ -66,6 +66,12 @@ class ActivityViewController: BaseViewController {
                 self.totalLabel.textColor = App.Color.outcoming.rawValue
             }
         }).disposed(by: disposeBag)
+        
+        viewModel.totalValue.subscribe(onNext: { [unowned self] (totalValue) in
+            self.totalLabel.text = "Total: \(totalValue)"
+        }).disposed(by: disposeBag)
+        
+        viewModel.isActiveDoneButton.bind(to: doneBtn.rx.isEnabled).disposed(by: disposeBag)
     }
     
     private func subscribeToEvents() {
