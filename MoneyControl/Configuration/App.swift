@@ -24,8 +24,8 @@ struct App {
     
     enum Color {
         case main
-        case checkBtnIncoming
-        case checkBtnOutcoming
+        case incoming
+        case outcoming
     }
     
 }
@@ -36,8 +36,8 @@ extension App.Color: Rawable {
     var rawValue: UIColor {
         switch self {
         case .main: return UIColor(hex: 0x212121)
-        case .checkBtnIncoming: return UIColor(hex: 0xd63031)
-        case .checkBtnOutcoming: return UIColor(hex: 0x00b894)
+        case .outcoming: return UIColor(hex: 0xd63031)
+        case .incoming: return UIColor(hex: 0x00b894)
         }
     }
     

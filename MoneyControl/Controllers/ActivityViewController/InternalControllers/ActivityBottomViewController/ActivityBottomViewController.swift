@@ -8,23 +8,49 @@
 
 import UIKit
 
-class ActivityBottomViewController: UIViewController {
+class ActivityBottomViewController: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    // MARK: - Outlets
+    @IBOutlet var butons: [UIButton]!
+    
+    
+    // MARK: - Variables public
+    var parentViewModel: ActivityViewViewModel! {
+        didSet {
+            setup()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
-    */
+    
+    // MARK: - Private methods
+    private func setup() {
+        butons.forEach { (button) in
+            button.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+                var buttonType: ActivityViewViewModel.KeyboardButtonType = .one
+                switch button.tag {
+                case 1: buttonType = .one
+                case 2: buttonType = .two
+                case 3: buttonType = .three
+                case 4: buttonType = .four
+                case 5: buttonType = .five
+                case 6: buttonType = .six
+                case 7: buttonType = .seven
+                case 8: buttonType = .eight
+                case 9: buttonType = .nine
+                case 0: buttonType = .zero
+                case 10: buttonType = .dot
+                case 11: buttonType = .clear
+                default: buttonType = .one
+                }
+                
+                self.parentViewModel.keyboardValue(buttonType)
+            }).disposed(by: disposeBag)
+        }
+    }
 
 }

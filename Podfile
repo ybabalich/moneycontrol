@@ -6,8 +6,12 @@ target 'MoneyControl' do
   use_frameworks!
 
   # Pods for MoneyControl
-
+  
+  #Rx
   pod 'RxSwift'
   pod 'RxCocoa'
-	
+  pod "RxGesture"
+  
+  #Database
+  pod ‘RealmSwift’
 end

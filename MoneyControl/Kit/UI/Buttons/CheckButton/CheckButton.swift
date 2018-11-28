@@ -23,6 +23,12 @@ class CheckButton: UIButton {
         }
     }
     
+    var isActive: Bool = true {
+        didSet {
+            updateUI()
+        }
+    }
+    
     // MARK: - Variables private
     private var oldFrame: CGRect = .zero
     
@@ -62,10 +68,14 @@ class CheckButton: UIButton {
     private func updateUI() {
         var backgroundColor = App.Color.main.rawValue
         switch colorType {
-        case .incoming: backgroundColor = App.Color.checkBtnIncoming.rawValue
-        case .outcoming: backgroundColor = App.Color.checkBtnOutcoming.rawValue
+        case .incoming: backgroundColor = App.Color.incoming.rawValue
+        case .outcoming: backgroundColor = App.Color.outcoming.rawValue
         default: backgroundColor = App.Color.main.rawValue
         }
+        
+        backgroundColor = isActive ? backgroundColor.withAlphaComponent(1) : backgroundColor.withAlphaComponent(0.3)
+        
+        isEnabled = isActive
         
         self.backgroundColor = backgroundColor
     }

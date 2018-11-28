@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Lato-Bold.ttf">
-            <string>Lato-Bold</string>
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -24,8 +24,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money control" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAJ-yw-3qo">
-                                <rect key="frame" x="89" y="325.5" width="197" height="36"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="30"/>
+                                <rect key="frame" x="94" y="325.5" width="187.5" height="36"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

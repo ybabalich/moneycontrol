@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 var appLauncher: AppLaunch = AppLaunch()
 
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder {
     {
         //controller for showing
         setupStoryboardForStart()
-        
+
         return true
     }
     

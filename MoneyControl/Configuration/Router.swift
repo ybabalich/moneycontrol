@@ -29,6 +29,16 @@ class Router {
         }
         navigationViewController.popViewController(animated: true)
     }
+    
+    func showTodayHistoryScreen() {
+        let todayHistoryFlow = AppLaunch.StoryboardFlow.activity(viewController: .todayHistory)
+        showScreen(todayHistoryFlow, animated: true)
+    }
+    
+    func showHistoryScreen() {
+        let historyFlow = AppLaunch.StoryboardFlow.activity(viewController: .history)
+        showScreen(historyFlow, animated: true)
+    }
 
     
     // MARK: - Private methods
