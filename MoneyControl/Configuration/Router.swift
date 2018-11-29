@@ -36,7 +36,7 @@ class Router {
     }
     
     func showHistoryScreen() {
-        let historyFlow = AppLaunch.StoryboardFlow.activity(viewController: .history)
+        let historyFlow = AppLaunch.StoryboardFlow.history(viewController: .base)
         showScreen(historyFlow, animated: true)
     }
 

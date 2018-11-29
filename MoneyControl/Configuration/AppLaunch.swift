@@ -35,10 +35,14 @@ class AppLaunch {
         enum Activity: String {
             case base = "ActivityViewController"
             case todayHistory = "TodayHistoryViewController"
-            case history = "HistoryViewController"
+        }
+        
+        enum History: String {
+            case base = "HistoryViewController"
         }
         
         case activity(viewController: Activity)
+        case history(viewController: History)
     }
     
     // MARK: - Public methods
@@ -55,6 +59,10 @@ extension AppLaunch.StoryboardFlow {
             return StoryboardFlowData(storyboardName: "ActivityFlow",
                                       controllerName: controller.rawValue,
                                       isInitial: controller == .base ? true : false)
+        case .history(viewController: let controller):
+            return StoryboardFlowData(storyboardName: "HistoryFlow",
+                                      controllerName: controller.rawValue,
+                                      isInitial: false)
         }
     }
 }

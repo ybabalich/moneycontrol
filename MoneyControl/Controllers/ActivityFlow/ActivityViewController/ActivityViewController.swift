@@ -100,6 +100,4 @@ class ActivityViewController: BaseViewController {
         bottomViewController.parentViewModel = viewModel
         
     }
-    
-
 }

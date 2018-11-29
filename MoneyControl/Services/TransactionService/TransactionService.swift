@@ -16,7 +16,7 @@ class TransactionService: RealmBasedService {
     // MARK: - Public methods
     
     // today
-    func fetchTodayTransactions(type: Transaction.TransactionType, completion: ([Transaction]) -> ()) {
+    func fetchTodayTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
         let calendar = Calendar.current
         let (dateFrom, dateTo) = calendar.currentDay()
         fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
