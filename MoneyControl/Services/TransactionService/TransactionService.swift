@@ -14,21 +14,12 @@ class TransactionService: RealmBasedService {
     static let instance = TransactionService()
     
     // MARK: - Public methods
+    
+    // today
     func fetchTodayTransactions(type: Transaction.TransactionType, completion: ([Transaction]) -> ()) {
         let calendar = Calendar.current
-        
-        let currentDate = Date()
-        let dateFrom = calendar.startOfDay(for: currentDate)
-        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)!
-        
-        let predicateFromDate = NSPredicate(format: "time >= %@", argumentArray: [dateFrom])
-        let predicateToDate = NSPredicate(format: "time <= %@", argumentArray: [dateTo])
-        let predicateTransactionType = NSPredicate(format: "type == %d", type.rawValue)
-        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicateFromDate, predicateToDate, predicateTransactionType])
-        
-        completion( db.objects(TransactionDB.self).filter(predicate).map({ (transaction) -> Transaction in
-            return Transaction(db: transaction)
-        }).sorted { $0.time > $1.time } )
+        let (dateFrom, dateTo) = calendar.currentDay()
+        fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
     }
     
     func fetchTodayTransactionsSum(type: Transaction.TransactionType, completion: (Double) -> ()) {
@@ -36,6 +27,18 @@ class TransactionService: RealmBasedService {
             completion(transactions.map({ $0.value }).reduce(0, +))
         }
     }
+    
+    // week
+    
+    /*
+     * If send type -> nil - it's means that method will fetch all transactions, ignoring type.
+     */
+    func fetchWeekTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
+        let calendar = Calendar.current
+        let (dateFrom, dateTo) = calendar.currentWeek()
+        fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
+    }
+    
     
     func save(_ transaction: Transaction) {
         let dbTransaction = TransactionDB()
@@ -55,6 +58,32 @@ class TransactionService: RealmBasedService {
             db.add(dbTransaction)
         }
         
+    }
+    
+    // MARK: - Private methods
+    private func fetchTransactions(from date1: Date,
+                                   to date2: Date,
+                                   type: Transaction.TransactionType?,
+                                   completion: ([Transaction]) -> ())
+    {
+        let predicateFromDate = NSPredicate(format: "time >= %@", argumentArray: [date1])
+        let predicateToDate = NSPredicate(format: "time <= %@", argumentArray: [date2])
+        var predicateTransactionType: NSPredicate?
+        if type != nil {
+            predicateTransactionType = NSPredicate(format: "type == %d", type!.rawValue)
+        }
+        
+        var predicates: [NSPredicate] = [predicateFromDate, predicateToDate]
+
+        if predicateTransactionType != nil {
+            predicates.append(predicateTransactionType!)
+        }
+        
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        
+        completion( db.objects(TransactionDB.self).filter(predicate).map({ (transaction) -> Transaction in
+            return Transaction(db: transaction)
+        }).sorted { $0.time > $1.time } )
     }
     
 }

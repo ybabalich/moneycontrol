@@ -61,6 +61,7 @@
 		D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F686521AB2356005EC865 /* CategoriesFabric.swift */; };
 		D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB3B2021A94BB100D8BADC /* UIBarButtonItemFabric.swift */; };
 		D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC28F321623FBC00E57E1B /* Transaction.swift */; };
+		D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +122,7 @@
 		D99F686521AB2356005EC865 /* CategoriesFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFabric.swift; sourceTree = "<group>"; };
 		D9DB3B2021A94BB100D8BADC /* UIBarButtonItemFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemFabric.swift; sourceTree = "<group>"; };
 		D9FC28F321623FBC00E57E1B /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
 		F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -275,6 +277,7 @@
 				D95CF26921577A9A001BEF1F /* UIColorExtensions.swift */,
 				D922147F21A97DCB00A71CDB /* UICollectionViewExtensions.swift */,
 				D99F684721AAB399005EC865 /* UITableViewExtenions.swift */,
+				D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				D99F685D21AB1E77005EC865 /* RealmBasedService.swift in Sources */,
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
 				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,
+				D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */,
 				D911ED0021A7FC5500C3A7B1 /* Router.swift in Sources */,
 				D96CE21D21ADD2B80085664A /* TodayHistoryViewViewModel.swift in Sources */,
 				D99F685421AAD630005EC865 /* HistoryTopCollectionViewCell.swift in Sources */,
