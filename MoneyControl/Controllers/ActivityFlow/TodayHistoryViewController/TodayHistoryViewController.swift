@@ -17,6 +17,7 @@ class TodayHistoryViewController: BaseViewController {
     // MARK: - Variables private
     private var viewModel = TodayHistoryViewViewModel()
     private var navSegmentControl: UISegmentedControl!
+    private var emptyView: EmptyView = EmptyView.view()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -39,6 +40,9 @@ class TodayHistoryViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setup() {
+        //subviews
+        addSubviews()
+        
         //events
         subscribeToEvents()
         
@@ -49,6 +53,12 @@ class TodayHistoryViewController: BaseViewController {
         viewModel.loadData()
     }
     
+    private func addSubviews() {
+        view.addSubview(emptyView)
+        emptyView.alignCenterX(toView: view)
+        emptyView.alignCenterY(toView: view)
+    }
+    
     private func subscribeToEvents() {
         closeBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
             Router.instance.goBack()
@@ -57,6 +67,25 @@ class TodayHistoryViewController: BaseViewController {
         navSegmentControl.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] (value) in
             self.viewModel.selectedTransationType.value = Transaction.TransactionType(rawValue: self.navSegmentControl.selectedSegmentIndex)
         }).disposed(by: disposeBag)
+        
+        viewModel.transactions.asObserver().map({ $0.count > 0 })
+            .subscribe(onNext: { [unowned self] (haveTransactions) in
+            
+                if haveTransactions {
+                    self.tableView.isHidden = false
+                    self.emptyView.isHidden = true
+                } else {
+                    self.tableView.isHidden = true
+                    self.emptyView.isHidden = false
+                    self.emptyView.setTitleText("Haven't activities today")
+                    self.emptyView.setButtonText("Add new activity")
+                }
+                
+        }).disposed(by: disposeBag)
+        
+        emptyView.onActionBtnTap {
+            Router.instance.goBack()
+        }
     }
     
     private func configureTableView() {

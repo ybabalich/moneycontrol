@@ -28,6 +28,8 @@
 		D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */; };
 		D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */; };
 		D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */; };
+		D94ADB2C21B186A700D94F0F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94ADB2B21B186A700D94F0F /* EmptyView.swift */; };
+		D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94ADB2D21B1887700D94F0F /* EmptyView.xib */; };
 		D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CF25C2156523D001BEF1F /* LockViewController.swift */; };
 		D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D95CF25D2156523D001BEF1F /* LockViewController.xib */; };
 		D95CF261215775FF001BEF1F /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95CF260215775F8001BEF1F /* Lato-Light.ttf */; };
@@ -90,6 +92,8 @@
 		D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBottomViewController.swift; sourceTree = "<group>"; };
 		D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		D94ADB2B21B186A700D94F0F /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		D94ADB2D21B1887700D94F0F /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		D95CF25C2156523D001BEF1F /* LockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 		D95CF25D2156523D001BEF1F /* LockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockViewController.xib; sourceTree = "<group>"; };
 		D95CF260215775F8001BEF1F /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -332,6 +336,15 @@
 			path = CategoryCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		D94ADB2A21B1868D00D94F0F /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				D94ADB2B21B186A700D94F0F /* EmptyView.swift */,
+				D94ADB2D21B1887700D94F0F /* EmptyView.xib */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
 		D95CF25A21565212001BEF1F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +365,7 @@
 		D95CF26221577803001BEF1F /* View's */ = {
 			isa = PBXGroup;
 			children = (
+				D94ADB2A21B1868D00D94F0F /* EmptyView */,
 				D95CF26B215782D5001BEF1F /* PinButton */,
 				D95CF26321577809001BEF1F /* PinCircleView */,
 			);
@@ -686,6 +700,7 @@
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
 				D9FD0E7021AFDA8300A77C8A /* HistoryFlow.storyboard in Resources */,
 				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
+				D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */,
 				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
 				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
 				D911ECF921A7EFFB00C3A7B1 /* ActivityFlow.storyboard in Resources */,
@@ -753,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */,
+				D94ADB2C21B186A700D94F0F /* EmptyView.swift in Sources */,
 				D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */,
 				D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */,
 				D95CF26521577826001BEF1F /* PinCircleView.swift in Sources */,
