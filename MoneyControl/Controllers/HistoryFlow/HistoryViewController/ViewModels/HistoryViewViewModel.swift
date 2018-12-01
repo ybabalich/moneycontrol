@@ -10,10 +10,13 @@ import RxSwift
 
 class HistoryViewViewModel {
     
+    typealias StatisticsValues = (incomes: Double, outcomes: Double)
+    
     // MARK: - Variables
     let sortCategories = PublishSubject<[HistorySortCategoryViewModel]>()
     let selectedSortCategory = Variable<HistorySortCategoryViewModel>(HistorySortCategoryViewModel(sort: Sort.day))
     let transactions: PublishSubject<[TransactionViewModel]> = PublishSubject<[TransactionViewModel]>()
+    let statisticsValues = PublishSubject<StatisticsValues>()
     
     // MARK: - Variables private
     private let disposeBag = DisposeBag()
@@ -42,11 +45,61 @@ class HistoryViewViewModel {
     private func loadTransactions() {
         
         let handler: ([Transaction]) -> Void = { (transactionsDb) in
-            let transactions = transactionsDb.map({ (transaction) -> TransactionViewModel in
-                return TransactionViewModel(transaction: transaction)
+            var transactions: [TransactionViewModel] = []
+            var totalIncomes: Double = 0
+            var totalOutcomes: Double = 0
+            
+            // all transactions grouped by transaction types Incoming/Outcoming (2 keys)
+            let groupedTransactionsByType = Dictionary(grouping: transactionsDb, by: { (transaction) -> Transaction.TransactionType in
+                return transaction.type
             })
             
+            // each transactions in values grouped by category id
+            
+            //incoming
+            var incomesGroupedByCategory: [Category: [Transaction]] = [:]
+            if let incomesValues = groupedTransactionsByType[Transaction.TransactionType.incoming] {
+                totalIncomes = incomesValues.map({ $0.value }).reduce(0, +)
+                
+                incomesGroupedByCategory = Dictionary(grouping: incomesValues, by: { (transaction) -> Category in
+                    return transaction.category
+                })
+            }
+            
+            //outcoming
+            var outcomesGroupedByCategory: [Category: [Transaction]] = [:]
+            if let outcomesValues = groupedTransactionsByType[Transaction.TransactionType.outcoming] {
+                totalOutcomes = outcomesValues.map({ $0.value }).reduce(0, +)
+                
+                outcomesGroupedByCategory = Dictionary(grouping: outcomesValues, by: { (transaction) -> Category in
+                    return transaction.category
+                })
+            }
+            
+            incomesGroupedByCategory.keys.forEach({ (category) in
+                let transaction = Transaction()
+                transaction.value = incomesGroupedByCategory[category]!.map({ $0.value }).reduce(0, +)
+                transaction.type = .incoming
+                transaction.category = category
+                transaction.time = Date()
+                
+                transactions.append(TransactionViewModel(transaction: transaction))
+            })
+            
+            outcomesGroupedByCategory.keys.forEach({ (category) in
+                let transaction = Transaction()
+                transaction.value = outcomesGroupedByCategory[category]!.map({ $0.value }).reduce(0, +)
+                transaction.type = .outcoming
+                transaction.category = category
+                transaction.time = Date()
+                
+                transactions.append(TransactionViewModel(transaction: transaction))
+            })
+            
+        
+
             self.transactions.onNext(transactions)
+            self.statisticsValues.onNext((totalIncomes, totalOutcomes))
         }
         
         let service = TransactionService.instance

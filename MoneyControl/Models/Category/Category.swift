@@ -8,8 +8,8 @@
 
 import Foundation
 
-class Category {
-    
+class Category: Equatable, Hashable {
+
     // MARK: - Variables
     let id: Int
     var title: String
@@ -40,6 +40,16 @@ class Category {
         self.init(id: viewModel.id)
         title = viewModel.title
         imageRaw = viewModel.imageRaw
+    }
+    
+    // MARK: - Equtable
+    static func == (lhs: Category, rhs: Category) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    // MARK: - Hashable
+    var hashValue: Int {
+        return id.hashValue
     }
     
 }

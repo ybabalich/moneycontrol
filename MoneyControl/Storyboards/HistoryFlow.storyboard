@@ -105,18 +105,35 @@
                                 <rect key="frame" x="0.0" y="65.5" width="375" height="134.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iqr-vz-eat">
-                                        <rect key="frame" x="16" y="38" width="110.5" height="58.5"/>
+                                        <rect key="frame" x="16" y="38" width="90" height="58.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total balance:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qj-jz-Bj9">
-                                                <rect key="frame" x="0.0" y="0.0" width="110.5" height="23"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qj-jz-Bj9">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="23"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2000.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Haz-8N-g5I">
-                                                <rect key="frame" x="0.0" y="33" width="110.5" height="25.5"/>
+                                                <rect key="frame" x="0.0" y="33" width="90" height="25.5"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="21"/>
                                                 <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ECw-Eu-eBY">
+                                        <rect key="frame" x="265" y="45.5" width="94" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total incomes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VB-wc-i4t">
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="17"/>
+                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total outcomes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WF-1f-Qj3">
+                                                <rect key="frame" x="0.0" y="27" width="94" height="17"/>
+                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                                <color key="textColor" red="0.88325450620000001" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -124,8 +141,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="ECw-Eu-eBY" firstAttribute="centerY" secondItem="NV7-d1-SVE" secondAttribute="centerY" id="Rfa-Ek-Zjd"/>
                                     <constraint firstItem="iqr-vz-eat" firstAttribute="centerY" secondItem="NV7-d1-SVE" secondAttribute="centerY" id="plS-cX-Qes"/>
                                     <constraint firstItem="iqr-vz-eat" firstAttribute="leading" secondItem="NV7-d1-SVE" secondAttribute="leading" constant="16" id="yRw-7f-Jii"/>
+                                    <constraint firstAttribute="trailing" secondItem="ECw-Eu-eBY" secondAttribute="trailing" constant="16" id="z9c-pt-mAE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-x8-TOB">
@@ -156,6 +175,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="32W-40-7dI" id="Y7l-U0-cho"/>
+                        <outlet property="incomesLabel" destination="6VB-wc-i4t" id="Vjb-aV-tJh"/>
+                        <outlet property="outcomesLabel" destination="2WF-1f-Qj3" id="9wW-MV-tfK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzj-yQ-Ygx" userLabel="First Responder" sceneMemberID="firstResponder"/>

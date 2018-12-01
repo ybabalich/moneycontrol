@@ -12,6 +12,8 @@ class HistoryTopViewController: BaseViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var incomesLabel: UILabel!
+    @IBOutlet weak var outcomesLabel: UILabel!
     
     // MARK: - Variables public
     var parentViewModel: HistoryViewViewModel! {
@@ -29,6 +31,13 @@ class HistoryTopViewController: BaseViewController {
     private func setupViewModel() {
         //collection view
         configureCollectionView()
+        
+        parentViewModel.statisticsValues.asObserver().subscribe(onNext: { [unowned self] (values) in
+            let (incomesValue, outcomesValue) = values
+            
+            self.incomesLabel.text = "Total incomes: \(incomesValue)"
+            self.outcomesLabel.text = "Total outcomes: \(outcomesValue)"
+        }).disposed(by: disposeBag)
     }
     
     private func configureCollectionView() {
