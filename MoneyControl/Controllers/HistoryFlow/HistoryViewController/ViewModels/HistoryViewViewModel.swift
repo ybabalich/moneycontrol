@@ -95,8 +95,6 @@ class HistoryViewViewModel {
                 
                 transactions.append(TransactionViewModel(transaction: transaction))
             })
-            
-        
 
             self.transactions.onNext(transactions)
             self.statisticsValues.onNext((totalIncomes, totalOutcomes))

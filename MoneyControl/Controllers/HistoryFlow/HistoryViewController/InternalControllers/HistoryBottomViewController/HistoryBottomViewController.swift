@@ -12,6 +12,7 @@ class HistoryBottomViewController: BaseViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableContentView: UIView!
     
     // MARK: - Variables public
     var parentViewModel: HistoryViewViewModel! {
@@ -23,15 +24,27 @@ class HistoryBottomViewController: BaseViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        tableContentView.applyCornerRadius(15, topLeft: true, topRight: true, bottomRight: false, bottomLeft: false)
     }
     
     // MARK: - Public methods
-    func setupViewModel() {
+    func setupUI() {
+        tableContentView.layer.masksToBounds = true
+    }
+    
+    // MARK: - Private methods
+    private func setupViewModel() {
         //table view
         configureTableView()
     }
     
-    // MARK: - Private methods
     private func configureTableView() {
         tableView.registerNib(type: TodayHistoryTableViewCell.self)
         tableView.tableFooterView = UIView(frame: .zero)

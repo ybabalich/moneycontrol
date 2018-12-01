@@ -14,6 +14,7 @@ class HistoryTopViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var incomesLabel: UILabel!
     @IBOutlet weak var outcomesLabel: UILabel!
+    @IBOutlet weak var balanceInfoContentView: UIView!
     
     // MARK: - Variables public
     var parentViewModel: HistoryViewViewModel! {
@@ -25,9 +26,15 @@ class HistoryTopViewController: BaseViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
     }
     
     // MARK: - Private methods
+    private func setupUI() {
+        balanceInfoContentView.applyFullyRounded(15)
+    }
+    
     private func setupViewModel() {
         //collection view
         configureCollectionView()
@@ -35,8 +42,8 @@ class HistoryTopViewController: BaseViewController {
         parentViewModel.statisticsValues.asObserver().subscribe(onNext: { [unowned self] (values) in
             let (incomesValue, outcomesValue) = values
             
-            self.incomesLabel.text = "Total incomes: \(incomesValue)"
-            self.outcomesLabel.text = "Total outcomes: \(outcomesValue)"
+            self.incomesLabel.text = "\(incomesValue)"
+            self.outcomesLabel.text = "\(outcomesValue)"
         }).disposed(by: disposeBag)
     }
     

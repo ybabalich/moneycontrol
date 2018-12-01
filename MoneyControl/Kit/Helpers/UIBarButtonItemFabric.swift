@@ -16,8 +16,8 @@ class UIBarButtonItemFabric {
         
         let button: UIButton = UIButton(type: .custom)
         button.setImage(bgI, for: .normal)
+        button.frame = .zero
         button.tintColor = App.Color.main.rawValue
-        button.contentHorizontalAlignment = .center
         button.widthConstraint(needCreate: true)?.constant = 23
         button.heightConstraint(needCreate: true)?.constant = 20
         
