@@ -36,7 +36,7 @@ class ActivityViewViewModel {
     
     // MARK: - Variables private
     private let _transactionValue: Variable<String> = Variable<String>("")
-    private let _transactionType: Variable<Transaction.TransactionType> = Variable<Transaction.TransactionType>(.incoming)
+    private let _transactionType: Variable<Transaction.TransactionType> = Variable<Transaction.TransactionType>(.outcoming)
     private let disposeBag = DisposeBag()
     
     // MARK: - Initializers

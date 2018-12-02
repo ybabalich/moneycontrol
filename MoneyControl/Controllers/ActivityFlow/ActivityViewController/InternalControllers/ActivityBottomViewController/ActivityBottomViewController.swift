@@ -12,7 +12,7 @@ class ActivityBottomViewController: BaseViewController {
 
     // MARK: - Outlets
     @IBOutlet var butons: [UIButton]!
-    
+    @IBOutlet weak var baseContentView: UIView!
     
     // MARK: - Variables public
     var parentViewModel: ActivityViewViewModel! {
@@ -22,9 +22,10 @@ class ActivityBottomViewController: BaseViewController {
     }
     
     // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
+        baseContentView.applyFullyRounded(15)
     }
     
     // MARK: - Private methods

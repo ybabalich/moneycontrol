@@ -42,6 +42,7 @@ class TransactionService: RealmBasedService {
     
     func save(_ transaction: Transaction) {
         let dbTransaction = TransactionDB()
+        dbTransaction.id = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
         dbTransaction.value = transaction.value
         dbTransaction.currency = transaction.currency.rawValue
         dbTransaction.type = transaction.type.rawValue
@@ -58,6 +59,16 @@ class TransactionService: RealmBasedService {
             db.add(dbTransaction)
         }
         
+    }
+    
+    // removing
+    func remove(id: Int) {
+        let removePredicate = NSPredicate(format: "id == %d", argumentArray: [id])
+        
+        let objects = db.objects(TransactionDB.self).filter(removePredicate)
+        try! db.write {
+            db.delete(objects)
+        }
     }
     
     // MARK: - Private methods

@@ -19,7 +19,8 @@ class CategoriesFabric {
         let payments = CategoryViewModel(id: 4, title: "Payments", imageType: .payments)
         let spa = CategoryViewModel(id: 5, title: "Spa", imageType: .spa)
         let gym = CategoryViewModel(id: 6, title: "Gym", imageType: .gym)
-        return [fuel, shopping, food, coffee, payments, spa, gym]
+        let car = CategoryViewModel(id: 7, title: "Car", imageType: .car)
+        return [fuel, car, shopping, food, coffee, payments, spa, gym]
     }
     
 }

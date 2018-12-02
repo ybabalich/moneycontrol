@@ -68,7 +68,7 @@ class TodayHistoryViewController: BaseViewController {
             self.viewModel.selectedTransationType.value = Transaction.TransactionType(rawValue: self.navSegmentControl.selectedSegmentIndex)
         }).disposed(by: disposeBag)
         
-        viewModel.transactions.asObserver().map({ $0.count > 0 })
+        viewModel.transactions.asObservable().map({ $0.count > 0 })
             .subscribe(onNext: { [unowned self] (haveTransactions) in
             
                 if haveTransactions {
@@ -90,6 +90,7 @@ class TodayHistoryViewController: BaseViewController {
     
     private func configureTableView() {
         tableView.registerNib(type: TodayHistoryTableViewCell.self)
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.tableFooterView = UIView(frame: .zero)
         
         viewModel.transactions.asObservable().bind(to: tableView.rx.items)
@@ -103,4 +104,14 @@ class TodayHistoryViewController: BaseViewController {
         }.disposed(by: disposeBag)
     }
 
+}
+
+extension TodayHistoryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Remove") { [unowned self] (action, indexPath) in
+            let transaction = self.viewModel.transactions.value[indexPath.row]
+            self.viewModel.remove(transaction)
+        }
+        return [deleteAction]
+    }
 }

@@ -12,9 +12,10 @@ class ActivityTopViewController: BaseViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
-    @IBOutlet weak var sumStackView: UIStackView!
-    @IBOutlet weak var spendingTypeLabel: UILabel!
+    @IBOutlet weak var baseContentView: UIView!
     @IBOutlet weak var sumTextField: UITextField!
+    @IBOutlet weak var outcomeBtn: RegularButton!
+    @IBOutlet weak var incomeBtn: RegularButton!
     
     // MARK: - Variables
     var parentViewModel: ActivityViewViewModel! {
@@ -33,6 +34,7 @@ class ActivityTopViewController: BaseViewController {
     // MARK: - Private methods
     private func setup() {
         sumTextField.isHidden = true
+        baseContentView.applyFullyRounded(15)
     }
     
     private func setupViewModel() {
@@ -41,15 +43,23 @@ class ActivityTopViewController: BaseViewController {
         
         parentViewModel.transactionType.subscribe(onNext: { [unowned self] (transactionType) in
             if transactionType == .incoming {
-                self.spendingTypeLabel.text = "Incoming"
-                self.spendingTypeLabel.textColor = App.Color.incoming.rawValue
+                self.incomeBtn.isEnabled = false
+                self.outcomeBtn.isEnabled = true
+                
+                self.sumTextField.textColor = App.Color.incoming.rawValue
             } else {
-                self.spendingTypeLabel.text = "Outcoming"
-                self.spendingTypeLabel.textColor = App.Color.outcoming.rawValue
+                self.incomeBtn.isEnabled = true
+                self.outcomeBtn.isEnabled = false
+                
+                self.sumTextField.textColor = App.Color.outcoming.rawValue
             }
         }).disposed(by: disposeBag)
         
-        sumStackView.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+        outcomeBtn.rx.tapGesture().when(.recognized).asObservable().subscribe(onNext: { [unowned self] _ in
+            self.parentViewModel.changeTransactionType()
+        }).disposed(by: disposeBag)
+
+        incomeBtn.rx.tapGesture().when(.recognized).asObservable().subscribe(onNext: { [unowned self] _ in
             self.parentViewModel.changeTransactionType()
         }).disposed(by: disposeBag)
         

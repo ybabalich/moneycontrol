@@ -11,7 +11,7 @@ import RxSwift
 class TodayHistoryViewViewModel {
     
     // MARK: - Variables
-    let transactions: PublishSubject<[TransactionViewModel]> = PublishSubject<[TransactionViewModel]>()
+    let transactions = Variable<[TransactionViewModel]>([])
     let selectedTransationType: Variable<Transaction.TransactionType> = Variable<Transaction.TransactionType>(.incoming)
     
     // MARK: - Variables private
@@ -31,8 +31,13 @@ class TodayHistoryViewViewModel {
                 return TransactionViewModel(transaction: transaction)
             })
             
-            self.transactions.onNext(transactions)
+            self.transactions.value = transactions
         }
+    }
+    
+    func remove(_ transaction: TransactionViewModel) {
+        TransactionService.instance.remove(id: transaction.id)
+        transactions.value = transactions.value.filter({ $0.id != transaction.id })
     }
     
 }

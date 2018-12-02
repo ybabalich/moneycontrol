@@ -18,6 +18,7 @@ class CategoryViewModel {
         case payments
         case spa
         case gym
+        case car
         
         init(rawValue: Int) {
             switch rawValue {
@@ -28,6 +29,7 @@ class CategoryViewModel {
             case 4: self = .payments
             case 5: self = .spa
             case 6: self = .gym
+            case 7: self = .car
             default: self = .fuel
             }
         }
@@ -41,6 +43,7 @@ class CategoryViewModel {
             case .payments: return UIImage(named: "ic_category_payments")!
             case .spa: return UIImage(named: "ic_category_spa")!
             case .gym: return UIImage(named: "ic_category_gym")!
+            case .car: return UIImage(named: "ic_category_car")!
             }
         }
     }

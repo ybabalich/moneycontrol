@@ -16,9 +16,6 @@
         <array key="Lato-Light.ttf">
             <string>Lato-Light</string>
         </array>
-        <array key="Lato-Regular.ttf">
-            <string>Lato-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Activity View Controller-->
@@ -37,6 +34,7 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZ6-36-Xtb">
                                 <rect key="frame" x="0.0" y="283.5" width="375" height="333.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="bd8-zM-IRE" kind="embed" id="oxd-Ue-VBu"/>
                                 </connections>
@@ -115,64 +113,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="263.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NcI-JG-PSI">
-                                <rect key="frame" x="16" y="16" width="343" height="161.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tud-wr-laM" userLabel="Content View">
+                                <rect key="frame" x="16" y="16" width="343" height="231.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incoming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9f-Vh-uA0">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
-                                        <color key="textColor" red="0.0" green="0.72156862745098038" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000.20" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaH-4U-zhz">
-                                        <rect key="frame" x="0.0" y="32" width="343" height="129.5"/>
-                                        <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="38"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bdO-in-Ytl">
+                                        <rect key="frame" x="61.5" y="16" width="220" height="76"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OAJ-rI-ARp">
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQZ-ks-sYb" customClass="RegularButton" customModule="MoneyControl" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="5cg-N9-p5J"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
+                                                        <state key="normal" title="Outcome">
+                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fS-GH-MdO" customClass="RegularButton" customModule="MoneyControl" customModuleProvider="target">
+                                                        <rect key="frame" x="120" y="0.0" width="100" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="xKj-N0-8ug"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
+                                                        <state key="normal" title="Income">
+                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000.20" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaH-4U-zhz">
+                                                <rect key="frame" x="37.5" y="30" width="145" height="46"/>
+                                                <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="38"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e2U-RA-Wqa">
+                                        <rect key="frame" x="8" y="170.5" width="327" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="kIN-gN-D1H"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X39-cU-wRn">
+                                            <size key="itemSize" width="50" height="45"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="nnn-I6-Vpw">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
-                            </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e2U-RA-Wqa">
-                                <rect key="frame" x="0.0" y="193.5" width="375" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="kIN-gN-D1H"/>
+                                    <constraint firstItem="bdO-in-Ytl" firstAttribute="centerX" secondItem="Tud-wr-laM" secondAttribute="centerX" id="7IM-w2-5v4"/>
+                                    <constraint firstAttribute="bottom" secondItem="e2U-RA-Wqa" secondAttribute="bottom" constant="16" id="QLd-Ft-bkf"/>
+                                    <constraint firstItem="e2U-RA-Wqa" firstAttribute="leading" secondItem="Tud-wr-laM" secondAttribute="leading" constant="8" id="YFt-ij-XZZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="e2U-RA-Wqa" secondAttribute="trailing" constant="8" id="lFH-k0-gJ8"/>
+                                    <constraint firstItem="bdO-in-Ytl" firstAttribute="top" secondItem="Tud-wr-laM" secondAttribute="topMargin" constant="8" id="owL-5K-KKb"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X39-cU-wRn">
-                                    <size key="itemSize" width="50" height="70"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="nnn-I6-Vpw">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="X5B-82-Rtl" firstAttribute="bottom" secondItem="e2U-RA-Wqa" secondAttribute="bottom" id="5q6-nu-fDw"/>
-                            <constraint firstItem="e2U-RA-Wqa" firstAttribute="leading" secondItem="X5B-82-Rtl" secondAttribute="leading" id="7Se-2g-sHL"/>
-                            <constraint firstItem="e2U-RA-Wqa" firstAttribute="top" secondItem="NcI-JG-PSI" secondAttribute="bottom" constant="16" id="BvK-uJ-3lY"/>
-                            <constraint firstItem="X5B-82-Rtl" firstAttribute="trailing" secondItem="e2U-RA-Wqa" secondAttribute="trailing" id="bkL-Dz-mfn"/>
-                            <constraint firstItem="NcI-JG-PSI" firstAttribute="leading" secondItem="X5B-82-Rtl" secondAttribute="leading" constant="16" id="mHc-K2-qnB"/>
-                            <constraint firstItem="X5B-82-Rtl" firstAttribute="trailing" secondItem="NcI-JG-PSI" secondAttribute="trailing" constant="16" id="pw8-hn-mHa"/>
-                            <constraint firstItem="NcI-JG-PSI" firstAttribute="top" secondItem="X5B-82-Rtl" secondAttribute="top" constant="16" id="zTN-LE-JqA"/>
+                            <constraint firstItem="X5B-82-Rtl" firstAttribute="trailing" secondItem="Tud-wr-laM" secondAttribute="trailing" constant="16" id="2Cq-mv-8Yd"/>
+                            <constraint firstItem="Tud-wr-laM" firstAttribute="top" secondItem="X5B-82-Rtl" secondAttribute="top" constant="16" id="BGI-Qc-RUr"/>
+                            <constraint firstItem="Tud-wr-laM" firstAttribute="leading" secondItem="X5B-82-Rtl" secondAttribute="leading" constant="16" id="I9G-GD-L8J"/>
+                            <constraint firstItem="X5B-82-Rtl" firstAttribute="bottom" secondItem="Tud-wr-laM" secondAttribute="bottom" constant="16" id="jhU-Il-AyM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X5B-82-Rtl"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="baseContentView" destination="Tud-wr-laM" id="Bfa-ZR-1ZL"/>
                         <outlet property="categoriesCollectionView" destination="e2U-RA-Wqa" id="2aV-go-2co"/>
-                        <outlet property="spendingTypeLabel" destination="x9f-Vh-uA0" id="80O-0N-x6X"/>
-                        <outlet property="sumStackView" destination="NcI-JG-PSI" id="uX5-Tf-qAp"/>
+                        <outlet property="incomeBtn" destination="8fS-GH-MdO" id="Trz-yC-3yV"/>
+                        <outlet property="outcomeBtn" destination="UQZ-ks-sYb" id="87h-XB-fEb"/>
                         <outlet property="sumTextField" destination="xaH-4U-zhz" id="Umj-or-dRz"/>
                     </connections>
                 </viewController>
@@ -188,148 +216,156 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWe-zr-7Bq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
-                                <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="0.29913848458904108" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="0.5" id="0TU-iP-0eX"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8W1-gj-izp">
-                                <rect key="frame" x="16" y="0.5" width="343" height="333"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-fq-vGe" userLabel="ContentView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OPl-2i-mNc">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="83.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8W1-gj-izp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esS-vP-35o">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="83.5"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
-                                                <state key="normal" title="1">
-                                                    <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGc-Pl-5JG">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="83.5"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
-                                                <state key="normal" title="2">
-                                                    <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucs-o5-D21">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="83.5"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
-                                                <state key="normal" title="3">
-                                                    <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OPl-2i-mNc">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esS-vP-35o">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="83.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGc-Pl-5JG">
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="83.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucs-o5-D21">
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="83.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="D4o-oK-Bsf">
+                                                <rect key="frame" x="0.0" y="83.5" width="375" height="83.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er3-TT-pC4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="83.5"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A54-Tf-Oun">
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="83.5"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
+                                                        <state key="normal" title="5">
+                                                            <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfm-2P-lY8">
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="83.5"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="18u-Ke-o5J">
+                                                <rect key="frame" x="0.0" y="167" width="375" height="83"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOH-ln-Thd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="83"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
+                                                        <state key="normal" title="7">
+                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EB-Cy-FZl">
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="83"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
+                                                        <state key="normal" title="8">
+                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGs-h6-zSf">
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="83"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bux-13-daw">
+                                                <rect key="frame" x="0.0" y="250" width="375" height="83.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CC1-Qw-Efg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="83.5"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
+                                                        <state key="normal" title=".">
+                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3d-m1-Tdo">
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="83.5"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
+                                                        <state key="normal" title="0">
+                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wT4-I1-nRR">
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="83.5"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
+                                                        <state key="normal" title="CLEAR">
+                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="D4o-oK-Bsf">
-                                        <rect key="frame" x="0.0" y="83.5" width="343" height="83"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er3-TT-pC4">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="83"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
-                                                <state key="normal" title="4">
-                                                    <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A54-Tf-Oun">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="83"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
-                                                <state key="normal" title="5">
-                                                    <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfm-2P-lY8">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="83"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
-                                                <state key="normal" title="6">
-                                                    <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="18u-Ke-o5J">
-                                        <rect key="frame" x="0.0" y="166.5" width="343" height="83.5"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOH-ln-Thd">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="83.5"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
-                                                <state key="normal" title="7">
-                                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EB-Cy-FZl">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="83.5"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
-                                                <state key="normal" title="8">
-                                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGs-h6-zSf">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="83.5"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
-                                                <state key="normal" title="9">
-                                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bux-13-daw">
-                                        <rect key="frame" x="0.0" y="250" width="343" height="83"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CC1-Qw-Efg">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="83"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
-                                                <state key="normal" title=".">
-                                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3d-m1-Tdo">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="83"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
-                                                <state key="normal" title="0">
-                                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wT4-I1-nRR">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="83"/>
-                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
-                                                <state key="normal" title="CLEAR">
-                                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8W1-gj-izp" firstAttribute="leading" secondItem="f6A-fq-vGe" secondAttribute="leading" id="cvY-bp-qT0"/>
+                                    <constraint firstItem="8W1-gj-izp" firstAttribute="top" secondItem="f6A-fq-vGe" secondAttribute="top" id="mZa-1y-BJd"/>
+                                    <constraint firstAttribute="bottom" secondItem="8W1-gj-izp" secondAttribute="bottom" id="tmw-he-ORM"/>
+                                    <constraint firstAttribute="trailing" secondItem="8W1-gj-izp" secondAttribute="trailing" id="zcg-EK-BCq"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="8W1-gj-izp" secondAttribute="bottom" id="0fY-qT-reT"/>
-                            <constraint firstAttribute="trailing" secondItem="fWe-zr-7Bq" secondAttribute="trailing" id="7pC-ef-pJu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8W1-gj-izp" secondAttribute="trailing" id="D6R-Id-9F7"/>
-                            <constraint firstItem="fWe-zr-7Bq" firstAttribute="leading" secondItem="r3D-UT-NCo" secondAttribute="leading" id="J61-Q3-4ff"/>
-                            <constraint firstItem="fWe-zr-7Bq" firstAttribute="top" secondItem="r3D-UT-NCo" secondAttribute="top" id="TrX-BS-D2k"/>
-                            <constraint firstItem="8W1-gj-izp" firstAttribute="leading" secondItem="r3D-UT-NCo" secondAttribute="leadingMargin" id="Uvp-Ym-sdY"/>
-                            <constraint firstItem="8W1-gj-izp" firstAttribute="top" secondItem="fWe-zr-7Bq" secondAttribute="bottom" id="gqj-8X-D8L"/>
+                            <constraint firstItem="f6A-fq-vGe" firstAttribute="top" secondItem="r3D-UT-NCo" secondAttribute="top" id="Bda-4T-8UJ"/>
+                            <constraint firstItem="f6A-fq-vGe" firstAttribute="leading" secondItem="r3D-UT-NCo" secondAttribute="leading" id="Wyg-cQ-TBN"/>
+                            <constraint firstAttribute="bottom" secondItem="f6A-fq-vGe" secondAttribute="bottom" id="cYF-uy-VEm"/>
+                            <constraint firstAttribute="trailing" secondItem="f6A-fq-vGe" secondAttribute="trailing" id="vYa-sf-OVe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Za-Yf-Y4w"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outletCollection property="butons" destination="esS-vP-35o" collectionClass="NSMutableArray" id="2Of-ZL-A77"/>
-                        <outletCollection property="butons" destination="OGc-Pl-5JG" collectionClass="NSMutableArray" id="io0-rV-Vd2"/>
-                        <outletCollection property="butons" destination="ucs-o5-D21" collectionClass="NSMutableArray" id="eOb-2q-akt"/>
-                        <outletCollection property="butons" destination="Er3-TT-pC4" collectionClass="NSMutableArray" id="Ti7-Xe-8Oj"/>
+                        <outlet property="baseContentView" destination="f6A-fq-vGe" id="6eP-jR-p5b"/>
                         <outletCollection property="butons" destination="A54-Tf-Oun" collectionClass="NSMutableArray" id="gBQ-Es-Ejg"/>
-                        <outletCollection property="butons" destination="Tfm-2P-lY8" collectionClass="NSMutableArray" id="WX7-YO-Teo"/>
                         <outletCollection property="butons" destination="TOH-ln-Thd" collectionClass="NSMutableArray" id="BJa-Vp-bSI"/>
-                        <outletCollection property="butons" destination="9EB-Cy-FZl" collectionClass="NSMutableArray" id="Asc-aV-RnN"/>
-                        <outletCollection property="butons" destination="rGs-h6-zSf" collectionClass="NSMutableArray" id="vEy-VX-lK8"/>
+                        <outletCollection property="butons" destination="Tfm-2P-lY8" collectionClass="NSMutableArray" id="WX7-YO-Teo"/>
+                        <outletCollection property="butons" destination="Er3-TT-pC4" collectionClass="NSMutableArray" id="Ti7-Xe-8Oj"/>
+                        <outletCollection property="butons" destination="OGc-Pl-5JG" collectionClass="NSMutableArray" id="io0-rV-Vd2"/>
                         <outletCollection property="butons" destination="CC1-Qw-Efg" collectionClass="NSMutableArray" id="hjE-hb-mF3"/>
+                        <outletCollection property="butons" destination="ucs-o5-D21" collectionClass="NSMutableArray" id="eOb-2q-akt"/>
+                        <outletCollection property="butons" destination="rGs-h6-zSf" collectionClass="NSMutableArray" id="vEy-VX-lK8"/>
+                        <outletCollection property="butons" destination="esS-vP-35o" collectionClass="NSMutableArray" id="2Of-ZL-A77"/>
                         <outletCollection property="butons" destination="h3d-m1-Tdo" collectionClass="NSMutableArray" id="iKw-oL-o9B"/>
+                        <outletCollection property="butons" destination="9EB-Cy-FZl" collectionClass="NSMutableArray" id="Asc-aV-RnN"/>
                         <outletCollection property="butons" destination="wT4-I1-nRR" collectionClass="NSMutableArray" id="zPD-WP-b35"/>
                     </connections>
                 </viewController>

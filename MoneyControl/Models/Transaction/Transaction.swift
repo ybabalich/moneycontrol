@@ -35,6 +35,7 @@ class Transaction {
     }
     
     // MARK: - Variables
+    var id: Int
     var value: Double
     var currency: Currency
     var type: TransactionType
@@ -44,6 +45,7 @@ class Transaction {
     
     // MARK: - Initializers
     init() {
+        id = 0
         value = 0
         currency = .uah
         type = .incoming
@@ -53,6 +55,7 @@ class Transaction {
     }
     
     init(db: TransactionDB) {
+        self.id = db.id
         self.value = db.value
         self.currency = Currency(rawValue: db.currency)
         self.type = TransactionType(rawValue: db.type)

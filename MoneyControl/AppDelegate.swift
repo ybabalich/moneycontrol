@@ -23,6 +23,27 @@ class AppDelegate: UIResponder {
     {
         //controller for showing
         setupStoryboardForStart()
+        
+        let config = Realm.Configuration(
+            // Set the new schema version. This must be greater than the previously used
+            // version (if you've never set a schema version before, the version is 0).
+            schemaVersion: 1,
+            
+            // Set the block which will be called automatically when opening a Realm with
+            // a schema version lower than the one set above
+            migrationBlock: { migration, oldSchemaVersion in
+                // We haven’t migrated anything yet, so oldSchemaVersion == 0
+                switch oldSchemaVersion {
+                case 1:
+                    break
+                default:
+                    migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
+                        newObject!["id"] = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
+                    })
+                }
+        })
+        
+        Realm.Configuration.defaultConfiguration = config
 
         return true
     }
