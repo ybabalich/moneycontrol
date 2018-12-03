@@ -35,6 +35,7 @@ class AppLaunch {
         enum Activity: String {
             case base = "ActivityViewController"
             case todayHistory = "TodayHistoryViewController"
+            case editTransaction = "EditTransactionViewController"
         }
         
         enum History: String {

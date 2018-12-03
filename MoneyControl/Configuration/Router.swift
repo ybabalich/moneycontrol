@@ -39,6 +39,12 @@ class Router {
         let historyFlow = AppLaunch.StoryboardFlow.history(viewController: .base)
         showScreen(historyFlow, animated: true)
     }
+    
+    func showEditTransactionScreen(_ transaction: TransactionViewModel) {
+        let editTransactionFlow = AppLaunch.StoryboardFlow.activity(viewController: .editTransaction)
+        let transactionVC = showScreen(editTransactionFlow, animated: true) as! EditTransactionViewController
+        transactionVC.transactionViewModel = transaction
+    }
 
     
     // MARK: - Private methods

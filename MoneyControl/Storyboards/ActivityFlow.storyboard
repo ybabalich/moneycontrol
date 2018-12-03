@@ -373,6 +373,102 @@
             </objects>
             <point key="canvasLocation" x="609" y="296"/>
         </scene>
+        <!--Edit Transaction View Controller-->
+        <scene sceneID="O4m-VW-GEw">
+            <objects>
+                <viewController storyboardIdentifier="EditTransactionViewController" id="Pw1-pL-imQ" customClass="EditTransactionViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xSk-BO-Uh8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqG-2K-mpZ">
+                                <rect key="frame" x="16" y="36" width="343" height="222"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QoA-Oz-WVx">
+                                        <rect key="frame" x="8" y="8" width="327" height="190"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOk-QV-Ph4">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="IiV-5V-WVq"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0L-dT-Ian">
+                                                <rect key="frame" x="0.0" y="70" width="327" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="UXh-43-I66"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6c-CS-b08">
+                                                <rect key="frame" x="0.0" y="140" width="327" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="yO1-Rg-0Ui"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="QoA-Oz-WVx" firstAttribute="leading" secondItem="lqG-2K-mpZ" secondAttribute="leading" constant="8" id="Oiy-Si-nAO"/>
+                                    <constraint firstItem="QoA-Oz-WVx" firstAttribute="top" secondItem="lqG-2K-mpZ" secondAttribute="top" constant="8" id="Tlh-iN-Euo"/>
+                                    <constraint firstAttribute="bottom" secondItem="QoA-Oz-WVx" secondAttribute="bottom" constant="24" id="eLc-ds-yDZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="QoA-Oz-WVx" secondAttribute="trailing" constant="8" id="m81-8m-enA"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="9YL-Fh-cbj">
+                                <rect key="frame" x="70.5" y="619" width="234" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-fm-rr9" customClass="RemoveButton" customModule="MoneyControl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="MMZ-en-lBA"/>
+                                            <constraint firstAttribute="width" constant="100" id="k11-n4-FnJ"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
+                                        <state key="normal" image="ic_remove"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbj-vM-CPN" customClass="CheckButton" customModule="MoneyControl" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="0.0" width="100" height="40"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="cyF-zu-2nm"/>
+                                            <constraint firstAttribute="height" constant="40" id="djl-6a-0V3"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="35" minY="10" maxX="35" maxY="10"/>
+                                        <state key="normal" image="ic_check"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lqG-2K-mpZ" firstAttribute="leading" secondItem="McR-MC-t9c" secondAttribute="leading" constant="16" id="PAa-D2-OzY"/>
+                            <constraint firstItem="lqG-2K-mpZ" firstAttribute="top" secondItem="McR-MC-t9c" secondAttribute="top" constant="16" id="Pu1-FW-qTH"/>
+                            <constraint firstItem="9YL-Fh-cbj" firstAttribute="centerX" secondItem="McR-MC-t9c" secondAttribute="centerX" id="j4i-kn-dND"/>
+                            <constraint firstItem="McR-MC-t9c" firstAttribute="trailing" secondItem="lqG-2K-mpZ" secondAttribute="trailing" constant="16" id="kJV-hd-daS"/>
+                            <constraint firstItem="McR-MC-t9c" firstAttribute="bottom" secondItem="9YL-Fh-cbj" secondAttribute="bottom" constant="8" id="vei-yy-cez"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="McR-MC-t9c"/>
+                    </view>
+                    <connections>
+                        <outlet property="deleteBtn" destination="vm7-fm-rr9" id="eYd-Z0-DXm"/>
+                        <outlet property="firstContentView" destination="GOk-QV-Ph4" id="zHL-a7-oO5"/>
+                        <outlet property="saveBtn" destination="Lbj-vM-CPN" id="TMx-mg-pKF"/>
+                        <outlet property="secondContentView" destination="u0L-dT-Ian" id="SLF-fs-lkb"/>
+                        <outlet property="stackContentView" destination="lqG-2K-mpZ" id="LpG-1I-4bD"/>
+                        <outlet property="thirdContentView" destination="z6c-CS-b08" id="AXP-fO-D5J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NnM-v7-xc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520.79999999999995" y="812.74362818590714"/>
+        </scene>
         <!--Today History View Controller-->
         <scene sceneID="eLf-z3-MAX">
             <objects>
@@ -419,5 +515,6 @@
         <image name="ic_check" width="192" height="139"/>
         <image name="ic_close" width="66" height="66"/>
         <image name="ic_history" width="510" height="484"/>
+        <image name="ic_remove" width="48" height="48"/>
     </resources>
 </document>

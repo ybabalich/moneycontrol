@@ -22,6 +22,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Variables private
+    private var selectedColor: UIColor!
     private var _viewModel: CategoryViewModel!
     private var disposeBag = DisposeBag()
     
@@ -39,10 +40,11 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Public methods
-    func apply(_ viewModel: CategoryViewModel) {
+    func apply(_ viewModel: CategoryViewModel, transactionType: Transaction.TransactionType) {
         _viewModel = viewModel
         
         titleLabel.text = viewModel.title
+        selectedColor = transactionType == .incoming ? App.Color.incoming.rawValue : App.Color.outcoming.rawValue
         imageView.image = viewModel.image
     }
     
@@ -58,7 +60,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateUI() {
-        titleLabel.textColor = isActive ? App.Color.incoming.rawValue : App.Color.main.rawValue
+        titleLabel.textColor = isActive ? selectedColor : App.Color.main.rawValue
     }
     
     

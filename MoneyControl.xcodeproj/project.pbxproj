@@ -47,6 +47,15 @@
 		D96CE21D21ADD2B80085664A /* TodayHistoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21C21ADD2B80085664A /* TodayHistoryViewViewModel.swift */; };
 		D96CE21F21ADD3B40085664A /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21E21ADD3B40085664A /* TransactionViewModel.swift */; };
 		D98E333621B2BAD2004C66C3 /* RegularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E333521B2BAD2004C66C3 /* RegularButton.swift */; };
+		D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E333921B4528A004C66C3 /* EditTransactionViewController.swift */; };
+		D98E333D21B454D4004C66C3 /* EditTransactionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E333C21B454D4004C66C3 /* EditTransactionViewViewModel.swift */; };
+		D98E334021B46B80004C66C3 /* RemoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E333F21B46B80004C66C3 /* RemoveButton.swift */; };
+		D98E334421B46E41004C66C3 /* EditTransactionAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E334321B46E41004C66C3 /* EditTransactionAmountView.swift */; };
+		D98E334621B46E56004C66C3 /* EditTransactionAmountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98E334521B46E56004C66C3 /* EditTransactionAmountView.xib */; };
+		D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E334821B470D0004C66C3 /* EditTransactionCategoryView.swift */; };
+		D98E334B21B470DB004C66C3 /* EditTransactionCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98E334A21B470DB004C66C3 /* EditTransactionCategoryView.xib */; };
+		D98E334E21B49D20004C66C3 /* EditTransactionDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E334D21B49D20004C66C3 /* EditTransactionDateView.swift */; };
+		D98E335021B49D29004C66C3 /* EditTransactionDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98E334F21B49D29004C66C3 /* EditTransactionDateView.xib */; };
 		D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */; };
 		D99F684521AAA462005EC865 /* TodayHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */; };
 		D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */; };
@@ -112,6 +121,15 @@
 		D96CE21C21ADD2B80085664A /* TodayHistoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewViewModel.swift; sourceTree = "<group>"; };
 		D96CE21E21ADD3B40085664A /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		D98E333521B2BAD2004C66C3 /* RegularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularButton.swift; sourceTree = "<group>"; };
+		D98E333921B4528A004C66C3 /* EditTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewController.swift; sourceTree = "<group>"; };
+		D98E333C21B454D4004C66C3 /* EditTransactionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewViewModel.swift; sourceTree = "<group>"; };
+		D98E333F21B46B80004C66C3 /* RemoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveButton.swift; sourceTree = "<group>"; };
+		D98E334321B46E41004C66C3 /* EditTransactionAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionAmountView.swift; sourceTree = "<group>"; };
+		D98E334521B46E56004C66C3 /* EditTransactionAmountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTransactionAmountView.xib; sourceTree = "<group>"; };
+		D98E334821B470D0004C66C3 /* EditTransactionCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionCategoryView.swift; sourceTree = "<group>"; };
+		D98E334A21B470DB004C66C3 /* EditTransactionCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTransactionCategoryView.xib; sourceTree = "<group>"; };
+		D98E334D21B49D20004C66C3 /* EditTransactionDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionDateView.swift; sourceTree = "<group>"; };
+		D98E334F21B49D29004C66C3 /* EditTransactionDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTransactionDateView.xib; sourceTree = "<group>"; };
 		D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewController.swift; sourceTree = "<group>"; };
 		D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -222,6 +240,7 @@
 		D911ED0121A801D500C3A7B1 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				D98E333E21B46B69004C66C3 /* RemoveButton */,
 				D98E333421B2BAB2004C66C3 /* RegularButton */,
 				D911ED0221A801DB00C3A7B1 /* CheckButton */,
 			);
@@ -409,6 +428,7 @@
 				D95CF27021582562001BEF1F /* BaseViewController */,
 				D9FD0E6E21AFDA6700A77C8A /* HistoryFlow */,
 				D9FD0E6D21AFDA5A00A77C8A /* ActivityFlow */,
+				D98E335121B546B5004C66C3 /* CategoryFlow */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -460,6 +480,76 @@
 				D98E333521B2BAD2004C66C3 /* RegularButton.swift */,
 			);
 			path = RegularButton;
+			sourceTree = "<group>";
+		};
+		D98E333821B4523B004C66C3 /* EditTransactionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D98E334121B46E23004C66C3 /* Views */,
+				D98E333B21B454A5004C66C3 /* ViewModels */,
+				D98E333921B4528A004C66C3 /* EditTransactionViewController.swift */,
+			);
+			path = EditTransactionViewController;
+			sourceTree = "<group>";
+		};
+		D98E333B21B454A5004C66C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D98E333C21B454D4004C66C3 /* EditTransactionViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D98E333E21B46B69004C66C3 /* RemoveButton */ = {
+			isa = PBXGroup;
+			children = (
+				D98E333F21B46B80004C66C3 /* RemoveButton.swift */,
+			);
+			path = RemoveButton;
+			sourceTree = "<group>";
+		};
+		D98E334121B46E23004C66C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D98E334C21B49D0F004C66C3 /* EditTransactionDateView */,
+				D98E334721B470BE004C66C3 /* EditTransactionCategoryView */,
+				D98E334221B46E30004C66C3 /* EditTransactionAmountView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D98E334221B46E30004C66C3 /* EditTransactionAmountView */ = {
+			isa = PBXGroup;
+			children = (
+				D98E334321B46E41004C66C3 /* EditTransactionAmountView.swift */,
+				D98E334521B46E56004C66C3 /* EditTransactionAmountView.xib */,
+			);
+			path = EditTransactionAmountView;
+			sourceTree = "<group>";
+		};
+		D98E334721B470BE004C66C3 /* EditTransactionCategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				D98E334821B470D0004C66C3 /* EditTransactionCategoryView.swift */,
+				D98E334A21B470DB004C66C3 /* EditTransactionCategoryView.xib */,
+			);
+			path = EditTransactionCategoryView;
+			sourceTree = "<group>";
+		};
+		D98E334C21B49D0F004C66C3 /* EditTransactionDateView */ = {
+			isa = PBXGroup;
+			children = (
+				D98E334D21B49D20004C66C3 /* EditTransactionDateView.swift */,
+				D98E334F21B49D29004C66C3 /* EditTransactionDateView.xib */,
+			);
+			path = EditTransactionDateView;
+			sourceTree = "<group>";
+		};
+		D98E335121B546B5004C66C3 /* CategoryFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoryFlow;
 			sourceTree = "<group>";
 		};
 		D99F683E21AA9C70005EC865 /* TodayHistoryViewController */ = {
@@ -616,6 +706,7 @@
 		D9FD0E6D21AFDA5A00A77C8A /* ActivityFlow */ = {
 			isa = PBXGroup;
 			children = (
+				D98E333821B4523B004C66C3 /* EditTransactionViewController */,
 				D99F683E21AA9C70005EC865 /* TodayHistoryViewController */,
 				D911ECFA21A7F7B700C3A7B1 /* ActivityViewController */,
 			);
@@ -709,10 +800,13 @@
 			files = (
 				D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */,
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
+				D98E335021B49D29004C66C3 /* EditTransactionDateView.xib in Resources */,
 				D9FD0E7021AFDA8300A77C8A /* HistoryFlow.storyboard in Resources */,
 				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
 				D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */,
 				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
+				D98E334621B46E56004C66C3 /* EditTransactionAmountView.xib in Resources */,
+				D98E334B21B470DB004C66C3 /* EditTransactionCategoryView.xib in Resources */,
 				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
 				D911ECF921A7EFFB00C3A7B1 /* ActivityFlow.storyboard in Resources */,
 				D99F685521AAD630005EC865 /* HistoryTopCollectionViewCell.xib in Resources */,
@@ -787,6 +881,7 @@
 				D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */,
 				D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */,
 				D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */,
+				D98E334421B46E41004C66C3 /* EditTransactionAmountView.swift in Sources */,
 				D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */,
 				D99F684821AAB399005EC865 /* UITableViewExtenions.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
@@ -799,6 +894,8 @@
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
 				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,
 				D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */,
+				D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */,
+				D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */,
 				D911ED0021A7FC5500C3A7B1 /* Router.swift in Sources */,
 				D96CE21D21ADD2B80085664A /* TodayHistoryViewViewModel.swift in Sources */,
 				D99F685421AAD630005EC865 /* HistoryTopCollectionViewCell.swift in Sources */,
@@ -807,9 +904,12 @@
 				D920A09B21562F8100ECA806 /* BottomPopupViewController.swift in Sources */,
 				D9FD0E7621AFE19600A77C8A /* HistoryViewViewModel.swift in Sources */,
 				D92295F621ADEF4E002AF881 /* ActivityViewViewModel.swift in Sources */,
+				D98E334021B46B80004C66C3 /* RemoveButton.swift in Sources */,
 				D95CF26D215782E9001BEF1F /* PinButton.swift in Sources */,
 				D96CE21F21ADD3B40085664A /* TransactionViewModel.swift in Sources */,
+				D98E333D21B454D4004C66C3 /* EditTransactionViewViewModel.swift in Sources */,
 				D96483102162439400B2D880 /* CategoryViewModel.swift in Sources */,
+				D98E334E21B49D20004C66C3 /* EditTransactionDateView.swift in Sources */,
 				D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */,
 				D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */,
 				D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */,

@@ -41,7 +41,7 @@ class ActivityTopViewController: BaseViewController {
         //setup collection view
         configureCollectionView()
         
-        parentViewModel.transactionType.subscribe(onNext: { [unowned self] (transactionType) in
+        parentViewModel.transactionType.asObservable().subscribe(onNext: { [unowned self] (transactionType) in
             if transactionType == .incoming {
                 self.incomeBtn.isEnabled = false
                 self.outcomeBtn.isEnabled = true
@@ -76,7 +76,7 @@ class ActivityTopViewController: BaseViewController {
             let cell = collectionView.dequeueReusableCell(type: CategoryCollectionViewCell.self,
                                                           indexPath: IndexPath(row: row, section: 0))
             
-            cell.apply(viewModel)
+            cell.apply(viewModel, transactionType: self.parentViewModel.transactionType.value)
             cell.onTap { [unowned self] (category) in
                 self.makeSelectedCategory(category)
             }

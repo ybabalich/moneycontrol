@@ -99,6 +99,9 @@ class TodayHistoryViewController: BaseViewController {
                                                      indexPath: IndexPath(row: row, section: 0))
             
             cell.apply(viewModel)
+            cell.onTap(completion: { (transactionViewModel) in
+                Router.instance.showEditTransactionScreen(transactionViewModel)
+            })
             
             return cell
         }.disposed(by: disposeBag)

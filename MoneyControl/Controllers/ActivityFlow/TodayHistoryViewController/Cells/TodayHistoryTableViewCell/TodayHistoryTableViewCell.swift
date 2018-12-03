@@ -6,19 +6,29 @@
 //  Copyright © 2018 PxToday. All rights reserved.
 //
 
-import UIKit
+import RxSwift
 
 class TodayHistoryTableViewCell : UITableViewCell {
 
+    typealias TransactionTapClosure = (TransactionViewModel) -> ()
+    
     // MARK: - Outlets
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var categoryNameLabel: UILabel!
     
+    // MARK: - Variables private
+    private var _tapClosure: TransactionTapClosure?
+    private var _viewModel: TransactionViewModel!
+    private let disposeBag = DisposeBag()
+    
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+            self._tapClosure?(self._viewModel)
+        }).disposed(by: disposeBag)
     }
     
     override func prepareForReuse() {
@@ -28,10 +38,16 @@ class TodayHistoryTableViewCell : UITableViewCell {
     
     // MARK: - Public methods
     func apply(_ viewModel: TransactionViewModel) {
+        _viewModel = viewModel
+        
         categoryImageView.image = viewModel.category.image
         valueLabel.text = "\(viewModel.value)"
         valueLabel.textColor = viewModel.type == .incoming ? App.Color.incoming.rawValue : App.Color.outcoming.rawValue
         categoryNameLabel.text = viewModel.category.title
+    }
+    
+    func onTap(completion: @escaping TransactionTapClosure) {
+        _tapClosure = completion
     }
     
 }

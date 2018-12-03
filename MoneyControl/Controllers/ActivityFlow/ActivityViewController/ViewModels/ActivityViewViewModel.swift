@@ -32,7 +32,7 @@ class ActivityViewViewModel {
     let isHiddenField: PublishSubject<Bool> = PublishSubject<Bool>()
     let categories: Variable<[CategoryViewModel]> = Variable<[CategoryViewModel]>([])
     let selectedCategory: Variable<CategoryViewModel?> = Variable<CategoryViewModel?>(nil)
-    let transactionType: PublishSubject<Transaction.TransactionType> = PublishSubject<Transaction.TransactionType>()
+    lazy var transactionType = Variable<Transaction.TransactionType>(_transactionType.value)
     
     // MARK: - Variables private
     private let _transactionValue: Variable<String> = Variable<String>("")
@@ -57,7 +57,7 @@ class ActivityViewViewModel {
     // MARK: - Public methods
     func loadData() {
         _transactionValue.value = ""
-        transactionType.onNext(_transactionType.value)
+        transactionType.value = _transactionType.value
         fetchCategories()
         fetchTransactionsSum()
     }
@@ -69,7 +69,7 @@ class ActivityViewViewModel {
             _transactionType.value = .incoming
         }
         
-        transactionType.onNext(_transactionType.value)
+        transactionType.value = _transactionType.value
         fetchTransactionsSum()
     }
     

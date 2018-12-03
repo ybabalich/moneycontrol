@@ -57,7 +57,7 @@ class ActivityViewController: BaseViewController {
     }
     
     private func setupViewModel() {
-        viewModel.transactionType.subscribe(onNext: { [unowned self] (transactionType) in
+        viewModel.transactionType.asObservable().subscribe(onNext: { [unowned self] (transactionType) in
             if transactionType == .incoming {
                 self.doneBtn.colorType = .incoming
                 self.totalLabel.textColor = App.Color.incoming.rawValue
