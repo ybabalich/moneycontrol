@@ -42,8 +42,13 @@ class AppLaunch {
             case base = "HistoryViewController"
         }
         
+        enum Category: String {
+            case manageCategories = "ManageCategoriesViewController"
+        }
+        
         case activity(viewController: Activity)
         case history(viewController: History)
+        case category(viewController: Category)
     }
     
     // MARK: - Public methods
@@ -62,6 +67,10 @@ extension AppLaunch.StoryboardFlow {
                                       isInitial: controller == .base ? true : false)
         case .history(viewController: let controller):
             return StoryboardFlowData(storyboardName: "HistoryFlow",
+                                      controllerName: controller.rawValue,
+                                      isInitial: false)
+        case .category(viewController: let controller):
+            return StoryboardFlowData(storyboardName: "CategoryFlow",
                                       controllerName: controller.rawValue,
                                       isInitial: false)
         }

@@ -22,7 +22,23 @@ class CategoriesFabric {
         let car = CategoryViewModel(id: 7, title: "Car", imageType: .car)
         let pharmacy = CategoryViewModel(id: 8, title: "Pharmacy", imageType: .pharmacy)
         let rent = CategoryViewModel(id: 9, title: "Rent", imageType: .rent)
-        return [fuel, car, shopping, food, coffee, payments, spa, gym, pharmacy, rent]
+        let restaurant = CategoryViewModel(id: 10, title: "Restaurant", imageType: .restaurant)
+        let train = CategoryViewModel(id: 11, title: "Train", imageType: .train)
+        let smoke = CategoryViewModel(id: 12, title: "Smoke", imageType: .smoke)
+        let travel = CategoryViewModel(id: 13, title: "Travel", imageType: .travel)
+        let game = CategoryViewModel(id: 14, title: "Game", imageType: .game)
+        let fly = CategoryViewModel(id: 15, title: "Fly", imageType: .fly)
+        return [fuel, car, shopping, food, coffee,
+                payments, spa, gym, pharmacy, rent,
+                restaurant, train, smoke, travel, game, fly]
+    }
+    
+    static func incomeCategories() -> [CategoryViewModel] {
+        return Array(CategoriesFabric.initialCategories()[0...4])
+    }
+    
+    static func expenseCategories() -> [CategoryViewModel] {
+        return Array(CategoriesFabric.initialCategories()[5...9])
     }
     
 }

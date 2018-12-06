@@ -56,6 +56,13 @@
 		D98E334B21B470DB004C66C3 /* EditTransactionCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98E334A21B470DB004C66C3 /* EditTransactionCategoryView.xib */; };
 		D98E334E21B49D20004C66C3 /* EditTransactionDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E334D21B49D20004C66C3 /* EditTransactionDateView.swift */; };
 		D98E335021B49D29004C66C3 /* EditTransactionDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98E334F21B49D29004C66C3 /* EditTransactionDateView.xib */; };
+		D98E335321B5471F004C66C3 /* CategoryFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98E335221B5471F004C66C3 /* CategoryFlow.storyboard */; };
+		D98E335521B547C0004C66C3 /* ManageCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E335421B547C0004C66C3 /* ManageCategoriesViewController.swift */; };
+		D98E335C21B54BC5004C66C3 /* ManagedCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E335A21B54BC5004C66C3 /* ManagedCategoryTableViewCell.swift */; };
+		D98E335D21B54BC5004C66C3 /* ManagedCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98E335B21B54BC5004C66C3 /* ManagedCategoryTableViewCell.xib */; };
+		D98E336021B54ED4004C66C3 /* EyeSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E335F21B54ED4004C66C3 /* EyeSwitchView.swift */; };
+		D98E336321B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */; };
+		D98E336521B58E06004C66C3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E336421B58E06004C66C3 /* Settings.swift */; };
 		D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */; };
 		D99F684521AAA462005EC865 /* TodayHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */; };
 		D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */; };
@@ -130,6 +137,13 @@
 		D98E334A21B470DB004C66C3 /* EditTransactionCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTransactionCategoryView.xib; sourceTree = "<group>"; };
 		D98E334D21B49D20004C66C3 /* EditTransactionDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionDateView.swift; sourceTree = "<group>"; };
 		D98E334F21B49D29004C66C3 /* EditTransactionDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTransactionDateView.xib; sourceTree = "<group>"; };
+		D98E335221B5471F004C66C3 /* CategoryFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryFlow.storyboard; sourceTree = "<group>"; };
+		D98E335421B547C0004C66C3 /* ManageCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesViewController.swift; sourceTree = "<group>"; };
+		D98E335A21B54BC5004C66C3 /* ManagedCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		D98E335B21B54BC5004C66C3 /* ManagedCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManagedCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		D98E335F21B54ED4004C66C3 /* EyeSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeSwitchView.swift; sourceTree = "<group>"; };
+		D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesViewViewModel.swift; sourceTree = "<group>"; };
+		D98E336421B58E06004C66C3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewController.swift; sourceTree = "<group>"; };
 		D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -223,6 +237,7 @@
 			children = (
 				D911ECF821A7EFFB00C3A7B1 /* ActivityFlow.storyboard */,
 				D9FD0E6F21AFDA8300A77C8A /* HistoryFlow.storyboard */,
+				D98E335221B5471F004C66C3 /* CategoryFlow.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -240,6 +255,7 @@
 		D911ED0121A801D500C3A7B1 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				D98E335E21B54EA3004C66C3 /* EyeSwitchView */,
 				D98E333E21B46B69004C66C3 /* RemoveButton */,
 				D98E333421B2BAB2004C66C3 /* RegularButton */,
 				D911ED0221A801DB00C3A7B1 /* CheckButton */,
@@ -406,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				D95CF2672157796E001BEF1F /* App.swift */,
+				D98E336421B58E06004C66C3 /* Settings.swift */,
 				D964831A216287BE00B2D880 /* Constants.swift */,
 				D911ECFD21A7F9E400C3A7B1 /* AppLaunch.swift */,
 				D911ECFF21A7FC5500C3A7B1 /* Router.swift */,
@@ -548,8 +565,60 @@
 		D98E335121B546B5004C66C3 /* CategoryFlow */ = {
 			isa = PBXGroup;
 			children = (
+				D98E335621B547C3004C66C3 /* ManageCategoriesViewController */,
 			);
 			path = CategoryFlow;
+			sourceTree = "<group>";
+		};
+		D98E335621B547C3004C66C3 /* ManageCategoriesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D98E336121B56A8C004C66C3 /* ViewModels */,
+				D98E335721B54B8C004C66C3 /* Views */,
+				D98E335421B547C0004C66C3 /* ManageCategoriesViewController.swift */,
+			);
+			path = ManageCategoriesViewController;
+			sourceTree = "<group>";
+		};
+		D98E335721B54B8C004C66C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D98E335821B54B92004C66C3 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D98E335821B54B92004C66C3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D98E335921B54BAB004C66C3 /* ManagedCategoryTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D98E335921B54BAB004C66C3 /* ManagedCategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D98E335A21B54BC5004C66C3 /* ManagedCategoryTableViewCell.swift */,
+				D98E335B21B54BC5004C66C3 /* ManagedCategoryTableViewCell.xib */,
+			);
+			path = ManagedCategoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		D98E335E21B54EA3004C66C3 /* EyeSwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				D98E335F21B54ED4004C66C3 /* EyeSwitchView.swift */,
+			);
+			path = EyeSwitchView;
+			sourceTree = "<group>";
+		};
+		D98E336121B56A8C004C66C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D99F683E21AA9C70005EC865 /* TodayHistoryViewController */ = {
@@ -802,6 +871,7 @@
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
 				D98E335021B49D29004C66C3 /* EditTransactionDateView.xib in Resources */,
 				D9FD0E7021AFDA8300A77C8A /* HistoryFlow.storyboard in Resources */,
+				D98E335321B5471F004C66C3 /* CategoryFlow.storyboard in Resources */,
 				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
 				D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */,
 				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
@@ -811,6 +881,7 @@
 				D911ECF921A7EFFB00C3A7B1 /* ActivityFlow.storyboard in Resources */,
 				D99F685521AAD630005EC865 /* HistoryTopCollectionViewCell.xib in Resources */,
 				D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */,
+				D98E335D21B54BC5004C66C3 /* ManagedCategoryTableViewCell.xib in Resources */,
 				D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */,
 				D95CF261215775FF001BEF1F /* Lato-Light.ttf in Resources */,
 			);
@@ -825,26 +896,30 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyControl/Pods-MoneyControl-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyControl/Pods-MoneyControl-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72E4DDBA8E9EFFAAC23AD982 /* [CP] Check Pods Manifest.lock */ = {
@@ -879,6 +954,7 @@
 				D95CF26521577826001BEF1F /* PinCircleView.swift in Sources */,
 				D911ED0621A804FF00C3A7B1 /* Typealiases.swift in Sources */,
 				D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */,
+				D98E335C21B54BC5004C66C3 /* ManagedCategoryTableViewCell.swift in Sources */,
 				D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */,
 				D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */,
 				D98E334421B46E41004C66C3 /* EditTransactionAmountView.swift in Sources */,
@@ -889,12 +965,14 @@
 				D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */,
 				D92EEDF321A94F0E00A9C233 /* ActivityTopViewController.swift in Sources */,
 				D96CE21421ADC8D10085664A /* TransactionDB.swift in Sources */,
+				D98E336521B58E06004C66C3 /* Settings.swift in Sources */,
 				D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */,
 				D99F685D21AB1E77005EC865 /* RealmBasedService.swift in Sources */,
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
 				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,
 				D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */,
 				D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */,
+				D98E335521B547C0004C66C3 /* ManageCategoriesViewController.swift in Sources */,
 				D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */,
 				D911ED0021A7FC5500C3A7B1 /* Router.swift in Sources */,
 				D96CE21D21ADD2B80085664A /* TodayHistoryViewViewModel.swift in Sources */,
@@ -910,9 +988,11 @@
 				D98E333D21B454D4004C66C3 /* EditTransactionViewViewModel.swift in Sources */,
 				D96483102162439400B2D880 /* CategoryViewModel.swift in Sources */,
 				D98E334E21B49D20004C66C3 /* EditTransactionDateView.swift in Sources */,
+				D98E336021B54ED4004C66C3 /* EyeSwitchView.swift in Sources */,
 				D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */,
 				D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */,
 				D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */,
+				D98E336321B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift in Sources */,
 				D911ECFC21A7F7EB00C3A7B1 /* ActivityViewController.swift in Sources */,
 				D99F684521AAA462005EC865 /* TodayHistoryTableViewCell.swift in Sources */,
 				D9FD0E7421AFDFC900A77C8A /* HistoryBottomViewController.swift in Sources */,

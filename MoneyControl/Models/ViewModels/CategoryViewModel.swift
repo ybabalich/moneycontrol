@@ -21,6 +21,12 @@ class CategoryViewModel {
         case car
         case pharmacy
         case rent
+        case restaurant
+        case train
+        case smoke
+        case travel
+        case game
+        case fly
         
         init(rawValue: Int) {
             switch rawValue {
@@ -34,6 +40,12 @@ class CategoryViewModel {
             case 7: self = .car
             case 8: self = .pharmacy
             case 9: self = .rent
+            case 10: self = .restaurant
+            case 11: self = .train
+            case 12: self = .smoke
+            case 13: self = .travel
+            case 14: self = .game
+            case 15: self = .fly
             default: self = .fuel
             }
         }
@@ -50,6 +62,12 @@ class CategoryViewModel {
             case .car: return UIImage(named: "ic_category_car")!
             case .pharmacy: return UIImage(named: "ic_category_pharmacy")!
             case .rent: return UIImage(named: "ic_category_rent")!
+            case .restaurant: return UIImage(named: "ic_category_restaurant")!
+            case .train: return UIImage(named: "ic_category_train")!
+            case .smoke: return UIImage(named: "ic_category_smoking")!
+            case .travel: return UIImage(named: "ic_category_travel")!
+            case .game: return UIImage(named: "ic_category_games")!
+            case .fly: return UIImage(named: "ic_category_fly")!
             }
         }
     }
@@ -59,6 +77,7 @@ class CategoryViewModel {
     let title: String
     let image: UIImage
     let imageRaw: Int
+//    let 
     
     // MARK: - Initial methods
     init(db: CategoryDB) {

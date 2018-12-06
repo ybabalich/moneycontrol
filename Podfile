@@ -11,7 +11,8 @@ target 'MoneyControl' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod "RxGesture"
-  
+  pod "RxDataSources"
+
   #Database
   pod ‘RealmSwift’
 end

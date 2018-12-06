@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 var appLauncher: AppLaunch = AppLaunch()
+var settings = Settings()
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
@@ -21,13 +22,15 @@ class AppDelegate: UIResponder {
     fileprivate func setup(application: UIApplication,
                            launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+        settings.launchCount += 1
+        
         //controller for showing
         setupStoryboardForStart()
         
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: 1,
+            schemaVersion: 2,
             
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above
@@ -35,10 +38,13 @@ class AppDelegate: UIResponder {
                 // We haven’t migrated anything yet, so oldSchemaVersion == 0
                 switch oldSchemaVersion {
                 case 1:
-                    break
-                default:
                     migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
                         newObject!["id"] = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
+                    })
+                    break
+                default:
+                    migration.enumerateObjects(ofType: CategoryDB.className(), { (oldObject, newObject) in
+                        newObject!["type"] = 0
                     })
                 }
         })

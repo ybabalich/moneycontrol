@@ -1,11 +1,16 @@
 PODS:
-  - Realm (3.11.2):
-    - Realm/Headers (= 3.11.2)
-  - Realm/Headers (3.11.2)
-  - RealmSwift (3.11.2):
-    - Realm (= 3.11.2)
+  - Differentiator (3.1.0)
+  - Realm (3.12.0):
+    - Realm/Headers (= 3.12.0)
+  - Realm/Headers (3.12.0)
+  - RealmSwift (3.12.0):
+    - Realm (= 3.12.0)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxGesture (2.1.0):
     - RxCocoa (~> 4.4.0)
@@ -16,26 +21,31 @@ PODS:
 DEPENDENCIES:
   - RealmSwift
   - RxCocoa
+  - RxDataSources
   - RxGesture
   - RxSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Differentiator
     - Realm
     - RealmSwift
     - RxAtomic
     - RxCocoa
+    - RxDataSources
     - RxGesture
     - RxSwift
 
 SPEC CHECKSUMS:
-  Realm: 864477d028db77f7c5a0cba64a4892ad53db128a
-  RealmSwift: 12b8262fc08020b47de4fd88eb3d5c9425b34ec7
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
+  RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxGesture: 7f6dfb45dbde06e618c24442d38493e3144f2c95
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: 18394af7415620f43d30a1c635cefe670cb2c4b7
+PODFILE CHECKSUM: 8c51a53453859848f204f90aabe321bafad190ba
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2

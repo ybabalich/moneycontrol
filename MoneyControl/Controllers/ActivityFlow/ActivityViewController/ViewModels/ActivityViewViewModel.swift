@@ -71,6 +71,7 @@ class ActivityViewViewModel {
         
         transactionType.value = _transactionType.value
         fetchTransactionsSum()
+        fetchCategories()
     }
     
     func keyboardValue(_ type: KeyboardButtonType) {
@@ -115,7 +116,7 @@ class ActivityViewViewModel {
     
     // MARK: - Private methods
     private func fetchCategories() {
-        CategoryService.instance.fetchMyCategories { [weak self] (categories) in
+        CategoryService.instance.fetchSavedCategories(type: _transactionType.value) { [weak self] (categories) in
             guard let strongSelf = self else { return }
             
             strongSelf.categories.value = categories

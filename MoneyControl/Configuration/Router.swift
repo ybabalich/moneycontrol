@@ -45,6 +45,12 @@ class Router {
         let transactionVC = showScreen(editTransactionFlow, animated: true) as! EditTransactionViewController
         transactionVC.transactionViewModel = transaction
     }
+    
+    // MARK: - Categories
+    func showManageCategoriesScreen() {
+        let manageCategoriesFlow = AppLaunch.StoryboardFlow.category(viewController: .manageCategories)
+        showScreen(manageCategoriesFlow, animated: true)
+    }
 
     
     // MARK: - Private methods

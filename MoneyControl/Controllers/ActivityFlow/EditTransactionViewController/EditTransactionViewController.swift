@@ -53,7 +53,7 @@ class EditTransactionViewController: BaseViewController {
     private func setup() {
         //navigation
         navigationItem.hidesBackButton = false
-        navigationController?.navigationBar.tintColor = App.Color.main.rawValue
+        customizeBackBtn()
         
         //views
         setupSubviews()
