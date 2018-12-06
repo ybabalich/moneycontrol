@@ -27,6 +27,7 @@ class CategoryViewModel {
         case travel
         case game
         case fly
+        case salary
         
         init(rawValue: Int) {
             switch rawValue {
@@ -46,6 +47,7 @@ class CategoryViewModel {
             case 13: self = .travel
             case 14: self = .game
             case 15: self = .fly
+            case 16: self = .salary
             default: self = .fuel
             }
         }
@@ -68,6 +70,7 @@ class CategoryViewModel {
             case .travel: return UIImage(named: "ic_category_travel")!
             case .game: return UIImage(named: "ic_category_games")!
             case .fly: return UIImage(named: "ic_category_fly")!
+            case .salary: return UIImage(named: "ic_category_salary")!
             }
         }
     }
@@ -77,7 +80,6 @@ class CategoryViewModel {
     let title: String
     let image: UIImage
     let imageRaw: Int
-//    let 
     
     // MARK: - Initial methods
     init(db: CategoryDB) {

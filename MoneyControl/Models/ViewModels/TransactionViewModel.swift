@@ -15,6 +15,7 @@ class TransactionViewModel {
     var value: Double
     var type: Transaction.TransactionType
     var category: CategoryViewModel
+    var innerTransactions: [TransactionViewModel]
     
     // MARK: - Initializers
     init(transaction: Transaction) {
@@ -22,6 +23,7 @@ class TransactionViewModel {
         value = transaction.value
         type = transaction.type
         category = CategoryViewModel(category: transaction.category)
+        innerTransactions = transaction.innerTransactions?.map({ TransactionViewModel(transaction: $0) }) ?? []
     }
     
 }

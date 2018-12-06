@@ -82,6 +82,7 @@ class HistoryViewViewModel {
                 transaction.type = .incoming
                 transaction.category = category
                 transaction.time = Date()
+                transaction.innerTransactions = incomesGroupedByCategory[category]
                 
                 transactions.append(TransactionViewModel(transaction: transaction))
             })
@@ -92,6 +93,7 @@ class HistoryViewViewModel {
                 transaction.type = .outcoming
                 transaction.category = category
                 transaction.time = Date()
+                transaction.innerTransactions = outcomesGroupedByCategory[category]
                 
                 transactions.append(TransactionViewModel(transaction: transaction))
             })

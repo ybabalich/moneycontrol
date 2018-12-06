@@ -46,6 +46,7 @@
 		D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21921ADCDD30085664A /* TransactionService.swift */; };
 		D96CE21D21ADD2B80085664A /* TodayHistoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21C21ADD2B80085664A /* TodayHistoryViewViewModel.swift */; };
 		D96CE21F21ADD3B40085664A /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21E21ADD3B40085664A /* TransactionViewModel.swift */; };
+		D97A0FF821B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97A0FF721B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift */; };
 		D98E333621B2BAD2004C66C3 /* RegularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E333521B2BAD2004C66C3 /* RegularButton.swift */; };
 		D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E333921B4528A004C66C3 /* EditTransactionViewController.swift */; };
 		D98E333D21B454D4004C66C3 /* EditTransactionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E333C21B454D4004C66C3 /* EditTransactionViewViewModel.swift */; };
@@ -127,6 +128,7 @@
 		D96CE21921ADCDD30085664A /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		D96CE21C21ADD2B80085664A /* TodayHistoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewViewModel.swift; sourceTree = "<group>"; };
 		D96CE21E21ADD3B40085664A /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		D97A0FF721B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryListViewController.swift; sourceTree = "<group>"; };
 		D98E333521B2BAD2004C66C3 /* RegularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularButton.swift; sourceTree = "<group>"; };
 		D98E333921B4528A004C66C3 /* EditTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewController.swift; sourceTree = "<group>"; };
 		D98E333C21B454D4004C66C3 /* EditTransactionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewViewModel.swift; sourceTree = "<group>"; };
@@ -491,6 +493,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		D97A0FF621B9CE20002BCA4C /* TransactionsHistoryListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D97A0FF721B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift */,
+			);
+			path = TransactionsHistoryListViewController;
+			sourceTree = "<group>";
+		};
 		D98E333421B2BAB2004C66C3 /* RegularButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -785,6 +795,7 @@
 		D9FD0E6E21AFDA6700A77C8A /* HistoryFlow */ = {
 			isa = PBXGroup;
 			children = (
+				D97A0FF621B9CE20002BCA4C /* TransactionsHistoryListViewController */,
 				D99F684921AABD96005EC865 /* HistoryViewController */,
 			);
 			path = HistoryFlow;
@@ -969,6 +980,7 @@
 				D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */,
 				D99F685D21AB1E77005EC865 /* RealmBasedService.swift in Sources */,
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
+				D97A0FF821B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift in Sources */,
 				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,
 				D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */,
 				D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */,

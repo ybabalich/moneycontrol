@@ -299,6 +299,36 @@
             </objects>
             <point key="canvasLocation" x="1337" y="958"/>
         </scene>
+        <!--Transactions History List View Controller-->
+        <scene sceneID="I2C-CR-rnU">
+            <objects>
+                <viewController storyboardIdentifier="TransactionsHistoryListViewController" id="bVo-hP-Y1l" customClass="TransactionsHistoryListViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ePE-HJ-8kw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-20-gcQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="waJ-20-gcQ" firstAttribute="leading" secondItem="7wY-1l-tx1" secondAttribute="leading" id="8Ja-fM-eev"/>
+                            <constraint firstItem="waJ-20-gcQ" firstAttribute="top" secondItem="7wY-1l-tx1" secondAttribute="top" id="s2m-qp-C61"/>
+                            <constraint firstItem="7wY-1l-tx1" firstAttribute="trailing" secondItem="waJ-20-gcQ" secondAttribute="trailing" id="seF-zw-gdO"/>
+                            <constraint firstItem="7wY-1l-tx1" firstAttribute="bottom" secondItem="waJ-20-gcQ" secondAttribute="bottom" id="sjq-r6-9T2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7wY-1l-tx1"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="waJ-20-gcQ" id="O30-qQ-ypH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4LZ-VW-Qkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="1493"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_close" width="66" height="66"/>

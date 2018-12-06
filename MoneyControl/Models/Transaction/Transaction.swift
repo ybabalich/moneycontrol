@@ -42,6 +42,7 @@ class Transaction {
     var category: Category
     var entity: Entity
     var time: Date
+    var innerTransactions: [Transaction]?
     
     // MARK: - Initializers
     init() {

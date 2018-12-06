@@ -55,6 +55,9 @@ class HistoryBottomViewController: BaseViewController {
                                                      indexPath: IndexPath(row: row, section: 0))
             
             cell.apply(viewModel)
+            cell.onTap(completion: { (transaction) in
+                Router.instance.showTransactionsList(transaction.innerTransactions)
+            })
             
             return cell
         }.disposed(by: disposeBag)

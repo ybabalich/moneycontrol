@@ -28,17 +28,19 @@ class CategoriesFabric {
         let travel = CategoryViewModel(id: 13, title: "Travel", imageType: .travel)
         let game = CategoryViewModel(id: 14, title: "Game", imageType: .game)
         let fly = CategoryViewModel(id: 15, title: "Fly", imageType: .fly)
+        let salary = CategoryViewModel(id: 16, title: "Salary", imageType: .salary)
+        
         return [fuel, car, shopping, food, coffee,
                 payments, spa, gym, pharmacy, rent,
-                restaurant, train, smoke, travel, game, fly]
+                restaurant, train, smoke, travel, game, fly, salary]
     }
     
     static func incomeCategories() -> [CategoryViewModel] {
-        return Array(CategoriesFabric.initialCategories()[0...4])
+        return [CategoriesFabric.initialCategories()[16]]
     }
     
     static func expenseCategories() -> [CategoryViewModel] {
-        return Array(CategoriesFabric.initialCategories()[5...9])
+        return Array(CategoriesFabric.initialCategories()[0...15])
     }
     
 }

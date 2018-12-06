@@ -40,6 +40,7 @@ class AppLaunch {
         
         enum History: String {
             case base = "HistoryViewController"
+            case transactionsList = "TransactionsHistoryListViewController"
         }
         
         enum Category: String {
