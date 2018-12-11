@@ -21,6 +21,9 @@ class HistoryBottomViewController: BaseViewController {
         }
     }
     
+    // MARK: - Variables private
+    private var emptyView: EmptyView = EmptyView.view()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +39,43 @@ class HistoryBottomViewController: BaseViewController {
     
     // MARK: - Public methods
     func setupUI() {
+        //general
         tableContentView.layer.masksToBounds = true
+        
+        //subviews
+        addSubviews()
+        
+        //events
+        emptyView.onActionBtnTap {
+            Router.instance.goBack()
+        }
     }
     
     // MARK: - Private methods
     private func setupViewModel() {
         //table view
         configureTableView()
+        
+        parentViewModel.transactions.asObservable().map({ $0.count > 0 })
+            .subscribe(onNext: { [unowned self] (haveTransactions) in
+                
+                if haveTransactions {
+                    self.tableView.isHidden = false
+                    self.emptyView.isHidden = true
+                } else {
+                    self.tableView.isHidden = true
+                    self.emptyView.isHidden = false
+                    self.emptyView.setTitleText("Haven't transactions")
+                    self.emptyView.setButtonText("Add new transaction")
+                }
+                
+        }).disposed(by: disposeBag)
+    }
+    
+    private func addSubviews() {
+        view.addSubview(emptyView)
+        emptyView.alignCenterX(toView: view)
+        emptyView.alignCenterY(toView: view)
     }
     
     private func configureTableView() {
