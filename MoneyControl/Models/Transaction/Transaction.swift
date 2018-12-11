@@ -60,7 +60,7 @@ class Transaction {
         self.value = db.value
         self.currency = Currency(rawValue: db.currency)
         self.type = TransactionType(rawValue: db.type)
-        self.category = db.category != nil ? Category(db: db.category!) : Category.emptyCategory()
+        self.category = Category.emptyCategory()
         self.entity = .cash
         self.time = db.time
     }

@@ -246,6 +246,7 @@
                     </view>
                     <connections>
                         <outlet property="balanceInfoContentView" destination="NV7-d1-SVE" id="rYY-Xt-9On"/>
+                        <outlet property="balanceLabel" destination="mBT-qs-gQJ" id="1Fa-gl-dKG"/>
                         <outlet property="collectionView" destination="32W-40-7dI" id="Y7l-U0-cho"/>
                         <outlet property="incomesLabel" destination="fTi-8T-Jav" id="rEd-xf-clH"/>
                         <outlet property="outcomesLabel" destination="nNm-ft-yYi" id="zir-tx-cBC"/>

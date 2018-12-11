@@ -84,8 +84,8 @@ class ActivityViewController: BaseViewController {
     
     private func subscribeToEvents() {
         historyBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
-//            Router.instance.showTodayHistoryScreen()
-            Router.instance.showManageCategoriesScreen()
+            Router.instance.showTodayHistoryScreen()
+//            Router.instance.showManageCategoriesScreen()
         }).disposed(by: disposeBag)
         
         doneBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in

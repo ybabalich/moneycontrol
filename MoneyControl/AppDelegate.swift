@@ -30,7 +30,7 @@ class AppDelegate: UIResponder {
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: 2,
+            schemaVersion: 3,
             
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above
@@ -42,15 +42,20 @@ class AppDelegate: UIResponder {
                         newObject!["id"] = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
                     })
                     break
+                case 2, 3:
+                    migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
+                        newObject!["categoryId"] = 0
+                    })
                 default:
                     migration.enumerateObjects(ofType: CategoryDB.className(), { (oldObject, newObject) in
                         newObject!["type"] = 0
                     })
                 }
-        })
+            }
+        )
         
         Realm.Configuration.defaultConfiguration = config
-
+        
         return true
     }
     

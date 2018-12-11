@@ -47,6 +47,7 @@ class HistoryBottomViewController: BaseViewController {
     
     private func configureTableView() {
         tableView.registerNib(type: TodayHistoryTableViewCell.self)
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.tableFooterView = UIView(frame: .zero)
         
         parentViewModel.transactions.asObservable().bind(to: tableView.rx.items)
@@ -64,4 +65,14 @@ class HistoryBottomViewController: BaseViewController {
     }
     
 
+}
+
+extension HistoryBottomViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let removeAction = UITableViewRowAction(style: .destructive, title: "Remove") { [unowned self] (action, indexPath) in
+            let transactionViewModel = self.parentViewModel.transactions.value[indexPath.row]
+            self.parentViewModel.removeInnerTransactions(transactionViewModel)
+        }
+        return [removeAction]
+    }
 }
