@@ -111,6 +111,8 @@ class HistoryViewViewModel {
             service.fetchTodayTransactions(type: nil, completion: handler)
         case .week:
             service.fetchWeekTransactions(type: nil, completion: handler)
+        case .month:
+            service.fetchMonthTransactions(type: nil, completion: handler)
         default: handler([])
         }
     }

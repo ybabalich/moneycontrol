@@ -96,10 +96,10 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NV7-d1-SVE" userLabel="Balance Content View">
-                                <rect key="frame" x="20" y="65.5" width="335" height="114.5"/>
+                                <rect key="frame" x="20" y="65.5" width="335" height="113.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iqr-vz-eat">
-                                        <rect key="frame" x="16" y="32.5" width="186.5" height="49.5"/>
+                                        <rect key="frame" x="16" y="32" width="186.5" height="49.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qj-jz-Bj9">
                                                 <rect key="frame" x="0.0" y="0.0" width="54" height="18"/>
@@ -130,14 +130,14 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Nb-9W-dF8">
-                                        <rect key="frame" x="210.5" y="8" width="0.5" height="98.5"/>
+                                        <rect key="frame" x="210.5" y="8" width="0.5" height="97.5"/>
                                         <color key="backgroundColor" white="0.29999999999999999" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="0.5" id="gdO-kd-BN0"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jTj-z5-r4l">
-                                        <rect key="frame" x="219" y="8" width="100" height="41"/>
+                                        <rect key="frame" x="219" y="8" width="100" height="40.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCOME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="km7-OP-rV5">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="11"/>
@@ -146,7 +146,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2dC-Gr-uB3">
-                                                <rect key="frame" x="0.0" y="16" width="54.5" height="25"/>
+                                                <rect key="frame" x="0.0" y="16" width="54.5" height="24.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTu-eb-1jN">
                                                         <rect key="frame" x="0.0" y="0.0" width="8" height="12"/>
@@ -171,14 +171,14 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZ5-i6-9NF">
-                                        <rect key="frame" x="219" y="57" width="100" height="0.5"/>
+                                        <rect key="frame" x="219" y="56.5" width="100" height="0.5"/>
                                         <color key="backgroundColor" white="0.29999999999999999" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="krM-VL-xjq"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bzm-Lg-A68">
-                                        <rect key="frame" x="219" y="69.5" width="100" height="37"/>
+                                        <rect key="frame" x="219" y="69" width="100" height="36.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXPENSE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwa-3W-rHn">
                                                 <rect key="frame" x="0.0" y="0.0" width="38.5" height="11"/>
@@ -187,7 +187,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="qP2-p1-efW">
-                                                <rect key="frame" x="0.0" y="16" width="54.5" height="21"/>
+                                                <rect key="frame" x="0.0" y="16" width="54.5" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOG-u0-gul">
                                                         <rect key="frame" x="0.0" y="0.0" width="8" height="12"/>
@@ -239,11 +239,12 @@
                             <constraint firstItem="NV7-d1-SVE" firstAttribute="leading" secondItem="ztq-Sk-mH0" secondAttribute="leading" constant="20" id="VUe-E1-p7O"/>
                             <constraint firstItem="3KV-gc-r7S" firstAttribute="trailing" secondItem="32W-40-7dI" secondAttribute="trailing" id="Xlg-Wf-sT2"/>
                             <constraint firstItem="32W-40-7dI" firstAttribute="leading" secondItem="3KV-gc-r7S" secondAttribute="leading" id="c43-rh-8o8"/>
+                            <constraint firstItem="3KV-gc-r7S" firstAttribute="bottom" secondItem="NV7-d1-SVE" secondAttribute="bottom" constant="21" id="eLU-mr-HJf"/>
                             <constraint firstAttribute="trailing" secondItem="NV7-d1-SVE" secondAttribute="trailing" constant="20" id="pg2-Lu-M4g"/>
-                            <constraint firstItem="NV7-d1-SVE" firstAttribute="bottom" secondItem="3KV-gc-r7S" secondAttribute="bottom" constant="-20" id="vJe-OP-qNs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3KV-gc-r7S"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="balanceInfoContentView" destination="NV7-d1-SVE" id="rYY-Xt-9On"/>
                         <outlet property="balanceLabel" destination="mBT-qs-gQJ" id="1Fa-gl-dKG"/>

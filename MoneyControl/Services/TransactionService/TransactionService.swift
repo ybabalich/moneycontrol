@@ -27,7 +27,8 @@ class TransactionService: RealmBasedService {
     
     // today
     func fetchTodayTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
         let (dateFrom, dateTo) = calendar.currentDay()
         fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
     }
@@ -44,10 +45,21 @@ class TransactionService: RealmBasedService {
      * If send type -> nil - it's means that method will fetch all transactions, ignoring type.
      */
     func fetchWeekTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
         let (dateFrom, dateTo) = calendar.currentWeek()
         fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
     }
+    
+    //  month
+    func fetchMonthTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let (dateFrom, dateTo) = calendar.currentMonth()
+        fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
+    }
+    
+    // MARK: - Saving
     
     func save(_ transaction: Transaction) {
         let dbTransaction = TransactionDB()
