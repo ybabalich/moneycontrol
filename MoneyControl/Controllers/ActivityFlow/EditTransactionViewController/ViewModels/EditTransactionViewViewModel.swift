@@ -12,6 +12,7 @@ class EditTransactionViewViewModel {
     
     // MARK: - Variables public
     let transaction = PublishSubject<TransactionViewModel>()
+    let isSuccess = PublishSubject<Bool>()
     
     // MARK: - Variables private
     private let _transaction = Variable<TransactionViewModel?>(nil)
@@ -29,6 +30,26 @@ class EditTransactionViewViewModel {
     // MARK: - Public methods
     func applyTransaction(_ transaction: TransactionViewModel) {
         _transaction.value = transaction
+    }
+    
+    func updateTransaction(value: Double, categoryId: Int) {
+        guard let transaction = _transaction.value else { return }
+        
+        transaction.value = value
+        transaction.category = CategoryViewModel(category: Category(id: categoryId))
+        
+        let transactionToSave = Transaction(viewModel: transaction)
+        TransactionService.instance.update(transactionToSave)
+        
+        isSuccess.onNext(true)
+    }
+    
+    func removeTransaction() {
+        guard let transaction = _transaction.value else { return }
+        
+        TransactionService.instance.remove(id: transaction.id)
+        
+        isSuccess.onNext(true)
     }
     
 }

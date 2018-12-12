@@ -64,6 +64,16 @@ class Transaction {
         self.entity = .cash
         self.time = db.time
     }
+    
+    init(viewModel: TransactionViewModel) {
+        self.id = viewModel.id
+        self.value = viewModel.value
+        self.type = viewModel.type
+        self.category = Category(viewModel: viewModel.category)
+        self.currency = .uah
+        self.entity = .cash
+        self.time = Date()
+    }
 }
 
 extension Transaction.Currency: Rawable {

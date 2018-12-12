@@ -26,6 +26,14 @@ class TodayHistoryViewController: BaseViewController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !isFirstLoad {
+            viewModel.loadData()
+        }
+    }
+    
     // navbar preparаtion
     override func createLeftNavButton() -> UIBarButtonItem? {
         return UIBarButtonItemFabric.titledBarButtonItem(title: "Activity")

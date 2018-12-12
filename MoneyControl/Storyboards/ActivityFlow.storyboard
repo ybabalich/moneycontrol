@@ -457,7 +457,7 @@
                         <viewLayoutGuide key="safeArea" id="McR-MC-t9c"/>
                     </view>
                     <connections>
-                        <outlet property="deleteBtn" destination="vm7-fm-rr9" id="eYd-Z0-DXm"/>
+                        <outlet property="deleteBtn" destination="vm7-fm-rr9" id="zYW-Vn-fIq"/>
                         <outlet property="firstContentView" destination="GOk-QV-Ph4" id="zHL-a7-oO5"/>
                         <outlet property="saveBtn" destination="Lbj-vM-CPN" id="TMx-mg-pKF"/>
                         <outlet property="secondContentView" destination="u0L-dT-Ian" id="SLF-fs-lkb"/>

@@ -59,7 +59,7 @@ class TransactionService: RealmBasedService {
         fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
     }
     
-    // MARK: - Saving
+    // MARK: - Saving/Updating
     
     func save(_ transaction: Transaction) {
         let dbTransaction = TransactionDB()
@@ -75,6 +75,19 @@ class TransactionService: RealmBasedService {
             db.add(dbTransaction)
         }
         
+    }
+    
+    func update(_ transaction: Transaction) {
+        let fetchPredicate = NSPredicate(format: "id == %d", argumentArray: [transaction.id])
+        
+        let objects = db.objects(TransactionDB.self).filter(fetchPredicate)
+        
+        if let transactionDb = objects.first {
+            try! db.write {
+                transactionDb.categoryId = transaction.category.id
+                transactionDb.value = transaction.value
+            }
+        }
     }
     
     // removing

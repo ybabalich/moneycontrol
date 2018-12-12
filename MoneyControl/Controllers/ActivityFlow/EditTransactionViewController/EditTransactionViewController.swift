@@ -6,7 +6,7 @@
 //  Copyright © 2018 PxToday. All rights reserved.
 //
 
-import UIKit
+import RxSwift
 
 class EditTransactionViewController: BaseViewController {
 
@@ -32,6 +32,7 @@ class EditTransactionViewController: BaseViewController {
     
     // MARK: - Variables private
     private var viewModel = EditTransactionViewViewModel()
+    
     private let editAmountView = EditTransactionAmountView.view()
     private let editCategoryView = EditTransactionCategoryView.view()
     private let editDateView = EditTransactionDateView.view()
@@ -71,13 +72,34 @@ class EditTransactionViewController: BaseViewController {
         //date view
         thirdContentView.addSubview(editDateView)
         editDateView.alignExpandToSuperview()
+        
+        //events
+        view.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+            self.view.endEditing(true)
+        }).disposed(by: disposeBag)
+        
+        saveBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+            self.viewModel.updateTransaction(value: Double(self.editAmountView.text) ?? 0,
+                                             categoryId: self.editCategoryView.category.id)
+        }).disposed(by: disposeBag)
+        
+        deleteBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+            self.viewModel.removeTransaction()
+        }).disposed(by: disposeBag)
     }
     
     private func setupViewModel() {
         viewModel.transaction.subscribe(onNext: { [unowned self] (transaction) in
             self.title = "Edit " + "\(transaction.type == .incoming ? "incoming" : "expense")"
+            
+            self.editAmountView.text = String(format: "%3.2f", transaction.value)
+            self.editCategoryView.category = transaction.category
+        }).disposed(by: disposeBag)
+        
+        viewModel.isSuccess.subscribe(onNext: { (isSuccess) in
+            if isSuccess {
+                Router.instance.goBack()
+            }
         }).disposed(by: disposeBag)
     }
-    
-
 }

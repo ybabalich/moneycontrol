@@ -76,6 +76,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vJg-lM-4Yk"/>
+            <connections>
+                <outlet property="categoryImageView" destination="OmJ-gh-U1r" id="3RT-aK-Ei7"/>
+                <outlet property="categoryLabel" destination="6lb-vh-96I" id="0cT-wj-6Yd"/>
+            </connections>
             <point key="canvasLocation" x="53.600000000000001" y="-224.88755622188907"/>
         </view>
     </objects>
