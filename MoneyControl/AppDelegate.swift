@@ -66,6 +66,8 @@ class AppDelegate: UIResponder {
         let navigationController = UINavigationController(rootViewController: controller)
         Router.instance.navigationViewController = navigationController
         
+        let root = UINavigationController(rootViewController: CalendarViewController.controller())
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

@@ -18,10 +18,11 @@ extension Calendar {
      * Return start and end date of current day
      */
     func currentDay() -> StartEndDate {
-        let currentDate = Date()
-        let dateFrom = startOfDay(for: currentDate)
-        let dateTo = date(byAdding: .day, value: 1, to: dateFrom)!
-        return (dateFrom, dateTo)
+        let currentDay = getStartEndDateFrom(.day)
+        print("Start ->: \(currentDay.start.description(with: .current))")
+        print("End ->: \(currentDay.end.description(with: .current))")
+        print("-----")
+        return getStartEndDateFrom(.day)
     }
     
     /*
@@ -58,8 +59,8 @@ extension Calendar {
             components.weekOfYear = 1
             components.second = -1
         default:
-            components.month = 1
             components.day = 1
+            components.second = -1
         }
         
         endDate = date(byAdding: components, to: startDate)!

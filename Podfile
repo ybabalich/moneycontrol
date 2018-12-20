@@ -15,4 +15,7 @@ target 'MoneyControl' do
 
   #Database
   pod ‘RealmSwift’
+
+  #Other
+  pod 'JTAppleCalendar', '~> 7.0'
 end

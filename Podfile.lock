@@ -1,5 +1,6 @@
 PODS:
   - Differentiator (3.1.0)
+  - JTAppleCalendar (7.1.6)
   - Realm (3.12.0):
     - Realm/Headers (= 3.12.0)
   - Realm/Headers (3.12.0)
@@ -19,6 +20,7 @@ PODS:
     - RxAtomic (~> 4.4)
 
 DEPENDENCIES:
+  - JTAppleCalendar (~> 7.0)
   - RealmSwift
   - RxCocoa
   - RxDataSources
@@ -28,6 +30,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Differentiator
+    - JTAppleCalendar
     - Realm
     - RealmSwift
     - RxAtomic
@@ -38,6 +41,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  JTAppleCalendar: abb30678f42a4ef8a340a932b1dcb8c85a33dac2
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
   RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
@@ -46,6 +50,6 @@ SPEC CHECKSUMS:
   RxGesture: 7f6dfb45dbde06e618c24442d38493e3144f2c95
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: 8c51a53453859848f204f90aabe321bafad190ba
+PODFILE CHECKSUM: 1a6466b2abfba444e5afe741864df9403faacf86
 
 COCOAPODS: 1.6.0.beta.2
