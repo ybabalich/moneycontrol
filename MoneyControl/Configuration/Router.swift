@@ -30,6 +30,16 @@ class Router {
         navigationViewController.popViewController(animated: true)
     }
     
+    func showController(_ controller: UIViewController, animated: Bool = true) {
+        navigationViewController.pushViewController(controller, animated: animated)
+    }
+    
+    func showActivityScreen() {
+        Router.instance.navigationViewController.isNavigationBarHidden = false
+        let activityScreen = AppLaunch.StoryboardFlow.activity(viewController: .base)
+        showScreen(activityScreen, animated: true)
+    }
+    
     func showTodayHistoryScreen() {
         let todayHistoryFlow = AppLaunch.StoryboardFlow.activity(viewController: .todayHistory)
         showScreen(todayHistoryFlow, animated: true)
@@ -40,12 +50,34 @@ class Router {
         showScreen(historyFlow, animated: true)
     }
     
+    func showTransactionsList(_ transactions: [TransactionViewModel]) {
+        let transactionsList = AppLaunch.StoryboardFlow.history(viewController: .transactionsList)
+        let transactionsVC = showScreen(transactionsList, animated: true) as! TransactionsHistoryListViewController
+        transactionsVC.transactions.value = transactions
+    }
+    
     func showEditTransactionScreen(_ transaction: TransactionViewModel) {
         let editTransactionFlow = AppLaunch.StoryboardFlow.activity(viewController: .editTransaction)
         let transactionVC = showScreen(editTransactionFlow, animated: true) as! EditTransactionViewController
         transactionVC.transactionViewModel = transaction
     }
-
+    
+    // MARK: - Categories
+    func showManageCategoriesScreen() {
+        let manageCategoriesFlow = AppLaunch.StoryboardFlow.category(viewController: .manageCategories)
+        showScreen(manageCategoriesFlow, animated: true)
+    }
+    
+    func showChooseCategoryScreen() {
+        let chooseCategoryFlow = AppLaunch.StoryboardFlow.category(viewController: .chooseCategory)
+        showScreen(chooseCategoryFlow, animated: true)
+    }
+    
+    //startup screens
+    func showYourBalanceScreen() {
+        let yourBalanceScreen = AppLaunch.StoryboardFlow.activity(viewController: .yourBalance)
+        showScreen(yourBalanceScreen, animated: true)
+    }
     
     // MARK: - Private methods
     @discardableResult

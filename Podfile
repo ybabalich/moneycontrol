@@ -11,7 +11,11 @@ target 'MoneyControl' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod "RxGesture"
-  
+  pod "RxDataSources"
+
   #Database
   pod ‘RealmSwift’
+
+  #Other
+  pod 'JTAppleCalendar', '~> 7.0'
 end

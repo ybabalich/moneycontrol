@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,22 +21,31 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ogi-L2-Csy">
+                    <constraints>
+                        <constraint firstAttribute="height" id="pTw-o0-t6O"/>
+                        <constraint firstAttribute="width" id="yvH-2A-saY"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R8u-3E-k3h">
                     <rect key="frame" x="16" y="8" width="343" height="24"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS1-QY-fSY">
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS1-QY-fSY">
                             <rect key="frame" x="0.0" y="3.5" width="30" height="17"/>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 December 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fG-V1-kg1">
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 December 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fG-V1-kg1">
                             <rect key="frame" x="116.5" y="2" width="132.5" height="20.5"/>
                             <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                             <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="tmQ-dc-dJM">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="tmQ-dc-dJM">
                             <rect key="frame" x="335" y="4.5" width="8" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="HIW-Zb-eRK"/>
@@ -57,7 +66,9 @@
             <constraints>
                 <constraint firstItem="SoR-HV-9AX" firstAttribute="leading" secondItem="QS1-QY-fSY" secondAttribute="leading" id="9Yt-D5-BWG"/>
                 <constraint firstItem="YJR-yg-1sZ" firstAttribute="bottom" secondItem="R8u-3E-k3h" secondAttribute="bottom" constant="8" id="CbF-if-0sx"/>
+                <constraint firstItem="Ogi-L2-Csy" firstAttribute="top" secondItem="YJR-yg-1sZ" secondAttribute="top" id="Dxb-5o-BWY"/>
                 <constraint firstItem="R8u-3E-k3h" firstAttribute="leading" secondItem="YJR-yg-1sZ" secondAttribute="leading" constant="16" id="EEV-YN-8M9"/>
+                <constraint firstItem="Ogi-L2-Csy" firstAttribute="leading" secondItem="YJR-yg-1sZ" secondAttribute="leading" id="JTr-uq-v14"/>
                 <constraint firstAttribute="bottom" secondItem="SoR-HV-9AX" secondAttribute="bottom" id="U64-Aj-b4N"/>
                 <constraint firstItem="SoR-HV-9AX" firstAttribute="trailing" secondItem="R8u-3E-k3h" secondAttribute="trailing" id="dRK-Bx-7e4"/>
                 <constraint firstItem="R8u-3E-k3h" firstAttribute="top" secondItem="YJR-yg-1sZ" secondAttribute="top" constant="8" id="pMK-UO-0hC"/>
@@ -65,10 +76,15 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="YJR-yg-1sZ"/>
+            <connections>
+                <outlet property="dateLabel" destination="9fG-V1-kg1" id="sZa-e1-znD"/>
+                <outlet property="textField" destination="Ogi-L2-Csy" id="GVV-pO-6jf"/>
+                <outlet property="titleLabel" destination="QS1-QY-fSY" id="cSO-qy-duI"/>
+            </connections>
             <point key="canvasLocation" x="170" y="-376"/>
         </view>
     </objects>
     <resources>
-        <image name="ic_arrow_right" width="17.25" height="33"/>
+        <image name="ic_arrow_right" width="11.5" height="22"/>
     </resources>
 </document>

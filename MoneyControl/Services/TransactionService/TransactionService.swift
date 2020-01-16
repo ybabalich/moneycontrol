@@ -14,6 +14,16 @@ class TransactionService: RealmBasedService {
     static let instance = TransactionService()
     
     // MARK: - Public methods
+    func fetchBalanceFromAllTransactions(completion: (Double) -> ()) {
+        var currentBalance: Double = 0.0
+        
+        db.objects(TransactionDB.self).forEach { (transactionDb) in
+            let value = transactionDb.value
+            currentBalance += (transactionDb.type == Transaction.TransactionType.incoming.rawValue) ? value : -(value)
+        }
+        
+        completion(currentBalance)
+    }
     
     // today
     func fetchTodayTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
@@ -39,6 +49,14 @@ class TransactionService: RealmBasedService {
         fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
     }
     
+    //  month
+    func fetchMonthTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
+        let calendar = Calendar.current
+        let (dateFrom, dateTo) = calendar.currentMonth()
+        fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
+    }
+    
+    // MARK: - Saving/Updating
     
     func save(_ transaction: Transaction) {
         let dbTransaction = TransactionDB()
@@ -48,12 +66,7 @@ class TransactionService: RealmBasedService {
         dbTransaction.type = transaction.type.rawValue
         dbTransaction.time = transaction.time
         
-        let category = CategoryDB()
-        category.id = transaction.category.id
-        category.title = transaction.category.title
-        category.imageType = transaction.category.imageRaw
-        
-        dbTransaction.category = category
+        dbTransaction.categoryId = transaction.category.id
         
         try! db.write {
             db.add(dbTransaction)
@@ -61,11 +74,35 @@ class TransactionService: RealmBasedService {
         
     }
     
+    func update(_ transaction: Transaction) {
+        let fetchPredicate = NSPredicate(format: "id == %d", argumentArray: [transaction.id])
+        
+        let objects = db.objects(TransactionDB.self).filter(fetchPredicate)
+        
+        if let transactionDb = objects.first {
+            try! db.write {
+                transactionDb.categoryId = transaction.category.id
+                transactionDb.value = transaction.value
+            }
+        }
+    }
+    
     // removing
     func remove(id: Int) {
         let removePredicate = NSPredicate(format: "id == %d", argumentArray: [id])
         
         let objects = db.objects(TransactionDB.self).filter(removePredicate)
+        try! db.write {
+            db.delete(objects)
+        }
+    }
+    
+    func removeTransactions(_ ids: [Int]) {
+        guard ids.count > 0 else { return }
+
+        let arrayPredicate = NSPredicate(format: "id IN %@", argumentArray: [ids])
+        
+        let objects = db.objects(TransactionDB.self).filter(arrayPredicate)
         try! db.write {
             db.delete(objects)
         }
@@ -92,8 +129,12 @@ class TransactionService: RealmBasedService {
         
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         
-        completion( db.objects(TransactionDB.self).filter(predicate).map({ (transaction) -> Transaction in
-            return Transaction(db: transaction)
+        completion( db.objects(TransactionDB.self).filter(predicate).map({ (transactionDb) -> Transaction in
+            let transaction = Transaction(db: transactionDb)
+            let categoryPredicate = NSPredicate(format: "id == %d", argumentArray: [transactionDb.categoryId])
+            let categoryDb = self.db.objects(CategoryDB.self).filter(categoryPredicate)[0]
+            transaction.category = Category(db: categoryDb)
+            return transaction
         }).sorted { $0.time > $1.time } )
     }
     

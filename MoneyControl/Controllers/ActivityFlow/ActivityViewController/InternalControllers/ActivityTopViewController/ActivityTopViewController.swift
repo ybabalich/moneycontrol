@@ -24,11 +24,24 @@ class ActivityTopViewController: BaseViewController {
         }
     }
     
+    // MARK: - Variables private
+    private var oldSize: CGRect = .zero
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if oldSize != view.frame {
+            baseContentView.applyFullyRounded(15)
+            
+            oldSize = view.frame
+        }
     }
     
     // MARK: - Private methods

@@ -6,7 +6,7 @@
 //  Copyright © 2018 PxToday. All rights reserved.
 //
 
-import UIKit
+import RxSwift
 
 class EditTransactionViewController: BaseViewController {
 
@@ -32,9 +32,13 @@ class EditTransactionViewController: BaseViewController {
     
     // MARK: - Variables private
     private var viewModel = EditTransactionViewViewModel()
+    
+    private let chooseCategoryViewController: ChooseCategoryViewController = UIViewController.by(flow: .category(viewController: .chooseCategory)) as! ChooseCategoryViewController
     private let editAmountView = EditTransactionAmountView.view()
     private let editCategoryView = EditTransactionCategoryView.view()
     private let editDateView = EditTransactionDateView.view()
+    
+    private let datePicker = UIDatePicker()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -53,7 +57,7 @@ class EditTransactionViewController: BaseViewController {
     private func setup() {
         //navigation
         navigationItem.hidesBackButton = false
-        navigationController?.navigationBar.tintColor = App.Color.main.rawValue
+        customizeBackBtn()
         
         //views
         setupSubviews()
@@ -71,13 +75,83 @@ class EditTransactionViewController: BaseViewController {
         //date view
         thirdContentView.addSubview(editDateView)
         editDateView.alignExpandToSuperview()
+        
+        //events
+        view.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+            self.view.endEditing(true)
+        }).disposed(by: disposeBag)
+        
+        saveBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+            self.viewModel.updateTransaction(value: Double(self.editAmountView.text) ?? 0,
+                                             categoryId: self.editCategoryView.category.id)
+        }).disposed(by: disposeBag)
+        
+        deleteBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+            self.viewModel.removeTransaction()
+        }).disposed(by: disposeBag)
+        
+        editDateView.onTap { [unowned self] in
+            self.showDateChooseView()
+        }
+        
+        editCategoryView.onTap { [weak self] in
+            guard let strongSelf = self else { return }
+            
+            Router.instance.showController(strongSelf.chooseCategoryViewController)
+        }
+        
+        chooseCategoryViewController.onChooseCategory { [weak self] (category) in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.viewModel.selectCategory(category)
+        }
     }
     
     private func setupViewModel() {
         viewModel.transaction.subscribe(onNext: { [unowned self] (transaction) in
-            self.title = "Edit " + "\(transaction.type == .incoming ? "incoming" : "expense")"
+            self.title = "Edit".localized + " " + "\(transaction.type == .incoming ? "Incoming" : "Expense")".localized
+            
+            self.editAmountView.text = String(format: "%3.2f", transaction.value)
+            self.editCategoryView.category = transaction.category
+            self.editDateView.text = transaction.formattedTime
+            self.datePicker.date = transaction.createdTime
+        }).disposed(by: disposeBag)
+        
+        viewModel.isSuccess.subscribe(onNext: { (isSuccess) in
+            if isSuccess {
+                Router.instance.goBack()
+            }
         }).disposed(by: disposeBag)
     }
-    
 
+    private func showDateChooseView() {
+        
+        datePicker.datePickerMode = .date
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: "Done".localized, style: .done, target: self, action: #selector(dateChoosed))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel".localized, style: .plain, target: self, action: #selector(dateChoosingCancel))
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        // add toolbar to textField
+        editDateView.textField.inputAccessoryView = toolbar
+        
+        editDateView.textField.inputView = datePicker
+        editDateView.textField.becomeFirstResponder()
+    }
+    
+    @objc private func dateChoosed() {
+        editDateView.text = DateService.instance.convertDateToString(datePicker.date, format: DateService.dayMonthYearWithSpacesFormat)
+        viewModel.changeDate(to: datePicker.date)
+        
+        dateChoosingCancel()
+    }
+    
+    @objc private func dateChoosingCancel() {
+        editDateView.textField.resignFirstResponder()
+    }
 }

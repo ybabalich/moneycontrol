@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  MoneyControl
+
+  Created by Yaroslav Babalich on 4/17/19.
+  Copyright © 2019 PxToday. All rights reserved.
+*/
+
+"Today" = "Today";
+"Total" = "Total";
+
+// history screen
+"History" = "History";
+"Haven't transactions" = "Haven't transactions";
+"Add new transaction" = "Add new transaction";
+"Day" = "Day";
+"Week" = "Week";
+"Week" = "Week";
+
+"Remove" = "Remove";

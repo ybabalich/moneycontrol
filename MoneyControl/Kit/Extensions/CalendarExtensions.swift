@@ -18,40 +18,57 @@ extension Calendar {
      * Return start and end date of current day
      */
     func currentDay() -> StartEndDate {
-        let currentDate = Date()
-        let dateFrom = startOfDay(for: currentDate)
-        let dateTo = date(byAdding: .day, value: 1, to: dateFrom)!
-        return (dateFrom, dateTo)
+        let currentDay = getStartEndDateFrom(.day)
+        print("Start ->: \(currentDay.start.description(with: .current))")
+        print("End ->: \(currentDay.end.description(with: .current))")
+        print("-----")
+        return getStartEndDateFrom(.day)
     }
     
     /*
      * Return start and end date of current week
      */
     func currentWeek() -> StartEndDate {
-        let currentDate = Date()
-        let weekDayComponents = dateComponents([.weekday], from: currentDate)
+        return getStartEndDateFrom(.weekOfYear)
+    }
+    
+    /*
+     * Return start and end date of current month
+     */
+    func currentMonth() -> StartEndDate {
+        return getStartEndDateFrom(.month)
+    }
+    
+    // MARK: - Private methods
+    private func getStartEndDateFrom(_ component: Component) -> StartEndDate {
+        var startDate = Date()
+        var endDate = Date()
+        var interval: TimeInterval = 0
         
+        //start date
+        let _ = dateInterval(of: component, start: &startDate, interval: &interval, for: startDate)
+        
+        //end date
         var components = DateComponents()
-        // Sunday -> -(weekdayComponetns.weekday - firstWeekday)
-        // Monday -> -(weekdayComponetns.weekday - firstWeekday - 1)
-        components.day = -(weekDayComponents.weekday! - firstWeekday - 1)
         
-        //start of week
-        var beginningOfWeek = date(byAdding: components, to: currentDate)
+        switch component {
+        case .month:
+            components.month = 1
+            components.second = -1
+        case .weekOfYear:
+            components.weekOfYear = 1
+            components.second = -1
+        default:
+            components.day = 1
+            components.second = -1
+        }
         
-        let componentsForBeginningOfWeek = dateComponents([.year, .month, .day], from: beginningOfWeek!)
-        beginningOfWeek = date(from: componentsForBeginningOfWeek)
+        endDate = date(byAdding: components, to: startDate)!
         
-        //end of week
-        components.day = 7
+        let componentsForEndOfWeek = dateComponents([.year, .month, .day, .hour, .minute, .second], from: endDate)
+        endDate = date(from: componentsForEndOfWeek)!
         
-        var endOfWeek = date(byAdding: components, to: beginningOfWeek!)
-        
-        let componentsForEndOfWeek = dateComponents([.year, .month, .day], from: endOfWeek!)
-        endOfWeek = date(from: componentsForEndOfWeek)
-        
-        
-        return (beginningOfWeek!, endOfWeek!)
+        return (startDate, endDate)
     }
     
 }

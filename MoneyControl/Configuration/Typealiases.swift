@@ -10,6 +10,44 @@ import Foundation
 
 // MARK: - Typealias
 typealias EmptyClosure = () -> ()
+typealias CategoryViewModelClosure = (CategoryViewModel) -> ()
+
+enum Currency {
+    case uah
+    case usd
+    case rub
+    
+    // MARK: - Initializers
+    init(stringValue: String) {
+        switch stringValue {
+        case Currency.uah.stringValue: self = .uah
+        case Currency.usd.stringValue: self = .usd
+        case Currency.rub.stringValue: self = .rub
+        default: self = .usd
+        }
+    }
+    
+    // MARK: - Variables
+    var stringValue: String {
+        switch self {
+        case .uah: return "uah"
+        case .usd: return "usd"
+        case .rub: return "rub"
+        }
+    }
+    
+    var symbol: String {
+        switch self {
+        case .uah: return "₴"
+        case .usd: return "$"
+        case .rub: return "₽"
+        }
+    }
+    
+    var flagName: String {
+        return "ic_flag_" + stringValue
+    }
+}
 
 enum Sort: StringRepresentable, Equatable {
     case day
@@ -21,9 +59,9 @@ enum Sort: StringRepresentable, Equatable {
     // MARK: - Variables
     var stringValue: String {
         switch self {
-        case .day: return "Day"
-        case .week: return "Week"
-        case .month: return "Month"
+        case .day: return "Day".localized
+        case .week: return "Week".localized
+        case .month: return "Month".localized
         case .year: return "Year"
         case .custom(from: _, to: _): return "Custom"
         }

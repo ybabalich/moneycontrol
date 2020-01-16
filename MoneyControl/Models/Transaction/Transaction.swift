@@ -10,12 +10,6 @@ import Foundation
 
 class Transaction {
     
-    enum Currency {
-        case uah
-        case usd
-        case rub
-    }
-    
     enum TransactionType {
         case incoming
         case outcoming
@@ -42,6 +36,7 @@ class Transaction {
     var category: Category
     var entity: Entity
     var time: Date
+    var innerTransactions: [Transaction]?
     
     // MARK: - Initializers
     init() {
@@ -59,13 +54,23 @@ class Transaction {
         self.value = db.value
         self.currency = Currency(rawValue: db.currency)
         self.type = TransactionType(rawValue: db.type)
-        self.category = db.category != nil ? Category(db: db.category!) : Category.emptyCategory()
+        self.category = Category.emptyCategory()
         self.entity = .cash
         self.time = db.time
     }
+    
+    init(viewModel: TransactionViewModel) {
+        self.id = viewModel.id
+        self.value = viewModel.value
+        self.type = viewModel.type
+        self.category = Category(viewModel: viewModel.category)
+        self.currency = .uah
+        self.entity = .cash
+        self.time = Date()
+    }
 }
 
-extension Transaction.Currency: Rawable {
+extension Currency: Rawable {
     
     init(rawValue: Int) {
         switch rawValue {

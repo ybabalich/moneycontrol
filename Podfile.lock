@@ -1,41 +1,56 @@
 PODS:
-  - Realm (3.11.2):
-    - Realm/Headers (= 3.11.2)
-  - Realm/Headers (3.11.2)
-  - RealmSwift (3.11.2):
-    - Realm (= 3.11.2)
-  - RxAtomic (4.4.0)
-  - RxCocoa (4.4.0):
-    - RxSwift (~> 4.0)
-  - RxGesture (2.1.0):
-    - RxCocoa (~> 4.4.0)
-    - RxSwift (~> 4.4.0)
-  - RxSwift (4.4.0):
-    - RxAtomic (~> 4.4)
+  - Differentiator (4.0.1)
+  - JTAppleCalendar (7.1.8)
+  - Realm (4.3.0):
+    - Realm/Headers (= 4.3.0)
+  - Realm/Headers (4.3.0)
+  - RealmSwift (4.3.0):
+    - Realm (= 4.3.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxGesture (3.0.1):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
 
 DEPENDENCIES:
+  - JTAppleCalendar (~> 7.0)
   - RealmSwift
   - RxCocoa
+  - RxDataSources
   - RxGesture
   - RxSwift
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
+    - Differentiator
+    - JTAppleCalendar
     - Realm
     - RealmSwift
-    - RxAtomic
     - RxCocoa
+    - RxDataSources
     - RxGesture
+    - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
-  Realm: 864477d028db77f7c5a0cba64a4892ad53db128a
-  RealmSwift: 12b8262fc08020b47de4fd88eb3d5c9425b34ec7
-  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
-  RxGesture: 7f6dfb45dbde06e618c24442d38493e3144f2c95
-  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  JTAppleCalendar: b7fb40852f5f319fe55c8ec3861f1de0edc99cc8
+  Realm: 9357c3589555793e1860a7104a7412bca4a48d99
+  RealmSwift: 402f1e379a8ef82c635313037b043f0f06de880c
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxGesture: a3f8dd6adf078110ed5e1c9c30d09d705a09852e
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: 18394af7415620f43d30a1c635cefe670cb2c4b7
+PODFILE CHECKSUM: 1a6466b2abfba444e5afe741864df9403faacf86
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

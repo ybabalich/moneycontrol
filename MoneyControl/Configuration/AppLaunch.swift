@@ -36,19 +36,32 @@ class AppLaunch {
             case base = "ActivityViewController"
             case todayHistory = "TodayHistoryViewController"
             case editTransaction = "EditTransactionViewController"
+            case chooseCurrency = "ChooseCurrencyViewController"
+            case yourBalance = "YourBalanceViewController"
         }
         
         enum History: String {
             case base = "HistoryViewController"
+            case transactionsList = "TransactionsHistoryListViewController"
+        }
+        
+        enum Category: String {
+            case manageCategories = "ManageCategoriesViewController"
+            case chooseCategory = "ChooseCategoryViewController"
         }
         
         case activity(viewController: Activity)
         case history(viewController: History)
+        case category(viewController: Category)
     }
     
     // MARK: - Public methods
     func flowDataToShow() -> StoryboardFlow {
-        return .activity(viewController: .base)
+        if let _ = settings.currency {
+            return .activity(viewController: .base)
+        } else {
+            return .activity(viewController: .chooseCurrency)
+        }
     }
 }
 
@@ -62,6 +75,10 @@ extension AppLaunch.StoryboardFlow {
                                       isInitial: controller == .base ? true : false)
         case .history(viewController: let controller):
             return StoryboardFlowData(storyboardName: "HistoryFlow",
+                                      controllerName: controller.rawValue,
+                                      isInitial: false)
+        case .category(viewController: let controller):
+            return StoryboardFlowData(storyboardName: "CategoryFlow",
                                       controllerName: controller.rawValue,
                                       isInitial: false)
         }

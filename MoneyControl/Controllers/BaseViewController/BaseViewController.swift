@@ -11,6 +11,8 @@ import RxSwift
 class BaseViewController: UIViewController {
 
     // MARK: - Variables private
+    internal var isFirstLoad: Bool = true
+    internal var viewWillAppearLoadingCount: Int = 0
     internal let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
@@ -20,9 +22,23 @@ class BaseViewController: UIViewController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if viewWillAppearLoadingCount > 0 {
+            isFirstLoad = false
+        }
+        
+        viewWillAppearLoadingCount += 1
+    }
+    
     // MARK: - Private methods
     private func setup() {
         setupNavigationBarItems()
+    }
+    
+    internal func customizeBackBtn() {
+        navigationController?.navigationBar.tintColor = App.Color.main.rawValue
     }
     
     //navbar items

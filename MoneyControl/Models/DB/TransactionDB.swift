@@ -15,7 +15,7 @@ class TransactionDB: Object {
     @objc dynamic var value: Double = 0
     @objc dynamic var currency: Int = 0
     @objc dynamic var type: Int = 0
-    @objc dynamic var category: CategoryDB?
+    @objc dynamic var categoryId: Int = 0
     @objc dynamic var time = Date()
     
 }
