@@ -12,6 +12,9 @@ protocol AppSettings {
     //general
     var launchCount: Int { get set }
     var baseCategoriesAdded: Bool { get set }
+    
+    //currencies
+    var currency: Currency? { get set }
 }
 
 class Settings {
@@ -20,6 +23,7 @@ class Settings {
     private struct Keys {
         static let kAppLaunchCount = "kAppLaunchCount"
         static let kBaseCategoriesAdded = "kBaseCategoriesAdded"
+        static let kCurrency = "kCurrency"
     }
     
     // MARK: - Private methods
@@ -49,6 +53,20 @@ extension Settings: AppSettings {
         }
         set {
             Settings.set(value: newValue, for: Keys.kBaseCategoriesAdded)
+        }
+    }
+    
+    var currency: Currency? {
+        get {
+            if let value = Settings.value(for: Keys.kCurrency) as String? {
+                return Currency(stringValue: value)
+            }
+            return nil
+        }
+        set {
+            if let value = newValue?.stringValue {
+                Settings.set(value: value, for: Keys.kCurrency)
+            }
         }
     }
     

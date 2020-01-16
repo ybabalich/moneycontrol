@@ -65,8 +65,8 @@ class HistoryBottomViewController: BaseViewController {
                 } else {
                     self.tableView.isHidden = true
                     self.emptyView.isHidden = false
-                    self.emptyView.setTitleText("Haven't transactions")
-                    self.emptyView.setButtonText("Add new transaction")
+                    self.emptyView.setTitleText("Haven't transactions".localized)
+                    self.emptyView.setButtonText("Add new transaction".localized)
                 }
                 
         }).disposed(by: disposeBag)
@@ -102,7 +102,7 @@ class HistoryBottomViewController: BaseViewController {
 
 extension HistoryBottomViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let removeAction = UITableViewRowAction(style: .destructive, title: "Remove") { [unowned self] (action, indexPath) in
+        let removeAction = UITableViewRowAction(style: .destructive, title: "Remove".localized) { [unowned self] (action, indexPath) in
             let transactionViewModel = self.parentViewModel.transactions.value[indexPath.row]
             self.parentViewModel.removeInnerTransactions(transactionViewModel)
         }

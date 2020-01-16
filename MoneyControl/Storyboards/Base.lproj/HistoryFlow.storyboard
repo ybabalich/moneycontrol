@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BXF-1w-z42">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BXF-1w-z42">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -249,6 +249,9 @@
                         <outlet property="balanceInfoContentView" destination="NV7-d1-SVE" id="rYY-Xt-9On"/>
                         <outlet property="balanceLabel" destination="mBT-qs-gQJ" id="1Fa-gl-dKG"/>
                         <outlet property="collectionView" destination="32W-40-7dI" id="Y7l-U0-cho"/>
+                        <outlet property="currencyBalanceLabel" destination="fl0-XS-swk" id="wL9-X7-yEh"/>
+                        <outlet property="currencyExpenseLabel" destination="BOG-u0-gul" id="lUx-LE-1Ma"/>
+                        <outlet property="currencyIncomeLabel" destination="PTu-eb-1jN" id="ngD-BG-q4Z"/>
                         <outlet property="incomesLabel" destination="fTi-8T-Jav" id="rEd-xf-clH"/>
                         <outlet property="outcomesLabel" destination="nNm-ft-yYi" id="zir-tx-cBC"/>
                     </connections>
@@ -333,6 +336,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_close" width="66" height="66"/>
+        <image name="ic_close" width="44" height="44"/>
     </resources>
 </document>

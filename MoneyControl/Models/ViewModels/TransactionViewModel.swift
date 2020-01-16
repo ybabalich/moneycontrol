@@ -16,6 +16,8 @@ class TransactionViewModel {
     var type: Transaction.TransactionType
     var category: CategoryViewModel
     var innerTransactions: [TransactionViewModel]
+    var formattedTime: String
+    var createdTime: Date
     
     // MARK: - Initializers
     init(transaction: Transaction) {
@@ -24,6 +26,8 @@ class TransactionViewModel {
         type = transaction.type
         category = CategoryViewModel(category: transaction.category)
         innerTransactions = transaction.innerTransactions?.map({ TransactionViewModel(transaction: $0) }) ?? []
+        formattedTime = DateService.instance.convertDateToString(transaction.time, format: DateService.dayMonthYearWithSpacesFormat)
+        createdTime = transaction.time
     }
     
 }

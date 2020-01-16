@@ -11,14 +11,19 @@ import UIKit
 class UIBarButtonItemFabric {
     
     // MARK: - Private Class Methods
-    private class func imagedBarButtonItem(imageName: String) -> UIBarButtonItem {
+    private class func imagedBarButtonItem(imageName: String, size: CGSize) -> UIBarButtonItem {
         let bgI: UIImage? = UIImage(named: imageName)
         
         let button: UIButton = UIButton(type: .custom)
         button.setImage(bgI, for: .normal)
         button.tintColor = App.Color.main.rawValue
-        button.widthConstraint(needCreate: true)?.constant = 23
-        button.heightConstraint(needCreate: true)?.constant = 20
+        
+        if #available(iOS 11, *) {
+            button.widthConstraint(needCreate: true)?.constant = size.width
+            button.heightConstraint(needCreate: true)?.constant = size.height
+        } else {
+            button.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        }
         
         return UIBarButtonItem(customView: button)
     }
@@ -30,10 +35,10 @@ class UIBarButtonItemFabric {
     }
     
     // MARK: - Public Class Methods
-    class func titledBarButtonItem(title: String) -> UIBarButtonItem {
+    class func titledBarButtonItem(title: String, fontSize: CGFloat = 28) -> UIBarButtonItem {
         let label: UILabel = UILabel()
         
-        label.font = App.Font.main(size: 28, type: .bold).rawValue
+        label.font = App.Font.main(size: fontSize, type: .bold).rawValue
         label.textColor = App.Color.main.rawValue
         label.text = title
         label.sizeToFit()
@@ -42,7 +47,11 @@ class UIBarButtonItemFabric {
     }
     
     class func chartBarItem() -> UIBarButtonItem {
-        return imagedBarButtonItem(imageName: "ic_chart")
+        return imagedBarButtonItem(imageName: "ic_chart", size: CGSize(width: 23, height: 20))
+    }
+    
+    class func settingsBarItem() -> UIBarButtonItem {
+        return imagedBarButtonItem(imageName: "ic_settings", size: CGSize(width: 23, height: 23))
     }
     
 }

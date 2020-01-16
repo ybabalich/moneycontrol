@@ -27,7 +27,7 @@ class HistoryViewController: BaseViewController {
     
     // navbar preparаtion
     override func createLeftNavButton() -> UIBarButtonItem? {
-        return UIBarButtonItemFabric.titledBarButtonItem(title: "History")
+        return UIBarButtonItemFabric.titledBarButtonItem(title: "History".localized)
     }
     
     // MARK: - Private methods

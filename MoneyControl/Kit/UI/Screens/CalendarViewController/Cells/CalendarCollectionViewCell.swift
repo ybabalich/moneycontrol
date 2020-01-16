@@ -13,9 +13,33 @@ class CalendarCollectionViewCell: JTAppleCell {
     // MARK: - Outlets
     @IBOutlet weak var dayLabel: UILabel!
     
+    // MARK: - Variables public
+    var isActive: Bool = false {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        clearUI()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        clearUI()
+    }
+    
+    // MARK: - Private methods
+    private func updateUI() {
+        backgroundColor = isActive ? App.Color.incoming.rawValue : UIColor.clear
+    }
+    
+    private func clearUI() {
+        isActive = false
     }
 
 }

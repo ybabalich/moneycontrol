@@ -36,6 +36,8 @@ class AppLaunch {
             case base = "ActivityViewController"
             case todayHistory = "TodayHistoryViewController"
             case editTransaction = "EditTransactionViewController"
+            case chooseCurrency = "ChooseCurrencyViewController"
+            case yourBalance = "YourBalanceViewController"
         }
         
         enum History: String {
@@ -45,6 +47,7 @@ class AppLaunch {
         
         enum Category: String {
             case manageCategories = "ManageCategoriesViewController"
+            case chooseCategory = "ChooseCategoryViewController"
         }
         
         case activity(viewController: Activity)
@@ -54,7 +57,11 @@ class AppLaunch {
     
     // MARK: - Public methods
     func flowDataToShow() -> StoryboardFlow {
-        return .activity(viewController: .base)
+        if let _ = settings.currency {
+            return .activity(viewController: .base)
+        } else {
+            return .activity(viewController: .chooseCurrency)
+        }
     }
 }
 

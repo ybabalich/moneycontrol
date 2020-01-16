@@ -36,13 +36,14 @@ class TodayHistoryViewController: BaseViewController {
     
     // navbar preparаtion
     override func createLeftNavButton() -> UIBarButtonItem? {
-        return UIBarButtonItemFabric.titledBarButtonItem(title: "Activity")
+        return UIBarButtonItemFabric.titledBarButtonItem(title: "Activity".localized,
+                                                         fontSize: UIScreen.main.isScreenWidthSmall ? 14 : 22)
     }
     
     override func createRightNavButton() -> UIBarButtonItem? {
-        let navSegmentBarButton = UIBarButtonItemFabric.segmentBar(items: ["Incoming", "Outcoming"])
+        let navSegmentBarButton = UIBarButtonItemFabric.segmentBar(items: ["Incoming".localized, "Outcoming".localized])
         self.navSegmentControl = navSegmentBarButton.customView as? UISegmentedControl
-        self.navSegmentControl.selectedSegmentIndex = self.viewModel.selectedTransationType.value.rawValue
+        self.navSegmentControl.selectedSegmentIndex = viewModel.selectedTransationType.value.rawValue
         return navSegmentBarButton
     }
     
@@ -85,8 +86,8 @@ class TodayHistoryViewController: BaseViewController {
                 } else {
                     self.tableView.isHidden = true
                     self.emptyView.isHidden = false
-                    self.emptyView.setTitleText("Haven't activities today")
-                    self.emptyView.setButtonText("Add new activity")
+                    self.emptyView.setTitleText("Haven't activities today".localized)
+                    self.emptyView.setButtonText("Add new activity".localized)
                 }
                 
         }).disposed(by: disposeBag)

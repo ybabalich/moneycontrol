@@ -42,9 +42,9 @@ class HistoryViewViewModel {
     
     // MARK: - Private methods
     private func getSortCategories() -> [HistorySortCategoryViewModel] {
-        let dayCategory = HistorySortCategoryViewModel(sort: Sort.day)
-        let weakCategory = HistorySortCategoryViewModel(sort: Sort.week)
-        let monthCategory = HistorySortCategoryViewModel(sort: Sort.month)
+        let dayCategory = HistorySortCategoryViewModel(sort: .day)
+        let weakCategory = HistorySortCategoryViewModel(sort: .week)
+        let monthCategory = HistorySortCategoryViewModel(sort: .month)
         return [dayCategory, weakCategory, monthCategory]
     }
     

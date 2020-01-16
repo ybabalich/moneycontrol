@@ -17,6 +17,10 @@ class HistoryTopViewController: BaseViewController {
     @IBOutlet weak var outcomesLabel: UILabel!
     @IBOutlet weak var balanceInfoContentView: UIView!
     
+    @IBOutlet weak var currencyBalanceLabel: UILabel!
+    @IBOutlet weak var currencyIncomeLabel: UILabel!
+    @IBOutlet weak var currencyExpenseLabel: UILabel!
+    
     // MARK: - Variables public
     var parentViewModel: HistoryViewViewModel! {
         didSet {
@@ -34,6 +38,11 @@ class HistoryTopViewController: BaseViewController {
     // MARK: - Private methods
     private func setupUI() {
         balanceInfoContentView.applyFullyRounded(15)
+        
+        //currencies label's
+        currencyBalanceLabel.text = settings.currency!.symbol.uppercased()
+        currencyIncomeLabel.text = settings.currency!.symbol.uppercased()
+        currencyExpenseLabel.text = settings.currency!.symbol.uppercased()
     }
     
     private func setupViewModel() {

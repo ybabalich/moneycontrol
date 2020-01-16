@@ -84,13 +84,13 @@ class CategoryViewModel {
     // MARK: - Initial methods
     init(db: CategoryDB) {
         self.id = db.id
-        self.title = db.title
+        self.title = db.title.localized
         self.image = CategoryImageType(rawValue: db.imageType).image
         self.imageRaw = db.imageType
     }
     
     convenience init(category: Category) {
-        self.init(id: category.id, title: category.title, imageRaw: category.imageRaw)
+        self.init(id: category.id, title: category.title.localized, imageRaw: category.imageRaw)
     }
     
     init(id: Int, title: String, imageType: CategoryImageType) {

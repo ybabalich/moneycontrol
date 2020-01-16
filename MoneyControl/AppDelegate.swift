@@ -61,12 +61,11 @@ class AppDelegate: UIResponder {
     
     fileprivate func setupStoryboardForStart() {
         let flowDataToShow = appLauncher.flowDataToShow()
-        
+
         let controller = UIViewController.by(flow: flowDataToShow)
         let navigationController = UINavigationController(rootViewController: controller)
         Router.instance.navigationViewController = navigationController
-        
-        let root = UINavigationController(rootViewController: CalendarViewController.controller())
+        Router.instance.navigationViewController.isNavigationBarHidden = flowDataToShow == .activity(viewController: .chooseCurrency)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController

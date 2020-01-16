@@ -112,6 +112,8 @@ class ActivityViewViewModel {
         TransactionService.instance.save(transaction)
         
         _transactionValue.value.removeAll()
+        
+        fetchTransactionsSum()
     }
     
     // MARK: - Private methods

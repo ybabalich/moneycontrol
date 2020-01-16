@@ -27,7 +27,7 @@ class TransactionsHistoryListViewController: BaseViewController {
     private func setup() {
         //general
         customizeBackBtn()
-        self.title = "Transactions list"
+        self.title = "Transactions list".localized
         
         //tableview
         configureTableView()

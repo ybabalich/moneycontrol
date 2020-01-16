@@ -10,12 +10,6 @@ import Foundation
 
 class Transaction {
     
-    enum Currency {
-        case uah
-        case usd
-        case rub
-    }
-    
     enum TransactionType {
         case incoming
         case outcoming
@@ -76,7 +70,7 @@ class Transaction {
     }
 }
 
-extension Transaction.Currency: Rawable {
+extension Currency: Rawable {
     
     init(rawValue: Int) {
         switch rawValue {

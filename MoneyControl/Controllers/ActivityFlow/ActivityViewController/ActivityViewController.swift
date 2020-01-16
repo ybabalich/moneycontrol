@@ -38,11 +38,15 @@ class ActivityViewController: BaseViewController {
     
     // navbar preparаtion
     override func createLeftNavButton() -> UIBarButtonItem? {
-        return UIBarButtonItemFabric.titledBarButtonItem(title: "Today")
+        return UIBarButtonItemFabric.titledBarButtonItem(title: "Today".localized)
     }
     
     override func createRightNavButton() -> UIBarButtonItem? {
         return UIBarButtonItemFabric.chartBarItem()
+    }
+    
+    override func createRightNavButtonsAdditionals() -> [UIBarButtonItem]? {
+        return [UIBarButtonItemFabric.settingsBarItem()]
     }
     
     override func didBtNavRightClicked() {
@@ -76,7 +80,7 @@ class ActivityViewController: BaseViewController {
         }).disposed(by: disposeBag)
         
         viewModel.totalValue.subscribe(onNext: { [unowned self] (totalValue) in
-            self.totalLabel.text = "Total: \(totalValue)"
+            self.totalLabel.text = "Total".localized + ": \(totalValue)"
         }).disposed(by: disposeBag)
         
         viewModel.isActiveDoneButton.bind(to: doneBtn.rx.isEnabled).disposed(by: disposeBag)
@@ -85,7 +89,6 @@ class ActivityViewController: BaseViewController {
     private func subscribeToEvents() {
         historyBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
             Router.instance.showTodayHistoryScreen()
-//            Router.instance.showManageCategoriesScreen()
         }).disposed(by: disposeBag)
         
         doneBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
