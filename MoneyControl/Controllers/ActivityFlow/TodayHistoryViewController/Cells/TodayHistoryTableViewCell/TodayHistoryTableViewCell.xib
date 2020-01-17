@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,8 +21,8 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodayHistoryTableViewCell" rowHeight="73" id="KGk-i7-Jjw" customClass="TodayHistoryTableViewCell" customModule="MoneyControl" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="337" height="66"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="337" height="65.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="337" height="66"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_category_fuel" translatesAutoresizingMaskIntoConstraints="NO" id="8l3-2y-lf1">
@@ -51,8 +49,8 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ic_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-tj-F9h">
-                        <rect key="frame" x="321" y="25" width="8" height="15"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-tj-F9h">
+                        <rect key="frame" x="321" y="25.5" width="8" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ClR-tj-F9h" secondAttribute="height" multiplier="17:32" id="0sC-gP-cEn"/>
                             <constraint firstAttribute="height" constant="15" id="sJb-Gk-HhS"/>
@@ -70,6 +68,7 @@
                     <constraint firstItem="eMj-ob-hrd" firstAttribute="bottom" secondItem="8l3-2y-lf1" secondAttribute="bottom" id="rae-Bg-08S"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="categoryImageView" destination="8l3-2y-lf1" id="kdr-7s-6rg"/>
@@ -80,7 +79,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_arrow_right" width="17.25" height="33"/>
-        <image name="ic_category_fuel" width="512" height="512"/>
+        <image name="ic_arrow_right" width="11.5" height="22"/>
+        <image name="ic_category_fuel" width="256" height="256"/>
     </resources>
 </document>

@@ -28,6 +28,9 @@ class HistoryTopViewController: BaseViewController {
         }
     }
     
+    // MARK: - Variables private
+    private var oldFrame: CGRect = .zero
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +38,17 @@ class HistoryTopViewController: BaseViewController {
         setupUI()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if oldFrame != view.frame {
+            balanceInfoContentView.applyFullyRounded(15)
+            oldFrame = view.frame
+        }
+    }
+    
     // MARK: - Private methods
     private func setupUI() {
-        balanceInfoContentView.applyFullyRounded(15)
-        
         //currencies label's
         currencyBalanceLabel.text = settings.currency!.symbol.uppercased()
         currencyIncomeLabel.text = settings.currency!.symbol.uppercased()

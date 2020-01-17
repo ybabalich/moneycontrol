@@ -30,7 +30,19 @@ class UIBarButtonItemFabric {
     
     class func segmentBar(items: [Any]?) -> UIBarButtonItem {
         let segment = UISegmentedControl(items: items)
-        segment.tintColor = App.Color.main.rawValue
+        
+        if #available(iOS 13, *) {
+            segment.selectedSegmentTintColor = App.Color.main.rawValue
+            
+            let unselectedAttributes = [NSAttributedString.Key.foregroundColor: App.Color.main.rawValue];
+            let selectedAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white];
+            
+            segment.setTitleTextAttributes(unselectedAttributes, for: .normal)
+            segment.setTitleTextAttributes(selectedAttributes, for: .selected)
+        } else {
+            segment.tintColor = App.Color.main.rawValue
+        }
+        
         return UIBarButtonItem(customView: segment)
     }
     

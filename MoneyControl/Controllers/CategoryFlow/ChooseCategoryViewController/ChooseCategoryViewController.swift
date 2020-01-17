@@ -12,7 +12,21 @@ import RxDataSources
 class ChooseCategoryViewController: BaseViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var segmentControl: UISegmentedControl! {
+        didSet {
+            if #available(iOS 13, *) {
+                segmentControl.selectedSegmentTintColor = App.Color.main.rawValue
+                
+                let unselectedAttributes = [NSAttributedString.Key.foregroundColor: App.Color.main.rawValue];
+                let selectedAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white];
+                
+                segmentControl.setTitleTextAttributes(unselectedAttributes, for: .normal)
+                segmentControl.setTitleTextAttributes(selectedAttributes, for: .selected)
+            } else {
+                segmentControl.tintColor = App.Color.main.rawValue
+            }
+        }
+    }
     @IBOutlet weak var tableViewContentView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveBtn: CheckButton! {
