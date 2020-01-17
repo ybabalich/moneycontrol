@@ -64,6 +64,9 @@ class AppDelegate: UIResponder {
 
         let controller = UIViewController.by(flow: flowDataToShow)
         let navigationController = UINavigationController(rootViewController: controller)
+        
+        navigationController.navigationBar.applyWhiteBackground()
+        
         Router.instance.navigationViewController = navigationController
         Router.instance.navigationViewController.isNavigationBarHidden = flowDataToShow == .activity(viewController: .chooseCurrency)
         
