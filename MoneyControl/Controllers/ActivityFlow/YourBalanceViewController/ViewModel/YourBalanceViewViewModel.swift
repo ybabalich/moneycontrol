@@ -32,7 +32,21 @@ class YourBalanceViewViewModel {
     }
     
     func save() {
+        saveTransaction()
         isSuccess.onNext(true)
+    }
+    
+    // MARK: - Private methods
+    private func saveTransaction() {
+        let category = Category(viewModel: CategoriesFabric.startBalanceCategory())
+        
+        let transaction = Transaction()
+        transaction.value = 1000.0
+        transaction.type = .incoming
+        transaction.category = category
+        transaction.time = Date()
+        
+        TransactionService.instance.save(transaction)
     }
     
 }

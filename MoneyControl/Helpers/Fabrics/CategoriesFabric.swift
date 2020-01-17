@@ -43,4 +43,9 @@ class CategoriesFabric {
         return Array(CategoriesFabric.initialCategories()[0...15])
     }
     
+    static func startBalanceCategory() -> CategoryViewModel {
+        let category = CategoryViewModel(id: 17, title: "Start Balance", imageType: .startBalance)
+        return category
+    }
+    
 }

@@ -28,6 +28,7 @@ class CategoryViewModel {
         case game
         case fly
         case salary
+        case startBalance
         
         init(rawValue: Int) {
             switch rawValue {
@@ -48,6 +49,7 @@ class CategoryViewModel {
             case 14: self = .game
             case 15: self = .fly
             case 16: self = .salary
+            case 17: self = .startBalance
             default: self = .fuel
             }
         }
@@ -71,6 +73,7 @@ class CategoryViewModel {
             case .game: return UIImage(named: "ic_category_games")!
             case .fly: return UIImage(named: "ic_category_fly")!
             case .salary: return UIImage(named: "ic_category_salary")!
+            case .startBalance: return UIImage(named: "ic_category_launch")!
             }
         }
     }

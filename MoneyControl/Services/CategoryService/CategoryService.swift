@@ -34,7 +34,10 @@ class CategoryService: RealmBasedService {
     
     // MARK: - Private methods
     private func saveBaseCategories() {
-        let incomingCategoriesDB = CategoriesFabric.incomeCategories().map { (categoryViewModel) -> CategoryDB in
+        var categories = CategoriesFabric.incomeCategories()
+        categories.append(CategoriesFabric.startBalanceCategory())
+        
+        let incomingCategoriesDB = categories.map { (categoryViewModel) -> CategoryDB in
             let categoryDb = CategoryDB()
             categoryDb.id = categoryViewModel.id
             categoryDb.title = categoryViewModel.title
