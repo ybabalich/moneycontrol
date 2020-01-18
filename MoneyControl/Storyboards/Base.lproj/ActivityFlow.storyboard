@@ -50,8 +50,8 @@
                                         <inset key="imageEdgeInsets" minX="35" minY="10" maxX="35" maxY="10"/>
                                         <state key="normal" image="ic_check"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-pw-yRM">
-                                        <rect key="frame" x="312" y="16" width="47" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-pw-yRM">
+                                        <rect key="frame" x="242" y="16" width="125" height="18"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -70,10 +70,11 @@
                                     <constraint firstItem="sFm-Ne-ll1" firstAttribute="centerY" secondItem="MZ7-rK-DEH" secondAttribute="centerY" id="2fx-3Q-szr"/>
                                     <constraint firstItem="PUm-g2-JiH" firstAttribute="leading" secondItem="MZ7-rK-DEH" secondAttribute="leading" constant="16" id="3Tp-qE-aVg"/>
                                     <constraint firstAttribute="height" constant="50" id="Bc4-Ok-aMu"/>
-                                    <constraint firstAttribute="trailing" secondItem="EcT-pw-yRM" secondAttribute="trailing" constant="16" id="ZOd-Jd-hmd"/>
+                                    <constraint firstAttribute="trailing" secondItem="EcT-pw-yRM" secondAttribute="trailing" constant="8" id="ZOd-Jd-hmd"/>
                                     <constraint firstItem="EcT-pw-yRM" firstAttribute="centerY" secondItem="MZ7-rK-DEH" secondAttribute="centerY" id="bJC-GW-JUJ"/>
                                     <constraint firstItem="PUm-g2-JiH" firstAttribute="centerY" secondItem="MZ7-rK-DEH" secondAttribute="centerY" id="fOd-2K-uY4"/>
                                     <constraint firstItem="sFm-Ne-ll1" firstAttribute="centerX" secondItem="MZ7-rK-DEH" secondAttribute="centerX" id="rL7-wL-NcX"/>
+                                    <constraint firstItem="EcT-pw-yRM" firstAttribute="leading" secondItem="sFm-Ne-ll1" secondAttribute="trailing" constant="4.5" id="tlG-VX-lha"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -83,6 +83,7 @@ class TransactionService: RealmBasedService {
             try! db.write {
                 transactionDb.categoryId = transaction.category.id
                 transactionDb.value = transaction.value
+                transactionDb.time = transaction.time
             }
         }
     }

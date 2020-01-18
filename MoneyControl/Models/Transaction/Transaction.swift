@@ -66,7 +66,7 @@ class Transaction {
         self.category = Category(viewModel: viewModel.category)
         self.currency = .uah
         self.entity = .cash
-        self.time = Date()
+        self.time = viewModel.createdTime
     }
 }
 

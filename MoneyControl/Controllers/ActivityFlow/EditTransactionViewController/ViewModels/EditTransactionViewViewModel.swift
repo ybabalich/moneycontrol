@@ -49,6 +49,10 @@ class EditTransactionViewViewModel {
         transaction.value = value
         transaction.category = CategoryViewModel(category: Category(id: categoryId))
         
+        if let trasactionDate = transactionDate {
+            transaction.createdTime = trasactionDate
+        }
+        
         let transactionToSave = Transaction(viewModel: transaction)
         TransactionService.instance.update(transactionToSave)
         
