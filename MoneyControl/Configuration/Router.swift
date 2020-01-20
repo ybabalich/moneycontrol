@@ -12,6 +12,9 @@ class Router {
     
     // MARK: - Variables
     var navigationViewController: UINavigationController!
+    var secondaryNavigationViewController: UINavigationController?
+    var lastPushedScreen: UIViewController?
+    var lastPresentedScreen: UIViewController?
     
     // MARK: - Class methods
     static let instance = Router()
@@ -77,6 +80,33 @@ class Router {
     func showYourBalanceScreen() {
         let yourBalanceScreen = AppLaunch.StoryboardFlow.activity(viewController: .yourBalance)
         showScreen(yourBalanceScreen, animated: true)
+    }
+    
+    //general
+    func goBackToController<T>(type: T.Type) -> T? {
+        lastPushedScreen = nil
+        
+        let navigation: UINavigationController = secondaryNavigationViewController != nil ? secondaryNavigationViewController! : navigationViewController
+        
+        var searchController: T?
+        
+        if let presentedViewController = navigation.presentedViewController {
+            presentedViewController.dismiss(animated: true, completion: nil)
+        }
+        
+        navigation.viewControllers.forEach { (controller) in
+            if controller.classForCoder == type {
+                searchController = controller as? T
+            }
+        }
+        
+        if let searchController = searchController {
+            let navViewControllers = navigation.viewControllers
+            let newViewControllers = Array(navViewControllers[0...navViewControllers.firstIndex(of: searchController as! UIViewController)!])
+            navigation.setViewControllers(newViewControllers, animated: true)
+        }
+        
+        return searchController
     }
     
     // MARK: - Private methods
