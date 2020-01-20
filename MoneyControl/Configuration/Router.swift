@@ -83,6 +83,7 @@ class Router {
     }
     
     //general
+    @discardableResult
     func goBackToController<T>(type: T.Type) -> T? {
         lastPushedScreen = nil
         
