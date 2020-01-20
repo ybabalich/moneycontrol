@@ -28,6 +28,8 @@ class CategoryViewModel {
         case game
         case fly
         case salary
+        case transfer
+        case deposit
         case startBalance
         
         init(rawValue: Int) {
@@ -49,7 +51,9 @@ class CategoryViewModel {
             case 14: self = .game
             case 15: self = .fly
             case 16: self = .salary
-            case 17: self = .startBalance
+            case 17: self = .transfer
+            case 18: self = .deposit
+            case 19: self = .startBalance
             default: self = .fuel
             }
         }
@@ -73,6 +77,8 @@ class CategoryViewModel {
             case .game: return UIImage(named: "ic_category_games")!
             case .fly: return UIImage(named: "ic_category_fly")!
             case .salary: return UIImage(named: "ic_category_salary")!
+            case .transfer: return UIImage(named: "ic_category_transfer")!
+            case .deposit: return UIImage(named: "ic_category_deposit")!
             case .startBalance: return UIImage(named: "ic_category_launch")!
             }
         }
@@ -83,6 +89,7 @@ class CategoryViewModel {
     let title: String
     let image: UIImage
     let imageRaw: Int
+    var isVisibleForUser: Bool = true
     
     // MARK: - Initial methods
     init(db: CategoryDB) {

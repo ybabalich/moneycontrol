@@ -25,6 +25,14 @@ class HistoryBottomViewController: BaseViewController {
     private var emptyView: EmptyView = EmptyView.view()
     
     // MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !isFirstLoad {
+            parentViewModel.loadTransactions()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,8 +97,12 @@ class HistoryBottomViewController: BaseViewController {
                                                      indexPath: IndexPath(row: row, section: 0))
             
             cell.apply(viewModel)
-            cell.onTap(completion: { (transaction) in
-                Router.instance.showTransactionsList(transaction.innerTransactions)
+            cell.onTap(completion: { [weak self] (transaction) in
+                guard let strongSelf = self else { return }
+                
+                let historyViewModel = HistoryViewModel(sortCategory: strongSelf.parentViewModel.selectedSortCategory.value,
+                                                        category: transaction.category)
+                Router.instance.showTransactionsList(historyViewModel)
             })
             
             return cell

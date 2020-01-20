@@ -90,6 +90,8 @@
 		D99F685D21AB1E77005EC865 /* RealmBasedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F685C21AB1E77005EC865 /* RealmBasedService.swift */; };
 		D99F686221AB1FEC005EC865 /* CategoryDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F686121AB1FEC005EC865 /* CategoryDB.swift */; };
 		D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F686521AB2356005EC865 /* CategoriesFabric.swift */; };
+		D9AB5DCB23D4D1CC002167D8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DCA23D4D1CC002167D8 /* HistoryViewModel.swift */; };
+		D9AB5DCE23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DCD23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift */; };
 		D9B67548226B225500CC204A /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B67547226B225500CC204A /* ChooseCategoryViewController.swift */; };
 		D9B6754B226B38D400CC204A /* ChooseCategoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6754A226B38D400CC204A /* ChooseCategoryViewViewModel.swift */; };
 		D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6754E226B397A00CC204A /* ChooseCategoryTableViewCell.swift */; };
@@ -207,6 +209,8 @@
 		D99F685C21AB1E77005EC865 /* RealmBasedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBasedService.swift; sourceTree = "<group>"; };
 		D99F686121AB1FEC005EC865 /* CategoryDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDB.swift; sourceTree = "<group>"; };
 		D99F686521AB2356005EC865 /* CategoriesFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFabric.swift; sourceTree = "<group>"; };
+		D9AB5DCA23D4D1CC002167D8 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		D9AB5DCD23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryListViewModel.swift; sourceTree = "<group>"; };
 		D9B67547226B225500CC204A /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
 		D9B6754A226B38D400CC204A /* ChooseCategoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewViewModel.swift; sourceTree = "<group>"; };
 		D9B6754E226B397A00CC204A /* ChooseCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -620,6 +624,7 @@
 		D97A0FF621B9CE20002BCA4C /* TransactionsHistoryListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D9AB5DCC23D4D307002167D8 /* ViewModel */,
 				D97A0FF721B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift */,
 			);
 			path = TransactionsHistoryListViewController;
@@ -833,6 +838,7 @@
 			children = (
 				D964830F2162439400B2D880 /* CategoryViewModel.swift */,
 				D96CE21E21ADD3B40085664A /* TransactionViewModel.swift */,
+				D9AB5DCA23D4D1CC002167D8 /* HistoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -879,6 +885,14 @@
 				D99F686521AB2356005EC865 /* CategoriesFabric.swift */,
 			);
 			path = Fabrics;
+			sourceTree = "<group>";
+		};
+		D9AB5DCC23D4D307002167D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB5DCD23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D9B67546226B223900CC204A /* ChooseCategoryViewController */ = {
@@ -1149,6 +1163,7 @@
 				D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */,
 				D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */,
 				D98E334421B46E41004C66C3 /* EditTransactionAmountView.swift in Sources */,
+				D9AB5DCE23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift in Sources */,
 				D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */,
 				D99F684821AAB399005EC865 /* UITableViewExtenions.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
@@ -1198,6 +1213,7 @@
 				D9FD0E7421AFDFC900A77C8A /* HistoryBottomViewController.swift in Sources */,
 				D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */,
 				D922148021A97DCB00A71CDB /* UICollectionViewExtensions.swift in Sources */,
+				D9AB5DCB23D4D1CC002167D8 /* HistoryViewModel.swift in Sources */,
 				D95D156022672F1600B83AD6 /* UIScreenExtensions.swift in Sources */,
 				D95CF26A21577A9A001BEF1F /* UIColorExtensions.swift in Sources */,
 				D95D155E2266823600B83AD6 /* StringExtensions.swift in Sources */,

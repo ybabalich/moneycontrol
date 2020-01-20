@@ -43,11 +43,10 @@ class EditTransactionViewViewModel {
         _transaction.value = transaction
     }
     
-    func updateTransaction(value: Double, categoryId: Int) {
+    func updateTransaction(value: Double) {
         guard let transaction = _transaction.value else { return }
         
         transaction.value = value
-        transaction.category = CategoryViewModel(category: Category(id: categoryId))
         
         if let trasactionDate = transactionDate {
             transaction.createdTime = trasactionDate

@@ -47,7 +47,6 @@ class ActivityTopViewController: BaseViewController {
     // MARK: - Private methods
     private func setup() {
         sumTextField.isHidden = true
-        baseContentView.applyFullyRounded(15)
     }
     
     private func setupViewModel() {

@@ -15,5 +15,6 @@ class CategoryDB: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var imageType: Int = 0
     @objc dynamic var type: Int = 0
+    @objc dynamic var isVisibleForUser: Bool = true
     
 }

@@ -109,6 +109,64 @@ class TransactionService: RealmBasedService {
         }
     }
     
+    //sorting
+    func sortedByGroups(transactions: [Transaction], completion: ([TransactionViewModel]) -> Void) {
+        let handler: ([Transaction]) -> [TransactionViewModel] = { (transactionsDb) in
+            var transactions: [TransactionViewModel] = []
+            
+            // all transactions grouped by transaction types Incoming/Outcoming (2 keys)
+            let groupedTransactionsByType = Dictionary(grouping: transactionsDb, by: { (transaction) -> Transaction.TransactionType in
+                return transaction.type
+            })
+            
+            // each transactions in values grouped by category id
+            
+            //incoming
+            var incomesGroupedByCategory: [Category: [Transaction]] = [:]
+            if let incomesValues = groupedTransactionsByType[Transaction.TransactionType.incoming] {
+                incomesGroupedByCategory = Dictionary(grouping: incomesValues, by: { (transaction) -> Category in
+                    return transaction.category
+                })
+            }
+            
+            //outcoming
+            var outcomesGroupedByCategory: [Category: [Transaction]] = [:]
+            if let outcomesValues = groupedTransactionsByType[Transaction.TransactionType.outcoming] {
+                outcomesGroupedByCategory = Dictionary(grouping: outcomesValues, by: { (transaction) -> Category in
+                    return transaction.category
+                })
+            }
+            
+            incomesGroupedByCategory.keys.forEach({ (category) in
+                let transaction = Transaction()
+                transaction.id = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
+                transaction.value = incomesGroupedByCategory[category]!.map({ $0.value }).reduce(0, +)
+                transaction.type = .incoming
+                transaction.category = category
+                transaction.time = Date()
+                transaction.innerTransactions = incomesGroupedByCategory[category]
+                
+                transactions.append(TransactionViewModel(transaction: transaction))
+            })
+            
+            outcomesGroupedByCategory.keys.forEach({ (category) in
+                let transaction = Transaction()
+                transaction.id = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
+                transaction.value = outcomesGroupedByCategory[category]!.map({ $0.value }).reduce(0, +)
+                transaction.type = .outcoming
+                transaction.category = category
+                transaction.time = Date()
+                transaction.innerTransactions = outcomesGroupedByCategory[category]
+                
+                transactions.append(TransactionViewModel(transaction: transaction))
+            })
+            
+            return transactions
+        }
+        
+        completion(handler(transactions))
+    }
+    
     // MARK: - Private methods
     private func fetchTransactions(from date1: Date,
                                    to date2: Date,

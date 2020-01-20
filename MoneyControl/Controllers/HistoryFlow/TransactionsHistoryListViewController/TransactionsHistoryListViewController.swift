@@ -14,13 +14,30 @@ class TransactionsHistoryListViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Variables public
-    let transactions = Variable<[TransactionViewModel]>([])
+    var historyViewModel: HistoryViewModel? {
+        didSet {
+            if let historyViewModel = historyViewModel {
+                viewModel.historyViewModel = historyViewModel
+            }
+        }
+    }
+    
+    // MARK: - Varaibles private
+    private let viewModel = TransactionsHistoryListViewModel()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !isFirstLoad {
+            reloadData()
+        }
     }
     
     // MARK: - Private methods
@@ -37,7 +54,7 @@ class TransactionsHistoryListViewController: BaseViewController {
         tableView.registerNib(type: TodayHistoryTableViewCell.self)
         tableView.tableFooterView = UIView(frame: .zero)
         
-        transactions.asObservable().bind(to: tableView.rx.items)
+        viewModel.transactions.asObservable().bind(to: tableView.rx.items)
         { (tableView, row, viewModel) in
             let cell = tableView.dequeueReusableCell(type: TodayHistoryTableViewCell.self,
                                                      indexPath: IndexPath(row: row, section: 0))
@@ -49,6 +66,12 @@ class TransactionsHistoryListViewController: BaseViewController {
             
             return cell
         }.disposed(by: disposeBag)
+        
+        viewModel.loadData()
+    }
+    
+    private func reloadData() {
+        viewModel.loadData()
     }
 
 }

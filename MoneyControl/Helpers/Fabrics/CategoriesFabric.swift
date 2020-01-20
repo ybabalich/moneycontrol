@@ -28,23 +28,27 @@ class CategoriesFabric {
         let travel = CategoryViewModel(id: 13, title: "Travel", imageType: .travel)
         let game = CategoryViewModel(id: 14, title: "Game", imageType: .game)
         let fly = CategoryViewModel(id: 15, title: "Fly", imageType: .fly)
-        let salary = CategoryViewModel(id: 16, title: "Salary", imageType: .salary)
+        let transfer = CategoryViewModel(id: 16, title: "Transfer", imageType: .transfer)
+        let salary = CategoryViewModel(id: 17, title: "Salary", imageType: .salary)
+        let deposit = CategoryViewModel(id: 18, title: "Deposit", imageType: .deposit)
+        let startBalance = CategoryViewModel(id: 19, title: "Start Balance", imageType: .startBalance)
         
         return [fuel, car, shopping, food, coffee,
                 payments, spa, gym, pharmacy, rent,
-                restaurant, train, smoke, travel, game, fly, salary]
+                restaurant, train, smoke, travel, game, fly, transfer, salary, deposit, startBalance]
     }
     
     static func incomeCategories() -> [CategoryViewModel] {
-        return [CategoriesFabric.initialCategories()[16]]
+        return Array(CategoriesFabric.initialCategories()[17...18])
     }
     
     static func expenseCategories() -> [CategoryViewModel] {
-        return Array(CategoriesFabric.initialCategories()[0...15])
+        return Array(CategoriesFabric.initialCategories()[0...16])
     }
     
     static func startBalanceCategory() -> CategoryViewModel {
-        let category = CategoryViewModel(id: 17, title: "Start Balance", imageType: .startBalance)
+        let category = CategoryViewModel(id: 19, title: "Start Balance", imageType: .startBalance)
+        category.isVisibleForUser = false
         return category
     }
     

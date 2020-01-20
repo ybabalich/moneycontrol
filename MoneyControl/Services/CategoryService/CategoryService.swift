@@ -21,7 +21,7 @@ class CategoryService: RealmBasedService {
             settings.baseCategoriesAdded = true
         }
         
-        let filter = NSPredicate(format: "type == %d", argumentArray: [type.rawValue])
+        let filter = NSPredicate(format: "type == %d && isVisibleForUser == true", argumentArray: [type.rawValue])
         completion(db.objects(CategoryDB.self).filter(filter).map({ CategoryViewModel(db: $0) }))
     }
     
@@ -43,6 +43,7 @@ class CategoryService: RealmBasedService {
             categoryDb.title = categoryViewModel.title
             categoryDb.imageType = categoryViewModel.imageRaw
             categoryDb.type = Transaction.TransactionType.incoming.rawValue
+            categoryDb.isVisibleForUser = categoryViewModel.isVisibleForUser
             return categoryDb
         }
         
@@ -52,6 +53,7 @@ class CategoryService: RealmBasedService {
             categoryDb.title = categoryViewModel.title
             categoryDb.imageType = categoryViewModel.imageRaw
             categoryDb.type = Transaction.TransactionType.outcoming.rawValue
+            categoryDb.isVisibleForUser = categoryViewModel.isVisibleForUser
             return categoryDb
         }
         

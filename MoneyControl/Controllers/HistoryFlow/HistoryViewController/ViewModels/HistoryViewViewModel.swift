@@ -34,6 +34,27 @@ class HistoryViewViewModel {
         loadTransactions()
     }
     
+    func loadTransactions() {
+        let service = TransactionService.instance
+        
+        let operateWithTransactions: ([Transaction]) -> Void = { (transactions) in
+            service.sortedByGroups(transactions: transactions) { (transactionsViewModels) in
+                self.transactions.value = transactionsViewModels
+                self.calculateStatisticsValues()
+            }
+        }
+        
+        switch selectedSortCategory.value.sortType {
+        case .day:
+            service.fetchTodayTransactions(type: nil, completion: operateWithTransactions)
+        case .week:
+            service.fetchWeekTransactions(type: nil, completion: operateWithTransactions)
+        case .month:
+            service.fetchMonthTransactions(type: nil, completion: operateWithTransactions)
+        default: operateWithTransactions([])
+        }
+    }
+    
     func removeInnerTransactions(_ viewModel: TransactionViewModel) {
         TransactionService.instance.removeTransactions(viewModel.innerTransactions.map({ $0.id }))
         transactions.value = transactions.value.filter({ $0.id != viewModel.id })
@@ -46,75 +67,6 @@ class HistoryViewViewModel {
         let weakCategory = HistorySortCategoryViewModel(sort: .week)
         let monthCategory = HistorySortCategoryViewModel(sort: .month)
         return [dayCategory, weakCategory, monthCategory]
-    }
-    
-    private func loadTransactions() {
-        
-        let service = TransactionService.instance
-        
-        let handler: ([Transaction]) -> Void = { (transactionsDb) in
-            var transactions: [TransactionViewModel] = []
-            
-            // all transactions grouped by transaction types Incoming/Outcoming (2 keys)
-            let groupedTransactionsByType = Dictionary(grouping: transactionsDb, by: { (transaction) -> Transaction.TransactionType in
-                return transaction.type
-            })
-            
-            // each transactions in values grouped by category id
-            
-            //incoming
-            var incomesGroupedByCategory: [Category: [Transaction]] = [:]
-            if let incomesValues = groupedTransactionsByType[Transaction.TransactionType.incoming] {
-                incomesGroupedByCategory = Dictionary(grouping: incomesValues, by: { (transaction) -> Category in
-                    return transaction.category
-                })
-            }
-            
-            //outcoming
-            var outcomesGroupedByCategory: [Category: [Transaction]] = [:]
-            if let outcomesValues = groupedTransactionsByType[Transaction.TransactionType.outcoming] {
-                outcomesGroupedByCategory = Dictionary(grouping: outcomesValues, by: { (transaction) -> Category in
-                    return transaction.category
-                })
-            }
-            
-            incomesGroupedByCategory.keys.forEach({ (category) in
-                let transaction = Transaction()
-                transaction.id = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
-                transaction.value = incomesGroupedByCategory[category]!.map({ $0.value }).reduce(0, +)
-                transaction.type = .incoming
-                transaction.category = category
-                transaction.time = Date()
-                transaction.innerTransactions = incomesGroupedByCategory[category]
-                
-                transactions.append(TransactionViewModel(transaction: transaction))
-            })
-            
-            outcomesGroupedByCategory.keys.forEach({ (category) in
-                let transaction = Transaction()
-                transaction.id = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
-                transaction.value = outcomesGroupedByCategory[category]!.map({ $0.value }).reduce(0, +)
-                transaction.type = .outcoming
-                transaction.category = category
-                transaction.time = Date()
-                transaction.innerTransactions = outcomesGroupedByCategory[category]
-                
-                transactions.append(TransactionViewModel(transaction: transaction))
-            })
-            
-            self.transactions.value = transactions
-            self.calculateStatisticsValues()
-        }
-        
-        switch selectedSortCategory.value.sortType {
-        case .day:
-            service.fetchTodayTransactions(type: nil, completion: handler)
-        case .week:
-            service.fetchWeekTransactions(type: nil, completion: handler)
-        case .month:
-            service.fetchMonthTransactions(type: nil, completion: handler)
-        default: handler([])
-        }
     }
     
     private func calculateStatisticsValues() {
