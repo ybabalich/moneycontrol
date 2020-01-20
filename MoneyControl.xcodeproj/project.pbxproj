@@ -92,6 +92,10 @@
 		D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F686521AB2356005EC865 /* CategoriesFabric.swift */; };
 		D9AB5DCB23D4D1CC002167D8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DCA23D4D1CC002167D8 /* HistoryViewModel.swift */; };
 		D9AB5DCE23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DCD23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift */; };
+		D9AB5DD723D64D4D002167D8 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DD623D64D4D002167D8 /* LocalizationService.swift */; };
+		D9AB5DDA23D64D75002167D8 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DD923D64D75002167D8 /* en.strings */; };
+		D9AB5DDF23D64F8D002167D8 /* uk.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DDE23D64F8D002167D8 /* uk.strings */; };
+		D9AB5DE123D64F9A002167D8 /* ru.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DE023D64F9A002167D8 /* ru.strings */; };
 		D9B67548226B225500CC204A /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B67547226B225500CC204A /* ChooseCategoryViewController.swift */; };
 		D9B6754B226B38D400CC204A /* ChooseCategoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6754A226B38D400CC204A /* ChooseCategoryViewViewModel.swift */; };
 		D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6754E226B397A00CC204A /* ChooseCategoryTableViewCell.swift */; };
@@ -211,6 +215,10 @@
 		D99F686521AB2356005EC865 /* CategoriesFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFabric.swift; sourceTree = "<group>"; };
 		D9AB5DCA23D4D1CC002167D8 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		D9AB5DCD23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryListViewModel.swift; sourceTree = "<group>"; };
+		D9AB5DD623D64D4D002167D8 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
+		D9AB5DD923D64D75002167D8 /* en.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
+		D9AB5DDE23D64F8D002167D8 /* uk.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = uk.strings; sourceTree = "<group>"; };
+		D9AB5DE023D64F9A002167D8 /* ru.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ru.strings; sourceTree = "<group>"; };
 		D9B67547226B225500CC204A /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
 		D9B6754A226B38D400CC204A /* ChooseCategoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewViewModel.swift; sourceTree = "<group>"; };
 		D9B6754E226B397A00CC204A /* ChooseCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -850,6 +858,7 @@
 				D99F685921AB1D8C005EC865 /* CategoryService */,
 				D96CE21821ADCDBF0085664A /* TransactionService */,
 				D9F87B5222651994005CCFD5 /* DateService */,
+				D9AB5DD523D64D33002167D8 /* LocalizationService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -893,6 +902,25 @@
 				D9AB5DCD23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D9AB5DD523D64D33002167D8 /* LocalizationService */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB5DD623D64D4D002167D8 /* LocalizationService.swift */,
+				D9AB5DD823D64D5C002167D8 /* LocalizedFiles */,
+			);
+			path = LocalizationService;
+			sourceTree = "<group>";
+		};
+		D9AB5DD823D64D5C002167D8 /* LocalizedFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB5DD923D64D75002167D8 /* en.strings */,
+				D9AB5DDE23D64F8D002167D8 /* uk.strings */,
+				D9AB5DE023D64F9A002167D8 /* ru.strings */,
+			);
+			path = LocalizedFiles;
 			sourceTree = "<group>";
 		};
 		D9B67546226B223900CC204A /* ChooseCategoryViewController */ = {
@@ -1081,6 +1109,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AB5DDF23D64F8D002167D8 /* uk.strings in Resources */,
 				D9B67551226B397A00CC204A /* ChooseCategoryTableViewCell.xib in Resources */,
 				D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */,
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
@@ -1096,6 +1125,8 @@
 				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
 				D98E334621B46E56004C66C3 /* EditTransactionAmountView.xib in Resources */,
 				D98E334B21B470DB004C66C3 /* EditTransactionCategoryView.xib in Resources */,
+				D9AB5DE123D64F9A002167D8 /* ru.strings in Resources */,
+				D9AB5DDA23D64D75002167D8 /* en.strings in Resources */,
 				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
 				D95D153C22667B4A00B83AD6 /* ActivityFlow.storyboard in Resources */,
 				D99F685521AAD630005EC865 /* HistoryTopCollectionViewCell.xib in Resources */,
@@ -1165,6 +1196,7 @@
 				D98E334421B46E41004C66C3 /* EditTransactionAmountView.swift in Sources */,
 				D9AB5DCE23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift in Sources */,
 				D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */,
+				D9AB5DD723D64D4D002167D8 /* LocalizationService.swift in Sources */,
 				D99F684821AAB399005EC865 /* UITableViewExtenions.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
 				D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */,

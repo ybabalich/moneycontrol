@@ -6,21 +6,7 @@
   Copyright © 2019 PxToday. All rights reserved.
 */
 
-"Today" = "Cегодня";
-"Total" = "Всего";
 
-// history screen
-"History" = "История";
-"Haven't transactions" = "Транзакций нет";
-"Add new transaction" = "Добавить транзакцию";
-"Day" = "День";
-"Week" = "Неделя";
-"Month" = "Месяц";
-
-"Remove" = "Удалить";
-
-// categories
-"Fuel" = "Топлево";
 
 
 

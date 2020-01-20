@@ -9,7 +9,13 @@
 import Foundation
 
 extension String {
+    
     var localized: String {
-        return NSLocalizedString(self, comment: "")
+        let service = LocalizationService.instance
+        if let value = service.getDictionaryForLanguage(service.preferredLanguage())[self] {
+            return value
+        }
+        return ""
     }
+    
 }
