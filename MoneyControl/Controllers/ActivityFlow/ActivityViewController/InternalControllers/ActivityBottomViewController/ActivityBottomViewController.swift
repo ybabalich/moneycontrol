@@ -11,7 +11,15 @@ import UIKit
 class ActivityBottomViewController: BaseViewController {
 
     // MARK: - Outlets
-    @IBOutlet var butons: [UIButton]!
+    @IBOutlet var butons: [UIButton]! {
+        didSet {
+            butons.forEach { (button) in
+                if button.tag == 11 { //clear button
+                    button.setTitle("Clear".localized, for: .normal)
+                }
+            }
+        }
+    }
     @IBOutlet weak var baseContentView: UIView!
     
     // MARK: - Variables public

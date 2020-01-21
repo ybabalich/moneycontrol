@@ -83,7 +83,7 @@ class ManageCategoriesViewController: BaseViewController {
 
 extension ManageCategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Remove") { [unowned self] (action, indexPath) in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Remove".localized) { [unowned self] (action, indexPath) in
             let category = self.viewModel.categories.value[indexPath.row]
             self.viewModel.removeCategory(category)
         }

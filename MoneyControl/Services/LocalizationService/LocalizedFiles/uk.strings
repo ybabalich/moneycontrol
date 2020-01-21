@@ -1,13 +1,19 @@
 /* 
-  Localizable.strings
+  uk.strings
   MoneyControl
 
-  Created by Yaroslav Babalich on 4/17/19.
-  Copyright © 2019 PxToday. All rights reserved.
+  Created by Yaroslav Babalich on 20.01.2020.
+  Copyright © 2020 PxToday. All rights reserved.
 */
 
 "Today" = "Cьогодні";
 "Total" = "Усього";
+"Clear" = "Відчистити";
+"Choose your currency" = "Виберіть Вашу валюту";
+"Your Balance" = "Ваш баланс:";
+"Balance" = "Баланс:";
+"Back" = "Назад";
+"Remove" = "Видалити";
 
 // history screen
 "History" = "Історія";
@@ -19,8 +25,6 @@
 
 // activity screen
 "Activity" = "Активність";
-
-"Outcoming" = "Витрати";
 "Add new activity" = "Додати нову активність";
 "Haven't activities today" = "Сьогодні немає активності";
 
@@ -33,23 +37,22 @@
 "Transactions list" = "Список транзакцій";
 
 // general
-"Expense" = "Витрати";
-"Incoming" = "Надходження";
+"Spending" = "Витрати";
+"Revenues" = "Надходження";
 "Edit" = "Редагування";
-"Remove" = "Видалити";
 "Done" = "Готово";
 "Cancel" = "Відмінити";
 
 // categories
+"Choose Category" = "Виберіть Категорію";
+
 "Fuel" = "Паливо";
 "Car" = "Машина";
 "Shopping" = "Покупки";
 "Food" = "Їжа";
 "Coffee" = "Кава";
-"Coffee" = "Кава";
 "Payments" = "Платежі";
 "Spa" = "Відпочинок";
-"Gym" = "Спортзал";
 "Gym" = "Спортзал";
 "Pharmacy" = "Аптека";
 "Rent" = "Оренда";
@@ -60,4 +63,6 @@
 "Game" = "Ігри";
 "Fly" = "Літак";
 "Salary" = "Зарплата";
-"StartBalance" = "Стартовый баланс";
+"Start Balance" = "Стартовый баланс";
+"Transfer" = "Переведення";
+"Deposit" = "Депозит";

@@ -1,0 +1,68 @@
+/* 
+  ru.strings
+  MoneyControl
+
+  Created by Yaroslav Babalich on 20.01.2020.
+  Copyright © 2020 PxToday. All rights reserved.
+*/
+
+"Today" = "Cегодня";
+"Total" = "Всего";
+"Clear" = "Отчистить";
+"Choose your currency" = "Выберите Вашу валюту";
+"Your Balance" = "Ваш баланс:";
+"Balance" = "Баланс:";
+"Назад" = "Назад";
+"Remove" = "Удалить";
+
+// history screen
+"History" = "История";
+"Haven't transactions" = "Транзакции отсутствуют";
+"Add new transaction" = "Добавить транзакцию";
+"Day" = "День";
+"Week" = "Неделя";
+"Month" = "Месяц";
+
+// activity screen
+"Activity" = "Активность";
+"Add new activity" = "Добавить активность";
+"Haven't activities today" = "Активности отсутствуют";
+
+// edit expense screen
+"Amount" = "Сумма";
+"Category" = "Категория";
+"Date" = "Дата";
+
+// transactions list screen
+"Transactions list" = "Список транзакций";
+
+// general
+"Spending" = "Траты";
+"Revenues" = "Поступления";
+"Edit" = "Редактировать";
+"Done" = "Выполнено";
+"Cancel" = "Отмена";
+
+// categories
+"Choose Category" = "Выберите категорию";
+
+"Fuel" = "Топливо";
+"Car" = "Машина";
+"Shopping" = "Покупка";
+"Food" = "Еда";
+"Coffee" = "Кофе";
+"Payments" = "Платежи";
+"Spa" = "Спа";
+"Gym" = "Спортзал";
+"Pharmacy" = "Аптека";
+"Rent" = "Аренда";
+"Restaurant" = "Ресторан";
+"Train" = "Поезд";
+"Smoke" = "Курение";
+"Travel" = "Путешествия";
+"Game" = "Игры";
+"Fly" = "Полеты";
+"Salary" = "Зарплата";
+"Start Balance" = "Стартовый баланс";
+"Transfer" = "Трансфер";
+"Deposit" = "Депозит";
