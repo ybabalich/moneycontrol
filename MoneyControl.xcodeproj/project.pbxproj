@@ -96,6 +96,8 @@
 		D9AB5DDA23D64D75002167D8 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DD923D64D75002167D8 /* en.strings */; };
 		D9AB5DDF23D64F8D002167D8 /* uk.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DDE23D64F8D002167D8 /* uk.strings */; };
 		D9AB5DE123D64F9A002167D8 /* ru.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DE023D64F9A002167D8 /* ru.strings */; };
+		D9AB5DEB23D77FD2002167D8 /* SettingsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DEA23D77FD2002167D8 /* SettingsFlow.storyboard */; };
+		D9AB5DEE23D7813A002167D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DED23D7813A002167D8 /* SettingsViewController.swift */; };
 		D9B67548226B225500CC204A /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B67547226B225500CC204A /* ChooseCategoryViewController.swift */; };
 		D9B6754B226B38D400CC204A /* ChooseCategoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6754A226B38D400CC204A /* ChooseCategoryViewViewModel.swift */; };
 		D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6754E226B397A00CC204A /* ChooseCategoryTableViewCell.swift */; };
@@ -204,6 +206,8 @@
 		D9AB5DE323D70B6F002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9AB5DE423D70B6F002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/CategoryFlow.storyboard; sourceTree = "<group>"; };
 		D9AB5DE523D70B73002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/HistoryFlow.storyboard; sourceTree = "<group>"; };
+		D9AB5DEA23D77FD2002167D8 /* SettingsFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsFlow.storyboard; sourceTree = "<group>"; };
+		D9AB5DED23D7813A002167D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D9B67547226B225500CC204A /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
 		D9B6754A226B38D400CC204A /* ChooseCategoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewViewModel.swift; sourceTree = "<group>"; };
 		D9B6754E226B397A00CC204A /* ChooseCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 				D95D153E22667B4A00B83AD6 /* ActivityFlow.storyboard */,
 				D95D154D22667D9D00B83AD6 /* HistoryFlow.storyboard */,
 				D95D155622667E6600B83AD6 /* CategoryFlow.storyboard */,
+				D9AB5DEA23D77FD2002167D8 /* SettingsFlow.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				D9FD0E6E21AFDA6700A77C8A /* HistoryFlow */,
 				D9FD0E6D21AFDA5A00A77C8A /* ActivityFlow */,
 				D98E335121B546B5004C66C3 /* CategoryFlow */,
+				D9AB5DE923D77FB8002167D8 /* SettingsFlow */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -908,6 +914,22 @@
 			path = LocalizedFiles;
 			sourceTree = "<group>";
 		};
+		D9AB5DE923D77FB8002167D8 /* SettingsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB5DEC23D78127002167D8 /* SettingsViewController */,
+			);
+			path = SettingsFlow;
+			sourceTree = "<group>";
+		};
+		D9AB5DEC23D78127002167D8 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB5DED23D7813A002167D8 /* SettingsViewController.swift */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
 		D9B67546226B223900CC204A /* ChooseCategoryViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1114,6 +1136,7 @@
 				D99F685521AAD630005EC865 /* HistoryTopCollectionViewCell.xib in Resources */,
 				D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */,
 				D98E335D21B54BC5004C66C3 /* ManagedCategoryTableViewCell.xib in Resources */,
+				D9AB5DEB23D77FD2002167D8 /* SettingsFlow.storyboard in Resources */,
 				D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */,
 				D95CF261215775FF001BEF1F /* Lato-Light.ttf in Resources */,
 			);
@@ -1166,6 +1189,7 @@
 			files = (
 				D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */,
 				D94ADB2C21B186A700D94F0F /* EmptyView.swift in Sources */,
+				D9AB5DEE23D7813A002167D8 /* SettingsViewController.swift in Sources */,
 				D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */,
 				D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */,
 				D95CF26521577826001BEF1F /* PinCircleView.swift in Sources */,

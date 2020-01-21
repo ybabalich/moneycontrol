@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FB9-Y8-bLb">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="mL1-0Y-MNB">
+            <objects>
+                <viewController id="FB9-Y8-bLb" customClass="SettingsViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hkK-P9-u1R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbX-bu-mFb">
+                                <rect key="frame" x="170" y="624" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="TR8-iv-pUU"/>
+                                    <constraint firstAttribute="height" constant="35" id="lmp-Bt-xBz"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_close"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HYe-5e-MRJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="616"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="e8C-xE-rDR" firstAttribute="bottom" secondItem="mbX-bu-mFb" secondAttribute="bottom" constant="8" id="F82-6w-xpb"/>
+                            <constraint firstItem="HYe-5e-MRJ" firstAttribute="top" secondItem="e8C-xE-rDR" secondAttribute="top" id="K7I-8f-TJm"/>
+                            <constraint firstItem="e8C-xE-rDR" firstAttribute="trailing" secondItem="HYe-5e-MRJ" secondAttribute="trailing" id="PPP-3L-BeY"/>
+                            <constraint firstItem="mbX-bu-mFb" firstAttribute="centerX" secondItem="e8C-xE-rDR" secondAttribute="centerX" id="gD7-8g-P1y"/>
+                            <constraint firstItem="mbX-bu-mFb" firstAttribute="top" secondItem="HYe-5e-MRJ" secondAttribute="bottom" constant="8" id="itn-bf-Djo"/>
+                            <constraint firstItem="HYe-5e-MRJ" firstAttribute="leading" secondItem="e8C-xE-rDR" secondAttribute="leading" id="uZ6-Fs-Ruz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e8C-xE-rDR"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeBtn" destination="mbX-bu-mFb" id="j8n-0I-MeW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="id8-au-A1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_close" width="44" height="44"/>
+    </resources>
+</document>

@@ -80,6 +80,12 @@ class Router: NSObject {
         showScreen(chooseCategoryFlow, animated: true)
     }
     
+    // MARK: - Settings
+    func showSettingsScreen() {
+        let settingsFlow = AppLaunch.StoryboardFlow.settings(viewController: .base)
+        showScreen(settingsFlow, animated: true)
+    }
+    
     //startup screens
     func showYourBalanceScreen() {
         let yourBalanceScreen = AppLaunch.StoryboardFlow.activity(viewController: .yourBalance)

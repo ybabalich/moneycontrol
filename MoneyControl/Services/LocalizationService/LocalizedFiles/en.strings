@@ -15,6 +15,9 @@
 "Back" = "Back";
 "Remove" = "Remove";
 
+//setting
+"Settings" = "Settings";
+
 // history screen
 "History" = "History";
 "Haven't transactions" = "Haven't transactions";

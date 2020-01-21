@@ -50,9 +50,14 @@ class AppLaunch {
             case chooseCategory = "ChooseCategoryViewController"
         }
         
+        enum Settings: String {
+            case base = "SettingsViewController"
+        }
+        
         case activity(viewController: Activity)
         case history(viewController: History)
         case category(viewController: Category)
+        case settings(viewController: Settings)
     }
     
     // MARK: - Public methods
@@ -81,6 +86,10 @@ extension AppLaunch.StoryboardFlow {
             return StoryboardFlowData(storyboardName: "CategoryFlow",
                                       controllerName: controller.rawValue,
                                       isInitial: false)
+        case .settings(viewController: let controller):
+        return StoryboardFlowData(storyboardName: "SettingsFlow",
+                                  controllerName: controller.rawValue,
+                                  isInitial: controller == .base ? true : false)
         }
     }
 }

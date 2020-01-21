@@ -15,6 +15,9 @@
 "Back" = "Назад";
 "Remove" = "Видалити";
 
+//setting
+"Settings" = "Налаштування";
+
 // history screen
 "History" = "Історія";
 "Haven't transactions" = "Транзакції відсутні";
