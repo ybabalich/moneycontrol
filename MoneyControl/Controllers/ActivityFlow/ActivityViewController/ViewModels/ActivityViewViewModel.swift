@@ -51,7 +51,7 @@ class ActivityViewViewModel {
             }
         }).disposed(by: disposeBag)
         
-        _transactionValue.asObservable().map { $0.count > 0 }.bind(to: isActiveDoneButton).disposed(by: disposeBag)
+        _transactionValue.asObservable().map { $0.numeric != 0.0 }.bind(to: isActiveDoneButton).disposed(by: disposeBag)
     }
     
     // MARK: - Public methods
@@ -75,7 +75,6 @@ class ActivityViewViewModel {
     }
     
     func keyboardValue(_ type: KeyboardButtonType) {
-        
         switch type {
         case .zero: _transactionValue.value.append("0")
         case .one: _transactionValue.value.append("1")
@@ -104,7 +103,7 @@ class ActivityViewViewModel {
         let category = Category(viewModel: selectedCategory)
         
         let transaction = Transaction()
-        transaction.value = Double(_transactionValue.value)!
+        transaction.value = _transactionValue.value.numeric
         transaction.type = _transactionType.value
         transaction.category = category
         transaction.time = Date()

@@ -15,6 +15,7 @@ class YourBalanceViewViewModel {
     let isActiveSaveBtn = Variable<Bool>(false)
     
     // MARK: - Private methods
+    private var balanceValue: Double = 0.0
     private let disposeBag = DisposeBag()
     
     // MARK: - Initializers
@@ -24,7 +25,10 @@ class YourBalanceViewViewModel {
     
     // MARK: - Public methods
     func loadData(balanceObs: Observable<String>) {
-        balanceObs.map { $0.count > 0 }.bind(to: isActiveSaveBtn).disposed(by: disposeBag)
+        balanceObs.asObservable().subscribe(onNext: { (value) in
+            self.balanceValue = value.numeric
+        }).disposed(by: disposeBag)
+        balanceObs.map { $0.numeric != 0 }.bind(to: isActiveSaveBtn).disposed(by: disposeBag)
     }
     
     func currencySymbol() -> String {
@@ -41,7 +45,7 @@ class YourBalanceViewViewModel {
         let category = Category(viewModel: CategoriesFabric.startBalanceCategory())
         
         let transaction = Transaction()
-        transaction.value = 1000.0
+        transaction.value = balanceValue
         transaction.type = .incoming
         transaction.category = category
         transaction.time = Date()

@@ -67,6 +67,12 @@ class AppDelegate: UIResponder {
         
         navigationController.navigationBar.applyWhiteBackground()
         
+        navigationController.navigationBar.titleTextAttributes =
+                [NSAttributedString.Key.foregroundColor: UIColor(hex: 0x525252),
+                 NSAttributedString.Key.font: App.Font.main(size: 16, type: .bold).rawValue]
+        
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.classForCoder() as! UIAppearanceContainer.Type]).setTitleTextAttributes([NSAttributedString.Key.font: App.Font.main(size: 17, type: .light).rawValue], for: .normal)
+        
         Router.instance.navigationViewController = navigationController
         Router.instance.navigationViewController.isNavigationBarHidden = flowDataToShow == .activity(viewController: .chooseCurrency)
         

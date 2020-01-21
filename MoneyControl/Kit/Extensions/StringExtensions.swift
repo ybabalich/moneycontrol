@@ -18,4 +18,9 @@ extension String {
         return ""
     }
     
+    var numeric: Double {
+        let replacedString = self.replacingOccurrences(of: ",", with: ".")
+        return Double(replacedString) ?? 0.0
+    }
+    
 }

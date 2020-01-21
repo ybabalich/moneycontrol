@@ -8,10 +8,14 @@
 
 import UIKit
 
-class Router {
+class Router: NSObject {
     
     // MARK: - Variables
-    var navigationViewController: UINavigationController!
+    var navigationViewController: UINavigationController! {
+        didSet {
+            navigationViewController.delegate = self
+        }
+    }
     var secondaryNavigationViewController: UINavigationController?
     var lastPushedScreen: UIViewController?
     var lastPresentedScreen: UIViewController?
@@ -141,4 +145,18 @@ class Router {
         return flowOfController
     }
     
+}
+
+extension Router: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController, animated: Bool)
+    {
+        let backButton = UIBarButtonItem(
+            title: "Back".localized,
+            style: .done,
+            target: nil,
+            action: nil
+        )
+        navigationController.navigationBar.topItem?.backBarButtonItem = backButton
+    }
 }
