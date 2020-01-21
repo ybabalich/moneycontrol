@@ -246,12 +246,15 @@
                     <connections>
                         <outlet property="balanceInfoContentView" destination="NV7-d1-SVE" id="rYY-Xt-9On"/>
                         <outlet property="balanceLabel" destination="mBT-qs-gQJ" id="1Fa-gl-dKG"/>
+                        <outlet property="balanceStaticLabel" destination="1qj-jz-Bj9" id="7Fx-sz-Zw6"/>
                         <outlet property="collectionView" destination="32W-40-7dI" id="Y7l-U0-cho"/>
                         <outlet property="currencyBalanceLabel" destination="fl0-XS-swk" id="wL9-X7-yEh"/>
                         <outlet property="currencyExpenseLabel" destination="BOG-u0-gul" id="lUx-LE-1Ma"/>
                         <outlet property="currencyIncomeLabel" destination="PTu-eb-1jN" id="ngD-BG-q4Z"/>
                         <outlet property="incomesLabel" destination="fTi-8T-Jav" id="rEd-xf-clH"/>
+                        <outlet property="incomesStaticLabel" destination="km7-OP-rV5" id="aC8-qC-RIK"/>
                         <outlet property="outcomesLabel" destination="nNm-ft-yYi" id="zir-tx-cBC"/>
+                        <outlet property="outcomesStaticLabel" destination="Jwa-3W-rHn" id="Ltq-SR-1Qw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzj-yQ-Ygx" userLabel="First Responder" sceneMemberID="firstResponder"/>

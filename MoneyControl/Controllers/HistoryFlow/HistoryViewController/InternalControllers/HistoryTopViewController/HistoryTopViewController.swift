@@ -12,8 +12,23 @@ class HistoryTopViewController: BaseViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var balanceStaticLabel: UILabel! {
+        didSet {
+            balanceStaticLabel.text = "Balance".localized
+        }
+    }
     @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var incomesStaticLabel: UILabel! {
+        didSet {
+            incomesStaticLabel.text = "Revenues".localized.uppercased()
+        }
+    }
     @IBOutlet weak var incomesLabel: UILabel!
+    @IBOutlet weak var outcomesStaticLabel: UILabel! {
+        didSet {
+            outcomesStaticLabel.text = "Spending".localized.uppercased()
+        }
+    }
     @IBOutlet weak var outcomesLabel: UILabel!
     @IBOutlet weak var balanceInfoContentView: UIView!
     
