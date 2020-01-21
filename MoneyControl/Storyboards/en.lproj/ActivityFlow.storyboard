@@ -556,6 +556,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="chooseCurrencyLabel" destination="j1U-zS-oTO" id="r9q-5h-z3k"/>
                         <outlet property="saveBtn" destination="gjx-Y0-By8" id="L7h-DE-78d"/>
                         <outlet property="tableView" destination="22t-uA-Y15" id="g3M-ZS-Y1I"/>
                     </connections>
@@ -625,6 +626,7 @@
                         <outlet property="balanceTextfield" destination="Sfe-N4-XPg" id="XHV-iW-DWJ"/>
                         <outlet property="currencyLabel" destination="1zZ-rp-OSO" id="tai-v6-uof"/>
                         <outlet property="saveBtn" destination="jYY-Ev-5OR" id="BMJ-6d-nEq"/>
+                        <outlet property="yourBalanceLabel" destination="aTf-vs-w2o" id="N74-1c-9fL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e57-93-faU" userLabel="First Responder" sceneMemberID="firstResponder"/>

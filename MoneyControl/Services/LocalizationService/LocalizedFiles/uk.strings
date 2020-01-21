@@ -10,7 +10,10 @@
 "Total" = "Усього";
 "Clear" = "Відчистити";
 "Choose your currency" = "Виберіть Вашу валюту";
+"Your Balance" = "Ваш баланс:";
 "Balance" = "Баланс:";
+"Назад" = "Назад";
+"Remove" = "Видалити";
 
 // history screen
 "History" = "Історія";
@@ -22,7 +25,6 @@
 
 // activity screen
 "Activity" = "Активність";
-
 "Add new activity" = "Додати нову активність";
 "Haven't activities today" = "Сьогодні немає активності";
 
@@ -35,14 +37,15 @@
 "Transactions list" = "Список транзакцій";
 
 // general
-"Expense" = "Витрати";
-"Incoming" = "Надходження";
+"Spending" = "Витрати";
+"Revenues" = "Надходження";
 "Edit" = "Редагування";
-"Remove" = "Видалити";
 "Done" = "Готово";
 "Cancel" = "Відмінити";
 
 // categories
+"Choose Category" = "Виберіть Категорію";
+
 "Fuel" = "Паливо";
 "Car" = "Машина";
 "Shopping" = "Покупки";
@@ -63,4 +66,6 @@
 "Fly" = "Літак";
 "Salary" = "Зарплата";
 "Start Balance" = "Стартовый баланс";
+"Transfer" = "Переведення";
+"Deposit" = "Депозит";
 

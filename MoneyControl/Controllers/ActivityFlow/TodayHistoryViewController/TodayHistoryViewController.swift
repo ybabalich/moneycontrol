@@ -41,7 +41,7 @@ class TodayHistoryViewController: BaseViewController {
     }
     
     override func createRightNavButton() -> UIBarButtonItem? {
-        let navSegmentBarButton = UIBarButtonItemFabric.segmentBar(items: ["Incoming".localized, "Outcoming".localized])
+        let navSegmentBarButton = UIBarButtonItemFabric.segmentBar(items: ["Revenues".localized, "Spending".localized])
         self.navSegmentControl = navSegmentBarButton.customView as? UISegmentedControl
         self.navSegmentControl.selectedSegmentIndex = viewModel.selectedTransationType.value.rawValue
         return navSegmentBarButton
@@ -120,7 +120,7 @@ class TodayHistoryViewController: BaseViewController {
 
 extension TodayHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Remove") { [unowned self] (action, indexPath) in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Remove".localized) { [unowned self] (action, indexPath) in
             let transaction = self.viewModel.transactions.value[indexPath.row]
             self.viewModel.remove(transaction)
         }

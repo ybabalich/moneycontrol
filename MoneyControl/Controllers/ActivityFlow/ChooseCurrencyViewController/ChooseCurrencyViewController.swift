@@ -11,6 +11,11 @@ import RxSwift
 class ChooseCurrencyViewController: BaseViewController {
 
     // MARK: - Outlets
+    @IBOutlet weak var chooseCurrencyLabel: UILabel! {
+        didSet {
+            chooseCurrencyLabel.text = "Choose your currency".localized
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveBtn: CheckButton! {
         didSet {

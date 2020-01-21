@@ -11,6 +11,11 @@ import RxSwift
 class YourBalanceViewController: BaseViewController {
     
     // MARK: - Outlets
+    @IBOutlet weak var yourBalanceLabel: UILabel! {
+        didSet {
+            yourBalanceLabel.text = "Your Balance".localized
+        }
+    }
     @IBOutlet weak var saveBtn: CheckButton! {
         didSet {
             saveBtn.colorType = .incoming

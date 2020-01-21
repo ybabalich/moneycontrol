@@ -25,6 +25,9 @@ class ChooseCategoryViewController: BaseViewController {
             } else {
                 segmentControl.tintColor = App.Color.main.rawValue
             }
+            
+            segmentControl.setTitle("Spending".localized, forSegmentAt: 0)
+            segmentControl.setTitle("Revenues".localized, forSegmentAt: 1)
         }
     }
     @IBOutlet weak var tableViewContentView: UIView!
@@ -61,7 +64,7 @@ class ChooseCategoryViewController: BaseViewController {
     private func setup() {
         //general
         customizeBackBtn()
-        title = "Choose category"
+        title = "Choose Category".localized
         
         //events
         subscribeToEvents()
