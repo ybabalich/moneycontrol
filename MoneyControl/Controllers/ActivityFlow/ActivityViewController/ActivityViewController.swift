@@ -42,15 +42,17 @@ class ActivityViewController: BaseViewController {
     }
     
     override func createRightNavButton() -> UIBarButtonItem? {
-        return UIBarButtonItemFabric.chartBarItem()
+        return UIBarButtonItemFabric.chartBarItem {
+            Router.instance.showHistoryScreen()
+        }
     }
     
     override func createRightNavButtonsAdditionals() -> [UIBarButtonItem]? {
-        return [UIBarButtonItemFabric.settingsBarItem()]
-    }
-    
-    override func didBtNavRightClicked() {
-        Router.instance.showHistoryScreen()
+        let settingsBtn = UIBarButtonItemFabric.settingsBarItem {
+            Router.instance.showSettingsScreen()
+        }
+        
+        return [settingsBtn]
     }
     
     // MARK: - Private methods

@@ -11,7 +11,7 @@
         <!--Settings View Controller-->
         <scene sceneID="mL1-0Y-MNB">
             <objects>
-                <viewController id="FB9-Y8-bLb" customClass="SettingsViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="FB9-Y8-bLb" customClass="SettingsViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkK-P9-u1R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

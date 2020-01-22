@@ -77,6 +77,8 @@ extension Currency: Rawable {
         case 0: self = .uah
         case 1: self = .usd
         case 2: self = .rub
+        case 3: self = .pln
+        case 4: self = .eur
         default: self = .uah
         }
     }
@@ -86,6 +88,8 @@ extension Currency: Rawable {
         case .uah: return 0
         case .usd: return 1
         case .rub: return 2
+        case .pln: return 3
+        case .eur: return 4
         }
     }
     

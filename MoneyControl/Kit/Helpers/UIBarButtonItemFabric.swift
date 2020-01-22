@@ -7,23 +7,43 @@
 //
 
 import UIKit
+import SnapKit
 
 class UIBarButtonItemFabric {
     
     // MARK: - Private Class Methods
-    private class func imagedBarButtonItem(imageName: String, size: CGSize) -> UIBarButtonItem {
-        let bgI: UIImage? = UIImage(named: imageName)
+    private class func imagedBarButtonItem(imageName: String,
+                                           size: CGSize,
+                                           color: UIColor?,
+                                           onTap: @escaping EmptyClosure) -> UIBarButtonItem
+    {
+        let imageColor = (color != nil) ? color! : App.Color.main.rawValue
         
-        let button: UIButton = UIButton(type: .custom)
-        button.setImage(bgI, for: .normal)
-        button.tintColor = App.Color.main.rawValue
+        let backgroundImage: UIImage? = UIImage(named: imageName)?.tinted(with: imageColor)
+        
+        let button = BiggerAreaButton(type: .system)
+        button.clickableInset = -20
+        button.setImage(backgroundImage, for: .normal)
+        button.tintColor = imageColor
+        
+        button.onTap(completion: onTap)
         
         if #available(iOS 11, *) {
-            button.widthConstraint(needCreate: true)?.constant = size.width
-            button.heightConstraint(needCreate: true)?.constant = size.height
+            button.imageView?.snp.makeConstraints {
+                $0.width.equalTo(size.width)
+                $0.height.equalTo(size.height)
+            }
+            
+            button.snp.makeConstraints {
+                $0.width.equalTo(size.width * 1.5)
+                $0.height.equalTo(size.height * 1.5)
+            }
         } else {
-            button.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            button.frame = CGRect(x: 0, y: 0, width: size.width * 1.5, height: size.height * 1.5)
+            button.imageView?.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         }
+        
+        button.contentHorizontalAlignment = .center
         
         return UIBarButtonItem(customView: button)
     }
@@ -58,12 +78,18 @@ class UIBarButtonItemFabric {
         return UIBarButtonItem(customView: label)
     }
     
-    class func chartBarItem() -> UIBarButtonItem {
-        return imagedBarButtonItem(imageName: "ic_chart", size: CGSize(width: 23, height: 20))
+    class func chartBarItem(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+        return imagedBarButtonItem(imageName: "ic_chart",
+                                   size: CGSize(width: 23, height: 20),
+                                   color: nil,
+                                   onTap: onTap)
     }
     
-    class func settingsBarItem() -> UIBarButtonItem {
-        return imagedBarButtonItem(imageName: "ic_settings", size: CGSize(width: 23, height: 23))
+    class func settingsBarItem(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+        return imagedBarButtonItem(imageName: "ic_settings",
+                                   size: CGSize(width: 23, height: 23),
+                                   color: nil,
+                                   onTap: onTap)
     }
     
 }

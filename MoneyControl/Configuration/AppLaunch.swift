@@ -89,7 +89,7 @@ extension AppLaunch.StoryboardFlow {
         case .settings(viewController: let controller):
         return StoryboardFlowData(storyboardName: "SettingsFlow",
                                   controllerName: controller.rawValue,
-                                  isInitial: controller == .base ? true : false)
+                                  isInitial: false)
         }
     }
 }

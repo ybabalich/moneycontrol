@@ -98,6 +98,9 @@
 		D9AB5DE123D64F9A002167D8 /* ru.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DE023D64F9A002167D8 /* ru.strings */; };
 		D9AB5DEB23D77FD2002167D8 /* SettingsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DEA23D77FD2002167D8 /* SettingsFlow.storyboard */; };
 		D9AB5DEE23D7813A002167D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DED23D7813A002167D8 /* SettingsViewController.swift */; };
+		D9AB5DF223D7836F002167D8 /* TappableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DF123D7836F002167D8 /* TappableButton.swift */; };
+		D9AB5DF423D783A0002167D8 /* BiggerAreaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DF323D783A0002167D8 /* BiggerAreaButton.swift */; };
+		D9AB5DF623D78533002167D8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DF523D78533002167D8 /* UIImageExtensions.swift */; };
 		D9B67548226B225500CC204A /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B67547226B225500CC204A /* ChooseCategoryViewController.swift */; };
 		D9B6754B226B38D400CC204A /* ChooseCategoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6754A226B38D400CC204A /* ChooseCategoryViewViewModel.swift */; };
 		D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6754E226B397A00CC204A /* ChooseCategoryTableViewCell.swift */; };
@@ -208,6 +211,9 @@
 		D9AB5DE523D70B73002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/HistoryFlow.storyboard; sourceTree = "<group>"; };
 		D9AB5DEA23D77FD2002167D8 /* SettingsFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsFlow.storyboard; sourceTree = "<group>"; };
 		D9AB5DED23D7813A002167D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D9AB5DF123D7836F002167D8 /* TappableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableButton.swift; sourceTree = "<group>"; };
+		D9AB5DF323D783A0002167D8 /* BiggerAreaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggerAreaButton.swift; sourceTree = "<group>"; };
+		D9AB5DF523D78533002167D8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		D9B67547226B225500CC204A /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
 		D9B6754A226B38D400CC204A /* ChooseCategoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewViewModel.swift; sourceTree = "<group>"; };
 		D9B6754E226B397A00CC204A /* ChooseCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -334,6 +340,7 @@
 		D920A09521562F1900ECA806 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
+				D9AB5DEF23D7834A002167D8 /* Buttons */,
 				D9C8BCEF2269B9C000289CDC /* Notificators */,
 				D9DB3B1F21A94BA000D8BADC /* Helpers */,
 				D920A09F2156303800ECA806 /* Extensions */,
@@ -384,6 +391,7 @@
 				D95D155D2266823600B83AD6 /* StringExtensions.swift */,
 				D95D155F22672F1600B83AD6 /* UIScreenExtensions.swift */,
 				D985471023D26E5700949C4E /* UINavigationBarExtensions.swift */,
+				D9AB5DF523D78533002167D8 /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -930,6 +938,23 @@
 			path = SettingsViewController;
 			sourceTree = "<group>";
 		};
+		D9AB5DEF23D7834A002167D8 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB5DF123D7836F002167D8 /* TappableButton.swift */,
+				D9AB5DF023D78356002167D8 /* BiggerAreaButton */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D9AB5DF023D78356002167D8 /* BiggerAreaButton */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB5DF323D783A0002167D8 /* BiggerAreaButton.swift */,
+			);
+			path = BiggerAreaButton;
+			sourceTree = "<group>";
+		};
 		D9B67546226B223900CC204A /* ChooseCategoryViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1207,6 +1232,7 @@
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
 				D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */,
 				D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */,
+				D9AB5DF223D7836F002167D8 /* TappableButton.swift in Sources */,
 				D92EEDF321A94F0E00A9C233 /* ActivityTopViewController.swift in Sources */,
 				D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */,
 				D96CE21421ADC8D10085664A /* TransactionDB.swift in Sources */,
@@ -1253,9 +1279,11 @@
 				D922148021A97DCB00A71CDB /* UICollectionViewExtensions.swift in Sources */,
 				D9AB5DCB23D4D1CC002167D8 /* HistoryViewModel.swift in Sources */,
 				D95D156022672F1600B83AD6 /* UIScreenExtensions.swift in Sources */,
+				D9AB5DF623D78533002167D8 /* UIImageExtensions.swift in Sources */,
 				D95CF26A21577A9A001BEF1F /* UIColorExtensions.swift in Sources */,
 				D95D155E2266823600B83AD6 /* StringExtensions.swift in Sources */,
 				D9F87B54226519A2005CCFD5 /* DateService.swift in Sources */,
+				D9AB5DF423D783A0002167D8 /* BiggerAreaButton.swift in Sources */,
 				D99F686221AB1FEC005EC865 /* CategoryDB.swift in Sources */,
 				D98E333621B2BAD2004C66C3 /* RegularButton.swift in Sources */,
 				D99F684F21AAD56C005EC865 /* HistoryTopViewController.swift in Sources */,

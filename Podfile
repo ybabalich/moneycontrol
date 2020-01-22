@@ -6,7 +6,10 @@ target 'MoneyControl' do
   use_frameworks!
 
   # Pods for MoneyControl
-  
+
+  #general
+  pod 'SnapKit'  
+
   #Rx
   pod 'RxSwift'
   pod 'RxCocoa'

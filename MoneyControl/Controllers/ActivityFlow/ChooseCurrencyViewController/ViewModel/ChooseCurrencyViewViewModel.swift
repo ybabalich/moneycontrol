@@ -26,7 +26,7 @@ class ChooseCurrencyViewViewModel {
     
     // MARK: - Public methods
     func loadData() {
-        currencies.value = [.uah, .usd, .rub]
+        currencies.value = Currency.all
     }
     
     func selectCurrency(_ indexPath: IndexPath) {
