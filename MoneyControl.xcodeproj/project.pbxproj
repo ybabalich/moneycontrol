@@ -33,6 +33,13 @@
 		D94CA39521C1C53000FCCEB9 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94CA39321C1C53000FCCEB9 /* CalendarViewController.xib */; };
 		D94CA39921C1C95000FCCEB9 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94CA39721C1C95000FCCEB9 /* CalendarCollectionViewCell.swift */; };
 		D94CA39A21C1C95000FCCEB9 /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */; };
+		D959B6D723D8F70F0050756E /* SettingsViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */; };
+		D959B6D923D8F8F10050756E /* SettingsViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */; };
+		D959B6DB23D8FBF90050756E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */; };
+		D959B6DD23D8FC340050756E /* SettingsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DC23D8FC340050756E /* SettingsHeaderViewModel.swift */; };
+		D959B6DF23D8FC420050756E /* SettingsSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DE23D8FC420050756E /* SettingsSectionViewModel.swift */; };
+		D959B6E323D9038E0050756E /* SettingsViewTitledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6E123D9038E0050756E /* SettingsViewTitledCell.swift */; };
+		D959B6E423D9038E0050756E /* SettingsViewTitledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D959B6E223D9038E0050756E /* SettingsViewTitledCell.xib */; };
 		D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CF25C2156523D001BEF1F /* LockViewController.swift */; };
 		D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D95CF25D2156523D001BEF1F /* LockViewController.xib */; };
 		D95CF261215775FF001BEF1F /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95CF260215775F8001BEF1F /* Lato-Light.ttf */; };
@@ -145,6 +152,13 @@
 		D94CA39321C1C53000FCCEB9 /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		D94CA39721C1C95000FCCEB9 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
+		D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHeaderCell.swift; sourceTree = "<group>"; };
+		D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewHeaderCell.xib; sourceTree = "<group>"; };
+		D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		D959B6DC23D8FC340050756E /* SettingsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderViewModel.swift; sourceTree = "<group>"; };
+		D959B6DE23D8FC420050756E /* SettingsSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionViewModel.swift; sourceTree = "<group>"; };
+		D959B6E123D9038E0050756E /* SettingsViewTitledCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewTitledCell.swift; sourceTree = "<group>"; };
+		D959B6E223D9038E0050756E /* SettingsViewTitledCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewTitledCell.xib; sourceTree = "<group>"; };
 		D95CF25C2156523D001BEF1F /* LockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 		D95CF25D2156523D001BEF1F /* LockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockViewController.xib; sourceTree = "<group>"; };
 		D95CF260215775F8001BEF1F /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -472,6 +486,33 @@
 				D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D959B6D423D8F6EB0050756E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D959B6D523D8F6F50050756E /* SettingsViewHeaderCell */,
+				D959B6E023D903730050756E /* SettingsViewTitledCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D959B6D523D8F6F50050756E /* SettingsViewHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */,
+				D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */,
+			);
+			path = SettingsViewHeaderCell;
+			sourceTree = "<group>";
+		};
+		D959B6E023D903730050756E /* SettingsViewTitledCell */ = {
+			isa = PBXGroup;
+			children = (
+				D959B6E123D9038E0050756E /* SettingsViewTitledCell.swift */,
+				D959B6E223D9038E0050756E /* SettingsViewTitledCell.xib */,
+			);
+			path = SettingsViewTitledCell;
 			sourceTree = "<group>";
 		};
 		D95CF25A21565212001BEF1F /* Screens */ = {
@@ -933,6 +974,8 @@
 		D9AB5DEC23D78127002167D8 /* SettingsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D959B6D423D8F6EB0050756E /* Cells */,
+				D9AB5DFA23D8A1E0002167D8 /* ViewModels */,
 				D9AB5DED23D7813A002167D8 /* SettingsViewController.swift */,
 			);
 			path = SettingsViewController;
@@ -953,6 +996,16 @@
 				D9AB5DF323D783A0002167D8 /* BiggerAreaButton.swift */,
 			);
 			path = BiggerAreaButton;
+			sourceTree = "<group>";
+		};
+		D9AB5DFA23D8A1E0002167D8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */,
+				D959B6DC23D8FC340050756E /* SettingsHeaderViewModel.swift */,
+				D959B6DE23D8FC420050756E /* SettingsSectionViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D9B67546226B223900CC204A /* ChooseCategoryViewController */ = {
@@ -1143,6 +1196,7 @@
 				D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */,
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
 				D94CA39521C1C53000FCCEB9 /* CalendarViewController.xib in Resources */,
+				D959B6E423D9038E0050756E /* SettingsViewTitledCell.xib in Resources */,
 				D98E335021B49D29004C66C3 /* EditTransactionDateView.xib in Resources */,
 				D95D154B22667D9D00B83AD6 /* HistoryFlow.storyboard in Resources */,
 				D95D154522667CA200B83AD6 /* Localizable.strings in Resources */,
@@ -1155,6 +1209,7 @@
 				D98E334621B46E56004C66C3 /* EditTransactionAmountView.xib in Resources */,
 				D98E334B21B470DB004C66C3 /* EditTransactionCategoryView.xib in Resources */,
 				D9AB5DE123D64F9A002167D8 /* ru.strings in Resources */,
+				D959B6D923D8F8F10050756E /* SettingsViewHeaderCell.xib in Resources */,
 				D9AB5DDA23D64D75002167D8 /* en.strings in Resources */,
 				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
 				D95D153C22667B4A00B83AD6 /* ActivityFlow.storyboard in Resources */,
@@ -1213,6 +1268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */,
+				D959B6D723D8F70F0050756E /* SettingsViewHeaderCell.swift in Sources */,
 				D94ADB2C21B186A700D94F0F /* EmptyView.swift in Sources */,
 				D9AB5DEE23D7813A002167D8 /* SettingsViewController.swift in Sources */,
 				D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */,
@@ -1230,6 +1286,7 @@
 				D9AB5DD723D64D4D002167D8 /* LocalizationService.swift in Sources */,
 				D99F684821AAB399005EC865 /* UITableViewExtenions.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
+				D959B6DD23D8FC340050756E /* SettingsHeaderViewModel.swift in Sources */,
 				D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */,
 				D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */,
 				D9AB5DF223D7836F002167D8 /* TappableButton.swift in Sources */,
@@ -1264,10 +1321,13 @@
 				D95CF26D215782E9001BEF1F /* PinButton.swift in Sources */,
 				D9C8BCF12269BAEE00289CDC /* KeyboardNotificator.swift in Sources */,
 				D96CE21F21ADD3B40085664A /* TransactionViewModel.swift in Sources */,
+				D959B6E323D9038E0050756E /* SettingsViewTitledCell.swift in Sources */,
+				D959B6DB23D8FBF90050756E /* SettingsViewModel.swift in Sources */,
 				D98E333D21B454D4004C66C3 /* EditTransactionViewViewModel.swift in Sources */,
 				D96483102162439400B2D880 /* CategoryViewModel.swift in Sources */,
 				D98E334E21B49D20004C66C3 /* EditTransactionDateView.swift in Sources */,
 				D98E336021B54ED4004C66C3 /* EyeSwitchView.swift in Sources */,
+				D959B6DF23D8FC420050756E /* SettingsSectionViewModel.swift in Sources */,
 				D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */,
 				D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */,
 				D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */,

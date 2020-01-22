@@ -27,4 +27,19 @@ extension UITableView {
                                    for: indexPath) as! C
     }
     
+    func registerHeaderFooterNib<N>(type: N.Type) {
+        var className = String(describing: type)
+        
+        let components = className.components(separatedBy: "<")
+        className = components[0]
+        
+        let sourceNib = UINib(nibName: className, bundle: Bundle.main)
+        register(sourceNib, forHeaderFooterViewReuseIdentifier: String(describing: type))
+    }
+    
+    func dequeueReusableHeaderFooter<C>(type: C.Type) -> C {
+        let className = String(describing: type)
+        return dequeueReusableHeaderFooterView(withIdentifier: className) as! C
+    }
+    
 }

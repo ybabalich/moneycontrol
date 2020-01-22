@@ -25,14 +25,14 @@
                                 <state key="normal" backgroundImage="ic_close"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HYe-5e-MRJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="616"/>
+                                <rect key="frame" x="0.0" y="24" width="375" height="592"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="e8C-xE-rDR" firstAttribute="bottom" secondItem="mbX-bu-mFb" secondAttribute="bottom" constant="8" id="F82-6w-xpb"/>
-                            <constraint firstItem="HYe-5e-MRJ" firstAttribute="top" secondItem="e8C-xE-rDR" secondAttribute="top" id="K7I-8f-TJm"/>
+                            <constraint firstItem="HYe-5e-MRJ" firstAttribute="top" secondItem="e8C-xE-rDR" secondAttribute="top" constant="24" id="K7I-8f-TJm"/>
                             <constraint firstItem="e8C-xE-rDR" firstAttribute="trailing" secondItem="HYe-5e-MRJ" secondAttribute="trailing" id="PPP-3L-BeY"/>
                             <constraint firstItem="mbX-bu-mFb" firstAttribute="centerX" secondItem="e8C-xE-rDR" secondAttribute="centerX" id="gD7-8g-P1y"/>
                             <constraint firstItem="mbX-bu-mFb" firstAttribute="top" secondItem="HYe-5e-MRJ" secondAttribute="bottom" constant="8" id="itn-bf-Djo"/>
@@ -42,6 +42,7 @@
                     </view>
                     <connections>
                         <outlet property="closeBtn" destination="mbX-bu-mFb" id="j8n-0I-MeW"/>
+                        <outlet property="tableView" destination="HYe-5e-MRJ" id="k8j-tV-06f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="id8-au-A1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

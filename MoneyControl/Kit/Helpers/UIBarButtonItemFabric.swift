@@ -22,7 +22,7 @@ class UIBarButtonItemFabric {
         let backgroundImage: UIImage? = UIImage(named: imageName)?.tinted(with: imageColor)
         
         let button = BiggerAreaButton(type: .system)
-        button.clickableInset = -20
+        button.clickableInset = -5
         button.setImage(backgroundImage, for: .normal)
         button.tintColor = imageColor
         
