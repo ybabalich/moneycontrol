@@ -47,7 +47,8 @@ class SettingsViewModel {
         //sections
         
         //general
-        let generalSections = [SettingsSectionViewModel(title: "Theme", needToShowArrow: true)]
+        let generalSections = [SettingsSectionViewModel(title: "Change currency", needToShowArrow: true),
+                               SettingsSectionViewModel(title: "Change language", needToShowArrow: true)]
         sections[general.id] = generalSections
         
         //feedback

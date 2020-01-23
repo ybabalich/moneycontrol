@@ -82,7 +82,7 @@ class ActivityViewController: BaseViewController {
         }).disposed(by: disposeBag)
         
         viewModel.totalValue.subscribe(onNext: { [unowned self] (totalValue) in
-            self.totalLabel.text = "Total".localized + ": \(totalValue)"
+            self.totalLabel.text = "Total".localized + ": \(totalValue.currencyFormatted)"
         }).disposed(by: disposeBag)
         
         viewModel.isActiveDoneButton.bind(to: doneBtn.rx.isEnabled).disposed(by: disposeBag)

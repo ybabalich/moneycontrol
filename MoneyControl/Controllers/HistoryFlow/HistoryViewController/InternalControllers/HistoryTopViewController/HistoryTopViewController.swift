@@ -77,9 +77,9 @@ class HistoryTopViewController: BaseViewController {
         parentViewModel.statisticsValues.asObserver().subscribe(onNext: { [unowned self] (values) in
             let (balance, incomesValue, outcomesValue) = values
             
-            self.balanceLabel.text = String(format: "%3.2f", balance)
-            self.incomesLabel.text = String(format: "%3.2f", incomesValue)
-            self.outcomesLabel.text = String(format: "%3.2f", outcomesValue)
+            self.balanceLabel.text = balance.currencyFormatted
+            self.incomesLabel.text = incomesValue.currencyFormatted
+            self.outcomesLabel.text = outcomesValue.currencyFormatted
         }).disposed(by: disposeBag)
     }
     

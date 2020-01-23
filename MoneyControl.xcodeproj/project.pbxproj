@@ -33,6 +33,7 @@
 		D94CA39521C1C53000FCCEB9 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94CA39321C1C53000FCCEB9 /* CalendarViewController.xib */; };
 		D94CA39921C1C95000FCCEB9 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94CA39721C1C95000FCCEB9 /* CalendarCollectionViewCell.swift */; };
 		D94CA39A21C1C95000FCCEB9 /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */; };
+		D95312F523DA1CAB00E26D1E /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */; };
 		D959B6D723D8F70F0050756E /* SettingsViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */; };
 		D959B6D923D8F8F10050756E /* SettingsViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */; };
 		D959B6DB23D8FBF90050756E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */; };
@@ -152,6 +153,7 @@
 		D94CA39321C1C53000FCCEB9 /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		D94CA39721C1C95000FCCEB9 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
+		D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHeaderCell.swift; sourceTree = "<group>"; };
 		D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewHeaderCell.xib; sourceTree = "<group>"; };
 		D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 				D95D155F22672F1600B83AD6 /* UIScreenExtensions.swift */,
 				D985471023D26E5700949C4E /* UINavigationBarExtensions.swift */,
 				D9AB5DF523D78533002167D8 /* UIImageExtensions.swift */,
+				D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1287,6 +1290,7 @@
 				D99F684821AAB399005EC865 /* UITableViewExtenions.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
 				D959B6DD23D8FC340050756E /* SettingsHeaderViewModel.swift in Sources */,
+				D95312F523DA1CAB00E26D1E /* DoubleExtensions.swift in Sources */,
 				D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */,
 				D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */,
 				D9AB5DF223D7836F002167D8 /* TappableButton.swift in Sources */,

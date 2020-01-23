@@ -41,7 +41,7 @@ class TodayHistoryTableViewCell : UITableViewCell {
         _viewModel = viewModel
         
         categoryImageView.image = viewModel.category.image
-        valueLabel.text = String(format: "%3.2f", viewModel.value)
+        valueLabel.text = viewModel.value.currencyFormatted
         valueLabel.textColor = viewModel.type == .incoming ? App.Color.incoming.rawValue : App.Color.outcoming.rawValue
         categoryNameLabel.text = viewModel.category.title
     }

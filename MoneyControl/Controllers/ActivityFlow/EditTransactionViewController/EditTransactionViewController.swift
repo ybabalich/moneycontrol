@@ -110,7 +110,7 @@ class EditTransactionViewController: BaseViewController {
         viewModel.transaction.subscribe(onNext: { [unowned self] (transaction) in
             self.title = "Edit".localized + " " + "\(transaction.type == .incoming ? "Incoming" : "Expense")".localized
             
-            self.editAmountView.text = String(format: "%3.2f", transaction.value)
+            self.editAmountView.text = transaction.value.currencyFormatted
             self.editCategoryView.category = transaction.category
             self.editDateView.text = transaction.formattedTime
             self.datePicker.date = transaction.createdTime
