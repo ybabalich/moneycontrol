@@ -1,0 +1,78 @@
+/* 
+  en.strings
+  MoneyControl
+
+  Created by Yaroslav Babalich on 20.01.2020.
+  Copyright © 2020 PxToday. All rights reserved.
+*/
+
+"Today" = "Today";
+"Total" = "Total";
+"Clear" = "Clear";
+"Choose your currency" = "Choose Your currency";
+"Your Balance" = "Your Balance:";
+"Balance" = "Balance:";
+"Back" = "Back";
+"Remove" = "Remove";
+
+//setting
+"Settings" = "Settings";
+"General" = "General";
+"Feedback" = "Feedback";
+"Change currency" = "Change currency";
+"Change language" = "Change language";
+"Leave feedback" = "Leave feedback";
+"Write to Developers" = "Write to Developers";
+"Choose language" = "Choose language";
+
+// history screen
+"History" = "History";
+"Haven't transactions" = "Haven't transactions";
+"Add new transaction" = "Add new transaction";
+"Day" = "Day";
+"Week" = "Week";
+"Month" = "Month";
+
+// activity screen
+"Activity" = "Activity";
+"Add new activity" = "Add new activity";
+"Haven't activities today" = "Haven't activities today";
+
+// edit expense screen
+"Amount" = "Amount";
+"Category" = "Category";
+"Date" = "Date";
+
+// transactions list screen
+"Transactions list" = "Transactions list";
+
+// general
+"Spending" = "Spending";
+"Revenues" = "Revenues";
+"Edit" = "Edit";
+"Done" = "Done";
+"Cancel" = "Cancel";
+
+// categories
+"Choose Category" = "Choose Category";
+
+"Fuel" = "Fuel";
+"Car" = "Car";
+"Shopping" = "Shopping";
+"Food" = "Food";
+"Coffee" = "Coffee";
+"Payments" = "Payments";
+"Spa" = "Spa";
+"Gym" = "Gym";
+"Pharmacy" = "Pharmacy";
+"Rent" = "Rent";
+"Restaurant" = "Restaurant";
+"Train" = "Train";
+"Smoke" = "Smoke";
+"Travel" = "Travel";
+"Game" = "Game";
+"Fly" = "Fly";
+"Salary" = "Salary";
+"Start Balance" = "Start Balance";
+"Transfer" = "Transfer";
+"Deposit" = "Deposit";

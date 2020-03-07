@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Y7j-gI-wes" customClass="EditTransactionCategoryView" customModule="MoneyControl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1i6-aH-odZ">
+                    <rect key="frame" x="16" y="8" width="343" height="24"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nf-GF-Kkp">
+                            <rect key="frame" x="0.0" y="3.5" width="56" height="17"/>
+                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zee-To-Fty">
+                            <rect key="frame" x="158" y="0.0" width="75.5" height="24"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_category_fuel" translatesAutoresizingMaskIntoConstraints="NO" id="OmJ-gh-U1r">
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="OmJ-gh-U1r" secondAttribute="height" multiplier="1:1" id="MVO-rg-VBS"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lb-vh-96I">
+                                    <rect key="frame" x="44" y="0.0" width="31.5" height="24"/>
+                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
+                                    <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="RJc-o1-scv">
+                            <rect key="frame" x="335" y="4.5" width="8" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="ZjV-Ad-Ub1"/>
+                                <constraint firstAttribute="width" constant="8" id="tiM-kg-HlH"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMQ-DC-gbQ">
+                    <rect key="frame" x="16" y="39.5" width="343" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="kNI-Sp-aOi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vJg-lM-4Yk" firstAttribute="trailing" secondItem="1i6-aH-odZ" secondAttribute="trailing" constant="16" id="4QF-UI-mpf"/>
+                <constraint firstItem="1i6-aH-odZ" firstAttribute="leading" secondItem="vJg-lM-4Yk" secondAttribute="leading" constant="16" id="K69-DX-Sv7"/>
+                <constraint firstItem="hMQ-DC-gbQ" firstAttribute="trailing" secondItem="1i6-aH-odZ" secondAttribute="trailing" id="Rff-pb-yrQ"/>
+                <constraint firstItem="1i6-aH-odZ" firstAttribute="top" secondItem="vJg-lM-4Yk" secondAttribute="top" constant="8" id="evf-7U-Tby"/>
+                <constraint firstAttribute="bottom" secondItem="hMQ-DC-gbQ" secondAttribute="bottom" id="gil-Go-gQ6"/>
+                <constraint firstItem="hMQ-DC-gbQ" firstAttribute="leading" secondItem="1nf-GF-Kkp" secondAttribute="leading" id="hZr-SU-mMK"/>
+                <constraint firstItem="vJg-lM-4Yk" firstAttribute="bottom" secondItem="1i6-aH-odZ" secondAttribute="bottom" constant="8" id="lnI-oS-GLb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vJg-lM-4Yk"/>
+            <connections>
+                <outlet property="categoryImageView" destination="OmJ-gh-U1r" id="3RT-aK-Ei7"/>
+                <outlet property="categoryLabel" destination="6lb-vh-96I" id="0cT-wj-6Yd"/>
+                <outlet property="titleLabel" destination="1nf-GF-Kkp" id="cM2-RR-bk2"/>
+            </connections>
+            <point key="canvasLocation" x="53.600000000000001" y="-224.88755622188907"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_arrow_right" width="11.5" height="22"/>
+        <image name="ic_category_fuel" width="256" height="256"/>
+    </resources>
+</document>

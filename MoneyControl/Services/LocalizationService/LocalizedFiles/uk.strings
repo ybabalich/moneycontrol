@@ -1,0 +1,78 @@
+/* 
+  uk.strings
+  MoneyControl
+
+  Created by Yaroslav Babalich on 20.01.2020.
+  Copyright © 2020 PxToday. All rights reserved.
+*/
+
+"Today" = "Cьогодні";
+"Total" = "Усього";
+"Clear" = "Відчистити";
+"Choose your currency" = "Виберіть Вашу валюту";
+"Your Balance" = "Ваш баланс:";
+"Balance" = "Баланс:";
+"Back" = "Назад";
+"Remove" = "Видалити";
+
+//setting
+"Settings" = "Налаштування";
+"General" = "Загальні";
+"Feedback" = "Відгуки";
+"Change currency" = "Змінити валюту";
+"Change language" = "Змінити мову";
+"Leave feedback" = "Залишити відгук";
+"Write to Developers" = "Написати розробникам";
+"Choose language" = "Виберіть мову";
+
+// history screen
+"History" = "Історія";
+"Haven't transactions" = "Транзакції відсутні";
+"Add new transaction" = "Додати транзакцію";
+"Day" = "День";
+"Week" = "Неділя";
+"Month" = "Місяць";
+
+// activity screen
+"Activity" = "Активність";
+"Add new activity" = "Додати нову активність";
+"Haven't activities today" = "Сьогодні немає активності";
+
+// edit expense screen
+"Amount" = "Сума";
+"Category" = "Категорія";
+"Date" = "Дата";
+
+// transactions list screen
+"Transactions list" = "Список транзакцій";
+
+// general
+"Spending" = "Витрати";
+"Revenues" = "Надходження";
+"Edit" = "Редагування";
+"Done" = "Готово";
+"Cancel" = "Відмінити";
+
+// categories
+"Choose Category" = "Виберіть Категорію";
+
+"Fuel" = "Паливо";
+"Car" = "Машина";
+"Shopping" = "Покупки";
+"Food" = "Їжа";
+"Coffee" = "Кава";
+"Payments" = "Платежі";
+"Spa" = "Відпочинок";
+"Gym" = "Спортзал";
+"Pharmacy" = "Аптека";
+"Rent" = "Оренда";
+"Restaurant" = "Ресторан";
+"Train" = "Потяг";
+"Smoke" = "Тютюн";
+"Travel" = "Подорожі";
+"Game" = "Ігри";
+"Fly" = "Літак";
+"Salary" = "Зарплата";
+"Start Balance" = "Стартовый баланс";
+"Transfer" = "Переведення";
+"Deposit" = "Депозит";
