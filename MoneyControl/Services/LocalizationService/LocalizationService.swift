@@ -21,6 +21,8 @@ class LocalizationService {
     
     // MARK: - Public methods
     func preferredLanguage() -> String {
+        guard settings.languageCode == nil else { return settings.languageCode! }
+        
         //ISO 639-1
         let preferredLanguages = Locale.preferredLanguages
         

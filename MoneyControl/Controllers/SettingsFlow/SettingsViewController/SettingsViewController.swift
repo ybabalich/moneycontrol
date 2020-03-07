@@ -26,6 +26,13 @@ class SettingsViewController: BaseViewController {
         setup()
     }
     
+    override func updateLocalization() {
+        super.updateLocalization()
+        
+        setupNavigationBarItems()
+        reloadData()
+    }
+    
     // navbar preparаtion
     override func createLeftNavButton() -> UIBarButtonItem? {
         return UIBarButtonItemFabric.titledBarButtonItem(title: "Settings".localized)
@@ -38,6 +45,14 @@ class SettingsViewController: BaseViewController {
         
         //table view
         configureTableView()
+        
+        //reload data
+        reloadData()
+    }
+    
+    private func reloadData() {
+        viewModel.loadData()
+        tableView.reloadData()
     }
     
     private func subscribeToEvents() {
@@ -53,8 +68,6 @@ class SettingsViewController: BaseViewController {
         tableView.registerHeaderFooterNib(type: SettingsViewHeaderCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
-        
     }
 
 }
@@ -73,7 +86,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: SettingsViewTitledCell.self, indexPath: indexPath)
         
-        let cellViewModel = viewModel.row(at: indexPath.section, for: indexPath.row)
+        let cellViewModel = viewModel.viewModelForRow(at: indexPath.section, for: indexPath.row)
         
         cell.titleLabel.text = cellViewModel.title
         
@@ -82,5 +95,16 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.headersCount()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellViewModel = viewModel.viewModelForRow(at: indexPath.section, for: indexPath.row)
+        
+        switch cellViewModel.type {
+        case .changeLanguage:
+            Router.instance.showSettingsChangeLanguageScreen()
+        default: return
+        }
+        
     }
 }

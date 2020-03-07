@@ -26,10 +26,12 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HYe-5e-MRJ">
                                 <rect key="frame" x="0.0" y="24" width="375" height="592"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="e8C-xE-rDR" firstAttribute="bottom" secondItem="mbX-bu-mFb" secondAttribute="bottom" constant="8" id="F82-6w-xpb"/>
                             <constraint firstItem="HYe-5e-MRJ" firstAttribute="top" secondItem="e8C-xE-rDR" secondAttribute="top" constant="24" id="K7I-8f-TJm"/>
@@ -48,6 +50,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="id8-au-A1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39" y="125"/>
+        </scene>
+        <!--Settings Choose Language View Controller-->
+        <scene sceneID="6t6-Le-yEK">
+            <objects>
+                <viewController storyboardIdentifier="SettingsChooseLanguageViewController" id="FFM-S5-8gk" customClass="SettingsChooseLanguageViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dV6-xm-7fF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y9e-hw-fnp">
+                                <rect key="frame" x="16" y="24" width="343" height="592"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4T-gl-hDk">
+                                <rect key="frame" x="170" y="624" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="QxV-bS-cEz"/>
+                                    <constraint firstAttribute="width" constant="35" id="fsA-jo-zwU"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_close"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="y9e-hw-fnp" firstAttribute="centerX" secondItem="dPP-bb-IXr" secondAttribute="centerX" id="2JP-Vy-18u"/>
+                            <constraint firstItem="dPP-bb-IXr" firstAttribute="bottom" secondItem="o4T-gl-hDk" secondAttribute="bottom" constant="8" id="6Mr-HC-vMp"/>
+                            <constraint firstItem="y9e-hw-fnp" firstAttribute="top" secondItem="dPP-bb-IXr" secondAttribute="top" constant="24" id="D0C-3m-Icc"/>
+                            <constraint firstItem="o4T-gl-hDk" firstAttribute="top" secondItem="y9e-hw-fnp" secondAttribute="bottom" constant="8" id="PoH-mL-o8X"/>
+                            <constraint firstItem="y9e-hw-fnp" firstAttribute="leading" secondItem="dPP-bb-IXr" secondAttribute="leading" constant="16" id="bTc-dq-DcQ"/>
+                            <constraint firstItem="o4T-gl-hDk" firstAttribute="centerX" secondItem="dPP-bb-IXr" secondAttribute="centerX" id="d42-Gc-efh"/>
+                            <constraint firstItem="dPP-bb-IXr" firstAttribute="trailing" secondItem="y9e-hw-fnp" secondAttribute="trailing" constant="16" id="hYY-2V-qRw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dPP-bb-IXr"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backBtn" destination="o4T-gl-hDk" id="VHE-Py-Jix"/>
+                        <outlet property="tableView" destination="y9e-hw-fnp" id="fCQ-Ae-I6l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deW-Kh-tDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="125"/>
         </scene>
     </scenes>
     <resources>

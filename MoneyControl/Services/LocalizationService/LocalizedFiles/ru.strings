@@ -17,6 +17,13 @@
 
 //setting
 "Settings" = "Настройки";
+"General" = "Общие";
+"Feedback" = "Обратная связь";
+"Change currency" = "Изменить валюту";
+"Change language" = "Сменить язык";
+"Leave feedback" = "Оставить отзыв";
+"Write to Developers" = "Написать разработчикам";
+"Choose language" = "Выберите язык";
 
 // history screen
 "History" = "История";

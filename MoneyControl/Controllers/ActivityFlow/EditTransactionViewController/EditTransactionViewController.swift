@@ -82,7 +82,7 @@ class EditTransactionViewController: BaseViewController {
         }).disposed(by: disposeBag)
         
         saveBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
-            self.viewModel.updateTransaction(value: Double(self.editAmountView.text) ?? 0)
+            self.viewModel.updateTransaction(value: self.editAmountView.text.numeric)
         }).disposed(by: disposeBag)
         
         deleteBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in

@@ -34,6 +34,11 @@
 		D94CA39921C1C95000FCCEB9 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94CA39721C1C95000FCCEB9 /* CalendarCollectionViewCell.swift */; };
 		D94CA39A21C1C95000FCCEB9 /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */; };
 		D95312F523DA1CAB00E26D1E /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */; };
+		D95312F823DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312F723DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift */; };
+		D95312FB23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312FA23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift */; };
+		D95312FD23DA32BC00E26D1E /* SettingsLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312FC23DA32BC00E26D1E /* SettingsLanguageViewModel.swift */; };
+		D953130223DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953130023DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift */; };
+		D953130323DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D953130123DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib */; };
 		D959B6D723D8F70F0050756E /* SettingsViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */; };
 		D959B6D923D8F8F10050756E /* SettingsViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */; };
 		D959B6DB23D8FBF90050756E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */; };
@@ -154,6 +159,11 @@
 		D94CA39721C1C95000FCCEB9 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
 		D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		D95312F723DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChooseLanguageViewController.swift; sourceTree = "<group>"; };
+		D95312FA23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChooseLanguageViewModel.swift; sourceTree = "<group>"; };
+		D95312FC23DA32BC00E26D1E /* SettingsLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLanguageViewModel.swift; sourceTree = "<group>"; };
+		D953130023DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChooseLanguageTitledCell.swift; sourceTree = "<group>"; };
+		D953130123DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsChooseLanguageTitledCell.xib; sourceTree = "<group>"; };
 		D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHeaderCell.swift; sourceTree = "<group>"; };
 		D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewHeaderCell.xib; sourceTree = "<group>"; };
 		D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -489,6 +499,42 @@
 				D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D95312F623DA2EDE00E26D1E /* SettingsChooseLanguageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D95312FE23DA3B4600E26D1E /* Cells */,
+				D95312F923DA31E800E26D1E /* ViewModels */,
+				D95312F723DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift */,
+			);
+			path = SettingsChooseLanguageViewController;
+			sourceTree = "<group>";
+		};
+		D95312F923DA31E800E26D1E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D95312FC23DA32BC00E26D1E /* SettingsLanguageViewModel.swift */,
+				D95312FA23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D95312FE23DA3B4600E26D1E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D95312FF23DA3B5A00E26D1E /* SettingsChooseLanguageTitledCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D95312FF23DA3B5A00E26D1E /* SettingsChooseLanguageTitledCell */ = {
+			isa = PBXGroup;
+			children = (
+				D953130023DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift */,
+				D953130123DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib */,
+			);
+			path = SettingsChooseLanguageTitledCell;
 			sourceTree = "<group>";
 		};
 		D959B6D423D8F6EB0050756E /* Cells */ = {
@@ -970,6 +1016,7 @@
 			isa = PBXGroup;
 			children = (
 				D9AB5DEC23D78127002167D8 /* SettingsViewController */,
+				D95312F623DA2EDE00E26D1E /* SettingsChooseLanguageViewController */,
 			);
 			path = SettingsFlow;
 			sourceTree = "<group>";
@@ -1206,6 +1253,7 @@
 				D95D155422667E6600B83AD6 /* CategoryFlow.storyboard in Resources */,
 				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
 				D95D156B2267C6DD00B83AD6 /* ChooseCurrencyTableViewCell.xib in Resources */,
+				D953130323DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib in Resources */,
 				D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */,
 				D94CA39A21C1C95000FCCEB9 /* CalendarCollectionViewCell.xib in Resources */,
 				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
@@ -1284,6 +1332,7 @@
 				D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */,
 				D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */,
 				D98E334421B46E41004C66C3 /* EditTransactionAmountView.swift in Sources */,
+				D95312FB23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift in Sources */,
 				D9AB5DCE23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift in Sources */,
 				D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */,
 				D9AB5DD723D64D4D002167D8 /* LocalizationService.swift in Sources */,
@@ -1298,11 +1347,13 @@
 				D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */,
 				D96CE21421ADC8D10085664A /* TransactionDB.swift in Sources */,
 				D98E336521B58E06004C66C3 /* Settings.swift in Sources */,
+				D953130223DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift in Sources */,
 				D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */,
 				D99F685D21AB1E77005EC865 /* RealmBasedService.swift in Sources */,
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
 				D97A0FF821B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift in Sources */,
 				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,
+				D95312FD23DA32BC00E26D1E /* SettingsLanguageViewModel.swift in Sources */,
 				D94CA39921C1C95000FCCEB9 /* CalendarCollectionViewCell.swift in Sources */,
 				D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */,
 				D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */,
@@ -1356,6 +1407,7 @@
 				D9C8BCEE2269A81100289CDC /* YourBalanceViewViewModel.swift in Sources */,
 				D95D15712268F2FA00B83AD6 /* YourBalanceViewController.swift in Sources */,
 				D94CA39421C1C53000FCCEB9 /* CalendarViewController.swift in Sources */,
+				D95312F823DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1528,18 +1580,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA33MXZ83V;
+				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nu.magzine.MagZine;
+				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1550,18 +1602,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EA33MXZ83V;
+				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nu.magzine.MagZine;
+				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

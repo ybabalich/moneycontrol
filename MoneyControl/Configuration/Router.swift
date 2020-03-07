@@ -86,6 +86,11 @@ class Router: NSObject {
         showScreen(settingsFlow, animated: true)
     }
     
+    func showSettingsChangeLanguageScreen() {
+        let changeLanguageScreen = AppLaunch.StoryboardFlow.settings(viewController: .changeLanguage)
+        showScreen(changeLanguageScreen, animated: true)
+    }
+    
     //startup screens
     func showYourBalanceScreen() {
         let yourBalanceScreen = AppLaunch.StoryboardFlow.activity(viewController: .yourBalance)

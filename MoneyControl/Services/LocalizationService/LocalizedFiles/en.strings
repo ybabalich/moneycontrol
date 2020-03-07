@@ -17,6 +17,13 @@
 
 //setting
 "Settings" = "Settings";
+"General" = "General";
+"Feedback" = "Feedback";
+"Change currency" = "Change currency";
+"Change language" = "Change language";
+"Leave feedback" = "Leave feedback";
+"Write to Developers" = "Write to Developers";
+"Choose language" = "Choose language";
 
 // history screen
 "History" = "History";

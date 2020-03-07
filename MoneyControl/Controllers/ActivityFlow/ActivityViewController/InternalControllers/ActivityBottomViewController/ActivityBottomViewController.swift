@@ -11,15 +11,7 @@ import UIKit
 class ActivityBottomViewController: BaseViewController {
 
     // MARK: - Outlets
-    @IBOutlet var butons: [UIButton]! {
-        didSet {
-            butons.forEach { (button) in
-                if button.tag == 11 { //clear button
-                    button.setTitle("Clear".localized, for: .normal)
-                }
-            }
-        }
-    }
+    @IBOutlet var butons: [UIButton]!
     @IBOutlet weak var baseContentView: UIView!
     
     // MARK: - Variables public
@@ -30,6 +22,22 @@ class ActivityBottomViewController: BaseViewController {
     }
     
     // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateLocalization()
+    }
+    
+    override func updateLocalization() {
+        super.updateLocalization()
+        
+        butons.forEach { (button) in
+            if button.tag == 11 { //clear button
+                button.setTitle("Clear".localized, for: .normal)
+            }
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         

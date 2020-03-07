@@ -17,6 +17,13 @@
 
 //setting
 "Settings" = "Налаштування";
+"General" = "Загальні";
+"Feedback" = "Відгуки";
+"Change currency" = "Змінити валюту";
+"Change language" = "Змінити мову";
+"Leave feedback" = "Залишити відгук";
+"Write to Developers" = "Написати розробникам";
+"Choose language" = "Виберіть мову";
 
 // history screen
 "History" = "Історія";

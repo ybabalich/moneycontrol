@@ -52,6 +52,7 @@ class AppLaunch {
         
         enum Settings: String {
             case base = "SettingsViewController"
+            case changeLanguage = "SettingsChooseLanguageViewController"
         }
         
         case activity(viewController: Activity)

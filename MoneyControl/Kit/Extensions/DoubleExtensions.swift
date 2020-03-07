@@ -15,7 +15,7 @@ extension Double {
         formatter.numberStyle = .currency
         formatter.currencySymbol = ""
         formatter.locale = Locale.current
-        return formatter.string(for: self) ?? ""
+        return formatter.string(for: self)?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) ?? ""
     }
     
 }

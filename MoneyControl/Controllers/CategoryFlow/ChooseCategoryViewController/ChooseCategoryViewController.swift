@@ -100,6 +100,8 @@ class ChooseCategoryViewController: BaseViewController {
         tableView.registerNib(type: ChooseCategoryTableViewCell.self)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.backgroundView?.backgroundColor = .white
+        tableView.backgroundColor = .white
         
         viewModel.categories.asObservable().bind(to: tableView.rx.items)
         { (tableView, row, viewModel) in

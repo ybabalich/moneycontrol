@@ -36,6 +36,12 @@ class ActivityViewController: BaseViewController {
         }
     }
     
+    override func updateLocalization() {
+        super.updateLocalization()
+        
+        setupNavigationBarItems()
+    }
+    
     // navbar preparаtion
     override func createLeftNavButton() -> UIBarButtonItem? {
         return UIBarButtonItemFabric.titledBarButtonItem(title: "Today".localized)
@@ -52,7 +58,7 @@ class ActivityViewController: BaseViewController {
             Router.instance.showSettingsScreen()
         }
         
-        return [settingsBtn]
+        return nil //[settingsBtn]
     }
     
     // MARK: - Private methods

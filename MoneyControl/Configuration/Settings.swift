@@ -13,8 +13,9 @@ protocol AppSettings {
     var launchCount: Int { get set }
     var baseCategoriesAdded: Bool { get set }
     
-    //currencies
+    //settings
     var currency: Currency? { get set }
+    var languageCode: String? { get set }
 }
 
 class Settings {
@@ -24,6 +25,7 @@ class Settings {
         static let kAppLaunchCount = "kAppLaunchCount"
         static let kBaseCategoriesAdded = "kBaseCategoriesAdded"
         static let kCurrency = "kCurrency"
+        static let kPreferredLanguageCodeKey = "kPreferredLanguageCodeKey"
     }
     
     // MARK: - Private methods
@@ -67,6 +69,15 @@ extension Settings: AppSettings {
             if let value = newValue?.stringValue {
                 Settings.set(value: value, for: Keys.kCurrency)
             }
+        }
+    }
+    
+    var languageCode: String? {
+        get {
+            return Settings.value(for: Keys.kPreferredLanguageCodeKey)
+        }
+        set {
+            Settings.set(value: newValue, for: Keys.kPreferredLanguageCodeKey)
         }
     }
     

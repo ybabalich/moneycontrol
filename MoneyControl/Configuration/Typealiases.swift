@@ -99,6 +99,49 @@ enum Currency {
     }
 }
 
+extension Currency: Rawable {
+    
+    init(rawValue: Int) {
+        switch rawValue {
+        case 0: self = .uah
+        case 1: self = .usd
+        case 2: self = .rub
+        case 3: self = .pln
+        case 4: self = .eur
+        case 5: self = .jpy
+        case 6: self = .gbp
+        case 7: self = .aud
+        case 8: self = .cad
+        case 9: self = .chf
+        case 10: self = .cny
+        case 11: self = .sek
+        case 12: self = .nzd
+        case 13: self = .egp
+        default: self = .usd
+        }
+    }
+    
+    var rawValue: Int {
+        switch self {
+        case .uah: return 0
+        case .usd: return 1
+        case .rub: return 2
+        case .pln: return 3
+        case .eur: return 4
+        case .jpy: return 5
+        case .gbp: return 6
+        case .aud: return 7
+        case .cad: return 8
+        case .chf: return 9
+        case .cny: return 10
+        case .sek: return 11
+        case .nzd: return 12
+        case .egp: return 13
+        }
+    }
+    
+}
+
 enum Sort: StringRepresentable, Equatable {
     case day
     case week

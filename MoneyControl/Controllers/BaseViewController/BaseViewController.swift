@@ -27,22 +27,26 @@ class BaseViewController: UIViewController {
         
         if viewWillAppearLoadingCount > 0 {
             isFirstLoad = false
+            
+            //updates
+            updateLocalization()
+            updateCurrencies()
         }
         
         viewWillAppearLoadingCount += 1
     }
     
-    // MARK: - Private methods
-    private func setup() {
-        setupNavigationBarItems()
+    // MARK: - Public methods
+    func updateLocalization() {
+        
     }
     
-    internal func customizeBackBtn() {
-        navigationController?.navigationBar.tintColor = App.Color.main.rawValue
+    func updateCurrencies() {
+        
     }
     
     //navbar items
-    private func setupNavigationBarItems() {
+    func setupNavigationBarItems() {
         if !self.navigationItem.hidesBackButton {
             if let leftNavigationButton: UIBarButtonItem = self.createLeftNavButton() {
                 if let leftNavigationButton: UIButton = leftNavigationButton.customView as? UIButton {
@@ -79,6 +83,15 @@ class BaseViewController: UIViewController {
                 self.navigationItem.rightBarButtonItem = rightNavigationButton
             }
         }
+    }
+    
+    // MARK: - Private methods
+    private func setup() {
+        setupNavigationBarItems()
+    }
+    
+    internal func customizeBackBtn() {
+        navigationController?.navigationBar.tintColor = App.Color.main.rawValue
     }
     
     // for overriding

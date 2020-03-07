@@ -14,16 +14,8 @@ class ActivityTopViewController: BaseViewController {
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var baseContentView: UIView!
     @IBOutlet weak var sumTextField: UITextField!
-    @IBOutlet weak var outcomeBtn: RegularButton! {
-        didSet {
-            outcomeBtn.setTitle("Spending".localized, for: .normal)
-        }
-    }
-    @IBOutlet weak var incomeBtn: RegularButton! {
-        didSet {
-            incomeBtn.setTitle("Revenues".localized, for: .normal)
-        }
-    }
+    @IBOutlet weak var outcomeBtn: RegularButton!
+    @IBOutlet weak var incomeBtn: RegularButton!
     
     // MARK: - Variables
     var parentViewModel: ActivityViewViewModel! {
@@ -40,6 +32,14 @@ class ActivityTopViewController: BaseViewController {
         super.viewDidLoad()
         
         setup()
+        updateLocalization()
+    }
+    
+    override func updateLocalization() {
+        super.updateLocalization()
+        
+        outcomeBtn.setTitle("Spending".localized, for: .normal)
+        incomeBtn.setTitle("Revenues".localized, for: .normal)
     }
     
     override func viewDidLayoutSubviews() {
