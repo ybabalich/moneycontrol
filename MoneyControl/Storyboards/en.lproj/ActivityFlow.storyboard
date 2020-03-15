@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lap-kz-unK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lap-kz-unK">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -95,6 +96,7 @@
                         <viewLayoutGuide key="safeArea" id="bno-at-WDx"/>
                     </view>
                     <connections>
+                        <outlet property="bottomView" destination="MZ7-rK-DEH" id="Xqp-3A-5EL"/>
                         <outlet property="doneBtn" destination="sFm-Ne-ll1" id="dsH-xF-C4Y"/>
                         <outlet property="historyBtn" destination="PUm-g2-JiH" id="dWo-hj-KsH"/>
                         <outlet property="totalLabel" destination="EcT-pw-yRM" id="u7O-V6-XTB"/>
@@ -109,48 +111,56 @@
             <objects>
                 <viewController id="k2h-rm-it2" customClass="ActivityTopViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nXy-Bf-BNa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tud-wr-laM" userLabel="Content View">
                                 <rect key="frame" x="16" y="16" width="343" height="251.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bdO-in-Ytl">
-                                        <rect key="frame" x="61.5" y="16" width="220" height="76"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OAJ-rI-ARp">
+                                        <rect key="frame" x="61.5" y="16" width="220" height="30"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OAJ-rI-ARp">
-                                                <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQZ-ks-sYb" customClass="RegularButton" customModule="MoneyControl" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="5cg-N9-p5J"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
-                                                        <state key="normal" title="Outcome">
-                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fS-GH-MdO" customClass="RegularButton" customModule="MoneyControl" customModuleProvider="target">
-                                                        <rect key="frame" x="120" y="0.0" width="100" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="xKj-N0-8ug"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
-                                                        <state key="normal" title="Income">
-                                                            <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQZ-ks-sYb" customClass="RegularButton" customModule="MoneyControl" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="5cg-N9-p5J"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
+                                                <state key="normal" title="Outcome">
+                                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fS-GH-MdO" customClass="RegularButton" customModule="MoneyControl" customModuleProvider="target">
+                                                <rect key="frame" x="120" y="0.0" width="100" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="xKj-N0-8ug"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
+                                                <state key="normal" title="Income">
+                                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9C-s4-hqC">
+                                        <rect key="frame" x="16" y="46" width="311" height="144.5"/>
+                                        <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000.20" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaH-4U-zhz">
-                                                <rect key="frame" x="39.5" y="30" width="141" height="46"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="311" height="144.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="38"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="xaH-4U-zhz" secondAttribute="trailing" id="AOA-ze-AnH"/>
+                                            <constraint firstItem="xaH-4U-zhz" firstAttribute="leading" secondItem="I9C-s4-hqC" secondAttribute="leading" id="kxd-XI-bSS"/>
+                                            <constraint firstAttribute="bottom" secondItem="xaH-4U-zhz" secondAttribute="bottom" id="nk4-pE-TjF"/>
+                                            <constraint firstItem="xaH-4U-zhz" firstAttribute="top" secondItem="I9C-s4-hqC" secondAttribute="top" id="tqf-39-JyE"/>
+                                        </constraints>
+                                    </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e2U-RA-Wqa">
                                         <rect key="frame" x="8" y="190.5" width="327" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,11 +187,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="bdO-in-Ytl" firstAttribute="centerX" secondItem="Tud-wr-laM" secondAttribute="centerX" id="7IM-w2-5v4"/>
+                                    <constraint firstItem="e2U-RA-Wqa" firstAttribute="top" secondItem="I9C-s4-hqC" secondAttribute="bottom" id="A81-o9-I9i"/>
+                                    <constraint firstItem="OAJ-rI-ARp" firstAttribute="centerX" secondItem="Tud-wr-laM" secondAttribute="centerX" id="LM2-rr-YKI"/>
                                     <constraint firstAttribute="bottom" secondItem="e2U-RA-Wqa" secondAttribute="bottom" constant="16" id="QLd-Ft-bkf"/>
+                                    <constraint firstItem="I9C-s4-hqC" firstAttribute="leading" secondItem="Tud-wr-laM" secondAttribute="leading" constant="16" id="WYj-vX-CvP"/>
                                     <constraint firstItem="e2U-RA-Wqa" firstAttribute="leading" secondItem="Tud-wr-laM" secondAttribute="leading" constant="8" id="YFt-ij-XZZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="I9C-s4-hqC" secondAttribute="trailing" constant="16" id="jSM-G4-QIU"/>
                                     <constraint firstAttribute="trailing" secondItem="e2U-RA-Wqa" secondAttribute="trailing" constant="8" id="lFH-k0-gJ8"/>
-                                    <constraint firstItem="bdO-in-Ytl" firstAttribute="top" secondItem="Tud-wr-laM" secondAttribute="topMargin" constant="8" id="owL-5K-KKb"/>
+                                    <constraint firstItem="OAJ-rI-ARp" firstAttribute="top" secondItem="Tud-wr-laM" secondAttribute="top" constant="16" id="peF-4H-dIs"/>
+                                    <constraint firstItem="I9C-s4-hqC" firstAttribute="top" secondItem="OAJ-rI-ARp" secondAttribute="bottom" id="vv8-Df-O90"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -212,7 +226,7 @@
             <objects>
                 <viewController id="bd8-zM-IRE" customClass="ActivityBottomViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r3D-UT-NCo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-fq-vGe" userLabel="ContentView">
@@ -445,7 +459,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="mainBackground"/>
                         <constraints>
                             <constraint firstItem="lqG-2K-mpZ" firstAttribute="leading" secondItem="McR-MC-t9c" secondAttribute="leading" constant="16" id="PAa-D2-OzY"/>
                             <constraint firstItem="lqG-2K-mpZ" firstAttribute="top" secondItem="McR-MC-t9c" secondAttribute="top" constant="16" id="Pu1-FW-qTH"/>
@@ -639,5 +653,8 @@
         <image name="ic_close" width="44" height="44"/>
         <image name="ic_history" width="255" height="242"/>
         <image name="ic_remove" width="24" height="24"/>
+        <namedColor name="mainBackground">
+            <color red="0.68627450980392157" green="0.90980392156862744" blue="0.96862745098039216" alpha="0.20285744863013699" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -53,6 +53,13 @@ class HistoryTopCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private methods
     private func setup() {
+        
+        // colors
+        titleLabel.textColor = .primaryText
+        bottomView.backgroundColor = .controlTintActive
+        
+        // general
+        
         isActive = false
         bottomView.layer.cornerRadius = bottomView.frame.height / 2
     }

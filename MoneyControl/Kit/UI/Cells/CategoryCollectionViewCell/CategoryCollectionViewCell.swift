@@ -46,6 +46,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         titleLabel.text = viewModel.title
         selectedColor = transactionType == .incoming ? App.Color.incoming.rawValue : App.Color.outcoming.rawValue
         imageView.image = viewModel.image
+        titleLabel.font = App.Font.main(size: 12, type: .bold).rawValue
     }
     
     func onTap(completion: @escaping (CategoryViewModel) -> ()) {
@@ -57,11 +58,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     // MARK: - Private methods
     private func setup() {
         isActive = false
+        titleLabel.textColor = .primaryText
+        contentView.backgroundColor = .clear
+        backgroundColor = .clear
     }
     
     private func updateUI() {
         titleLabel.textColor = isActive ? selectedColor : App.Color.main.rawValue
     }
-    
-    
 }

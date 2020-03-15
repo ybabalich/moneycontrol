@@ -13,6 +13,7 @@ class EditTransactionAmountView: UIView {
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var separatorView: UIView!
     
     // MARK: - Variables public
     var text: String {
@@ -25,10 +26,22 @@ class EditTransactionAmountView: UIView {
     }
     
     // MARK: - Class methods
+    
     class func view() -> EditTransactionAmountView {
         let view: EditTransactionAmountView = EditTransactionAmountView.nib()
         view.titleLabel.text = "Amount".localized
+        view.setupUI()
         return view
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupUI() {
+        // colors
+        
+        titleLabel.textColor = .secondaryText
+        amountTextField.textColor = .secondaryText
+        separatorView.backgroundColor = .tableSeparator
     }
 
 }

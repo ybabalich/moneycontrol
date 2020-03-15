@@ -27,6 +27,8 @@
 		D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */; };
 		D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */; };
 		D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */; };
+		D9466CF024142E410048095A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9466CEF24142E410048095A /* Colors.xcassets */; };
+		D9466CF224142F1A0048095A /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9466CF124142F1A0048095A /* UIColor+Assets.swift */; };
 		D94ADB2C21B186A700D94F0F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94ADB2B21B186A700D94F0F /* EmptyView.swift */; };
 		D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94ADB2D21B1887700D94F0F /* EmptyView.xib */; };
 		D94CA39421C1C53000FCCEB9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94CA39221C1C53000FCCEB9 /* CalendarViewController.swift */; };
@@ -152,6 +154,8 @@
 		D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBottomViewController.swift; sourceTree = "<group>"; };
 		D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		D9466CEF24142E410048095A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		D9466CF124142F1A0048095A /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
 		D94ADB2B21B186A700D94F0F /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		D94ADB2D21B1887700D94F0F /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		D94CA39221C1C53000FCCEB9 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 				D911ECF721A7EF1900C3A7B1 /* Storyboards */,
 				D90EDB88214FD93900012383 /* AppDelegate.swift */,
 				D90EDB9A214FE53900012383 /* Assets.xcassets */,
+				D9466CEF24142E410048095A /* Colors.xcassets */,
 				D90EDB91214FD93A00012383 /* LaunchScreen.storyboard */,
 				D90EDB94214FD93A00012383 /* Info.plist */,
 				D95D154322667CA200B83AD6 /* Localizable.strings */,
@@ -419,6 +424,7 @@
 				D985471023D26E5700949C4E /* UINavigationBarExtensions.swift */,
 				D9AB5DF523D78533002167D8 /* UIImageExtensions.swift */,
 				D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */,
+				D9466CF124142F1A0048095A /* UIColor+Assets.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1256,6 +1262,7 @@
 				D953130323DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib in Resources */,
 				D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */,
 				D94CA39A21C1C95000FCCEB9 /* CalendarCollectionViewCell.xib in Resources */,
+				D9466CF024142E410048095A /* Colors.xcassets in Resources */,
 				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
 				D98E334621B46E56004C66C3 /* EditTransactionAmountView.xib in Resources */,
 				D98E334B21B470DB004C66C3 /* EditTransactionCategoryView.xib in Resources */,
@@ -1379,6 +1386,7 @@
 				D959B6E323D9038E0050756E /* SettingsViewTitledCell.swift in Sources */,
 				D959B6DB23D8FBF90050756E /* SettingsViewModel.swift in Sources */,
 				D98E333D21B454D4004C66C3 /* EditTransactionViewViewModel.swift in Sources */,
+				D9466CF224142F1A0048095A /* UIColor+Assets.swift in Sources */,
 				D96483102162439400B2D880 /* CategoryViewModel.swift in Sources */,
 				D98E334E21B49D20004C66C3 /* EditTransactionDateView.swift in Sources */,
 				D98E336021B54ED4004C66C3 /* EyeSwitchView.swift in Sources */,
@@ -1582,7 +1590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1604,7 +1612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

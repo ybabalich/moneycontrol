@@ -64,6 +64,18 @@ class HistoryTopViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setupUI() {
+        
+        //colors
+        view.backgroundColor = .mainBackground
+        balanceInfoContentView.backgroundColor = .mainElementBackground
+        currencyBalanceLabel.textColor = .primaryText
+        currencyIncomeLabel.textColor = .primaryText
+        currencyExpenseLabel.textColor = .primaryText
+        balanceStaticLabel.textColor = .primaryText
+        balanceLabel.textColor = .primaryText
+        incomesStaticLabel.textColor = .primaryText
+        outcomesStaticLabel.textColor = .primaryText
+        
         //currencies label's
         currencyBalanceLabel.text = settings.currency!.symbol.uppercased()
         currencyIncomeLabel.text = settings.currency!.symbol.uppercased()

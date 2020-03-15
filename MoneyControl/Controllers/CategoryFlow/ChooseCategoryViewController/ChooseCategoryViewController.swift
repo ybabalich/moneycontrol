@@ -62,6 +62,15 @@ class ChooseCategoryViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setup() {
+        
+        // colors
+        
+        view.backgroundColor = .mainBackground
+        tableViewContentView.backgroundColor = .mainElementBackground
+        tableView.backgroundColor = .mainElementBackground
+        tableView.backgroundView?.backgroundColor = .mainElementBackground
+        tableView.separatorColor = .tableSeparator
+        
         //general
         customizeBackBtn()
         title = "Choose Category".localized
@@ -100,8 +109,6 @@ class ChooseCategoryViewController: BaseViewController {
         tableView.registerNib(type: ChooseCategoryTableViewCell.self)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.backgroundView?.backgroundColor = .white
-        tableView.backgroundColor = .white
         
         viewModel.categories.asObservable().bind(to: tableView.rx.items)
         { (tableView, row, viewModel) in

@@ -14,6 +14,7 @@ class EditTransactionDateView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var separatorView: UIView!
     
     // MARK: - Variables public
     var text: String {
@@ -32,6 +33,7 @@ class EditTransactionDateView: UIView {
     class func view() -> EditTransactionDateView {
         let view: EditTransactionDateView = EditTransactionDateView.nib()
         view.titleLabel.text = "Date".localized
+        view.setupUI()
         return view
     }
     
@@ -40,6 +42,16 @@ class EditTransactionDateView: UIView {
         rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
             completion()
         }).disposed(by: disposeBag)
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupUI() {
+        // colors
+        
+        titleLabel.textColor = .secondaryText
+        dateLabel.textColor = .secondaryText
+        separatorView.backgroundColor = .tableSeparator
     }
 
 }

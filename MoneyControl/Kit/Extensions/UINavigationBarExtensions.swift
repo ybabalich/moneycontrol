@@ -10,8 +10,8 @@ import UIKit
 
 extension UINavigationBar {
     
-    func applyWhiteBackground() {
-        barTintColor = .white
+    func applyMainBackground() {
+        barTintColor = .barBackground
         isTranslucent = false
         setBackgroundImage(UIImage(), for: .default)
         shadowImage = UIImage()

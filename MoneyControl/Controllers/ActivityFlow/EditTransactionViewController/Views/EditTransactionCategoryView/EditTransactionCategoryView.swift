@@ -14,6 +14,7 @@ class EditTransactionCategoryView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
     
     // MARK: - Private variables
     private let disposeBag = DisposeBag()
@@ -30,6 +31,7 @@ class EditTransactionCategoryView: UIView {
     class func view() -> EditTransactionCategoryView {
         let view: EditTransactionCategoryView = EditTransactionCategoryView.nib()
         view.titleLabel.text = "Category".localized
+        view.setupUI()
         return view
     }
     
@@ -38,6 +40,16 @@ class EditTransactionCategoryView: UIView {
         rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
             completion()
         }).disposed(by: disposeBag)
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupUI() {
+        // colors
+        
+        titleLabel.textColor = .secondaryText
+        categoryLabel.textColor = .secondaryText
+        separatorView.backgroundColor = .tableSeparator
     }
 
 }

@@ -18,6 +18,7 @@ class ChooseCurrencyTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setupUI()
         clear()
     }
     
@@ -29,6 +30,15 @@ class ChooseCurrencyTableViewCell: UITableViewCell {
     }
     
     // MARK: - Private methods
+    
+    private func setupUI() {
+        
+        // colors
+        
+        titleLabel.textColor = .primaryText
+        
+    }
+    
     private func clear() {
         flagImageView.image = nil
         titleLabel.text = nil

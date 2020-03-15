@@ -36,6 +36,10 @@ class ChooseCurrencyViewController: BaseViewController {
     // MARK: - Private methods
     private func setup() {
         
+        // colors
+        chooseCurrencyLabel.textColor = .primaryText
+        view.backgroundColor = .mainBackground
+        
         //tableview
         configureTableView()
         

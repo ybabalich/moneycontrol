@@ -32,6 +32,10 @@ class HistoryViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setup() {
+        
+        // colors
+        view.backgroundColor = .mainElementBackground
+        
         //events
         subscribeToEvents()
         

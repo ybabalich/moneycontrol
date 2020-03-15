@@ -12,6 +12,7 @@ import RxGesture
 class ActivityViewController: BaseViewController {
 
     // MARK: - Outlets
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var historyBtn: UIButton!
     @IBOutlet weak var doneBtn: CheckButton!
     @IBOutlet weak var totalLabel: UILabel!
@@ -63,6 +64,20 @@ class ActivityViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setup() {
+        //colors
+        
+        bottomView.backgroundColor = .mainElementBackground
+        view.backgroundColor = .mainElementBackground
+        
+        //images
+        
+        if #available(iOS 13.0, *) {
+            let configuration = UIImage.SymbolConfiguration(pointSize: 30)
+            let historyImage = UIImage(systemName: "clock.fill", withConfiguration: configuration)
+            historyBtn.setImage(historyImage, for: .normal)
+            historyBtn.tintColor = .controlTintActive
+        }
+
         //events
         subscribeToEvents()
         

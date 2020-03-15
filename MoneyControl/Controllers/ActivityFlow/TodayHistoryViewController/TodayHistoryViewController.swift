@@ -49,6 +49,12 @@ class TodayHistoryViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setup() {
+        
+        //colors
+        tableView.backgroundColor = .mainBackground
+        tableView.separatorColor = .tableSeparator
+        view.backgroundColor = .mainBackground
+        
         //subviews
         addSubviews()
         

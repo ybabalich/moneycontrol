@@ -41,11 +41,14 @@ class ActivityBottomViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        baseContentView.applyFullyRounded(15)
+        baseContentView.applyCornerRadius(15, topLeft: true, topRight: true, bottomRight: false, bottomLeft: false)
     }
     
     // MARK: - Private methods
     private func setup() {
+        view.backgroundColor = .mainBackground
+        baseContentView.backgroundColor = .mainElementBackground
+        
         butons.forEach { (button) in
             button.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
                 var buttonType: ActivityViewViewModel.KeyboardButtonType = .one
@@ -67,6 +70,8 @@ class ActivityBottomViewController: BaseViewController {
                 
                 self.parentViewModel.keyboardValue(buttonType)
             }).disposed(by: disposeBag)
+            
+            button.setTitleColor(.primaryText, for: .normal)
         }
     }
 

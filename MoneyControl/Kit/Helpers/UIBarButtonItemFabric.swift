@@ -12,34 +12,24 @@ import SnapKit
 class UIBarButtonItemFabric {
     
     // MARK: - Private Class Methods
-    private class func imagedBarButtonItem(imageName: String,
+    private class func imagedBarButtonItem(image: UIImage?,
                                            size: CGSize,
-                                           color: UIColor?,
-                                           onTap: @escaping EmptyClosure) -> UIBarButtonItem
-    {
-        let imageColor = (color != nil) ? color! : App.Color.main.rawValue
-        
-        let backgroundImage: UIImage? = UIImage(named: imageName)?.tinted(with: imageColor)
-        
+                                           onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+
         let button = BiggerAreaButton(type: .system)
         button.clickableInset = -5
-        button.setImage(backgroundImage, for: .normal)
-        button.tintColor = imageColor
+        button.setImage(image, for: .normal)
+        button.tintColor = .controlTintActive
         
         button.onTap(completion: onTap)
-        
+
         if #available(iOS 11, *) {
-            button.imageView?.snp.makeConstraints {
+            button.snp.makeConstraints {
                 $0.width.equalTo(size.width)
                 $0.height.equalTo(size.height)
             }
-            
-            button.snp.makeConstraints {
-                $0.width.equalTo(size.width * 1.5)
-                $0.height.equalTo(size.height * 1.5)
-            }
         } else {
-            button.frame = CGRect(x: 0, y: 0, width: size.width * 1.5, height: size.height * 1.5)
+            button.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
             button.imageView?.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         }
         
@@ -71,7 +61,7 @@ class UIBarButtonItemFabric {
         let label: UILabel = UILabel()
         
         label.font = App.Font.main(size: fontSize, type: .bold).rawValue
-        label.textColor = App.Color.main.rawValue
+        label.textColor = .primaryText
         label.text = title
         label.sizeToFit()
         
@@ -79,16 +69,28 @@ class UIBarButtonItemFabric {
     }
     
     class func chartBarItem(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
-        return imagedBarButtonItem(imageName: "ic_chart",
-                                   size: CGSize(width: 23, height: 20),
-                                   color: nil,
-                                   onTap: onTap)
+        
+        var image: UIImage? = UIImage(named: "ic_chart")
+        var size = CGSize(width: 23, height: 20)
+        
+        if #available(iOS 13, *) {
+            image = UIImage(systemName: "chart.pie.fill")
+            size = CGSize(width: 27, height: 27)
+        }
+        
+        return imagedBarButtonItem(image: image, size: size, onTap: onTap)
     }
     
     class func settingsBarItem(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
-        return imagedBarButtonItem(imageName: "ic_settings",
-                                   size: CGSize(width: 23, height: 23),
-                                   color: nil,
+        
+        var image: UIImage? = UIImage(named: "ic_settings")
+        
+        if #available(iOS 13, *) {
+            image = UIImage(systemName: "gear")
+        }
+        
+        return imagedBarButtonItem(image: image,
+                                   size: CGSize(width: 25, height: 23),
                                    onTap: onTap)
     }
     

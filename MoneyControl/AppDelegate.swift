@@ -65,7 +65,7 @@ class AppDelegate: UIResponder {
         let controller = UIViewController.by(flow: flowDataToShow)
         let navigationController = UINavigationController(rootViewController: controller)
         
-        navigationController.navigationBar.applyWhiteBackground()
+        navigationController.navigationBar.applyMainBackground()
         
         navigationController.navigationBar.titleTextAttributes =
                 [NSAttributedString.Key.foregroundColor: UIColor(hex: 0x525252),

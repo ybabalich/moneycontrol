@@ -43,6 +43,12 @@ class TransactionsHistoryListViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setup() {
+        
+        // colors
+        view.backgroundColor = .mainElementBackground
+        tableView.backgroundColor = .mainElementBackground
+        tableView.separatorColor = .tableSeparator
+        
         //general
         customizeBackBtn()
         self.title = "Transactions list".localized

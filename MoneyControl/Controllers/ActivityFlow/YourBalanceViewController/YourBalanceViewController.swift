@@ -44,6 +44,13 @@ class YourBalanceViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setup() {
+        
+        // colors
+        yourBalanceLabel.textColor = .primaryText
+        currencyLabel.textColor = .primaryText
+        balanceTextfield.textColor = .primaryText
+        view.backgroundColor = .mainBackground
+        
         //ui
         currencyLabel.text = viewModel.currencySymbol()
         

@@ -48,9 +48,16 @@ class EmptyView: UIView {
     
     // MARK: - Private methods
     private func setup() {
-        //action button
-        actionBtn.setTitleColor(.white, for: .normal)
-        actionBtn.backgroundColor = App.Color.main.rawValue
+        
+        // colors
+        
+        backgroundColor = .clear
+        textLabel.textColor = .primaryText
+        actionBtn.backgroundColor = .controlTintActive
+        actionBtn.setTitleColor(.primaryText, for: .normal)
+        
+        // general
+        
         actionBtn.layer.cornerRadius = 5
     }
 

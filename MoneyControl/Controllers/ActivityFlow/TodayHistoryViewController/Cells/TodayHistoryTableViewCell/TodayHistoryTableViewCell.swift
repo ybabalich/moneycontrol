@@ -16,6 +16,8 @@ class TodayHistoryTableViewCell : UITableViewCell {
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var rightArrowImageView: UIImageView!
+    
     
     // MARK: - Variables private
     private var _tapClosure: TransactionTapClosure?
@@ -25,6 +27,8 @@ class TodayHistoryTableViewCell : UITableViewCell {
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        setupUI()
         
         rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
             self._tapClosure?(self._viewModel)
@@ -37,13 +41,25 @@ class TodayHistoryTableViewCell : UITableViewCell {
     }
     
     // MARK: - Public methods
+    
+    func setupUI() {
+        
+        // colors
+        
+        backgroundView?.backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        categoryNameLabel.textColor = .secondaryText
+        categoryNameLabel.textColor = .primaryText
+        rightArrowImageView.image = rightArrowImageView.image?.tinted(with: .controlTintActive)
+    }
+    
     func apply(_ viewModel: TransactionViewModel) {
         _viewModel = viewModel
         
         categoryImageView.image = viewModel.category.image
         valueLabel.text = viewModel.value.currencyFormatted
-        valueLabel.textColor = viewModel.type == .incoming ? App.Color.incoming.rawValue : App.Color.outcoming.rawValue
         categoryNameLabel.text = viewModel.category.title
+        valueLabel.textColor = viewModel.type == .incoming ? App.Color.incoming.rawValue : App.Color.outcoming.rawValue
     }
     
     func onTap(completion: @escaping TransactionTapClosure) {

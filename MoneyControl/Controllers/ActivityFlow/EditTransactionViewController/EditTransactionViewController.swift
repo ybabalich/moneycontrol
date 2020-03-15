@@ -59,6 +59,10 @@ class EditTransactionViewController: BaseViewController {
         navigationItem.hidesBackButton = false
         customizeBackBtn()
         
+        // colors
+//        stackContentView.backgroundColor = .mainElementBackground
+//        view.backgroundColor = .mainBackground
+        
         //views
         setupSubviews()
     }

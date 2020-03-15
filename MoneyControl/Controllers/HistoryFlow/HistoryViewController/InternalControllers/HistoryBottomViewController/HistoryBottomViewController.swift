@@ -47,6 +47,13 @@ class HistoryBottomViewController: BaseViewController {
     
     // MARK: - Public methods
     func setupUI() {
+        
+        // colors
+        view.backgroundColor = .mainBackground
+        tableContentView.backgroundColor = .mainElementBackground
+        tableView.backgroundColor = .mainElementBackground
+        tableView.separatorColor = .tableSeparator
+        
         //general
         tableContentView.layer.masksToBounds = true
         

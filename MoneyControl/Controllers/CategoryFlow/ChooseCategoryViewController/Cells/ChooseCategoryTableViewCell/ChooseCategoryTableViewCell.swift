@@ -36,8 +36,11 @@ class ChooseCategoryTableViewCell: UITableViewCell {
     
     // MARK: - Private methods
     private func setup() {
-        contentView.backgroundColor = .white
-        categoryTitle.textColor = .black
+        
+        // colors
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        categoryTitle.textColor = .primaryText
     }
     
 }
