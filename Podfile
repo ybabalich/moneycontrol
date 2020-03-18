@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '11.0'
 
 target 'MoneyControl' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -8,13 +8,14 @@ target 'MoneyControl' do
   # Pods for MoneyControl
 
   #general
-  pod 'SnapKit'  
+  pod 'SnapKit'
+  pod 'Then'
 
   #Rx
   pod 'RxSwift'
   pod 'RxCocoa'
   pod "RxGesture"
-  pod "RxDataSources"
+  pod "RxDataSources" 
 
   #Database
   pod ‘RealmSwift’

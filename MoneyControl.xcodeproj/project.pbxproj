@@ -75,7 +75,9 @@
 		D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21921ADCDD30085664A /* TransactionService.swift */; };
 		D96CE21D21ADD2B80085664A /* TodayHistoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21C21ADD2B80085664A /* TodayHistoryViewViewModel.swift */; };
 		D96CE21F21ADD3B40085664A /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21E21ADD3B40085664A /* TransactionViewModel.swift */; };
+		D96F46EF242254090092C277 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F46EE242254090092C277 /* ReusableView.swift */; };
 		D97A0FF821B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97A0FF721B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift */; };
+		D9832B24241DBEEB002E5100 /* String+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9832B23241DBEEB002E5100 /* String+MoneyControl.swift */; };
 		D985471123D26E5700949C4E /* UINavigationBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985471023D26E5700949C4E /* UINavigationBarExtensions.swift */; };
 		D98E333621B2BAD2004C66C3 /* RegularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E333521B2BAD2004C66C3 /* RegularButton.swift */; };
 		D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E333921B4528A004C66C3 /* EditTransactionViewController.swift */; };
@@ -96,7 +98,7 @@
 		D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */; };
 		D99F684521AAA462005EC865 /* TodayHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */; };
 		D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */; };
-		D99F684821AAB399005EC865 /* UITableViewExtenions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684721AAB399005EC865 /* UITableViewExtenions.swift */; };
+		D99F684821AAB399005EC865 /* UITableView+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684721AAB399005EC865 /* UITableView+MoneyControl.swift */; };
 		D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684A21AABDAD005EC865 /* HistoryViewController.swift */; };
 		D99F684F21AAD56C005EC865 /* HistoryTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */; };
 		D99F685421AAD630005EC865 /* HistoryTopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F685221AAD630005EC865 /* HistoryTopCollectionViewCell.swift */; };
@@ -134,7 +136,7 @@
 /* Begin PBXFileReference section */
 		6CFAAB9EC7B78DE15D776C6B /* Pods-MoneyControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.release.xcconfig"; sourceTree = "<group>"; };
 		BE97D8B7FB287C9B7A662C78 /* Pods_MoneyControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D90EDB85214FD93900012383 /* MoneyControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90EDB85214FD93900012383 /* Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Money.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90EDB88214FD93900012383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90EDB94214FD93A00012383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D90EDB9A214FE53900012383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Desktop/Upwork/Money control/Assets.xcassets"; sourceTree = "<group>"; };
@@ -199,7 +201,9 @@
 		D96CE21921ADCDD30085664A /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		D96CE21C21ADD2B80085664A /* TodayHistoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewViewModel.swift; sourceTree = "<group>"; };
 		D96CE21E21ADD3B40085664A /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		D96F46EE242254090092C277 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		D97A0FF721B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryListViewController.swift; sourceTree = "<group>"; };
+		D9832B23241DBEEB002E5100 /* String+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MoneyControl.swift"; sourceTree = "<group>"; };
 		D985471023D26E5700949C4E /* UINavigationBarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtensions.swift; sourceTree = "<group>"; };
 		D98E333521B2BAD2004C66C3 /* RegularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularButton.swift; sourceTree = "<group>"; };
 		D98E333921B4528A004C66C3 /* EditTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewController.swift; sourceTree = "<group>"; };
@@ -220,7 +224,7 @@
 		D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewController.swift; sourceTree = "<group>"; };
 		D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayHistoryTableViewCell.xib; sourceTree = "<group>"; };
-		D99F684721AAB399005EC865 /* UITableViewExtenions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtenions.swift; sourceTree = "<group>"; };
+		D99F684721AAB399005EC865 /* UITableView+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+MoneyControl.swift"; sourceTree = "<group>"; };
 		D99F684A21AABDAD005EC865 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopViewController.swift; sourceTree = "<group>"; };
 		D99F685221AAD630005EC865 /* HistoryTopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -302,7 +306,7 @@
 		D90EDB86214FD93900012383 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D90EDB85214FD93900012383 /* MoneyControl.app */,
+				D90EDB85214FD93900012383 /* Money.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -371,6 +375,7 @@
 		D920A09521562F1900ECA806 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
+				D96F46ED242253F80092C277 /* Views */,
 				D9AB5DEF23D7834A002167D8 /* Buttons */,
 				D9C8BCEF2269B9C000289CDC /* Notificators */,
 				D9DB3B1F21A94BA000D8BADC /* Helpers */,
@@ -417,7 +422,7 @@
 				D920A0A52156427300ECA806 /* UIWindowExtensions.swift */,
 				D95CF26921577A9A001BEF1F /* UIColorExtensions.swift */,
 				D922147F21A97DCB00A71CDB /* UICollectionViewExtensions.swift */,
-				D99F684721AAB399005EC865 /* UITableViewExtenions.swift */,
+				D99F684721AAB399005EC865 /* UITableView+MoneyControl.swift */,
 				D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */,
 				D95D155D2266823600B83AD6 /* StringExtensions.swift */,
 				D95D155F22672F1600B83AD6 /* UIScreenExtensions.swift */,
@@ -425,6 +430,7 @@
 				D9AB5DF523D78533002167D8 /* UIImageExtensions.swift */,
 				D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */,
 				D9466CF124142F1A0048095A /* UIColor+Assets.swift */,
+				D9832B23241DBEEB002E5100 /* String+MoneyControl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -722,6 +728,14 @@
 				D96CE21C21ADD2B80085664A /* TodayHistoryViewViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D96F46ED242253F80092C277 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D96F46EE242254090092C277 /* ReusableView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D97A0FF621B9CE20002BCA4C /* TransactionsHistoryListViewController */ = {
@@ -1207,7 +1221,7 @@
 			);
 			name = MoneyControl;
 			productName = MoneyControl;
-			productReference = D90EDB85214FD93900012383 /* MoneyControl.app */;
+			productReference = D90EDB85214FD93900012383 /* Money.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1343,7 +1357,7 @@
 				D9AB5DCE23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift in Sources */,
 				D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */,
 				D9AB5DD723D64D4D002167D8 /* LocalizationService.swift in Sources */,
-				D99F684821AAB399005EC865 /* UITableViewExtenions.swift in Sources */,
+				D99F684821AAB399005EC865 /* UITableView+MoneyControl.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
 				D959B6DD23D8FC340050756E /* SettingsHeaderViewModel.swift in Sources */,
 				D95312F523DA1CAB00E26D1E /* DoubleExtensions.swift in Sources */,
@@ -1384,6 +1398,7 @@
 				D9C8BCF12269BAEE00289CDC /* KeyboardNotificator.swift in Sources */,
 				D96CE21F21ADD3B40085664A /* TransactionViewModel.swift in Sources */,
 				D959B6E323D9038E0050756E /* SettingsViewTitledCell.swift in Sources */,
+				D9832B24241DBEEB002E5100 /* String+MoneyControl.swift in Sources */,
 				D959B6DB23D8FBF90050756E /* SettingsViewModel.swift in Sources */,
 				D98E333D21B454D4004C66C3 /* EditTransactionViewViewModel.swift in Sources */,
 				D9466CF224142F1A0048095A /* UIColor+Assets.swift in Sources */,
@@ -1393,6 +1408,7 @@
 				D959B6DF23D8FC420050756E /* SettingsSectionViewModel.swift in Sources */,
 				D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */,
 				D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */,
+				D96F46EF242254090092C277 /* ReusableView.swift in Sources */,
 				D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */,
 				D98E336321B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift in Sources */,
 				D911ECFC21A7F7EB00C3A7B1 /* ActivityViewController.swift in Sources */,
@@ -1595,8 +1611,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1617,8 +1634,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

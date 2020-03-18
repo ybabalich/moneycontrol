@@ -14,6 +14,7 @@
 "Balance" = "Баланс:";
 "Назад" = "Назад";
 "Remove" = "Удалить";
+"All" = "Все";
 
 //setting
 "Settings" = "Настройки";
@@ -47,7 +48,7 @@
 "Transactions list" = "Список транзакций";
 
 // general
-"Spending" = "Траты";
+"Spendings" = "Траты";
 "Revenues" = "Поступления";
 "Edit" = "Редактировать";
 "Done" = "Готово";

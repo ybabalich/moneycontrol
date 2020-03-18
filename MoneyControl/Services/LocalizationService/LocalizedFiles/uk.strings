@@ -14,6 +14,7 @@
 "Balance" = "Баланс:";
 "Back" = "Назад";
 "Remove" = "Видалити";
+"All" = "Усі";
 
 //setting
 "Settings" = "Налаштування";
@@ -47,7 +48,7 @@
 "Transactions list" = "Список транзакцій";
 
 // general
-"Spending" = "Витрати";
+"Spendings" = "Витрати";
 "Revenues" = "Надходження";
 "Edit" = "Редагування";
 "Done" = "Готово";

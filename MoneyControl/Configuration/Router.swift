@@ -48,8 +48,8 @@ class Router: NSObject {
     }
     
     func showTodayHistoryScreen() {
-        let todayHistoryFlow = AppLaunch.StoryboardFlow.activity(viewController: .todayHistory)
-        showScreen(todayHistoryFlow, animated: true)
+        let vc = TodayHistoryViewController()
+        navigationViewController.pushViewController(vc, animated: true)
     }
     
     func showHistoryScreen() {

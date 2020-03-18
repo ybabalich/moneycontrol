@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     
-    var localized: String {
+    public var localized: String {
         let service = LocalizationService.instance
         if let value = service.getDictionaryForLanguage(service.preferredLanguage())[self] {
             return value

@@ -74,6 +74,7 @@ extension UIView {
             }
             
             layer.maskedCorners = corners
+            return
         }
         
         
