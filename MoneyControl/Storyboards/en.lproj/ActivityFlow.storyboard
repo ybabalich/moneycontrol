@@ -20,19 +20,19 @@
         <!--Activity View Controller-->
         <scene sceneID="6Mm-36-EKg">
             <objects>
-                <viewController id="Lap-kz-unK" customClass="ActivityViewController" customModule="Money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Lap-kz-unK" customClass="ActivityViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HEF-Iv-uU5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdv-Uv-df1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                 <connections>
                                     <segue destination="k2h-rm-it2" kind="embed" id="zmj-aI-ceG"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZ6-36-Xtb">
-                                <rect key="frame" x="0.0" y="283.5" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="350" width="375" height="267"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="bd8-zM-IRE" kind="embed" id="oxd-Ue-VBu"/>
@@ -41,22 +41,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZ7-rK-DEH">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFm-Ne-ll1" customClass="CheckButton" customModule="Money" customModuleProvider="target">
-                                        <rect key="frame" x="137.5" y="5" width="100" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFm-Ne-ll1" customClass="CheckButton" customModule="MoneyControl" customModuleProvider="target">
+                                        <rect key="frame" x="319" y="5" width="40" height="40"/>
                                         <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="P3F-OS-xUL"/>
-                                            <constraint firstAttribute="width" constant="100" id="b5Z-FZ-G6b"/>
+                                            <constraint firstAttribute="width" constant="40" id="b5Z-FZ-G6b"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="35" minY="10" maxX="35" maxY="10"/>
                                         <state key="normal" image="ic_check"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-pw-yRM">
-                                        <rect key="frame" x="242" y="16" width="125" height="18"/>
-                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-g2-JiH">
                                         <rect key="frame" x="16" y="12.5" width="25" height="25"/>
                                         <constraints>
@@ -71,11 +65,8 @@
                                     <constraint firstItem="sFm-Ne-ll1" firstAttribute="centerY" secondItem="MZ7-rK-DEH" secondAttribute="centerY" id="2fx-3Q-szr"/>
                                     <constraint firstItem="PUm-g2-JiH" firstAttribute="leading" secondItem="MZ7-rK-DEH" secondAttribute="leading" constant="16" id="3Tp-qE-aVg"/>
                                     <constraint firstAttribute="height" constant="50" id="Bc4-Ok-aMu"/>
-                                    <constraint firstAttribute="trailing" secondItem="EcT-pw-yRM" secondAttribute="trailing" constant="8" id="ZOd-Jd-hmd"/>
-                                    <constraint firstItem="EcT-pw-yRM" firstAttribute="centerY" secondItem="MZ7-rK-DEH" secondAttribute="centerY" id="bJC-GW-JUJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="sFm-Ne-ll1" secondAttribute="trailing" constant="16" id="Lga-KA-eoX"/>
                                     <constraint firstItem="PUm-g2-JiH" firstAttribute="centerY" secondItem="MZ7-rK-DEH" secondAttribute="centerY" id="fOd-2K-uY4"/>
-                                    <constraint firstItem="sFm-Ne-ll1" firstAttribute="centerX" secondItem="MZ7-rK-DEH" secondAttribute="centerX" id="rL7-wL-NcX"/>
-                                    <constraint firstItem="EcT-pw-yRM" firstAttribute="leading" secondItem="sFm-Ne-ll1" secondAttribute="trailing" constant="4.5" id="tlG-VX-lha"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -88,7 +79,7 @@
                             <constraint firstItem="bno-at-WDx" firstAttribute="trailing" secondItem="eZ6-36-Xtb" secondAttribute="trailing" id="MWg-8l-Xsc"/>
                             <constraint firstItem="bno-at-WDx" firstAttribute="trailing" secondItem="MZ7-rK-DEH" secondAttribute="trailing" id="RHw-6H-7Cy"/>
                             <constraint firstItem="MZ7-rK-DEH" firstAttribute="bottom" secondItem="bno-at-WDx" secondAttribute="bottom" id="SKM-Gh-ZNx"/>
-                            <constraint firstItem="eZ6-36-Xtb" firstAttribute="height" secondItem="HEF-Iv-uU5" secondAttribute="height" multiplier="0.5" id="TmS-Gd-EdG"/>
+                            <constraint firstItem="eZ6-36-Xtb" firstAttribute="height" secondItem="HEF-Iv-uU5" secondAttribute="height" multiplier="0.4" id="TmS-Gd-EdG"/>
                             <constraint firstItem="eZ6-36-Xtb" firstAttribute="leading" secondItem="bno-at-WDx" secondAttribute="leading" id="fQ9-Yh-6HJ"/>
                             <constraint firstItem="eZ6-36-Xtb" firstAttribute="top" secondItem="gdv-Uv-df1" secondAttribute="bottom" id="gHq-nS-LeU"/>
                             <constraint firstItem="MZ7-rK-DEH" firstAttribute="top" secondItem="eZ6-36-Xtb" secondAttribute="bottom" id="ptf-RQ-Udi"/>
@@ -99,7 +90,6 @@
                         <outlet property="bottomView" destination="MZ7-rK-DEH" id="Xqp-3A-5EL"/>
                         <outlet property="doneBtn" destination="sFm-Ne-ll1" id="dsH-xF-C4Y"/>
                         <outlet property="historyBtn" destination="PUm-g2-JiH" id="dWo-hj-KsH"/>
-                        <outlet property="totalLabel" destination="EcT-pw-yRM" id="u7O-V6-XTB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFX-x9-YmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,18 +99,18 @@
         <!--Activity Top View Controller-->
         <scene sceneID="jAc-3v-4XW">
             <objects>
-                <viewController id="k2h-rm-it2" customClass="ActivityTopViewController" customModule="Money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k2h-rm-it2" customClass="ActivityTopViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nXy-Bf-BNa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tud-wr-laM" userLabel="Content View">
-                                <rect key="frame" x="16" y="16" width="343" height="251.5"/>
+                                <rect key="frame" x="16" y="16" width="343" height="318"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OAJ-rI-ARp">
                                         <rect key="frame" x="61.5" y="16" width="220" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQZ-ks-sYb" customClass="RegularButton" customModule="Money" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQZ-ks-sYb" customClass="RegularButton" customModule="MoneyControl" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="5cg-N9-p5J"/>
@@ -130,7 +120,7 @@
                                                     <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fS-GH-MdO" customClass="RegularButton" customModule="Money" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fS-GH-MdO" customClass="RegularButton" customModule="MoneyControl" customModuleProvider="target">
                                                 <rect key="frame" x="120" y="0.0" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="xKj-N0-8ug"/>
@@ -143,10 +133,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9C-s4-hqC">
-                                        <rect key="frame" x="16" y="46" width="311" height="143.5"/>
+                                        <rect key="frame" x="16" y="46" width="311" height="210"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000.20" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaH-4U-zhz">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="143.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="311" height="210"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="38"/>
@@ -162,7 +152,7 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e2U-RA-Wqa">
-                                        <rect key="frame" x="8" y="189.5" width="327" height="50"/>
+                                        <rect key="frame" x="8" y="256" width="327" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="kIN-gN-D1H"/>
@@ -224,22 +214,22 @@
         <!--Activity Bottom View Controller-->
         <scene sceneID="9Wa-Ky-2SE">
             <objects>
-                <viewController id="bd8-zM-IRE" customClass="ActivityBottomViewController" customModule="Money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bd8-zM-IRE" customClass="ActivityBottomViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r3D-UT-NCo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-fq-vGe" userLabel="ContentView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8W1-gj-izp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OPl-2i-mNc">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esS-vP-35o">
-                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="83.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="67"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
                                                         <state key="normal" title="1">
@@ -247,7 +237,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGc-Pl-5JG">
-                                                        <rect key="frame" x="125" y="0.0" width="125" height="83.5"/>
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="67"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
                                                         <state key="normal" title="2">
@@ -255,7 +245,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucs-o5-D21">
-                                                        <rect key="frame" x="250" y="0.0" width="125" height="83.5"/>
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="67"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
                                                         <state key="normal" title="3">
@@ -266,24 +256,24 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="D4o-oK-Bsf">
-                                                <rect key="frame" x="0.0" y="83.5" width="375" height="83.5"/>
+                                                <rect key="frame" x="0.0" y="67" width="375" height="66.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er3-TT-pC4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="83.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="66.5"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
                                                         <state key="normal" title="4">
                                                             <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A54-Tf-Oun">
-                                                        <rect key="frame" x="125" y="0.0" width="125" height="83.5"/>
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="66.5"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
                                                         <state key="normal" title="5">
                                                             <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfm-2P-lY8">
-                                                        <rect key="frame" x="250" y="0.0" width="125" height="83.5"/>
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="66.5"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
                                                         <state key="normal" title="6">
                                                             <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -292,24 +282,24 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="18u-Ke-o5J">
-                                                <rect key="frame" x="0.0" y="167" width="375" height="83"/>
+                                                <rect key="frame" x="0.0" y="133.5" width="375" height="67"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOH-ln-Thd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="83"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="67"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
                                                         <state key="normal" title="7">
                                                             <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EB-Cy-FZl">
-                                                        <rect key="frame" x="125" y="0.0" width="125" height="83"/>
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="67"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
                                                         <state key="normal" title="8">
                                                             <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGs-h6-zSf">
-                                                        <rect key="frame" x="250" y="0.0" width="125" height="83"/>
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="67"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
                                                         <state key="normal" title="9">
                                                             <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -318,24 +308,24 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bux-13-daw">
-                                                <rect key="frame" x="0.0" y="250" width="375" height="83.5"/>
+                                                <rect key="frame" x="0.0" y="200.5" width="375" height="66.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CC1-Qw-Efg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="83.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="66.5"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
                                                         <state key="normal" title=".">
                                                             <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3d-m1-Tdo">
-                                                        <rect key="frame" x="125" y="0.0" width="125" height="83.5"/>
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="66.5"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wT4-I1-nRR">
-                                                        <rect key="frame" x="250" y="0.0" width="125" height="83.5"/>
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="66.5"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="21"/>
                                                         <state key="normal" title="CLEAR">
                                                             <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -389,7 +379,7 @@
         <!--Edit Transaction View Controller-->
         <scene sceneID="O4m-VW-GEw">
             <objects>
-                <viewController storyboardIdentifier="EditTransactionViewController" id="Pw1-pL-imQ" customClass="EditTransactionViewController" customModule="Money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditTransactionViewController" id="Pw1-pL-imQ" customClass="EditTransactionViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xSk-BO-Uh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -436,7 +426,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="9YL-Fh-cbj">
                                 <rect key="frame" x="70.5" y="619" width="234" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-fm-rr9" customClass="RemoveButton" customModule="Money" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-fm-rr9" customClass="RemoveButton" customModule="MoneyControl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
                                         <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -446,7 +436,7 @@
                                         <inset key="imageEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                         <state key="normal" image="ic_remove"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbj-vM-CPN" customClass="CheckButton" customModule="Money" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbj-vM-CPN" customClass="CheckButton" customModule="MoneyControl" customModuleProvider="target">
                                         <rect key="frame" x="134" y="0.0" width="100" height="40"/>
                                         <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -485,7 +475,7 @@
         <!--Choose Currency View Controller-->
         <scene sceneID="4u8-8L-ttc">
             <objects>
-                <viewController storyboardIdentifier="ChooseCurrencyViewController" id="eZx-V7-gJD" customClass="ChooseCurrencyViewController" customModule="Money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseCurrencyViewController" id="eZx-V7-gJD" customClass="ChooseCurrencyViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ny6-dn-Cj7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -502,7 +492,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjx-Y0-By8" customClass="CheckButton" customModule="Money" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjx-Y0-By8" customClass="CheckButton" customModule="MoneyControl" customModuleProvider="target">
                                 <rect key="frame" x="137.5" y="619" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -540,7 +530,7 @@
         <!--Your Balance View Controller-->
         <scene sceneID="Gzm-D7-nA3">
             <objects>
-                <viewController storyboardIdentifier="YourBalanceViewController" id="Z8t-EX-WQK" customClass="YourBalanceViewController" customModule="Money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YourBalanceViewController" id="Z8t-EX-WQK" customClass="YourBalanceViewController" customModule="MoneyControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uOi-W6-wt5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -572,7 +562,7 @@
                                     <constraint firstAttribute="width" constant="150" id="d2x-tg-GKh"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYY-Ev-5OR" customClass="CheckButton" customModule="Money" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYY-Ev-5OR" customClass="CheckButton" customModule="MoneyControl" customModuleProvider="target">
                                 <rect key="frame" x="137.5" y="619" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

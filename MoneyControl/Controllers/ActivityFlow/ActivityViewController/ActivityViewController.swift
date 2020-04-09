@@ -59,7 +59,7 @@ class ActivityViewController: BaseViewController {
             Router.instance.showSettingsScreen()
         }
         
-        return nil //[settingsBtn]
+        return [settingsBtn]
     }
     
     // MARK: - Private methods
@@ -95,15 +95,15 @@ class ActivityViewController: BaseViewController {
         viewModel.transactionType.asObservable().subscribe(onNext: { [unowned self] (transactionType) in
             if transactionType == .incoming {
                 self.doneBtn.colorType = .incoming
-                self.totalLabel.textColor = App.Color.incoming.rawValue
+//                self.totalLabel.textColor = App.Color.incoming.rawValue
             } else {
                 self.doneBtn.colorType = .outcoming
-                self.totalLabel.textColor = App.Color.outcoming.rawValue
+//                self.totalLabel.textColor = App.Color.outcoming.rawValue
             }
         }).disposed(by: disposeBag)
         
         viewModel.totalValue.subscribe(onNext: { [unowned self] (totalValue) in
-            self.totalLabel.text = "Total".localized + ": \(totalValue.currencyFormatted)"
+//            self.totalLabel.text = "Total".localized + ": \(totalValue.currencyFormatted)"
         }).disposed(by: disposeBag)
         
         viewModel.isActiveDoneButton.bind(to: doneBtn.rx.isEnabled).disposed(by: disposeBag)

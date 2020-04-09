@@ -40,14 +40,12 @@
 		D95312FB23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312FA23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift */; };
 		D95312FD23DA32BC00E26D1E /* SettingsLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312FC23DA32BC00E26D1E /* SettingsLanguageViewModel.swift */; };
 		D953130223DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953130023DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift */; };
-		D953130323DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D953130123DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib */; };
 		D959B6D723D8F70F0050756E /* SettingsViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */; };
 		D959B6D923D8F8F10050756E /* SettingsViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */; };
 		D959B6DB23D8FBF90050756E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */; };
 		D959B6DD23D8FC340050756E /* SettingsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DC23D8FC340050756E /* SettingsHeaderViewModel.swift */; };
 		D959B6DF23D8FC420050756E /* SettingsSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DE23D8FC420050756E /* SettingsSectionViewModel.swift */; };
 		D959B6E323D9038E0050756E /* SettingsViewTitledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6E123D9038E0050756E /* SettingsViewTitledCell.swift */; };
-		D959B6E423D9038E0050756E /* SettingsViewTitledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D959B6E223D9038E0050756E /* SettingsViewTitledCell.xib */; };
 		D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CF25C2156523D001BEF1F /* LockViewController.swift */; };
 		D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D95CF25D2156523D001BEF1F /* LockViewController.xib */; };
 		D95CF261215775FF001BEF1F /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95CF260215775F8001BEF1F /* Lato-Light.ttf */; };
@@ -95,6 +93,7 @@
 		D98E336021B54ED4004C66C3 /* EyeSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E335F21B54ED4004C66C3 /* EyeSwitchView.swift */; };
 		D98E336321B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */; };
 		D98E336521B58E06004C66C3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E336421B58E06004C66C3 /* Settings.swift */; };
+		D993362F243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */; };
 		D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */; };
 		D99F684521AAA462005EC865 /* TodayHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */; };
 		D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */; };
@@ -113,7 +112,6 @@
 		D9AB5DDA23D64D75002167D8 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DD923D64D75002167D8 /* en.strings */; };
 		D9AB5DDF23D64F8D002167D8 /* uk.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DDE23D64F8D002167D8 /* uk.strings */; };
 		D9AB5DE123D64F9A002167D8 /* ru.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DE023D64F9A002167D8 /* ru.strings */; };
-		D9AB5DEB23D77FD2002167D8 /* SettingsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AB5DEA23D77FD2002167D8 /* SettingsFlow.storyboard */; };
 		D9AB5DEE23D7813A002167D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DED23D7813A002167D8 /* SettingsViewController.swift */; };
 		D9AB5DF223D7836F002167D8 /* TappableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DF123D7836F002167D8 /* TappableButton.swift */; };
 		D9AB5DF423D783A0002167D8 /* BiggerAreaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DF323D783A0002167D8 /* BiggerAreaButton.swift */; };
@@ -125,6 +123,7 @@
 		D9C8BCEE2269A81100289CDC /* YourBalanceViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8BCED2269A81100289CDC /* YourBalanceViewViewModel.swift */; };
 		D9C8BCF12269BAEE00289CDC /* KeyboardNotificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8BCF02269BAEE00289CDC /* KeyboardNotificator.swift */; };
 		D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB3B2021A94BB100D8BADC /* UIBarButtonItemFabric.swift */; };
+		D9EC66CE242418B00030CADC /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC66CD242418B00030CADC /* BaseTableViewController.swift */; };
 		D9F87B54226519A2005CCFD5 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F87B53226519A2005CCFD5 /* DateService.swift */; };
 		D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC28F321623FBC00E57E1B /* Transaction.swift */; };
 		D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */; };
@@ -169,14 +168,12 @@
 		D95312FA23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChooseLanguageViewModel.swift; sourceTree = "<group>"; };
 		D95312FC23DA32BC00E26D1E /* SettingsLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLanguageViewModel.swift; sourceTree = "<group>"; };
 		D953130023DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChooseLanguageTitledCell.swift; sourceTree = "<group>"; };
-		D953130123DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsChooseLanguageTitledCell.xib; sourceTree = "<group>"; };
 		D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHeaderCell.swift; sourceTree = "<group>"; };
 		D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewHeaderCell.xib; sourceTree = "<group>"; };
 		D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D959B6DC23D8FC340050756E /* SettingsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderViewModel.swift; sourceTree = "<group>"; };
 		D959B6DE23D8FC420050756E /* SettingsSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionViewModel.swift; sourceTree = "<group>"; };
 		D959B6E123D9038E0050756E /* SettingsViewTitledCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewTitledCell.swift; sourceTree = "<group>"; };
-		D959B6E223D9038E0050756E /* SettingsViewTitledCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewTitledCell.xib; sourceTree = "<group>"; };
 		D95CF25C2156523D001BEF1F /* LockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 		D95CF25D2156523D001BEF1F /* LockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockViewController.xib; sourceTree = "<group>"; };
 		D95CF260215775F8001BEF1F /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -221,6 +218,7 @@
 		D98E335F21B54ED4004C66C3 /* EyeSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeSwitchView.swift; sourceTree = "<group>"; };
 		D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesViewViewModel.swift; sourceTree = "<group>"; };
 		D98E336421B58E06004C66C3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsChooseLanguageTitledCell.xib; sourceTree = "<group>"; };
 		D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewController.swift; sourceTree = "<group>"; };
 		D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 		D9AB5DE323D70B6F002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9AB5DE423D70B6F002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/CategoryFlow.storyboard; sourceTree = "<group>"; };
 		D9AB5DE523D70B73002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/HistoryFlow.storyboard; sourceTree = "<group>"; };
-		D9AB5DEA23D77FD2002167D8 /* SettingsFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsFlow.storyboard; sourceTree = "<group>"; };
 		D9AB5DED23D7813A002167D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D9AB5DF123D7836F002167D8 /* TappableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableButton.swift; sourceTree = "<group>"; };
 		D9AB5DF323D783A0002167D8 /* BiggerAreaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggerAreaButton.swift; sourceTree = "<group>"; };
@@ -255,6 +252,7 @@
 		D9C8BCED2269A81100289CDC /* YourBalanceViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourBalanceViewViewModel.swift; sourceTree = "<group>"; };
 		D9C8BCF02269BAEE00289CDC /* KeyboardNotificator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificator.swift; sourceTree = "<group>"; };
 		D9DB3B2021A94BB100D8BADC /* UIBarButtonItemFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemFabric.swift; sourceTree = "<group>"; };
+		D9EC66CD242418B00030CADC /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		D9F87B53226519A2005CCFD5 /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
 		D9FC28F321623FBC00E57E1B /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 				D95D153E22667B4A00B83AD6 /* ActivityFlow.storyboard */,
 				D95D154D22667D9D00B83AD6 /* HistoryFlow.storyboard */,
 				D95D155622667E6600B83AD6 /* CategoryFlow.storyboard */,
-				D9AB5DEA23D77FD2002167D8 /* SettingsFlow.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -544,7 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				D953130023DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift */,
-				D953130123DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib */,
+				D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */,
 			);
 			path = SettingsChooseLanguageTitledCell;
 			sourceTree = "<group>";
@@ -571,7 +568,6 @@
 			isa = PBXGroup;
 			children = (
 				D959B6E123D9038E0050756E /* SettingsViewTitledCell.swift */,
-				D959B6E223D9038E0050756E /* SettingsViewTitledCell.xib */,
 			);
 			path = SettingsViewTitledCell;
 			sourceTree = "<group>";
@@ -649,6 +645,7 @@
 			isa = PBXGroup;
 			children = (
 				D95CF271215825A4001BEF1F /* BaseViewController.swift */,
+				D9EC66CD242418B00030CADC /* BaseTableViewController.swift */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -1266,16 +1263,15 @@
 				D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */,
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
 				D94CA39521C1C53000FCCEB9 /* CalendarViewController.xib in Resources */,
-				D959B6E423D9038E0050756E /* SettingsViewTitledCell.xib in Resources */,
 				D98E335021B49D29004C66C3 /* EditTransactionDateView.xib in Resources */,
 				D95D154B22667D9D00B83AD6 /* HistoryFlow.storyboard in Resources */,
 				D95D154522667CA200B83AD6 /* Localizable.strings in Resources */,
 				D95D155422667E6600B83AD6 /* CategoryFlow.storyboard in Resources */,
 				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
 				D95D156B2267C6DD00B83AD6 /* ChooseCurrencyTableViewCell.xib in Resources */,
-				D953130323DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.xib in Resources */,
 				D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */,
 				D94CA39A21C1C95000FCCEB9 /* CalendarCollectionViewCell.xib in Resources */,
+				D993362F243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib in Resources */,
 				D9466CF024142E410048095A /* Colors.xcassets in Resources */,
 				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
 				D98E334621B46E56004C66C3 /* EditTransactionAmountView.xib in Resources */,
@@ -1288,7 +1284,6 @@
 				D99F685521AAD630005EC865 /* HistoryTopCollectionViewCell.xib in Resources */,
 				D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */,
 				D98E335D21B54BC5004C66C3 /* ManagedCategoryTableViewCell.xib in Resources */,
-				D9AB5DEB23D77FD2002167D8 /* SettingsFlow.storyboard in Resources */,
 				D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */,
 				D95CF261215775FF001BEF1F /* Lato-Light.ttf in Resources */,
 			);
@@ -1359,6 +1354,7 @@
 				D9AB5DD723D64D4D002167D8 /* LocalizationService.swift in Sources */,
 				D99F684821AAB399005EC865 /* UITableView+MoneyControl.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
+				D9EC66CE242418B00030CADC /* BaseTableViewController.swift in Sources */,
 				D959B6DD23D8FC340050756E /* SettingsHeaderViewModel.swift in Sources */,
 				D95312F523DA1CAB00E26D1E /* DoubleExtensions.swift in Sources */,
 				D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */,
