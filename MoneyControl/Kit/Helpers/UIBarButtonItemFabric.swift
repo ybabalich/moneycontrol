@@ -84,7 +84,7 @@ class UIBarButtonItemFabric {
     class func settingsBarItem(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
         
         var image: UIImage? = UIImage(named: "ic_settings")
-        var size = CGSize(width: 23, height: 20)
+        var size = CGSize(width: 23, height: 23)
         
         if #available(iOS 13, *) {
             image = UIImage(systemName: "gear")
@@ -94,6 +94,19 @@ class UIBarButtonItemFabric {
         return imagedBarButtonItem(image: image,
                                    size: size,
                                    onTap: onTap)
+    }
+    
+    class func calendar(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+        
+        var image: UIImage? = UIImage(named: "ic_settings")
+        var size = CGSize(width: 23, height: 23)
+        
+        if #available(iOS 13, *) {
+            image = UIImage(systemName: "calendar")
+            size = CGSize(width: 27, height: 27)
+        }
+        
+        return imagedBarButtonItem(image: image, size: size, onTap: onTap)
     }
     
 }

@@ -94,6 +94,7 @@
 		D98E336321B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */; };
 		D98E336521B58E06004C66C3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E336421B58E06004C66C3 /* Settings.swift */; };
 		D993362F243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */; };
+		D9933633243F208400AED4E6 /* BottomOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9933632243F208400AED4E6 /* BottomOverlayViewController.swift */; };
 		D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */; };
 		D99F684521AAA462005EC865 /* TodayHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */; };
 		D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */; };
@@ -219,6 +220,7 @@
 		D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesViewViewModel.swift; sourceTree = "<group>"; };
 		D98E336421B58E06004C66C3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsChooseLanguageTitledCell.xib; sourceTree = "<group>"; };
+		D9933632243F208400AED4E6 /* BottomOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOverlayViewController.swift; sourceTree = "<group>"; };
 		D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewController.swift; sourceTree = "<group>"; };
 		D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 		D920A09521562F1900ECA806 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
+				D9933630243F205D00AED4E6 /* Controllers */,
 				D96F46ED242253F80092C277 /* Views */,
 				D9AB5DEF23D7834A002167D8 /* Buttons */,
 				D9C8BCEF2269B9C000289CDC /* Notificators */,
@@ -873,6 +876,22 @@
 				D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D9933630243F205D00AED4E6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9933631243F206B00AED4E6 /* BottomOverlayViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D9933631243F206B00AED4E6 /* BottomOverlayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D9933632243F208400AED4E6 /* BottomOverlayViewController.swift */,
+			);
+			path = BottomOverlayViewController;
 			sourceTree = "<group>";
 		};
 		D99F683E21AA9C70005EC865 /* TodayHistoryViewController */ = {
@@ -1403,6 +1422,7 @@
 				D98E336021B54ED4004C66C3 /* EyeSwitchView.swift in Sources */,
 				D959B6DF23D8FC420050756E /* SettingsSectionViewModel.swift in Sources */,
 				D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */,
+				D9933633243F208400AED4E6 /* BottomOverlayViewController.swift in Sources */,
 				D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */,
 				D96F46EF242254090092C277 /* ReusableView.swift in Sources */,
 				D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */,
