@@ -38,7 +38,7 @@ class ActivityTopViewController: BaseViewController {
     override func updateLocalization() {
         super.updateLocalization()
         
-        outcomeBtn.setTitle("Spending".localized.uppercased(), for: .normal)
+        outcomeBtn.setTitle("Spendings".localized.uppercased(), for: .normal)
         outcomeBtn.titleLabel?.font = App.Font.main(size: 16, type: .bold).rawValue
         incomeBtn.setTitle("Revenues".localized.uppercased(), for: .normal)
         incomeBtn.titleLabel?.font = App.Font.main(size: 16, type: .bold).rawValue
@@ -56,6 +56,7 @@ class ActivityTopViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setup() {
+        
         // colors
         
         outcomeBtn.setTitleColor(.primaryText, for: .normal)

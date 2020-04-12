@@ -61,7 +61,7 @@ class EditTransactionViewController: BaseViewController {
         
         // colors
 //        stackContentView.backgroundColor = .mainElementBackground
-//        view.backgroundColor = .mainBackground
+        view.backgroundColor = .mainBackground
         
         //views
         setupSubviews()

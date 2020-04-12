@@ -10,6 +10,7 @@ import Foundation
 
 // MARK: - Typealias
 typealias EmptyClosure = () -> ()
+typealias TypeClosure<T> = (T) -> ()
 typealias CategoryViewModelClosure = (CategoryViewModel) -> ()
 
 enum Currency {
@@ -143,20 +144,31 @@ extension Currency: Rawable {
 }
 
 enum Sort: StringRepresentable, Equatable {
+    
     case day
     case week
     case month
     case year
     case custom(from: Date, to: Date)
     
+    static var allValues: [Sort] {
+        return [Sort.day, Sort.week, Sort.month,
+                Sort.year, Sort.custom(from: Date(), to: Date())]
+    }
+    
+    static var allCases: [String] {
+        return Sort.allValues.map { $0.stringValue }
+    }
+    
     // MARK: - Variables
+    
     var stringValue: String {
         switch self {
         case .day: return "Day".localized
         case .week: return "Week".localized
         case .month: return "Month".localized
-        case .year: return "Year"
-        case .custom(from: _, to: _): return "Custom"
+        case .year: return "Year".localized
+        case .custom(from: _, to: _): return "Custom".localized
         }
     }
 }

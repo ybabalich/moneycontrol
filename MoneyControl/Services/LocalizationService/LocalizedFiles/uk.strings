@@ -33,6 +33,8 @@
 "Day" = "День";
 "Week" = "Неділя";
 "Month" = "Місяць";
+"Year" = "Рік";
+"Custom" = "Вибрати період";
 
 // activity screen
 "Activity" = "Активність";

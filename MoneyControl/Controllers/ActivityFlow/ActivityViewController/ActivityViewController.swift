@@ -55,11 +55,13 @@ class ActivityViewController: BaseViewController {
     }
     
     override func createRightNavButtonsAdditionals() -> [UIBarButtonItem]? {
-        let settingsBtn = UIBarButtonItemFabric.settingsBarItem {
-            Router.instance.showSettingsScreen()
-        }
+//        let settingsBtn = UIBarButtonItemFabric.settingsBarItem {
+//            Router.instance.showSettingsScreen()
+//        }
+//
+//        return [settingsBtn]
         
-        return nil //[settingsBtn]
+        return nil
     }
     
     // MARK: - Private methods
@@ -75,8 +77,9 @@ class ActivityViewController: BaseViewController {
             let configuration = UIImage.SymbolConfiguration(pointSize: 30)
             let historyImage = UIImage(systemName: "clock.fill", withConfiguration: configuration)
             historyBtn.setImage(historyImage, for: .normal)
-            historyBtn.tintColor = .controlTintActive
         }
+        
+        historyBtn.tintColor = .controlTintActive
 
         //events
         subscribeToEvents()
@@ -95,15 +98,15 @@ class ActivityViewController: BaseViewController {
         viewModel.transactionType.asObservable().subscribe(onNext: { [unowned self] (transactionType) in
             if transactionType == .incoming {
                 self.doneBtn.colorType = .incoming
-                self.totalLabel.textColor = App.Color.incoming.rawValue
+//                self.totalLabel.textColor = App.Color.incoming.rawValue
             } else {
                 self.doneBtn.colorType = .outcoming
-                self.totalLabel.textColor = App.Color.outcoming.rawValue
+//                self.totalLabel.textColor = App.Color.outcoming.rawValue
             }
         }).disposed(by: disposeBag)
         
         viewModel.totalValue.subscribe(onNext: { [unowned self] (totalValue) in
-            self.totalLabel.text = "Total".localized + ": \(totalValue.currencyFormatted)"
+//            self.totalLabel.text = "Total".localized + ": \(totalValue.currencyFormatted)"
         }).disposed(by: disposeBag)
         
         viewModel.isActiveDoneButton.bind(to: doneBtn.rx.isEnabled).disposed(by: disposeBag)

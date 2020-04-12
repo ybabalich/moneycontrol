@@ -21,5 +21,6 @@ target 'MoneyControl' do
   pod ‘RealmSwift’
 
   #Other
-  pod 'JTAppleCalendar', '~> 7.0'
+  pod 'FSCalendar'
+ # pod 'JTAppleCalendar', '~> 7.0'
 end

@@ -11,31 +11,75 @@ import UIKit.UIColor
 extension UIColor {
 
     static var barBackground: UIColor {
-        return .assetColor(named: #function)
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xFFFFFF)
+        }
     }
     
     static var mainBackground: UIColor {
-        return .assetColor(named: #function)
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xDCF5FB)
+        }
     }
     
     static var primaryText: UIColor {
-        return .assetColor(named: #function)
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0x2A5077)
+        }
     }
     
     static var mainElementBackground: UIColor {
-        return .assetColor(named: #function)
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xFFFFFF)
+        }
     }
     
     static var controlTintActive: UIColor {
-        return .assetColor(named: #function)
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xF5C699)
+        }
     }
     
+    static var controlTintGreen: UIColor {
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0x27AE60)
+        }
+    }
+    
+    static var controlTintDestructive: UIColor {
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xE74C3C)
+        }
+    }
+
     static var tableSeparator: UIColor {
-        return .assetColor(named: #function)
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xF5C699).withAlphaComponent(0.5)
+        }
     }
     
     static var secondaryText: UIColor {
-        return .assetColor(named: #function)
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0x2A5093)
+        }
     }
 
 }
@@ -44,11 +88,15 @@ private extension UIColor {
 
     static func assetColor(named name: String) -> UIColor {
 
-        guard let retVal = UIColor(named: name) else {
-            fatalError("Color named \(name) does not exist!")
+        if #available(iOS 11.0, *) {
+            guard let retVal = UIColor(named: name) else {
+                fatalError("Color named \(name) does not exist!")
+            }
+            
+            return retVal
         }
-
-        return retVal
+        
+        return .clear
     }
 }
 

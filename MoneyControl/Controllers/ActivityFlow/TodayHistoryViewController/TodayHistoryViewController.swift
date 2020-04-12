@@ -25,6 +25,7 @@ class TodayHistoryViewController: BaseViewController {
     
     private var initialSegment: Segment = .all
     private var viewModel = TodayHistoryViewViewModel()
+    private var oldFrame: CGRect = .zero
     
     
     // MARK: - Lifecycle
@@ -49,9 +50,20 @@ class TodayHistoryViewController: BaseViewController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if oldFrame != tableView.frame {
+            tableView.applyCornerRadius(20, topLeft: true, topRight: true,
+                                        bottomRight: false, bottomLeft: false)
+            
+            oldFrame = tableView.frame
+        }
+    }
+    
     override func createRightNavButton() -> UIBarButtonItem? {
         UIBarButtonItemFabric.titledBarButtonItem(title: "Activity".localized,
-                                                  fontSize: UIScreen.main.isScreenWidthSmall ? 14 : 22)
+                                                  fontSize: UIScreen.isSmallDevice ? 14 : 22)
     }
     
     // MARK: - Private methods
@@ -65,6 +77,7 @@ class TodayHistoryViewController: BaseViewController {
             view.addSubview(segmentControl)
             
             segmentControl.selectedSegmentIndex = initialSegment.index
+            segmentControl.applyStyle()
             
             segmentControl.snp.makeConstraints {
                 $0.top.equalToSuperview().offset(24)
@@ -79,8 +92,6 @@ class TodayHistoryViewController: BaseViewController {
             tableView.separatorColor = .tableSeparator
             tableView.registerNib(type: TodayHistoryTableViewCell.self)
             tableView.tableFooterView = UIView(frame: .zero)
-            tableView.applyCornerRadius(20, topLeft: true, topRight: true,
-                                        bottomRight: false, bottomLeft: false)
             
             tableView.snp.makeConstraints {
                 $0.left.right.bottom.equalToSuperview()

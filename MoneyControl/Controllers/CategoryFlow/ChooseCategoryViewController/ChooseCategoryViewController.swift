@@ -14,19 +14,8 @@ class ChooseCategoryViewController: BaseViewController {
     // MARK: - Outlets
     @IBOutlet weak var segmentControl: UISegmentedControl! {
         didSet {
-            if #available(iOS 13, *) {
-                segmentControl.selectedSegmentTintColor = App.Color.main.rawValue
-                
-                let unselectedAttributes = [NSAttributedString.Key.foregroundColor: App.Color.main.rawValue];
-                let selectedAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white];
-                
-                segmentControl.setTitleTextAttributes(unselectedAttributes, for: .normal)
-                segmentControl.setTitleTextAttributes(selectedAttributes, for: .selected)
-            } else {
-                segmentControl.tintColor = App.Color.main.rawValue
-            }
-            
-            segmentControl.setTitle("Spending".localized, forSegmentAt: 0)
+            segmentControl.applyStyle()
+            segmentControl.setTitle("Spendings".localized, forSegmentAt: 0)
             segmentControl.setTitle("Revenues".localized, forSegmentAt: 1)
         }
     }
@@ -115,11 +104,7 @@ class ChooseCategoryViewController: BaseViewController {
             let cell = tableView.dequeueReusableCell(type: ChooseCategoryTableViewCell.self,
                                                      indexPath: IndexPath(row: row, section: 0))
             
-            cell.apply(viewModel,
-                       isSelected: self.viewModel.selectedCategory.value?.id == viewModel.id)
-            /*cell.onTap(completion: { (transactionViewModel) in
-             Router.instance.showEditTransactionScreen(transactionViewModel)
-             })*/
+            cell.apply(viewModel, isSelected: self.viewModel.selectedCategory.value?.id == viewModel.id)
             
             return cell
         }.disposed(by: disposeBag)
