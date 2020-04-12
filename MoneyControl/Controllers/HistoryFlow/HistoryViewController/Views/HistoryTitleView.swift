@@ -8,12 +8,31 @@
 
 import UIKit
 
-class HistoryTitleView: UIView {
+protocol LabeledView {
+    func show(title: String?)
+}
+
+class HistoryTitleView: UIView, LabeledView {
 
     // MARK: - UI
     
     private var firstLabel: UILabel!
     private var secondLabel: UILabel!
+    
+    // MARK: - Class methods
+    
+    class func view() -> (LabeledView & UIView) {
+        if #available(iOS 11, *) {
+            return HistoryTitleView()
+        } else {
+            let label = UILabel()
+            label.numberOfLines = 1
+            label.textColor = .primaryText
+            label.font = App.Font.main(size: 14, type: .bold).rawValue
+            label.textAlignment = .right
+            return label
+        }
+    }
     
     // MARK: - Initializers
     
@@ -28,6 +47,10 @@ class HistoryTitleView: UIView {
     }
     
     // MARK: - Public methods
+    
+    func show(title: String?) {
+        show(firstTitle: title, secondTitle: nil)
+    }
     
     func show(firstTitle: String?, secondTitle: String?) {
         
@@ -83,5 +106,12 @@ class HistoryTitleView: UIView {
         
     }
     
-    
+}
+
+extension UILabel: LabeledView {
+
+    func show(title: String?) {
+        text = title
+        sizeToFit()
+    }
 }

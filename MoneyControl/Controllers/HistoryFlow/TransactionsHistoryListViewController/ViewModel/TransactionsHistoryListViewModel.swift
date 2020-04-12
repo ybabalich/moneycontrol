@@ -51,8 +51,19 @@ class TransactionsHistoryListViewModel {
                 
                 makeSorted(transactions)
             }
-        default:
-            return
+        case .year:
+            let calendarYear = Calendar.current.currentYear()
+            service.fetchTransaction(dates: calendarYear, type: nil) { transactions in
+                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
+                
+                makeSorted(transactions)
+            }
+        case .custom(from: let fromDate, to: let toDate):
+            service.fetchTransaction(dates: (fromDate, toDate), type: nil) { transactions in
+                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
+                
+                makeSorted(transactions)
+            }
         }
     }
     

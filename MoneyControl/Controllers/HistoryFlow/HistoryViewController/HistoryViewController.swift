@@ -19,7 +19,7 @@ class HistoryViewController: BaseViewController {
     private var topViewController: HistoryTopViewController!
     private var bottomViewController: HistoryBottomViewController!
     
-    private let historyTitleView = HistoryTitleView()
+    private let historyTitleView: (LabeledView & UIView) = HistoryTitleView.view()
     
     // pickers
     
@@ -28,6 +28,7 @@ class HistoryViewController: BaseViewController {
     private var datePickerView: HistoryDatePickerView!
     
     // MARK: - Lifefycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,7 +53,7 @@ class HistoryViewController: BaseViewController {
     private func setup() {
         
         viewModel.titles.asObserver().subscribe(onNext: { [unowned self] values in
-            self.historyTitleView.show(firstTitle: values.0, secondTitle: values.1)
+            self.historyTitleView.show(title: values.0)
         }).disposed(by: disposeBag)
         
         // colors
@@ -65,7 +66,7 @@ class HistoryViewController: BaseViewController {
         viewModel.loadData()
         
         // title view
-    
+
         navigationItem.titleView = historyTitleView
         
         // UI

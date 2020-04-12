@@ -24,6 +24,7 @@
 		D922148021A97DCB00A71CDB /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D922147F21A97DCB00A71CDB /* UICollectionViewExtensions.swift */; };
 		D92295F621ADEF4E002AF881 /* ActivityViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295F521ADEF4E002AF881 /* ActivityViewViewModel.swift */; };
 		D92E85B5244321ED003EB2CB /* UIApplication+SafeAreas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E85B4244321ED003EB2CB /* UIApplication+SafeAreas.swift */; };
+		D92E85B724439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E85B624439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift */; };
 		D92EEDF321A94F0E00A9C233 /* ActivityTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF221A94F0E00A9C233 /* ActivityTopViewController.swift */; };
 		D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */; };
 		D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */; };
@@ -152,6 +153,7 @@
 		D922147F21A97DCB00A71CDB /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		D92295F521ADEF4E002AF881 /* ActivityViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewViewModel.swift; sourceTree = "<group>"; };
 		D92E85B4244321ED003EB2CB /* UIApplication+SafeAreas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeAreas.swift"; sourceTree = "<group>"; };
+		D92E85B624439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+MoneyControl.swift"; sourceTree = "<group>"; };
 		D92EEDF221A94F0E00A9C233 /* ActivityTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTopViewController.swift; sourceTree = "<group>"; };
 		D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBottomViewController.swift; sourceTree = "<group>"; };
 		D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				D9832B23241DBEEB002E5100 /* String+MoneyControl.swift */,
 				D993363A24409E1100AED4E6 /* Date+MoneyControl.swift */,
 				D92E85B4244321ED003EB2CB /* UIApplication+SafeAreas.swift */,
+				D92E85B624439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1366,6 +1369,7 @@
 				D993363D24410F0500AED4E6 /* HistoryCalendarPickerView.swift in Sources */,
 				D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */,
 				D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */,
+				D92E85B724439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift in Sources */,
 				D98E335521B547C0004C66C3 /* ManageCategoriesViewController.swift in Sources */,
 				D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */,
 				D985471123D26E5700949C4E /* UINavigationBarExtensions.swift in Sources */,
@@ -1594,7 +1598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1617,7 +1621,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

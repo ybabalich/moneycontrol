@@ -77,8 +77,9 @@ class ActivityViewController: BaseViewController {
             let configuration = UIImage.SymbolConfiguration(pointSize: 30)
             let historyImage = UIImage(systemName: "clock.fill", withConfiguration: configuration)
             historyBtn.setImage(historyImage, for: .normal)
-            historyBtn.tintColor = .controlTintActive
         }
+        
+        historyBtn.tintColor = .controlTintActive
 
         //events
         subscribeToEvents()

@@ -20,6 +20,7 @@ class BottomOverlayViewController: UIViewController {
     private var tappableView: UIView!
     private var bottomSpace: UIView!
     
+    private var oldFrame: CGRect = .zero
     private var contentHeight: CGFloat = 0
     
     let disposeBag = DisposeBag()
@@ -53,6 +54,17 @@ class BottomOverlayViewController: UIViewController {
         contentView(show: true)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if oldFrame != contentView.frame {
+            
+            contentView.applyCornerRadius(20, topLeft: true, topRight: true, bottomRight: false, bottomLeft: false)
+            
+            oldFrame = contentView.frame
+        }
+    }
+    
     // MARK: - Public methods
     
     func changeContentHeight(_ height: CGFloat) {
@@ -77,7 +89,6 @@ class BottomOverlayViewController: UIViewController {
             view.addSubview(contentView)
             
             contentView.backgroundColor = .clear
-            contentView.applyCornerRadius(20, topLeft: true, topRight: true, bottomRight: false, bottomLeft: false)
         }
         
         tappableView = UIView().then { tappableView in
@@ -131,16 +142,14 @@ class BottomOverlayViewController: UIViewController {
     }
     
     private func contentView(show: Bool, completion: EmptyClosure? = nil) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-            self.contentViewBottomConstraint.update(offset: show ? 0 : self.contentHeight)
-            
-            UIView.animate(withDuration: 0.1, animations: {
-                self.view.layoutIfNeeded()
-                self.contentView.layoutIfNeeded()
-            }, completion: { (_) in
-                completion?()
-            })
-        }
+        self.contentViewBottomConstraint.update(offset: show ? 0 : self.contentHeight)
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            self.view.layoutIfNeeded()
+            self.contentView.layoutIfNeeded()
+        }, completion: { (_) in
+            completion?()
+        })
     }
     
     private func changeHeightIfNeed() {

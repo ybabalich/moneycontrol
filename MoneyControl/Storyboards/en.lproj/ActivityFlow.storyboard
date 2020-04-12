@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,20 +41,20 @@
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFm-Ne-ll1" customClass="CheckButton" customModule="Money" customModuleProvider="target">
-                                        <rect key="frame" x="319" y="5" width="40" height="40"/>
+                                        <rect key="frame" x="259" y="5" width="100" height="40"/>
                                         <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="P3F-OS-xUL"/>
-                                            <constraint firstAttribute="width" constant="40" id="b5Z-FZ-G6b"/>
+                                            <constraint firstAttribute="width" constant="100" id="b5Z-FZ-G6b"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="35" minY="10" maxX="35" maxY="10"/>
                                         <state key="normal" image="ic_check"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-g2-JiH">
-                                        <rect key="frame" x="16" y="12.5" width="25" height="25"/>
+                                        <rect key="frame" x="16" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PUm-g2-JiH" secondAttribute="height" multiplier="1:1" id="1hq-sX-nW7"/>
-                                            <constraint firstAttribute="width" constant="25" id="HCH-q3-X8J"/>
+                                            <constraint firstAttribute="width" constant="30" id="HCH-q3-X8J"/>
                                         </constraints>
                                         <state key="normal" image="ic_history"/>
                                     </button>
@@ -185,7 +184,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="X5B-82-Rtl" firstAttribute="trailing" secondItem="Tud-wr-laM" secondAttribute="trailing" constant="16" id="2Cq-mv-8Yd"/>
                             <constraint firstItem="Tud-wr-laM" firstAttribute="top" secondItem="X5B-82-Rtl" secondAttribute="top" constant="16" id="BGI-Qc-RUr"/>
@@ -445,7 +443,6 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="mainBackground"/>
                         <constraints>
                             <constraint firstItem="lqG-2K-mpZ" firstAttribute="leading" secondItem="McR-MC-t9c" secondAttribute="leading" constant="16" id="PAa-D2-OzY"/>
                             <constraint firstItem="lqG-2K-mpZ" firstAttribute="top" secondItem="McR-MC-t9c" secondAttribute="top" constant="16" id="Pu1-FW-qTH"/>
@@ -594,10 +591,7 @@
     </scenes>
     <resources>
         <image name="ic_check" width="96" height="69.5"/>
-        <image name="ic_history" width="255" height="242"/>
+        <image name="ic_history" width="256" height="256"/>
         <image name="ic_remove" width="24" height="24"/>
-        <namedColor name="mainBackground">
-            <color red="0.86400002241134644" green="0.96100002527236938" blue="0.98600000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

@@ -98,7 +98,7 @@ class UIBarButtonItemFabric {
     
     class func calendar(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
         
-        var image: UIImage? = UIImage(named: "ic_settings")
+        var image: UIImage? = UIImage(named: "ic_calendar")
         var size = CGSize(width: 23, height: 23)
         
         if #available(iOS 13, *) {
