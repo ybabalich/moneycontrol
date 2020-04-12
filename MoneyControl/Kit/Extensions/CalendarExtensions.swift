@@ -10,7 +10,7 @@ import Foundation
 
 extension Calendar {
     
-    typealias StartEndDate = (start: Date, end: Date)
+    public typealias StartEndDate = (start: Date, end: Date)
     
     // MARK: - Public methods
     
@@ -29,14 +29,33 @@ extension Calendar {
      * Return start and end date of current week
      */
     func currentWeek() -> StartEndDate {
-        return getStartEndDateFrom(.weekOfYear)
+        let currentWeek = getStartEndDateFrom(.weekOfYear)
+        print("Start ->: \(currentWeek.start.description(with: .current))")
+        print("End ->: \(currentWeek.end.description(with: .current))")
+        print("-----")
+        return currentWeek
     }
     
     /*
      * Return start and end date of current month
      */
     func currentMonth() -> StartEndDate {
-        return getStartEndDateFrom(.month)
+        let currentMonth = getStartEndDateFrom(.month)
+        print("Start ->: \(currentMonth.start.description(with: .current))")
+        print("End ->: \(currentMonth.end.description(with: .current))")
+        print("-----")
+        return currentMonth
+    }
+    
+    /*
+     * Return start and end date of current month
+     */
+    func currentYear() -> StartEndDate {
+        let currentYear = getStartEndDateFrom(.year)
+        print("Start ->: \(currentYear.start.description(with: .current))")
+        print("End ->: \(currentYear.end.description(with: .current))")
+        print("-----")
+        return currentYear
     }
     
     // MARK: - Private methods
@@ -54,14 +73,15 @@ extension Calendar {
         switch component {
         case .month:
             components.month = 1
-            components.second = -1
         case .weekOfYear:
             components.weekOfYear = 1
-            components.second = -1
+        case .year:
+            components.year = 1
         default:
             components.day = 1
-            components.second = -1
         }
+        
+        components.second = -1
         
         endDate = date(byAdding: components, to: startDate)!
         

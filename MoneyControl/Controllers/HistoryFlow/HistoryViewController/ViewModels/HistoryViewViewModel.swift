@@ -13,6 +13,7 @@ class HistoryViewViewModel {
     typealias StatisticsValues = (balance: Double, incomes: Double, outcomes: Double)
     
     // MARK: - Variables
+    let titles = PublishSubject<(String?, String?)>()
     let sortCategories = PublishSubject<[HistorySortCategoryViewModel]>()
     let selectedSortCategory = Variable<HistorySortCategoryViewModel>(HistorySortCategoryViewModel(sort: Sort.day))
     let transactions = Variable<[TransactionViewModel]>([])
@@ -46,12 +47,57 @@ class HistoryViewViewModel {
         
         switch selectedSortCategory.value.sortType {
         case .day:
-            service.fetchTodayTransactions(type: nil, completion: operateWithTransactions)
+            let dates = Calendar.current.currentDay()
+            
+            service.fetchTransaction(dates: dates, type: nil, completion: operateWithTransactions)
+            
+            let title = dates.start.shortString
+            
+            titles.onNext((title, nil))
+            
         case .week:
-            service.fetchWeekTransactions(type: nil, completion: operateWithTransactions)
+            let dates = Calendar.current.currentWeek()
+            
+            service.fetchTransaction(dates: dates, type: nil, completion: operateWithTransactions)
+            
+            let title = dates.start.shortString + " - " + dates.end.shortString
+            
+            titles.onNext((title, nil))
+            
         case .month:
-            service.fetchMonthTransactions(type: nil, completion: operateWithTransactions)
-        default: operateWithTransactions([])
+            let dates = Calendar.current.currentMonth()
+            
+            service.fetchTransaction(dates: dates, type: nil, completion: operateWithTransactions)
+
+            let title = dates.start.shortString + " - " + dates.end.shortString
+            
+            titles.onNext((title, nil))
+            
+        case .year:
+            let dates = Calendar.current.currentYear()
+            
+            service.fetchTransaction(dates: dates, type: nil, completion: operateWithTransactions)
+            
+            let title = dates.start.shortString + " - " + dates.end.shortString
+            
+            titles.onNext((title, nil))
+            
+        case .custom(from: let fromDate, to: let toDate):
+            
+            let dates: Calendar.StartEndDate = (fromDate, toDate)
+            
+            let startOfDay = dates.start.startOfDay
+            let endOfDay = dates.end.endOfDay
+            
+            print("Start ->: \(startOfDay)")
+            print("End ->: \(endOfDay))")
+            print("-----")
+            
+            service.fetchTransaction(dates: (startOfDay, endOfDay), type: nil, completion: operateWithTransactions)
+            
+            let title = dates.start.shortString + " - " + dates.end.shortString
+            
+            titles.onNext((title, nil))
         }
     }
     

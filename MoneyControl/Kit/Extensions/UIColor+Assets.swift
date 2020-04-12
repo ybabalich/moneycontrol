@@ -30,6 +30,14 @@ extension UIColor {
         return .assetColor(named: #function)
     }
     
+    static var controlTintGreen: UIColor {
+        return .assetColor(named: #function)
+    }
+    
+    static var controlTintDestructive: UIColor {
+        return .assetColor(named: #function)
+    }
+
     static var tableSeparator: UIColor {
         return .assetColor(named: #function)
     }

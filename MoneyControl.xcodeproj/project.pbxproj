@@ -23,6 +23,7 @@
 		D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A52156427300ECA806 /* UIWindowExtensions.swift */; };
 		D922148021A97DCB00A71CDB /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D922147F21A97DCB00A71CDB /* UICollectionViewExtensions.swift */; };
 		D92295F621ADEF4E002AF881 /* ActivityViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295F521ADEF4E002AF881 /* ActivityViewViewModel.swift */; };
+		D92E85B5244321ED003EB2CB /* UIApplication+SafeAreas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E85B4244321ED003EB2CB /* UIApplication+SafeAreas.swift */; };
 		D92EEDF321A94F0E00A9C233 /* ActivityTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF221A94F0E00A9C233 /* ActivityTopViewController.swift */; };
 		D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */; };
 		D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */; };
@@ -31,10 +32,6 @@
 		D9466CF224142F1A0048095A /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9466CF124142F1A0048095A /* UIColor+Assets.swift */; };
 		D94ADB2C21B186A700D94F0F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94ADB2B21B186A700D94F0F /* EmptyView.swift */; };
 		D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94ADB2D21B1887700D94F0F /* EmptyView.xib */; };
-		D94CA39421C1C53000FCCEB9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94CA39221C1C53000FCCEB9 /* CalendarViewController.swift */; };
-		D94CA39521C1C53000FCCEB9 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94CA39321C1C53000FCCEB9 /* CalendarViewController.xib */; };
-		D94CA39921C1C95000FCCEB9 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94CA39721C1C95000FCCEB9 /* CalendarCollectionViewCell.swift */; };
-		D94CA39A21C1C95000FCCEB9 /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */; };
 		D95312F523DA1CAB00E26D1E /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */; };
 		D95312F823DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312F723DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift */; };
 		D95312FB23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312FA23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift */; };
@@ -95,14 +92,16 @@
 		D98E336521B58E06004C66C3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E336421B58E06004C66C3 /* Settings.swift */; };
 		D993362F243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */; };
 		D9933633243F208400AED4E6 /* BottomOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9933632243F208400AED4E6 /* BottomOverlayViewController.swift */; };
+		D993363724406E7100AED4E6 /* HistoryTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993363624406E7100AED4E6 /* HistoryTitleView.swift */; };
+		D99336392440819600AED4E6 /* HistoryDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99336382440819600AED4E6 /* HistoryDatePickerView.swift */; };
+		D993363B24409E1100AED4E6 /* Date+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993363A24409E1100AED4E6 /* Date+MoneyControl.swift */; };
+		D993363D24410F0500AED4E6 /* HistoryCalendarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993363C24410F0500AED4E6 /* HistoryCalendarPickerView.swift */; };
 		D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */; };
 		D99F684521AAA462005EC865 /* TodayHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */; };
 		D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */; };
 		D99F684821AAB399005EC865 /* UITableView+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684721AAB399005EC865 /* UITableView+MoneyControl.swift */; };
 		D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684A21AABDAD005EC865 /* HistoryViewController.swift */; };
 		D99F684F21AAD56C005EC865 /* HistoryTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */; };
-		D99F685421AAD630005EC865 /* HistoryTopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F685221AAD630005EC865 /* HistoryTopCollectionViewCell.swift */; };
-		D99F685521AAD630005EC865 /* HistoryTopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99F685321AAD630005EC865 /* HistoryTopCollectionViewCell.xib */; };
 		D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F685A21AB1DA2005EC865 /* CategoryService.swift */; };
 		D99F685D21AB1E77005EC865 /* RealmBasedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F685C21AB1E77005EC865 /* RealmBasedService.swift */; };
 		D99F686221AB1FEC005EC865 /* CategoryDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F686121AB1FEC005EC865 /* CategoryDB.swift */; };
@@ -152,6 +151,7 @@
 		D920A0A52156427300ECA806 /* UIWindowExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
 		D922147F21A97DCB00A71CDB /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		D92295F521ADEF4E002AF881 /* ActivityViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewViewModel.swift; sourceTree = "<group>"; };
+		D92E85B4244321ED003EB2CB /* UIApplication+SafeAreas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafeAreas.swift"; sourceTree = "<group>"; };
 		D92EEDF221A94F0E00A9C233 /* ActivityTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTopViewController.swift; sourceTree = "<group>"; };
 		D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBottomViewController.swift; sourceTree = "<group>"; };
 		D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -160,10 +160,6 @@
 		D9466CF124142F1A0048095A /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
 		D94ADB2B21B186A700D94F0F /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		D94ADB2D21B1887700D94F0F /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
-		D94CA39221C1C53000FCCEB9 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		D94CA39321C1C53000FCCEB9 /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
-		D94CA39721C1C95000FCCEB9 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
-		D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
 		D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		D95312F723DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChooseLanguageViewController.swift; sourceTree = "<group>"; };
 		D95312FA23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChooseLanguageViewModel.swift; sourceTree = "<group>"; };
@@ -221,14 +217,16 @@
 		D98E336421B58E06004C66C3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsChooseLanguageTitledCell.xib; sourceTree = "<group>"; };
 		D9933632243F208400AED4E6 /* BottomOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOverlayViewController.swift; sourceTree = "<group>"; };
+		D993363624406E7100AED4E6 /* HistoryTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTitleView.swift; sourceTree = "<group>"; };
+		D99336382440819600AED4E6 /* HistoryDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDatePickerView.swift; sourceTree = "<group>"; };
+		D993363A24409E1100AED4E6 /* Date+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+MoneyControl.swift"; sourceTree = "<group>"; };
+		D993363C24410F0500AED4E6 /* HistoryCalendarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCalendarPickerView.swift; sourceTree = "<group>"; };
 		D99F683F21AA9C87005EC865 /* TodayHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewController.swift; sourceTree = "<group>"; };
 		D99F684321AAA462005EC865 /* TodayHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		D99F684721AAB399005EC865 /* UITableView+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+MoneyControl.swift"; sourceTree = "<group>"; };
 		D99F684A21AABDAD005EC865 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopViewController.swift; sourceTree = "<group>"; };
-		D99F685221AAD630005EC865 /* HistoryTopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopCollectionViewCell.swift; sourceTree = "<group>"; };
-		D99F685321AAD630005EC865 /* HistoryTopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTopCollectionViewCell.xib; sourceTree = "<group>"; };
 		D99F685A21AB1DA2005EC865 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		D99F685C21AB1E77005EC865 /* RealmBasedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBasedService.swift; sourceTree = "<group>"; };
 		D99F686121AB1FEC005EC865 /* CategoryDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDB.swift; sourceTree = "<group>"; };
@@ -431,6 +429,8 @@
 				D95312F423DA1CAB00E26D1E /* DoubleExtensions.swift */,
 				D9466CF124142F1A0048095A /* UIColor+Assets.swift */,
 				D9832B23241DBEEB002E5100 /* String+MoneyControl.swift */,
+				D993363A24409E1100AED4E6 /* Date+MoneyControl.swift */,
+				D92E85B4244321ED003EB2CB /* UIApplication+SafeAreas.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,25 +492,6 @@
 				D94ADB2D21B1887700D94F0F /* EmptyView.xib */,
 			);
 			path = EmptyView;
-			sourceTree = "<group>";
-		};
-		D94CA39121C1C50700FCCEB9 /* CalendarViewController */ = {
-			isa = PBXGroup;
-			children = (
-				D94CA39621C1C93100FCCEB9 /* Cells */,
-				D94CA39221C1C53000FCCEB9 /* CalendarViewController.swift */,
-				D94CA39321C1C53000FCCEB9 /* CalendarViewController.xib */,
-			);
-			path = CalendarViewController;
-			sourceTree = "<group>";
-		};
-		D94CA39621C1C93100FCCEB9 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				D94CA39721C1C95000FCCEB9 /* CalendarCollectionViewCell.swift */,
-				D94CA39821C1C95000FCCEB9 /* CalendarCollectionViewCell.xib */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		D95312F623DA2EDE00E26D1E /* SettingsChooseLanguageViewController */ = {
@@ -578,7 +559,6 @@
 		D95CF25A21565212001BEF1F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				D94CA39121C1C50700FCCEB9 /* CalendarViewController */,
 				D95CF25B21565219001BEF1F /* LockViewController */,
 			);
 			path = Screens;
@@ -894,6 +874,16 @@
 			path = BottomOverlayViewController;
 			sourceTree = "<group>";
 		};
+		D993363524406E4700AED4E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D993363624406E7100AED4E6 /* HistoryTitleView.swift */,
+				D99336382440819600AED4E6 /* HistoryDatePickerView.swift */,
+				D993363C24410F0500AED4E6 /* HistoryCalendarPickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D99F683E21AA9C70005EC865 /* TodayHistoryViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -924,6 +914,7 @@
 		D99F684921AABD96005EC865 /* HistoryViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D993363524406E4700AED4E6 /* Views */,
 				D99F684C21AAD538005EC865 /* InternalControllers */,
 				D9FD0E7121AFDF2200A77C8A /* ViewModels */,
 				D99F684A21AABDAD005EC865 /* HistoryViewController.swift */,
@@ -943,27 +934,9 @@
 		D99F684D21AAD559005EC865 /* HistoryTopViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D99F685021AAD5DF005EC865 /* Cells */,
 				D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */,
 			);
 			path = HistoryTopViewController;
-			sourceTree = "<group>";
-		};
-		D99F685021AAD5DF005EC865 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				D99F685121AAD615005EC865 /* HistoryTopCollectionViewCell */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		D99F685121AAD615005EC865 /* HistoryTopCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				D99F685221AAD630005EC865 /* HistoryTopCollectionViewCell.swift */,
-				D99F685321AAD630005EC865 /* HistoryTopCollectionViewCell.xib */,
-			);
-			path = HistoryTopCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		D99F685621AB1C19005EC865 /* ViewModels */ = {
@@ -1281,7 +1254,6 @@
 				D9B67551226B397A00CC204A /* ChooseCategoryTableViewCell.xib in Resources */,
 				D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */,
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
-				D94CA39521C1C53000FCCEB9 /* CalendarViewController.xib in Resources */,
 				D98E335021B49D29004C66C3 /* EditTransactionDateView.xib in Resources */,
 				D95D154B22667D9D00B83AD6 /* HistoryFlow.storyboard in Resources */,
 				D95D154522667CA200B83AD6 /* Localizable.strings in Resources */,
@@ -1289,7 +1261,6 @@
 				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
 				D95D156B2267C6DD00B83AD6 /* ChooseCurrencyTableViewCell.xib in Resources */,
 				D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */,
-				D94CA39A21C1C95000FCCEB9 /* CalendarCollectionViewCell.xib in Resources */,
 				D993362F243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib in Resources */,
 				D9466CF024142E410048095A /* Colors.xcassets in Resources */,
 				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
@@ -1300,7 +1271,6 @@
 				D9AB5DDA23D64D75002167D8 /* en.strings in Resources */,
 				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
 				D95D153C22667B4A00B83AD6 /* ActivityFlow.storyboard in Resources */,
-				D99F685521AAD630005EC865 /* HistoryTopCollectionViewCell.xib in Resources */,
 				D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */,
 				D98E335D21B54BC5004C66C3 /* ManagedCategoryTableViewCell.xib in Resources */,
 				D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */,
@@ -1364,6 +1334,7 @@
 				D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */,
 				D98E335C21B54BC5004C66C3 /* ManagedCategoryTableViewCell.swift in Sources */,
 				D95D15652267BC0000B83AD6 /* ChooseCurrencyViewController.swift in Sources */,
+				D92E85B5244321ED003EB2CB /* UIApplication+SafeAreas.swift in Sources */,
 				D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */,
 				D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */,
 				D98E334421B46E41004C66C3 /* EditTransactionAmountView.swift in Sources */,
@@ -1384,21 +1355,23 @@
 				D96CE21421ADC8D10085664A /* TransactionDB.swift in Sources */,
 				D98E336521B58E06004C66C3 /* Settings.swift in Sources */,
 				D953130223DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift in Sources */,
+				D99336392440819600AED4E6 /* HistoryDatePickerView.swift in Sources */,
 				D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */,
+				D993363724406E7100AED4E6 /* HistoryTitleView.swift in Sources */,
 				D99F685D21AB1E77005EC865 /* RealmBasedService.swift in Sources */,
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
 				D97A0FF821B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift in Sources */,
 				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,
 				D95312FD23DA32BC00E26D1E /* SettingsLanguageViewModel.swift in Sources */,
-				D94CA39921C1C95000FCCEB9 /* CalendarCollectionViewCell.swift in Sources */,
+				D993363D24410F0500AED4E6 /* HistoryCalendarPickerView.swift in Sources */,
 				D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */,
 				D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */,
 				D98E335521B547C0004C66C3 /* ManageCategoriesViewController.swift in Sources */,
 				D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */,
 				D985471123D26E5700949C4E /* UINavigationBarExtensions.swift in Sources */,
+				D993363B24409E1100AED4E6 /* Date+MoneyControl.swift in Sources */,
 				D911ED0021A7FC5500C3A7B1 /* Router.swift in Sources */,
 				D96CE21D21ADD2B80085664A /* TodayHistoryViewViewModel.swift in Sources */,
-				D99F685421AAD630005EC865 /* HistoryTopCollectionViewCell.swift in Sources */,
 				D95D156E2267CBB500B83AD6 /* ChooseCurrencyViewViewModel.swift in Sources */,
 				D95D156A2267C6DD00B83AD6 /* ChooseCurrencyTableViewCell.swift in Sources */,
 				D95CF2682157796E001BEF1F /* App.swift in Sources */,
@@ -1446,7 +1419,6 @@
 				D964831B216287BE00B2D880 /* Constants.swift in Sources */,
 				D9C8BCEE2269A81100289CDC /* YourBalanceViewViewModel.swift in Sources */,
 				D95D15712268F2FA00B83AD6 /* YourBalanceViewController.swift in Sources */,
-				D94CA39421C1C53000FCCEB9 /* CalendarViewController.swift in Sources */,
 				D95312F823DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

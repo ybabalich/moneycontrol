@@ -38,7 +38,7 @@ class SettingsViewController: BaseTableViewController {
     // navbar preparаtion
     override func createRightNavButton() -> UIBarButtonItem? {
         UIBarButtonItemFabric.titledBarButtonItem(title: "Settings".localized,
-                                                  fontSize: UIScreen.main.isScreenWidthSmall ? 14 : 22)
+                                                  fontSize: UIScreen.isSmallDevice ? 14 : 22)
     }
     
     // MARK: - Private methods

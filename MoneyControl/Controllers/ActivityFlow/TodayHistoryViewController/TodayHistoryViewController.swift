@@ -51,7 +51,7 @@ class TodayHistoryViewController: BaseViewController {
     
     override func createRightNavButton() -> UIBarButtonItem? {
         UIBarButtonItemFabric.titledBarButtonItem(title: "Activity".localized,
-                                                  fontSize: UIScreen.main.isScreenWidthSmall ? 14 : 22)
+                                                  fontSize: UIScreen.isSmallDevice ? 14 : 22)
     }
     
     // MARK: - Private methods

@@ -16,14 +16,20 @@ class BottomOverlayViewController: UIViewController {
     
     private var contentViewBottomConstraint: Constraint!
     private var contentView: UIView!
-    private var tappableView:UIView!
+    private var subviewsContentView: UIView!
+    private var tappableView: UIView!
+    private var bottomSpace: UIView!
+    
+    private var contentHeight: CGFloat = 0
     
     let disposeBag = DisposeBag()
     
     // MARK: - Initializers
     
-    init() {
+    init(contentHeight: CGFloat) {
         super.init(nibName: nil, bundle: nil)
+        
+        self.contentHeight = contentHeight
         
         modalPresentationStyle = .custom
         modalTransitionStyle = .crossDissolve
@@ -47,6 +53,19 @@ class BottomOverlayViewController: UIViewController {
         contentView(show: true)
     }
     
+    // MARK: - Public methods
+    
+    func changeContentHeight(_ height: CGFloat) {
+        contentHeight = height
+        changeHeightIfNeed()
+    }
+    
+    func showContentView(_ view: UIView) {
+        subviewsContentView.removeAllSubviews()
+        subviewsContentView.addSubview(view)
+        view.alignExpandToSuperview()
+    }
+    
     // MARK: - Private methods
     
     private func setupUI() {
@@ -57,7 +76,7 @@ class BottomOverlayViewController: UIViewController {
         contentView = UIView().then { contentView in
             view.addSubview(contentView)
             
-            contentView.backgroundColor = .white
+            contentView.backgroundColor = .clear
             contentView.applyCornerRadius(20, topLeft: true, topRight: true, bottomRight: false, bottomLeft: false)
         }
         
@@ -74,7 +93,30 @@ class BottomOverlayViewController: UIViewController {
             }
         }
         
-        updateConstraintsOfContentView(-200)
+        bottomSpace = UIView().then { bottomSpace in
+            
+            bottomSpace.backgroundColor = .mainBackground
+            
+            contentView.addSubview(bottomSpace)
+            bottomSpace.snp.makeConstraints {
+                $0.left.right.equalToSuperview()
+                $0.bottom.equalToSuperview()
+                $0.top.equalTo(view.snp_bottomMargin)
+            }
+        }
+        
+        subviewsContentView = UIView().then { subviewsContentView in
+
+            subviewsContentView.backgroundColor = .clear
+            
+            contentView.addSubview(subviewsContentView)
+            subviewsContentView.snp.makeConstraints {
+                $0.left.top.right.equalToSuperview()
+                $0.bottom.equalTo(bottomSpace.snp.top)
+            }
+        }
+        
+        updateConstraintsOfContentView(-(contentHeight))
     }
     
     private func updateConstraintsOfContentView(_ bottomPadding: CGFloat) {
@@ -84,13 +126,13 @@ class BottomOverlayViewController: UIViewController {
             self.contentViewBottomConstraint = $0.bottom.equalTo(view.snp.bottom).inset(bottomPadding).constraint
             $0.left.right.equalToSuperview()
             $0.width.equalToSuperview()
-            $0.height.equalTo(200)
+            $0.height.equalTo(contentHeight)
         }
     }
     
     private func contentView(show: Bool, completion: EmptyClosure? = nil) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
-            self.contentViewBottomConstraint.update(offset: show ? 0 : 200)
+            self.contentViewBottomConstraint.update(offset: show ? 0 : self.contentHeight)
             
             UIView.animate(withDuration: 0.1, animations: {
                 self.view.layoutIfNeeded()
@@ -99,6 +141,18 @@ class BottomOverlayViewController: UIViewController {
                 completion?()
             })
         }
+    }
+    
+    private func changeHeightIfNeed() {
+        
+        contentView.snp.updateConstraints {
+            $0.height.equalTo(contentHeight)
+        }
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            self.view.layoutIfNeeded()
+            self.contentView.layoutIfNeeded()
+        })
     }
     
     func closeController() {

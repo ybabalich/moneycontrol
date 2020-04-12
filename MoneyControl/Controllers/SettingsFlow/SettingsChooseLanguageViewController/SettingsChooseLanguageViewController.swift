@@ -37,7 +37,7 @@ class SettingsChooseLanguageViewController: BaseTableViewController {
     // navbar preparаtion
     override func createRightNavButton() -> UIBarButtonItem? {
         return UIBarButtonItemFabric.titledBarButtonItem(title: "Choose language",
-                                                         fontSize: UIScreen.main.isScreenWidthSmall ? 14 : 22)
+                                                         fontSize: UIScreen.isSmallDevice ? 14 : 22)
     }
     
     // MARK: - Private methods
