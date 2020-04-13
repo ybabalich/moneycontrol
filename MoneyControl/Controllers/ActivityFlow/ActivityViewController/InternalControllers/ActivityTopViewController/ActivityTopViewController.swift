@@ -39,9 +39,9 @@ class ActivityTopViewController: BaseViewController {
         super.updateLocalization()
         
         outcomeBtn.setTitle("Spendings".localized.uppercased(), for: .normal)
-        outcomeBtn.titleLabel?.font = App.Font.main(size: 16, type: .bold).rawValue
+        outcomeBtn.titleLabel?.font = App.Font.main(size: UIScreen.isSmallDevice ? 14 : 16, type: .bold).rawValue
         incomeBtn.setTitle("Revenues".localized.uppercased(), for: .normal)
-        incomeBtn.titleLabel?.font = App.Font.main(size: 16, type: .bold).rawValue
+        incomeBtn.titleLabel?.font = App.Font.main(size: UIScreen.isSmallDevice ? 14 : 16, type: .bold).rawValue
     }
     
     override func viewDidLayoutSubviews() {

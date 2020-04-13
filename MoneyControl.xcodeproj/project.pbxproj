@@ -29,6 +29,7 @@
 		D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */; };
 		D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */; };
 		D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */; };
+		D94513182444687E004DDC81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D94513172444687E004DDC81 /* GoogleService-Info.plist */; };
 		D9466CF024142E410048095A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9466CEF24142E410048095A /* Colors.xcassets */; };
 		D9466CF224142F1A0048095A /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9466CF124142F1A0048095A /* UIColor+Assets.swift */; };
 		D94ADB2C21B186A700D94F0F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94ADB2B21B186A700D94F0F /* EmptyView.swift */; };
@@ -158,6 +159,7 @@
 		D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBottomViewController.swift; sourceTree = "<group>"; };
 		D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		D94513172444687E004DDC81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9466CEF24142E410048095A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D9466CF124142F1A0048095A /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
 		D94ADB2B21B186A700D94F0F /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				D90EDB91214FD93A00012383 /* LaunchScreen.storyboard */,
 				D90EDB94214FD93A00012383 /* Info.plist */,
 				D95D154322667CA200B83AD6 /* Localizable.strings */,
+				D94513172444687E004DDC81 /* GoogleService-Info.plist */,
 			);
 			path = MoneyControl;
 			sourceTree = "<group>";
@@ -1206,6 +1209,7 @@
 				D90EDB82214FD93900012383 /* Frameworks */,
 				D90EDB83214FD93900012383 /* Resources */,
 				0EDFBCF76FA08E6365F6BC2F /* [CP] Embed Pods Frameworks */,
+				D973FA0024446DF5007226DA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1266,6 +1270,7 @@
 				D94ADB2E21B1887700D94F0F /* EmptyView.xib in Resources */,
 				D993362F243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib in Resources */,
 				D9466CF024142E410048095A /* Colors.xcassets in Resources */,
+				D94513182444687E004DDC81 /* GoogleService-Info.plist in Resources */,
 				D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */,
 				D98E334621B46E56004C66C3 /* EditTransactionAmountView.xib in Resources */,
 				D98E334B21B470DB004C66C3 /* EditTransactionCategoryView.xib in Resources */,
@@ -1318,6 +1323,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D973FA0024446DF5007226DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1603,7 +1626,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1626,7 +1649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";

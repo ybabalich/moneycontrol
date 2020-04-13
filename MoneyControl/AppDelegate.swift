@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 var appLauncher: AppLaunch = AppLaunch()
 var settings = Settings()
@@ -55,6 +56,8 @@ class AppDelegate: UIResponder {
         )
         
         Realm.Configuration.defaultConfiguration = config
+        
+        FirebaseApp.configure()
         
         return true
     }

@@ -22,5 +22,8 @@ target 'MoneyControl' do
 
   #Other
   pod 'FSCalendar'
- # pod 'JTAppleCalendar', '~> 7.0'
+
+  #Firebase
+  pod 'Firebase/Crashlytics'  
+  pod 'Firebase/Analytics'
 end
