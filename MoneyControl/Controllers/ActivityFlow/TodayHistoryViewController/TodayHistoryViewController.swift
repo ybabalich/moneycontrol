@@ -7,80 +7,122 @@
 //
 
 import RxSwift
+import Then
+import SnapKit
 
 class TodayHistoryViewController: BaseViewController {
 
-    // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var closeBtn: UIButton!
+    typealias Segment = TodayHistoryViewViewModel.Segment
+    
+    // MARK: - UI
+    
+    private var tableView: UITableView!
+    private var closeBtn: UIButton!
+    private var segmentControl: UISegmentedControl!
+    private var emptyView: EmptyView!
     
     // MARK: - Variables private
+    
+    private var initialSegment: Segment = .all
     private var viewModel = TodayHistoryViewViewModel()
-    private var navSegmentControl: UISegmentedControl!
-    private var emptyView: EmptyView = EmptyView.view()
+    private var oldFrame: CGRect = .zero
+    
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setup()
+        // UI
+        
+        setupUI()
+        
+        // load data
+        
+        viewModel.loadData(for: initialSegment)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if !isFirstLoad {
-            viewModel.loadData()
+            viewModel.loadData(for: initialSegment)
         }
     }
     
-    // navbar preparаtion
-    override func createLeftNavButton() -> UIBarButtonItem? {
-        return UIBarButtonItemFabric.titledBarButtonItem(title: "Activity".localized,
-                                                         fontSize: UIScreen.main.isScreenWidthSmall ? 14 : 22)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if oldFrame != tableView.frame {
+            tableView.applyCornerRadius(20, topLeft: true, topRight: true,
+                                        bottomRight: false, bottomLeft: false)
+            
+            oldFrame = tableView.frame
+        }
     }
     
     override func createRightNavButton() -> UIBarButtonItem? {
-        let navSegmentBarButton = UIBarButtonItemFabric.segmentBar(items: ["Revenues".localized, "Spending".localized])
-        self.navSegmentControl = navSegmentBarButton.customView as? UISegmentedControl
-        self.navSegmentControl.selectedSegmentIndex = viewModel.selectedTransationType.value.rawValue
-        return navSegmentBarButton
+        UIBarButtonItemFabric.titledBarButtonItem(title: "Activity".localized,
+                                                  fontSize: UIScreen.isSmallDevice ? 14 : 22)
     }
     
     // MARK: - Private methods
-    private func setup() {
+    private func setupUI() {
         
         //colors
-        tableView.backgroundColor = .mainBackground
-        tableView.separatorColor = .tableSeparator
+        
         view.backgroundColor = .mainBackground
         
-        //subviews
-        addSubviews()
+        segmentControl = UISegmentedControl(items: Segment.allCasesLocalized).then { segmentControl in
+            view.addSubview(segmentControl)
+            
+            segmentControl.selectedSegmentIndex = initialSegment.index
+            segmentControl.applyStyle()
+            
+            segmentControl.snp.makeConstraints {
+                $0.top.equalToSuperview().offset(24)
+                $0.centerX.equalToSuperview()
+            }
+        }
+        
+        tableView = UITableView().then { tableView in
+            view.addSubview(tableView)
+            
+            tableView.backgroundColor = .mainElementBackground
+            tableView.separatorColor = .tableSeparator
+            tableView.registerNib(type: TodayHistoryTableViewCell.self)
+            tableView.tableFooterView = UIView(frame: .zero)
+            
+            tableView.snp.makeConstraints {
+                $0.left.right.bottom.equalToSuperview()
+                $0.top.equalTo(segmentControl.snp.bottom).offset(24)
+            }
+        }
+        
+        emptyView = EmptyView.view().then { emptyView in
+            view.addSubview(emptyView)
+            
+            emptyView.snp.makeConstraints {
+                $0.center.equalToSuperview()
+            }
+        }
         
         //events
         subscribeToEvents()
         
         //table view
         configureTableView()
-        
-        //data
-        viewModel.loadData()
-    }
-    
-    private func addSubviews() {
-        view.addSubview(emptyView)
-        emptyView.alignCenterX(toView: view)
-        emptyView.alignCenterY(toView: view)
     }
     
     private func subscribeToEvents() {
-        closeBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
-            Router.instance.goBack()
-        }).disposed(by: disposeBag)
+//        closeBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
+//            Router.instance.goBack()
+//        }).disposed(by: disposeBag)
         
-        navSegmentControl.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] (value) in
-            self.viewModel.selectedTransationType.value = Transaction.TransactionType(rawValue: self.navSegmentControl.selectedSegmentIndex)
+        segmentControl.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] value in
+
+            self.initialSegment = Segment(index: self.segmentControl.selectedSegmentIndex)
+            self.viewModel.loadData(for: self.initialSegment)
         }).disposed(by: disposeBag)
         
         viewModel.transactions.asObservable().map({ $0.count > 0 })
@@ -104,9 +146,8 @@ class TodayHistoryViewController: BaseViewController {
     }
     
     private func configureTableView() {
-        tableView.registerNib(type: TodayHistoryTableViewCell.self)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
-        tableView.tableFooterView = UIView(frame: .zero)
+        
         
         viewModel.transactions.asObservable().bind(to: tableView.rx.items)
         { (tableView, row, viewModel) in

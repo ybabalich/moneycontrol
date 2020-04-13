@@ -8,14 +8,24 @@
 
 import UIKit
 
-class SettingsChooseLanguageViewController: BaseViewController {
-
-    // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var backBtn: UIButton!
+class SettingsChooseLanguageViewController: BaseTableViewController {
     
     // MARK: - Variables private
     private let viewModel = SettingsChooseLanguageViewModel()
+    
+    // MARK: - Initializers
+    convenience init() {
+        self.init(style: .plain)
+    }
+    
+    override init(style: UITableView.Style) {
+        super.init(style: style)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("SettingsChooseLanguageViewController")
+    }
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -25,15 +35,13 @@ class SettingsChooseLanguageViewController: BaseViewController {
     }
     
     // navbar preparаtion
-    override func createLeftNavButton() -> UIBarButtonItem? {
+    override func createRightNavButton() -> UIBarButtonItem? {
         return UIBarButtonItemFabric.titledBarButtonItem(title: "Choose language",
-                                                         fontSize: UIScreen.main.isScreenWidthSmall ? 14 : 22)
+                                                         fontSize: UIScreen.isSmallDevice ? 14 : 22)
     }
     
     // MARK: - Private methods
     private func setupUI() {
-        //events
-        subscribeToEvents()
         
         //table view
         configureTableView()
@@ -42,15 +50,12 @@ class SettingsChooseLanguageViewController: BaseViewController {
         viewModel.loadData()
     }
     
-    private func subscribeToEvents() {
-        backBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
-            Router.instance.goBack()
-        }).disposed(by: disposeBag)
-    }
-    
     private func configureTableView() {
         tableView.tableFooterView = UIView(frame: .zero)
         
+        tableView.backgroundColor = .mainBackground
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 70, bottom: 0, right: 0)
+        tableView.separatorColor = .tableSeparator
         tableView.registerNib(type: SettingsChooseLanguageTitledCell.self)
         tableView.delegate = self
         tableView.dataSource = self
@@ -58,16 +63,16 @@ class SettingsChooseLanguageViewController: BaseViewController {
     
 }
 
-extension SettingsChooseLanguageViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
+extension SettingsChooseLanguageViewController  {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.sectionsCount()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: SettingsChooseLanguageTitledCell.self, indexPath: indexPath)
         
         let cellViewModel = viewModel.viewModel(for: indexPath.row)
@@ -77,7 +82,7 @@ extension SettingsChooseLanguageViewController: UITableViewDataSource, UITableVi
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = viewModel.viewModel(for: indexPath.row)
         viewModel.setLanguageCode(cellViewModel.languageCode)
         Router.instance.goBack()

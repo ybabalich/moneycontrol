@@ -9,7 +9,9 @@
 import UIKit
 
 extension UIScreen {
-    var isScreenWidthSmall: Bool {
-        return bounds.width < 350
+    
+    class var isSmallDevice: Bool {
+        return UIScreen.main.bounds.height < 667
     }
+    
 }

@@ -1,39 +1,41 @@
 PODS:
   - Differentiator (4.0.1)
-  - JTAppleCalendar (7.1.8)
-  - Realm (4.3.1):
-    - Realm/Headers (= 4.3.1)
-  - Realm/Headers (4.3.1)
-  - RealmSwift (4.3.1):
-    - Realm (= 4.3.1)
-  - RxCocoa (5.0.1):
+  - FSCalendar (2.8.1)
+  - Realm (4.4.0):
+    - Realm/Headers (= 4.4.0)
+  - Realm/Headers (4.4.0)
+  - RealmSwift (4.4.0):
+    - Realm (= 4.4.0)
+  - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxDataSources (4.0.1):
     - Differentiator (~> 4.0)
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
-  - RxGesture (3.0.1):
-    - RxCocoa (~> 5.0)
-    - RxSwift (~> 5.0)
-  - RxRelay (5.0.1):
+  - RxGesture (3.0.2):
+    - RxCocoa (~> 5.1)
+    - RxSwift (~> 5.1)
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - RxSwift (5.1.1)
   - SnapKit (5.0.1)
+  - Then (2.6.0)
 
 DEPENDENCIES:
-  - JTAppleCalendar (~> 7.0)
+  - FSCalendar
   - RealmSwift
   - RxCocoa
   - RxDataSources
   - RxGesture
   - RxSwift
   - SnapKit
+  - Then
 
 SPEC REPOS:
   trunk:
     - Differentiator
-    - JTAppleCalendar
+    - FSCalendar
     - Realm
     - RealmSwift
     - RxCocoa
@@ -42,19 +44,21 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
+    - Then
 
 SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  JTAppleCalendar: b7fb40852f5f319fe55c8ec3861f1de0edc99cc8
-  Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
-  RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  Realm: e125f464884cda953ebefe70c671b75b03b81b9b
+  RealmSwift: 33656a42bd300959a081fc13347376bc478071af
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
-  RxGesture: a3f8dd6adf078110ed5e1c9c30d09d705a09852e
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: a79c8dcd434d35eeffa283ae102c76902ff393ac
+PODFILE CHECKSUM: ad71e346244f29b6d9de8c4e6274e202f4d6240e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

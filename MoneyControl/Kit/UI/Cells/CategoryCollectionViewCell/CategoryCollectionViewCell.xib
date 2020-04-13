@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,7 +30,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJN-aF-IVF">
-                        <rect key="frame" x="0.0" y="32" width="50" height="12"/>
+                        <rect key="frame" x="0.0" y="32" width="50" height="13"/>
                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -40,6 +38,7 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="VJN-aF-IVF" secondAttribute="bottom" id="Erj-kS-VBl"/>
                 <constraint firstItem="VJN-aF-IVF" firstAttribute="leading" secondItem="0Ya-ba-Iz1" secondAttribute="leading" id="N6q-Qk-cWK"/>
                 <constraint firstItem="VJN-aF-IVF" firstAttribute="top" secondItem="fMi-hT-AKd" secondAttribute="bottom" constant="2" id="QRN-Ph-2h8"/>
                 <constraint firstItem="fMi-hT-AKd" firstAttribute="top" secondItem="0Ya-ba-Iz1" secondAttribute="top" id="Z7N-t7-E5q"/>
@@ -56,6 +55,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ic_category_fuel" width="512" height="512"/>
+        <image name="ic_category_fuel" width="200" height="200"/>
     </resources>
 </document>

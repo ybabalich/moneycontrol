@@ -56,6 +56,10 @@ class TransactionService: RealmBasedService {
         fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
     }
     
+    func fetchTransaction(dates: Calendar.StartEndDate, type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
+        fetchTransactions(from: dates.start, to: dates.end, type: type, completion: completion)
+    }
+    
     // MARK: - Saving/Updating
     
     func save(_ transaction: Transaction) {

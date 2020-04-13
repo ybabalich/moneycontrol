@@ -54,7 +54,7 @@ class EmptyView: UIView {
         backgroundColor = .clear
         textLabel.textColor = .primaryText
         actionBtn.backgroundColor = .controlTintActive
-        actionBtn.setTitleColor(.primaryText, for: .normal)
+        actionBtn.setTitleColor(.secondaryText, for: .normal)
         
         // general
         

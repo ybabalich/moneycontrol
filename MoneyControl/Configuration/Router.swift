@@ -48,8 +48,8 @@ class Router: NSObject {
     }
     
     func showTodayHistoryScreen() {
-        let todayHistoryFlow = AppLaunch.StoryboardFlow.activity(viewController: .todayHistory)
-        showScreen(todayHistoryFlow, animated: true)
+        let vc = TodayHistoryViewController()
+        navigationViewController.pushViewController(vc, animated: true)
     }
     
     func showHistoryScreen() {
@@ -82,13 +82,13 @@ class Router: NSObject {
     
     // MARK: - Settings
     func showSettingsScreen() {
-        let settingsFlow = AppLaunch.StoryboardFlow.settings(viewController: .base)
-        showScreen(settingsFlow, animated: true)
+        let vc = SettingsViewController()
+        navigationViewController?.pushViewController(vc, animated: true)
     }
     
     func showSettingsChangeLanguageScreen() {
-        let changeLanguageScreen = AppLaunch.StoryboardFlow.settings(viewController: .changeLanguage)
-        showScreen(changeLanguageScreen, animated: true)
+        let vc = SettingsChooseLanguageViewController()
+        navigationViewController?.pushViewController(vc, animated: true)
     }
     
     //startup screens

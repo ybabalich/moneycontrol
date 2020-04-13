@@ -38,7 +38,7 @@ class ActivityTopViewController: BaseViewController {
     override func updateLocalization() {
         super.updateLocalization()
         
-        outcomeBtn.setTitle("Spending".localized.uppercased(), for: .normal)
+        outcomeBtn.setTitle("Spendings".localized.uppercased(), for: .normal)
         outcomeBtn.titleLabel?.font = App.Font.main(size: 16, type: .bold).rawValue
         incomeBtn.setTitle("Revenues".localized.uppercased(), for: .normal)
         incomeBtn.titleLabel?.font = App.Font.main(size: 16, type: .bold).rawValue
@@ -56,6 +56,7 @@ class ActivityTopViewController: BaseViewController {
     
     // MARK: - Private methods
     private func setup() {
+        
         // colors
         
         outcomeBtn.setTitleColor(.primaryText, for: .normal)
@@ -102,6 +103,7 @@ class ActivityTopViewController: BaseViewController {
     private func configureCollectionView() {
         categoriesCollectionView.registerNib(type: CategoryCollectionViewCell.self)
         categoriesCollectionView.showsHorizontalScrollIndicator = false
+        categoriesCollectionView.delegate = self
         
         parentViewModel.categories.asObservable().bind(to: categoriesCollectionView.rx.items)
         { [unowned self] (collectionView, row, viewModel) in
@@ -126,4 +128,44 @@ class ActivityTopViewController: BaseViewController {
         self.categoriesCollectionView.reloadData()
     }
 
+    private func categoryLabelAttributes() -> [NSAttributedString.Key: Any] {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        paragraphStyle.lineSpacing = 2
+        
+        paragraphStyle.defaultTabInterval = 0.0
+        paragraphStyle.firstLineHeadIndent = 0.0
+        paragraphStyle.headIndent = 0.0
+        paragraphStyle.hyphenationFactor = 0.0
+        paragraphStyle.lineHeightMultiple = 0.0
+        paragraphStyle.paragraphSpacing = 0.0
+        paragraphStyle.paragraphSpacingBefore = 0.0
+        paragraphStyle.tailIndent = 0.0
+
+        var attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: self]
+        attributes[.font] = App.Font.main(size: 12, type: .bold).rawValue
+        attributes[.paragraphStyle] = paragraphStyle
+        
+        return attributes
+    }
+    
+}
+
+extension ActivityTopViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let category = parentViewModel.categories.value[indexPath.row]
+
+        let categoryLabelSize = category.title.size(constrainedToHeight: 20, attributes: categoryLabelAttributes())
+        
+        var width: CGFloat = 45
+        
+        if ceil(categoryLabelSize.width) > width {
+            width = ceil(categoryLabelSize.width)
+        }
+        
+        return CGSize(width: width, height: 50)
+    }
 }

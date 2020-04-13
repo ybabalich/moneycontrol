@@ -14,6 +14,7 @@
 "Balance" = "Balance:";
 "Back" = "Back";
 "Remove" = "Remove";
+"All" = "All";
 
 //setting
 "Settings" = "Settings";
@@ -32,6 +33,8 @@
 "Day" = "Day";
 "Week" = "Week";
 "Month" = "Month";
+"Year" = "Year";
+"Custom" = "Custom";
 
 // activity screen
 "Activity" = "Activity";
@@ -47,7 +50,7 @@
 "Transactions list" = "Transactions list";
 
 // general
-"Spending" = "Spending";
+"Spendings" = "Spendings";
 "Revenues" = "Revenues";
 "Edit" = "Edit";
 "Done" = "Done";

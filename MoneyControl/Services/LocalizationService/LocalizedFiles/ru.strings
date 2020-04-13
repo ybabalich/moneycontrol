@@ -14,6 +14,7 @@
 "Balance" = "Баланс:";
 "Назад" = "Назад";
 "Remove" = "Удалить";
+"All" = "Все";
 
 //setting
 "Settings" = "Настройки";
@@ -32,6 +33,8 @@
 "Day" = "День";
 "Week" = "Неделя";
 "Month" = "Месяц";
+"Year" = "Год";
+"Custom" = "Выбрать период";
 
 // activity screen
 "Activity" = "Активность";
@@ -47,7 +50,7 @@
 "Transactions list" = "Список транзакций";
 
 // general
-"Spending" = "Траты";
+"Spendings" = "Траты";
 "Revenues" = "Поступления";
 "Edit" = "Редактировать";
 "Done" = "Готово";
