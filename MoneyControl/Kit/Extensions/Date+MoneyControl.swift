@@ -15,14 +15,12 @@ extension Date {
         dateFormatter.dateFormat = "dd.MM.YYYY"
         return dateFormatter.string(from: self)
     }
-    
+
     var startOfDay: Date {
-        var startDate = Date()
-        var interval: TimeInterval = 0
-        
-        //start date
-        let _ = Calendar.current.dateInterval(of: .day, start: &startDate, interval: &interval, for: startDate)
-        return startDate
+        guard let date = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month, .day], from: self)) else {
+            fatalError("Failed to strip time from Date object")
+        }
+        return date
     }
     
     var endOfDay: Date {

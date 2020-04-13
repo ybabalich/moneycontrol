@@ -129,6 +129,7 @@ class HistoryCalendarPickerView: UIView {
             calendar.backgroundColor = .mainBackground
             calendar.allowsMultipleSelection = true
             calendar.delegate = self
+            calendar.locale = Locale(identifier: LocalizationService.instance.preferredLanguage())
             
             addSubview(calendar)
             calendar.snp.makeConstraints {
@@ -139,7 +140,7 @@ class HistoryCalendarPickerView: UIView {
         
         okButton = TappableButton(type: .custom).then { okButton in
             
-            okButton.setTitle("CHOOSE", for: .normal)
+            okButton.setTitle("Choose".localized.uppercased(), for: .normal)
             okButton.titleLabel?.font = App.Font.main(size: 15, type: .bold).rawValue
             okButton.backgroundColor = UIColor.controlTintGreen.withAlphaComponent(0.8)
             okButton.onTap { [unowned self] in
