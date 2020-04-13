@@ -129,6 +129,7 @@ class HistoryCalendarPickerView: UIView {
             calendar.backgroundColor = .mainBackground
             calendar.allowsMultipleSelection = true
             calendar.delegate = self
+            calendar.locale = Locale(identifier: LocalizationService.instance.preferredLanguage())
             
             addSubview(calendar)
             calendar.snp.makeConstraints {
