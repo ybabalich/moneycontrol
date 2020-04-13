@@ -1603,7 +1603,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1626,7 +1626,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";
