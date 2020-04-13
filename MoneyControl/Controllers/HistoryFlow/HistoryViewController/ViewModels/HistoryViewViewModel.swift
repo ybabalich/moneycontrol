@@ -95,7 +95,7 @@ class HistoryViewViewModel {
             
             service.fetchTransaction(dates: (startOfDay, endOfDay), type: nil, completion: operateWithTransactions)
             
-            let title = dates.start.shortString + " - " + dates.end.shortString
+            let title = startOfDay.shortString + " - " + endOfDay.shortString
             
             titles.onNext((title, nil))
         }

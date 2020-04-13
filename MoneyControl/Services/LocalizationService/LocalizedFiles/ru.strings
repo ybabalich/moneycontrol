@@ -35,6 +35,7 @@
 "Month" = "Месяц";
 "Year" = "Год";
 "Custom" = "Выбрать период";
+"Choose" = "Выбрать";
 
 // activity screen
 "Activity" = "Активность";
