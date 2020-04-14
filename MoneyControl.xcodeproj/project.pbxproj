@@ -29,6 +29,12 @@
 		D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */; };
 		D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */; };
 		D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */; };
+		D93625182445997E00CEB6D9 /* WalletsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93625172445997E00CEB6D9 /* WalletsService.swift */; };
+		D936251B2445B7D700CEB6D9 /* WalletAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D936251A2445B7D700CEB6D9 /* WalletAddViewController.swift */; };
+		D936251E2445B7F100CEB6D9 /* WalletAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D936251D2445B7F100CEB6D9 /* WalletAddViewModel.swift */; };
+		D93625212445BFD000CEB6D9 /* WalletAddNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93625202445BFD000CEB6D9 /* WalletAddNameTableViewCell.swift */; };
+		D93625232445CBDF00CEB6D9 /* UIFont+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93625222445CBDF00CEB6D9 /* UIFont+MoneyControl.swift */; };
+		D93625252445D15200CEB6D9 /* Entity+DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93625242445D15200CEB6D9 /* Entity+DB.swift */; };
 		D94513182444687E004DDC81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D94513172444687E004DDC81 /* GoogleService-Info.plist */; };
 		D9466CF024142E410048095A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9466CEF24142E410048095A /* Colors.xcassets */; };
 		D9466CF224142F1A0048095A /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9466CF124142F1A0048095A /* UIColor+Assets.swift */; };
@@ -73,6 +79,12 @@
 		D96CE21D21ADD2B80085664A /* TodayHistoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21C21ADD2B80085664A /* TodayHistoryViewViewModel.swift */; };
 		D96CE21F21ADD3B40085664A /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CE21E21ADD3B40085664A /* TransactionViewModel.swift */; };
 		D96F46EF242254090092C277 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F46EE242254090092C277 /* ReusableView.swift */; };
+		D973FA052444CC81007226DA /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973FA042444CC81007226DA /* Entity.swift */; };
+		D973FA072444CD92007226DA /* EntityDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973FA062444CD92007226DA /* EntityDB.swift */; };
+		D973FA232444D71C007226DA /* ActivityTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973FA222444D71C007226DA /* ActivityTitleView.swift */; };
+		D973FA282444E7ED007226DA /* WalletsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973FA272444E7ED007226DA /* WalletsListViewController.swift */; };
+		D973FA2B2444E85A007226DA /* WalletsTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973FA2A2444E859007226DA /* WalletsTotalTableViewCell.swift */; };
+		D973FA2D2444E86D007226DA /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973FA2C2444E86D007226DA /* WalletTableViewCell.swift */; };
 		D97A0FF821B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97A0FF721B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift */; };
 		D9832B24241DBEEB002E5100 /* String+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9832B23241DBEEB002E5100 /* String+MoneyControl.swift */; };
 		D985471123D26E5700949C4E /* UINavigationBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985471023D26E5700949C4E /* UINavigationBarExtensions.swift */; };
@@ -92,6 +104,7 @@
 		D98E336021B54ED4004C66C3 /* EyeSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E335F21B54ED4004C66C3 /* EyeSwitchView.swift */; };
 		D98E336321B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */; };
 		D98E336521B58E06004C66C3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E336421B58E06004C66C3 /* Settings.swift */; };
+		D99045092444EB8B0057AA4F /* WalletsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99045082444EB8B0057AA4F /* WalletsListViewModel.swift */; };
 		D993362F243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */; };
 		D9933633243F208400AED4E6 /* BottomOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9933632243F208400AED4E6 /* BottomOverlayViewController.swift */; };
 		D993363724406E7100AED4E6 /* HistoryTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993363624406E7100AED4E6 /* HistoryTitleView.swift */; };
@@ -105,7 +118,6 @@
 		D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684A21AABDAD005EC865 /* HistoryViewController.swift */; };
 		D99F684F21AAD56C005EC865 /* HistoryTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */; };
 		D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F685A21AB1DA2005EC865 /* CategoryService.swift */; };
-		D99F685D21AB1E77005EC865 /* RealmBasedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F685C21AB1E77005EC865 /* RealmBasedService.swift */; };
 		D99F686221AB1FEC005EC865 /* CategoryDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F686121AB1FEC005EC865 /* CategoryDB.swift */; };
 		D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F686521AB2356005EC865 /* CategoriesFabric.swift */; };
 		D9AB5DCB23D4D1CC002167D8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB5DCA23D4D1CC002167D8 /* HistoryViewModel.swift */; };
@@ -159,6 +171,12 @@
 		D92EEDF521A94F4700A9C233 /* ActivityBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBottomViewController.swift; sourceTree = "<group>"; };
 		D92EEDF821A9515A00A9C233 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		D93625172445997E00CEB6D9 /* WalletsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsService.swift; sourceTree = "<group>"; };
+		D936251A2445B7D700CEB6D9 /* WalletAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddViewController.swift; sourceTree = "<group>"; };
+		D936251D2445B7F100CEB6D9 /* WalletAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddViewModel.swift; sourceTree = "<group>"; };
+		D93625202445BFD000CEB6D9 /* WalletAddNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddNameTableViewCell.swift; sourceTree = "<group>"; };
+		D93625222445CBDF00CEB6D9 /* UIFont+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+MoneyControl.swift"; sourceTree = "<group>"; };
+		D93625242445D15200CEB6D9 /* Entity+DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+DB.swift"; sourceTree = "<group>"; };
 		D94513172444687E004DDC81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9466CEF24142E410048095A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D9466CF124142F1A0048095A /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
@@ -200,6 +218,37 @@
 		D96CE21C21ADD2B80085664A /* TodayHistoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryViewViewModel.swift; sourceTree = "<group>"; };
 		D96CE21E21ADD3B40085664A /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		D96F46EE242254090092C277 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		D973FA042444CC81007226DA /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		D973FA062444CD92007226DA /* EntityDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDB.swift; sourceTree = "<group>"; };
+		D973FA082444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-GB"; path = "en-GB.lproj/ActivityFlow.storyboard"; sourceTree = "<group>"; };
+		D973FA092444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-GB"; path = "en-GB.lproj/HistoryFlow.storyboard"; sourceTree = "<group>"; };
+		D973FA0A2444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-GB"; path = "en-GB.lproj/CategoryFlow.storyboard"; sourceTree = "<group>"; };
+		D973FA0B2444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		D973FA0C2444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D973FA0D2444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-AU"; path = "en-AU.lproj/ActivityFlow.storyboard"; sourceTree = "<group>"; };
+		D973FA0E2444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-AU"; path = "en-AU.lproj/HistoryFlow.storyboard"; sourceTree = "<group>"; };
+		D973FA0F2444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-AU"; path = "en-AU.lproj/CategoryFlow.storyboard"; sourceTree = "<group>"; };
+		D973FA102444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-AU"; path = "en-AU.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		D973FA112444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D973FA122444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-IN"; path = "en-IN.lproj/ActivityFlow.storyboard"; sourceTree = "<group>"; };
+		D973FA132444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-IN"; path = "en-IN.lproj/HistoryFlow.storyboard"; sourceTree = "<group>"; };
+		D973FA142444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-IN"; path = "en-IN.lproj/CategoryFlow.storyboard"; sourceTree = "<group>"; };
+		D973FA152444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-IN"; path = "en-IN.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		D973FA162444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D973FA172444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/ActivityFlow.storyboard; sourceTree = "<group>"; };
+		D973FA182444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/HistoryFlow.storyboard; sourceTree = "<group>"; };
+		D973FA192444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/CategoryFlow.storyboard; sourceTree = "<group>"; };
+		D973FA1A2444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D973FA1B2444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D973FA1C2444CE33007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/ActivityFlow.storyboard; sourceTree = "<group>"; };
+		D973FA1D2444CE33007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/HistoryFlow.storyboard; sourceTree = "<group>"; };
+		D973FA1E2444CE34007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/CategoryFlow.storyboard; sourceTree = "<group>"; };
+		D973FA1F2444CE34007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D973FA202444CE34007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D973FA222444D71C007226DA /* ActivityTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTitleView.swift; sourceTree = "<group>"; };
+		D973FA272444E7ED007226DA /* WalletsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsListViewController.swift; sourceTree = "<group>"; };
+		D973FA2A2444E859007226DA /* WalletsTotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTotalTableViewCell.swift; sourceTree = "<group>"; };
+		D973FA2C2444E86D007226DA /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
 		D97A0FF721B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryListViewController.swift; sourceTree = "<group>"; };
 		D9832B23241DBEEB002E5100 /* String+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MoneyControl.swift"; sourceTree = "<group>"; };
 		D985471023D26E5700949C4E /* UINavigationBarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtensions.swift; sourceTree = "<group>"; };
@@ -219,6 +268,7 @@
 		D98E335F21B54ED4004C66C3 /* EyeSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeSwitchView.swift; sourceTree = "<group>"; };
 		D98E336221B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoriesViewViewModel.swift; sourceTree = "<group>"; };
 		D98E336421B58E06004C66C3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D99045082444EB8B0057AA4F /* WalletsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsListViewModel.swift; sourceTree = "<group>"; };
 		D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsChooseLanguageTitledCell.xib; sourceTree = "<group>"; };
 		D9933632243F208400AED4E6 /* BottomOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOverlayViewController.swift; sourceTree = "<group>"; };
 		D993363624406E7100AED4E6 /* HistoryTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTitleView.swift; sourceTree = "<group>"; };
@@ -232,7 +282,6 @@
 		D99F684A21AABDAD005EC865 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopViewController.swift; sourceTree = "<group>"; };
 		D99F685A21AB1DA2005EC865 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
-		D99F685C21AB1E77005EC865 /* RealmBasedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBasedService.swift; sourceTree = "<group>"; };
 		D99F686121AB1FEC005EC865 /* CategoryDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDB.swift; sourceTree = "<group>"; };
 		D99F686521AB2356005EC865 /* CategoriesFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFabric.swift; sourceTree = "<group>"; };
 		D9AB5DCA23D4D1CC002167D8 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
@@ -322,7 +371,7 @@
 				D95CF2662157795B001BEF1F /* Configuration */,
 				D920A09521562F1900ECA806 /* Kit */,
 				D95F3FD6215434FA0039D714 /* Fonts */,
-				D95CF26F21582554001BEF1F /* Controllers */,
+				D95CF26F21582554001BEF1F /* Modules */,
 				D911ECF721A7EF1900C3A7B1 /* Storyboards */,
 				D90EDB88214FD93900012383 /* AppDelegate.swift */,
 				D90EDB9A214FE53900012383 /* Assets.xcassets */,
@@ -348,6 +397,7 @@
 		D911ECFA21A7F7B700C3A7B1 /* ActivityViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D973FA242444D847007226DA /* Views */,
 				D92EEDF021A94EC900A9C233 /* InternalControllers */,
 				D92295F421ADEF16002AF881 /* ViewModels */,
 				D911ECFB21A7F7EB00C3A7B1 /* ActivityViewController.swift */,
@@ -437,6 +487,7 @@
 				D993363A24409E1100AED4E6 /* Date+MoneyControl.swift */,
 				D92E85B4244321ED003EB2CB /* UIApplication+SafeAreas.swift */,
 				D92E85B624439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift */,
+				D93625222445CBDF00CEB6D9 /* UIFont+MoneyControl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -489,6 +540,32 @@
 				D92EEDFA21A9518100A9C233 /* CategoryCollectionViewCell.xib */,
 			);
 			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		D93625192445B7C200CEB6D9 /* WalletAddViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D936251F2445BFB200CEB6D9 /* Cells */,
+				D936251C2445B7E100CEB6D9 /* ViewModels */,
+				D936251A2445B7D700CEB6D9 /* WalletAddViewController.swift */,
+			);
+			path = WalletAddViewController;
+			sourceTree = "<group>";
+		};
+		D936251C2445B7E100CEB6D9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D936251D2445B7F100CEB6D9 /* WalletAddViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D936251F2445BFB200CEB6D9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D93625202445BFD000CEB6D9 /* WalletAddNameTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D94ADB2A21B1868D00D94F0F /* EmptyView */ = {
@@ -618,16 +695,17 @@
 			path = PinButton;
 			sourceTree = "<group>";
 		};
-		D95CF26F21582554001BEF1F /* Controllers */ = {
+		D95CF26F21582554001BEF1F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D973FA252444E7C8007226DA /* Wallet */,
 				D95CF27021582562001BEF1F /* BaseViewController */,
 				D9FD0E6E21AFDA6700A77C8A /* HistoryFlow */,
 				D9FD0E6D21AFDA5A00A77C8A /* ActivityFlow */,
 				D98E335121B546B5004C66C3 /* CategoryFlow */,
 				D9AB5DE923D77FB8002167D8 /* SettingsFlow */,
 			);
-			path = Controllers;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		D95CF27021582562001BEF1F /* BaseViewController */ = {
@@ -722,6 +800,42 @@
 				D96F46EE242254090092C277 /* ReusableView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D973FA242444D847007226DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D973FA222444D71C007226DA /* ActivityTitleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D973FA252444E7C8007226DA /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				D973FA262444E7D6007226DA /* WalletsListViewController */,
+				D93625192445B7C200CEB6D9 /* WalletAddViewController */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		D973FA262444E7D6007226DA /* WalletsListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D973FA292444E82F007226DA /* Cells */,
+				D99045072444EB7D0057AA4F /* ViewModels */,
+				D973FA272444E7ED007226DA /* WalletsListViewController.swift */,
+			);
+			path = WalletsListViewController;
+			sourceTree = "<group>";
+		};
+		D973FA292444E82F007226DA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D973FA2A2444E859007226DA /* WalletsTotalTableViewCell.swift */,
+				D973FA2C2444E86D007226DA /* WalletTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D97A0FF621B9CE20002BCA4C /* TransactionsHistoryListViewController */ = {
@@ -864,6 +978,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		D99045072444EB7D0057AA4F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D99045082444EB8B0057AA4F /* WalletsListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		D9933630243F205D00AED4E6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -958,7 +1080,7 @@
 		D99F685821AB1C24005EC865 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D99F685C21AB1E77005EC865 /* RealmBasedService.swift */,
+				D93625172445997E00CEB6D9 /* WalletsService.swift */,
 				D99F685921AB1D8C005EC865 /* CategoryService */,
 				D96CE21821ADCDBF0085664A /* TransactionService */,
 				D9F87B5222651994005CCFD5 /* DateService */,
@@ -980,6 +1102,7 @@
 			children = (
 				D99F686121AB1FEC005EC865 /* CategoryDB.swift */,
 				D96CE21321ADC8D10085664A /* TransactionDB.swift */,
+				D973FA062444CD92007226DA /* EntityDB.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -1155,6 +1278,8 @@
 			isa = PBXGroup;
 			children = (
 				D9FC28F321623FBC00E57E1B /* Transaction.swift */,
+				D973FA042444CC81007226DA /* Entity.swift */,
+				D93625242445D15200CEB6D9 /* Entity+DB.swift */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
@@ -1241,6 +1366,11 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"en-GB",
+				"en-AU",
+				"en-IN",
+				uk,
+				ru,
 			);
 			mainGroup = D90EDB7C214FD93900012383;
 			productRefGroup = D90EDB86214FD93900012383 /* Products */;
@@ -1358,33 +1488,40 @@
 				D95CF26521577826001BEF1F /* PinCircleView.swift in Sources */,
 				D911ED0621A804FF00C3A7B1 /* Typealiases.swift in Sources */,
 				D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */,
+				D936251E2445B7F100CEB6D9 /* WalletAddViewModel.swift in Sources */,
 				D98E335C21B54BC5004C66C3 /* ManagedCategoryTableViewCell.swift in Sources */,
 				D95D15652267BC0000B83AD6 /* ChooseCurrencyViewController.swift in Sources */,
+				D93625212445BFD000CEB6D9 /* WalletAddNameTableViewCell.swift in Sources */,
 				D92E85B5244321ED003EB2CB /* UIApplication+SafeAreas.swift in Sources */,
 				D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */,
+				D936251B2445B7D700CEB6D9 /* WalletAddViewController.swift in Sources */,
 				D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */,
 				D98E334421B46E41004C66C3 /* EditTransactionAmountView.swift in Sources */,
 				D95312FB23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift in Sources */,
 				D9AB5DCE23D4D31D002167D8 /* TransactionsHistoryListViewModel.swift in Sources */,
 				D920A0A32156306A00ECA806 /* UIViewControllerExtensions.swift in Sources */,
 				D9AB5DD723D64D4D002167D8 /* LocalizationService.swift in Sources */,
+				D973FA282444E7ED007226DA /* WalletsListViewController.swift in Sources */,
 				D99F684821AAB399005EC865 /* UITableView+MoneyControl.swift in Sources */,
+				D973FA2B2444E85A007226DA /* WalletsTotalTableViewCell.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
 				D9EC66CE242418B00030CADC /* BaseTableViewController.swift in Sources */,
 				D959B6DD23D8FC340050756E /* SettingsHeaderViewModel.swift in Sources */,
 				D95312F523DA1CAB00E26D1E /* DoubleExtensions.swift in Sources */,
+				D93625232445CBDF00CEB6D9 /* UIFont+MoneyControl.swift in Sources */,
 				D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */,
 				D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */,
 				D9AB5DF223D7836F002167D8 /* TappableButton.swift in Sources */,
 				D92EEDF321A94F0E00A9C233 /* ActivityTopViewController.swift in Sources */,
 				D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */,
 				D96CE21421ADC8D10085664A /* TransactionDB.swift in Sources */,
+				D973FA232444D71C007226DA /* ActivityTitleView.swift in Sources */,
+				D99045092444EB8B0057AA4F /* WalletsListViewModel.swift in Sources */,
 				D98E336521B58E06004C66C3 /* Settings.swift in Sources */,
 				D953130223DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift in Sources */,
 				D99336392440819600AED4E6 /* HistoryDatePickerView.swift in Sources */,
 				D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */,
 				D993363724406E7100AED4E6 /* HistoryTitleView.swift in Sources */,
-				D99F685D21AB1E77005EC865 /* RealmBasedService.swift in Sources */,
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
 				D97A0FF821B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift in Sources */,
 				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,
@@ -1394,6 +1531,7 @@
 				D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */,
 				D92E85B724439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift in Sources */,
 				D98E335521B547C0004C66C3 /* ManageCategoriesViewController.swift in Sources */,
+				D973FA2D2444E86D007226DA /* WalletTableViewCell.swift in Sources */,
 				D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */,
 				D985471123D26E5700949C4E /* UINavigationBarExtensions.swift in Sources */,
 				D993363B24409E1100AED4E6 /* Date+MoneyControl.swift in Sources */,
@@ -1433,6 +1571,7 @@
 				D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */,
 				D922148021A97DCB00A71CDB /* UICollectionViewExtensions.swift in Sources */,
 				D9AB5DCB23D4D1CC002167D8 /* HistoryViewModel.swift in Sources */,
+				D973FA072444CD92007226DA /* EntityDB.swift in Sources */,
 				D95D156022672F1600B83AD6 /* UIScreenExtensions.swift in Sources */,
 				D9AB5DF623D78533002167D8 /* UIImageExtensions.swift in Sources */,
 				D95CF26A21577A9A001BEF1F /* UIColorExtensions.swift in Sources */,
@@ -1441,9 +1580,12 @@
 				D9AB5DF423D783A0002167D8 /* BiggerAreaButton.swift in Sources */,
 				D99F686221AB1FEC005EC865 /* CategoryDB.swift in Sources */,
 				D98E333621B2BAD2004C66C3 /* RegularButton.swift in Sources */,
+				D93625182445997E00CEB6D9 /* WalletsService.swift in Sources */,
 				D99F684F21AAD56C005EC865 /* HistoryTopViewController.swift in Sources */,
 				D911ED0421A8025800C3A7B1 /* CheckButton.swift in Sources */,
 				D964831B216287BE00B2D880 /* Constants.swift in Sources */,
+				D973FA052444CC81007226DA /* Entity.swift in Sources */,
+				D93625252445D15200CEB6D9 /* Entity+DB.swift in Sources */,
 				D9C8BCEE2269A81100289CDC /* YourBalanceViewViewModel.swift in Sources */,
 				D95D15712268F2FA00B83AD6 /* YourBalanceViewController.swift in Sources */,
 				D95312F823DA2F0E00E26D1E /* SettingsChooseLanguageViewController.swift in Sources */,
@@ -1457,6 +1599,11 @@
 			isa = PBXVariantGroup;
 			children = (
 				D9AB5DE323D70B6F002167D8 /* en */,
+				D973FA0B2444CE16007226DA /* en-GB */,
+				D973FA102444CE1B007226DA /* en-AU */,
+				D973FA152444CE20007226DA /* en-IN */,
+				D973FA1A2444CE28007226DA /* uk */,
+				D973FA1F2444CE34007226DA /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1465,6 +1612,11 @@
 			isa = PBXVariantGroup;
 			children = (
 				D9AB5DE223D70B6D002167D8 /* en */,
+				D973FA082444CE16007226DA /* en-GB */,
+				D973FA0D2444CE1B007226DA /* en-AU */,
+				D973FA122444CE20007226DA /* en-IN */,
+				D973FA172444CE28007226DA /* uk */,
+				D973FA1C2444CE33007226DA /* ru */,
 			);
 			name = ActivityFlow.storyboard;
 			sourceTree = "<group>";
@@ -1473,6 +1625,11 @@
 			isa = PBXVariantGroup;
 			children = (
 				D95D154622667CA800B83AD6 /* en */,
+				D973FA0C2444CE16007226DA /* en-GB */,
+				D973FA112444CE1B007226DA /* en-AU */,
+				D973FA162444CE20007226DA /* en-IN */,
+				D973FA1B2444CE28007226DA /* uk */,
+				D973FA202444CE34007226DA /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1481,6 +1638,11 @@
 			isa = PBXVariantGroup;
 			children = (
 				D9AB5DE523D70B73002167D8 /* en */,
+				D973FA092444CE16007226DA /* en-GB */,
+				D973FA0E2444CE1B007226DA /* en-AU */,
+				D973FA132444CE20007226DA /* en-IN */,
+				D973FA182444CE28007226DA /* uk */,
+				D973FA1D2444CE33007226DA /* ru */,
 			);
 			name = HistoryFlow.storyboard;
 			sourceTree = "<group>";
@@ -1489,6 +1651,11 @@
 			isa = PBXVariantGroup;
 			children = (
 				D9AB5DE423D70B6F002167D8 /* en */,
+				D973FA0A2444CE16007226DA /* en-GB */,
+				D973FA0F2444CE1B007226DA /* en-AU */,
+				D973FA142444CE20007226DA /* en-IN */,
+				D973FA192444CE28007226DA /* uk */,
+				D973FA1E2444CE34007226DA /* ru */,
 			);
 			name = CategoryFlow.storyboard;
 			sourceTree = "<group>";
@@ -1626,7 +1793,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1649,7 +1816,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";

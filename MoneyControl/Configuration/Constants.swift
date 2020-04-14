@@ -8,5 +8,4 @@
 
 import Foundation
 
-let CashDefaultName = "Cash"
-let CardDefaultBaseNamePrefix = "Card"
+let EntityBaseNamePrefix = "Cash"

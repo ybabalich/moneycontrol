@@ -12,15 +12,21 @@ import RxGesture
 class ActivityViewController: BaseViewController {
 
     // MARK: - Outlets
+    
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var historyBtn: UIButton!
     @IBOutlet weak var doneBtn: CheckButton!
     @IBOutlet weak var totalLabel: UILabel!
     
     // MARK: - Variables private
+    
     private var viewModel = ActivityViewViewModel()
+    
+    // UI
+    
     private var topViewController: ActivityTopViewController!
     private var bottomViewController: ActivityBottomViewController!
+    private var titleView: ActivityTitleView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -35,6 +41,8 @@ class ActivityViewController: BaseViewController {
         if !isFirstLoad {
             viewModel.loadData()
         }
+        
+        updateNavigation()
     }
     
     override func updateLocalization() {
@@ -44,8 +52,15 @@ class ActivityViewController: BaseViewController {
     }
     
     // navbar preparаtion
+    
     override func createLeftNavButton() -> UIBarButtonItem? {
-        return UIBarButtonItemFabric.titledBarButtonItem(title: "Today".localized)
+        guard let wallet = viewModel.getCurrentWallet() else { return nil }
+        
+        return UIBarButtonItemFabric.wallet(wallet: wallet) { [unowned self] in
+            let vc = WalletsListViewController()
+            let navigation = UINavigationController(rootViewController: vc)
+            self.navigationController?.present(navigation, animated: true, completion: nil)
+        }
     }
     
     override func createRightNavButton() -> UIBarButtonItem? {
@@ -80,6 +95,10 @@ class ActivityViewController: BaseViewController {
         }
         
         historyBtn.tintColor = .controlTintActive
+        
+        // ui
+        
+        setupUI()
 
         //events
         subscribeToEvents()
@@ -92,6 +111,14 @@ class ActivityViewController: BaseViewController {
         
         //data
         viewModel.loadData()
+    }
+    
+    private func setupUI() {
+        
+        titleView = ActivityTitleView().then { titleView in
+            
+            navigationItem.titleView = titleView
+        }
     }
     
     private func setupViewModel() {
@@ -138,4 +165,12 @@ class ActivityViewController: BaseViewController {
         bottomViewController.parentViewModel = viewModel
         
     }
+    
+    private func updateNavigation() {
+        guard let wallet = viewModel.getCurrentWallet() else { return }
+        
+        setupNavigationBarItems()
+        titleView.show(wallet: wallet)
+    }
+    
 }

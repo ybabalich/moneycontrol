@@ -81,7 +81,14 @@ extension UIColor {
             return UIColor(hex: 0x2A5093)
         }
     }
-
+    
+    static var walletPlaceholderBackground: UIColor {
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xbadc58)
+        }
+    }
 }
 
 private extension UIColor {

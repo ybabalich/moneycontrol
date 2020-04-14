@@ -16,6 +16,7 @@ protocol AppSettings {
     //settings
     var currency: Currency? { get set }
     var languageCode: String? { get set }
+    var wallet: String? { get set }
 }
 
 class Settings {
@@ -26,6 +27,7 @@ class Settings {
         static let kBaseCategoriesAdded = "kBaseCategoriesAdded"
         static let kCurrency = "kCurrency"
         static let kPreferredLanguageCodeKey = "kPreferredLanguageCodeKey"
+        static let kWalletKey = "kWalletKey"
     }
     
     // MARK: - Private methods
@@ -78,6 +80,15 @@ extension Settings: AppSettings {
         }
         set {
             Settings.set(value: newValue, for: Keys.kPreferredLanguageCodeKey)
+        }
+    }
+    
+    var wallet: String? {
+        get {
+            return Settings.value(for: Keys.kWalletKey)
+        }
+        set {
+            Settings.set(value: newValue, for: Keys.kWalletKey)
         }
     }
     

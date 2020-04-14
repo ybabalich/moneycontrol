@@ -15,23 +15,9 @@ class Transaction {
         case outcoming
     }
     
-    enum Entity {
-        case cash
-        case card(name: String)
-        
-        // MARK: - Variables
-        var value: String {
-            switch self {
-            case .cash: return CashDefaultName
-            case .card(name: let cardName): return CardDefaultBaseNamePrefix + cardName
-            }
-        }
-    }
-    
     // MARK: - Variables
     var id: Int
     var value: Double
-    var currency: Currency
     var type: TransactionType
     var category: Category
     var entity: Entity
@@ -42,20 +28,24 @@ class Transaction {
     init() {
         id = 0
         value = 0
-        currency = .uah
         type = .incoming
         category = .emptyCategory()
-        entity = .cash
+        entity = .cashDefault()
         time = Date()
     }
     
     init(db: TransactionDB) {
         self.id = db.id
         self.value = db.value
-        self.currency = Currency(rawValue: db.currency)
         self.type = TransactionType(rawValue: db.type)
         self.category = Category.emptyCategory()
-        self.entity = .cash
+        
+        if let dbEntity = db.entity {
+            self.entity = Entity(db: dbEntity)
+        } else {
+            self.entity = .cashDefault()
+        }
+        
         self.time = db.time
     }
     
@@ -64,8 +54,7 @@ class Transaction {
         self.value = viewModel.value
         self.type = viewModel.type
         self.category = Category(viewModel: viewModel.category)
-        self.currency = .uah
-        self.entity = .cash
+        self.entity = viewModel.entity
         self.time = viewModel.createdTime
     }
 }

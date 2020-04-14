@@ -36,6 +36,8 @@
 "Year" = "Год";
 "Custom" = "Выбрать период";
 "Choose" = "Выбрать";
+"Close" = "Закрыть";
+"Add" = "Добавить";
 
 // activity screen
 "Activity" = "Активность";

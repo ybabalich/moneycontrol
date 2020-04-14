@@ -13,6 +13,7 @@ class TransactionViewModel {
     // MARK: - Variables
     var id: Int
     var value: Double
+    var entity: Entity
     var type: Transaction.TransactionType
     var category: CategoryViewModel
     var innerTransactions: [TransactionViewModel]
@@ -24,6 +25,7 @@ class TransactionViewModel {
         id = transaction.id
         value = transaction.value
         type = transaction.type
+        entity = transaction.entity
         category = CategoryViewModel(category: transaction.category)
         innerTransactions = transaction.innerTransactions?.map({ TransactionViewModel(transaction: $0) }) ?? []
         formattedTime = DateService.instance.convertDateToString(transaction.time, format: DateService.dayMonthYearWithSpacesFormat)

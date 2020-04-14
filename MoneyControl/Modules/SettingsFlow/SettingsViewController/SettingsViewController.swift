@@ -104,6 +104,5 @@ extension SettingsViewController {
             Router.instance.showSettingsChangeLanguageScreen()
         default: return
         }
-        
     }
 }

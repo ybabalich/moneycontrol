@@ -8,21 +8,33 @@
 
 import Foundation
 
-class TransactionService: RealmBasedService {
+class TransactionService {
     
     // MARK: - Singleton
     static let instance = TransactionService()
     
     // MARK: - Public methods
-    func fetchBalanceFromAllTransactions(completion: (Double) -> ()) {
+    
+    /// Fetch balance for entitites
+    /// - Parameters:
+    ///   - entity: Entity for which need fetch balance, nil means that need to fetch for all entities
+    /// - Returns: Total balance
+    func fetchBalance(for entity: Entity?) -> Double {
         var currentBalance: Double = 0.0
         
-        db.objects(TransactionDB.self).forEach { (transactionDb) in
-            let value = transactionDb.value
-            currentBalance += (transactionDb.type == Transaction.TransactionType.incoming.rawValue) ? value : -(value)
+        if let entity = entity {
+            db.objects(TransactionDB.self).filter("entity.title == %@", entity.title).forEach { (transactionDb) in
+                let value = transactionDb.value
+                currentBalance += (transactionDb.type == Transaction.TransactionType.incoming.rawValue) ? value : -(value)
+            }
+        } else {
+            db.objects(TransactionDB.self).forEach { (transactionDb) in
+                let value = transactionDb.value
+                currentBalance += (transactionDb.type == Transaction.TransactionType.incoming.rawValue) ? value : -(value)
+            }
         }
-        
-        completion(currentBalance)
+
+        return currentBalance
     }
     
     // today
@@ -66,7 +78,19 @@ class TransactionService: RealmBasedService {
         let dbTransaction = TransactionDB()
         dbTransaction.id = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
         dbTransaction.value = transaction.value
-        dbTransaction.currency = transaction.currency.rawValue
+        
+        var entityDB: EntityDB?
+        
+        if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "title == %@", transaction.entity.title)).first {
+            entityDB = entity
+        } else {
+            let dbEntity = EntityDB()
+            dbEntity.currency = transaction.entity.currency.rawValue
+            dbEntity.title = transaction.entity.title
+            entityDB = dbEntity
+        }
+        
+        dbTransaction.entity = entityDB
         dbTransaction.type = transaction.type.rawValue
         dbTransaction.time = transaction.time
         
@@ -195,10 +219,9 @@ class TransactionService: RealmBasedService {
         completion( db.objects(TransactionDB.self).filter(predicate).map({ (transactionDb) -> Transaction in
             let transaction = Transaction(db: transactionDb)
             let categoryPredicate = NSPredicate(format: "id == %d", argumentArray: [transactionDb.categoryId])
-            let categoryDb = self.db.objects(CategoryDB.self).filter(categoryPredicate)[0]
+            let categoryDb = db.objects(CategoryDB.self).filter(categoryPredicate)[0]
             transaction.category = Category(db: categoryDb)
             return transaction
         }).sorted { $0.time > $1.time } )
     }
-    
 }

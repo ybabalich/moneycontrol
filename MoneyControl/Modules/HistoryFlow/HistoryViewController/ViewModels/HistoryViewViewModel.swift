@@ -118,23 +118,17 @@ class HistoryViewViewModel {
     private func calculateStatisticsValues() {
         var totalIncomes: Double = 0
         var totalOutcomes: Double = 0
-        var totalBalance: Double = 0
+        let totalBalance: Double = TransactionService.instance.fetchBalance(for: nil)
         
-        TransactionService.instance.fetchBalanceFromAllTransactions(completion: { [weak self] (currentBalance) in
-            guard let strongSelf = self else { return }
-            
-            totalBalance = currentBalance
-            
-            strongSelf.transactions.value.forEach { (transaction) in
-                if transaction.type == .incoming {
-                    totalIncomes += transaction.value
-                } else {
-                    totalOutcomes += transaction.value
-                }
+        transactions.value.forEach { (transaction) in
+            if transaction.type == .incoming {
+                totalIncomes += transaction.value
+            } else {
+                totalOutcomes += transaction.value
             }
-            
-            strongSelf.statisticsValues.onNext((totalBalance, totalIncomes, totalOutcomes))
-        })
+        }
+        
+        statisticsValues.onNext((totalBalance, totalIncomes, totalOutcomes))
     }
     
 }

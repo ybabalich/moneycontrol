@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import Firebase
 
+var db = try! Realm()
 var appLauncher: AppLaunch = AppLaunch()
 var settings = Settings()
 
@@ -25,13 +26,22 @@ class AppDelegate: UIResponder {
     {
         settings.launchCount += 1
         
+        // TODO: need to remove and apply better logic for old users
+        if !settings.baseCategoriesAdded { // first time launch
+            WalletsService.instance.saveFirstTimeWallets()
+            CategoryService.instance.saveBaseCategories()
+            
+            settings.baseCategoriesAdded = true
+        }
+        
         //controller for showing
+        
         setupStoryboardForStart()
         
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: 3,
+            schemaVersion: 4,
             
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above
@@ -47,10 +57,11 @@ class AppDelegate: UIResponder {
                     migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
                         newObject!["categoryId"] = 0
                     })
-                default:
-                    migration.enumerateObjects(ofType: CategoryDB.className(), { (oldObject, newObject) in
-                        newObject!["type"] = 0
+                case 4:
+                    migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
+                        newObject!["entity"] = nil
                     })
+                default: print("Exception")
                 }
             }
         )

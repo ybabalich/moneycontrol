@@ -55,6 +55,11 @@ class ActivityViewViewModel {
     }
     
     // MARK: - Public methods
+    
+    func getCurrentWallet() -> Entity? {
+        WalletsService.instance.fetchWallet(name: settings.wallet ?? "")
+    }
+    
     func loadData() {
         _transactionValue.value = ""
         transactionType.value = _transactionType.value
