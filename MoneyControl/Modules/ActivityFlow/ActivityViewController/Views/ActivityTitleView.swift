@@ -33,7 +33,7 @@ class ActivityTitleView: UIView {
         //titles
         
         firstLabel.text = wallet.title.uppercased()
-        secondLabel.text = TransactionService.instance.fetchBalance(for: wallet).currencyFormatted
+        secondLabel.text = wallet.balance.currencyFormattedWithSymbol
     }
     
     // MARK: - Private methods

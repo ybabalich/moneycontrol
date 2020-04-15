@@ -57,9 +57,7 @@ class ActivityViewController: BaseViewController {
         guard let wallet = viewModel.getCurrentWallet() else { return nil }
         
         return UIBarButtonItemFabric.wallet(wallet: wallet) { [unowned self] in
-            let vc = WalletsListViewController()
-            let navigation = UINavigationController(rootViewController: vc)
-            self.navigationController?.present(navigation, animated: true, completion: nil)
+            self.showWalletsListVC()
         }
     }
     
@@ -132,10 +130,6 @@ class ActivityViewController: BaseViewController {
             }
         }).disposed(by: disposeBag)
         
-        viewModel.totalValue.subscribe(onNext: { [unowned self] (totalValue) in
-//            self.totalLabel.text = "Total".localized + ": \(totalValue.currencyFormatted)"
-        }).disposed(by: disposeBag)
-        
         viewModel.isActiveDoneButton.bind(to: doneBtn.rx.isEnabled).disposed(by: disposeBag)
     }
     
@@ -146,6 +140,7 @@ class ActivityViewController: BaseViewController {
         
         doneBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
             self.viewModel.saveTransaction()
+            self.updateNavigation()
         }).disposed(by: disposeBag)
     }
     
@@ -173,4 +168,16 @@ class ActivityViewController: BaseViewController {
         titleView.show(wallet: wallet)
     }
     
+    private func showWalletsListVC() {
+        let vc = WalletsListViewController()
+        vc.delegate = self
+        let navigation = UINavigationController(rootViewController: vc)
+        self.navigationController?.present(navigation, animated: true, completion: nil)
+    }
+}
+
+extension ActivityViewController: WalletsListViewControllerDelegate {
+    func didChooseNewWallet() {
+        updateNavigation()
+    }
 }

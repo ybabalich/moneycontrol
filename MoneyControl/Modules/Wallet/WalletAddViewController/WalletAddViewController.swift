@@ -75,6 +75,7 @@ class WalletAddViewController: BaseTableViewController {
     
         tableView.separatorColor = .tableSeparator
         tableView.register(WalletAddNameTableViewCell.self)
+        tableView.register(WalletAddBalanceTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -99,6 +100,12 @@ extension WalletAddViewController {
             let cell: WalletAddNameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
             nameField = cell.getNameField()
+            
+            return cell
+        case .startingBalance:
+            let cell: WalletAddBalanceTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            
+//            nameField = cell.getNameField()
             
             return cell
         default: return UITableViewCell()

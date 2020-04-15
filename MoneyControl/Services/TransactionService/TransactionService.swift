@@ -38,6 +38,7 @@ class TransactionService {
     }
     
     // today
+    
     func fetchTodayTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
         let calendar = Calendar.current
         let (dateFrom, dateTo) = calendar.currentDay()
@@ -196,22 +197,23 @@ class TransactionService {
     }
     
     // MARK: - Private methods
-    private func fetchTransactions(from date1: Date,
+    private func fetchTransactions(entity: Entity? = nil,
+                                   from date1: Date,
                                    to date2: Date,
                                    type: Transaction.TransactionType?,
                                    completion: ([Transaction]) -> ())
     {
         let predicateFromDate = NSPredicate(format: "time >= %@", argumentArray: [date1])
         let predicateToDate = NSPredicate(format: "time <= %@", argumentArray: [date2])
-        var predicateTransactionType: NSPredicate?
-        if type != nil {
-            predicateTransactionType = NSPredicate(format: "type == %d", type!.rawValue)
-        }
         
         var predicates: [NSPredicate] = [predicateFromDate, predicateToDate]
-
-        if predicateTransactionType != nil {
-            predicates.append(predicateTransactionType!)
+        
+        if type != nil {
+            predicates.append(NSPredicate(format: "type == %d", type!.rawValue))
+        }
+        
+        if entity != nil {
+            predicates.append(NSPredicate(format: "entity.title == %@", entity!.title.lowercased()))
         }
         
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)

@@ -17,5 +17,4 @@ extension Entity {
     var balance: Double {
         return TransactionService.instance.fetchBalance(for: self)
     }
-    
 }

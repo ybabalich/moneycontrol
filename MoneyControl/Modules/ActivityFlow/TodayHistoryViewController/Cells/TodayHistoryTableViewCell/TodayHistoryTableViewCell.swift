@@ -16,7 +16,6 @@ class TodayHistoryTableViewCell : UITableViewCell {
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var categoryNameLabel: UILabel!
-    @IBOutlet weak var rightArrowImageView: UIImageView!
     
     
     // MARK: - Variables private
@@ -46,11 +45,11 @@ class TodayHistoryTableViewCell : UITableViewCell {
         
         // colors
         
+        separatorInset = UIEdgeInsets(top: 0, left: 16 + 36 + 16, bottom: 0, right: 0)
         backgroundView?.backgroundColor = .clear
         contentView.backgroundColor = .clear
         categoryNameLabel.textColor = .secondaryText
         categoryNameLabel.textColor = .primaryText
-        rightArrowImageView.image = rightArrowImageView.image?.tinted(with: .controlTintActive)
     }
     
     func apply(_ viewModel: TransactionViewModel) {

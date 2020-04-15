@@ -18,7 +18,7 @@ class WalletsService {
     
     func saveFirstTimeWallets() {
         let cashEntity = EntityDB()
-        cashEntity.title = "monobank uah"
+        cashEntity.title = EntityBaseNamePrefix
         cashEntity.currency = Currency.uah.rawValue
         
         settings.wallet = cashEntity.title
@@ -38,6 +38,12 @@ class WalletsService {
         }
         
         return Entity(db: entityDB)
+    }
+    
+    func fetchCurrentWallet() -> Entity? {
+        guard let walletName = settings.wallet else { return nil }
+        
+        return fetchWallet(name: walletName)
     }
     
     func createWallet(name: String, currency: Currency) {

@@ -35,6 +35,9 @@
 		D93625212445BFD000CEB6D9 /* WalletAddNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93625202445BFD000CEB6D9 /* WalletAddNameTableViewCell.swift */; };
 		D93625232445CBDF00CEB6D9 /* UIFont+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93625222445CBDF00CEB6D9 /* UIFont+MoneyControl.swift */; };
 		D93625252445D15200CEB6D9 /* Entity+DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93625242445D15200CEB6D9 /* Entity+DB.swift */; };
+		D936252D24462C5300CEB6D9 /* WalletAddBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D936252C24462C5300CEB6D9 /* WalletAddBalanceTableViewCell.swift */; };
+		D93625332446ED5F00CEB6D9 /* BalancePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93625322446ED5F00CEB6D9 /* BalancePreviewView.swift */; };
+		D9362538244702F100CEB6D9 /* InfoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9362537244702F100CEB6D9 /* InfoPreviewView.swift */; };
 		D94513182444687E004DDC81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D94513172444687E004DDC81 /* GoogleService-Info.plist */; };
 		D9466CF024142E410048095A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9466CEF24142E410048095A /* Colors.xcassets */; };
 		D9466CF224142F1A0048095A /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9466CF124142F1A0048095A /* UIColor+Assets.swift */; };
@@ -61,7 +64,6 @@
 		D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CF271215825A4001BEF1F /* BaseViewController.swift */; };
 		D95D153C22667B4A00B83AD6 /* ActivityFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95D153E22667B4A00B83AD6 /* ActivityFlow.storyboard */; };
 		D95D154522667CA200B83AD6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D95D154322667CA200B83AD6 /* Localizable.strings */; };
-		D95D154B22667D9D00B83AD6 /* HistoryFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95D154D22667D9D00B83AD6 /* HistoryFlow.storyboard */; };
 		D95D155422667E6600B83AD6 /* CategoryFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95D155622667E6600B83AD6 /* CategoryFlow.storyboard */; };
 		D95D155E2266823600B83AD6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D155D2266823600B83AD6 /* StringExtensions.swift */; };
 		D95D156022672F1600B83AD6 /* UIScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D155F22672F1600B83AD6 /* UIScreenExtensions.swift */; };
@@ -107,7 +109,6 @@
 		D99045092444EB8B0057AA4F /* WalletsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99045082444EB8B0057AA4F /* WalletsListViewModel.swift */; };
 		D993362F243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */; };
 		D9933633243F208400AED4E6 /* BottomOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9933632243F208400AED4E6 /* BottomOverlayViewController.swift */; };
-		D993363724406E7100AED4E6 /* HistoryTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993363624406E7100AED4E6 /* HistoryTitleView.swift */; };
 		D99336392440819600AED4E6 /* HistoryDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99336382440819600AED4E6 /* HistoryDatePickerView.swift */; };
 		D993363B24409E1100AED4E6 /* Date+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993363A24409E1100AED4E6 /* Date+MoneyControl.swift */; };
 		D993363D24410F0500AED4E6 /* HistoryCalendarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993363C24410F0500AED4E6 /* HistoryCalendarPickerView.swift */; };
@@ -116,7 +117,6 @@
 		D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */; };
 		D99F684821AAB399005EC865 /* UITableView+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684721AAB399005EC865 /* UITableView+MoneyControl.swift */; };
 		D99F684B21AABDAD005EC865 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684A21AABDAD005EC865 /* HistoryViewController.swift */; };
-		D99F684F21AAD56C005EC865 /* HistoryTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */; };
 		D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F685A21AB1DA2005EC865 /* CategoryService.swift */; };
 		D99F686221AB1FEC005EC865 /* CategoryDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F686121AB1FEC005EC865 /* CategoryDB.swift */; };
 		D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F686521AB2356005EC865 /* CategoriesFabric.swift */; };
@@ -141,7 +141,6 @@
 		D9F87B54226519A2005CCFD5 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F87B53226519A2005CCFD5 /* DateService.swift */; };
 		D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC28F321623FBC00E57E1B /* Transaction.swift */; };
 		D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */; };
-		D9FD0E7421AFDFC900A77C8A /* HistoryBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD0E7321AFDFC900A77C8A /* HistoryBottomViewController.swift */; };
 		D9FD0E7621AFE19600A77C8A /* HistoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD0E7521AFE19600A77C8A /* HistoryViewViewModel.swift */; };
 		D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD0E7721AFE25000A77C8A /* HistorySortCategoryViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -177,6 +176,9 @@
 		D93625202445BFD000CEB6D9 /* WalletAddNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddNameTableViewCell.swift; sourceTree = "<group>"; };
 		D93625222445CBDF00CEB6D9 /* UIFont+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+MoneyControl.swift"; sourceTree = "<group>"; };
 		D93625242445D15200CEB6D9 /* Entity+DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+DB.swift"; sourceTree = "<group>"; };
+		D936252C24462C5300CEB6D9 /* WalletAddBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddBalanceTableViewCell.swift; sourceTree = "<group>"; };
+		D93625322446ED5F00CEB6D9 /* BalancePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePreviewView.swift; sourceTree = "<group>"; };
+		D9362537244702F100CEB6D9 /* InfoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPreviewView.swift; sourceTree = "<group>"; };
 		D94513172444687E004DDC81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9466CEF24142E410048095A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D9466CF124142F1A0048095A /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
@@ -221,27 +223,22 @@
 		D973FA042444CC81007226DA /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		D973FA062444CD92007226DA /* EntityDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDB.swift; sourceTree = "<group>"; };
 		D973FA082444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-GB"; path = "en-GB.lproj/ActivityFlow.storyboard"; sourceTree = "<group>"; };
-		D973FA092444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-GB"; path = "en-GB.lproj/HistoryFlow.storyboard"; sourceTree = "<group>"; };
 		D973FA0A2444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-GB"; path = "en-GB.lproj/CategoryFlow.storyboard"; sourceTree = "<group>"; };
 		D973FA0B2444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		D973FA0C2444CE16007226DA /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D973FA0D2444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-AU"; path = "en-AU.lproj/ActivityFlow.storyboard"; sourceTree = "<group>"; };
-		D973FA0E2444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-AU"; path = "en-AU.lproj/HistoryFlow.storyboard"; sourceTree = "<group>"; };
 		D973FA0F2444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-AU"; path = "en-AU.lproj/CategoryFlow.storyboard"; sourceTree = "<group>"; };
 		D973FA102444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-AU"; path = "en-AU.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		D973FA112444CE1B007226DA /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D973FA122444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-IN"; path = "en-IN.lproj/ActivityFlow.storyboard"; sourceTree = "<group>"; };
-		D973FA132444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-IN"; path = "en-IN.lproj/HistoryFlow.storyboard"; sourceTree = "<group>"; };
 		D973FA142444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-IN"; path = "en-IN.lproj/CategoryFlow.storyboard"; sourceTree = "<group>"; };
 		D973FA152444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-IN"; path = "en-IN.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		D973FA162444CE20007226DA /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D973FA172444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/ActivityFlow.storyboard; sourceTree = "<group>"; };
-		D973FA182444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/HistoryFlow.storyboard; sourceTree = "<group>"; };
 		D973FA192444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/CategoryFlow.storyboard; sourceTree = "<group>"; };
 		D973FA1A2444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D973FA1B2444CE28007226DA /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D973FA1C2444CE33007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/ActivityFlow.storyboard; sourceTree = "<group>"; };
-		D973FA1D2444CE33007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/HistoryFlow.storyboard; sourceTree = "<group>"; };
 		D973FA1E2444CE34007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/CategoryFlow.storyboard; sourceTree = "<group>"; };
 		D973FA1F2444CE34007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D973FA202444CE34007226DA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -271,7 +268,6 @@
 		D99045082444EB8B0057AA4F /* WalletsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsListViewModel.swift; sourceTree = "<group>"; };
 		D993362E243E712500AED4E6 /* SettingsChooseLanguageTitledCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsChooseLanguageTitledCell.xib; sourceTree = "<group>"; };
 		D9933632243F208400AED4E6 /* BottomOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOverlayViewController.swift; sourceTree = "<group>"; };
-		D993363624406E7100AED4E6 /* HistoryTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTitleView.swift; sourceTree = "<group>"; };
 		D99336382440819600AED4E6 /* HistoryDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDatePickerView.swift; sourceTree = "<group>"; };
 		D993363A24409E1100AED4E6 /* Date+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+MoneyControl.swift"; sourceTree = "<group>"; };
 		D993363C24410F0500AED4E6 /* HistoryCalendarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCalendarPickerView.swift; sourceTree = "<group>"; };
@@ -280,7 +276,6 @@
 		D99F684421AAA462005EC865 /* TodayHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		D99F684721AAB399005EC865 /* UITableView+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+MoneyControl.swift"; sourceTree = "<group>"; };
 		D99F684A21AABDAD005EC865 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopViewController.swift; sourceTree = "<group>"; };
 		D99F685A21AB1DA2005EC865 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		D99F686121AB1FEC005EC865 /* CategoryDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDB.swift; sourceTree = "<group>"; };
 		D99F686521AB2356005EC865 /* CategoriesFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFabric.swift; sourceTree = "<group>"; };
@@ -293,7 +288,6 @@
 		D9AB5DE223D70B6D002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/ActivityFlow.storyboard; sourceTree = "<group>"; };
 		D9AB5DE323D70B6F002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9AB5DE423D70B6F002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/CategoryFlow.storyboard; sourceTree = "<group>"; };
-		D9AB5DE523D70B73002167D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/HistoryFlow.storyboard; sourceTree = "<group>"; };
 		D9AB5DED23D7813A002167D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D9AB5DF123D7836F002167D8 /* TappableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableButton.swift; sourceTree = "<group>"; };
 		D9AB5DF323D783A0002167D8 /* BiggerAreaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggerAreaButton.swift; sourceTree = "<group>"; };
@@ -309,7 +303,6 @@
 		D9F87B53226519A2005CCFD5 /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
 		D9FC28F321623FBC00E57E1B /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
-		D9FD0E7321AFDFC900A77C8A /* HistoryBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBottomViewController.swift; sourceTree = "<group>"; };
 		D9FD0E7521AFE19600A77C8A /* HistoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewViewModel.swift; sourceTree = "<group>"; };
 		D9FD0E7721AFE25000A77C8A /* HistorySortCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySortCategoryViewModel.swift; sourceTree = "<group>"; };
 		F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -388,7 +381,6 @@
 			isa = PBXGroup;
 			children = (
 				D95D153E22667B4A00B83AD6 /* ActivityFlow.storyboard */,
-				D95D154D22667D9D00B83AD6 /* HistoryFlow.storyboard */,
 				D95D155622667E6600B83AD6 /* CategoryFlow.storyboard */,
 			);
 			path = Storyboards;
@@ -564,8 +556,18 @@
 			isa = PBXGroup;
 			children = (
 				D93625202445BFD000CEB6D9 /* WalletAddNameTableViewCell.swift */,
+				D936252C24462C5300CEB6D9 /* WalletAddBalanceTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D93625312446ED4700CEB6D9 /* BalancePreviewView */ = {
+			isa = PBXGroup;
+			children = (
+				D93625322446ED5F00CEB6D9 /* BalancePreviewView.swift */,
+				D9362537244702F100CEB6D9 /* InfoPreviewView.swift */,
+			);
+			path = BalancePreviewView;
 			sourceTree = "<group>";
 		};
 		D94ADB2A21B1868D00D94F0F /* EmptyView */ = {
@@ -700,7 +702,7 @@
 			children = (
 				D973FA252444E7C8007226DA /* Wallet */,
 				D95CF27021582562001BEF1F /* BaseViewController */,
-				D9FD0E6E21AFDA6700A77C8A /* HistoryFlow */,
+				D9FD0E6E21AFDA6700A77C8A /* History */,
 				D9FD0E6D21AFDA5A00A77C8A /* ActivityFlow */,
 				D98E335121B546B5004C66C3 /* CategoryFlow */,
 				D9AB5DE923D77FB8002167D8 /* SettingsFlow */,
@@ -798,6 +800,7 @@
 			isa = PBXGroup;
 			children = (
 				D96F46EE242254090092C277 /* ReusableView.swift */,
+				D93625312446ED4700CEB6D9 /* BalancePreviewView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1005,7 +1008,6 @@
 		D993363524406E4700AED4E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D993363624406E7100AED4E6 /* HistoryTitleView.swift */,
 				D99336382440819600AED4E6 /* HistoryDatePickerView.swift */,
 				D993363C24410F0500AED4E6 /* HistoryCalendarPickerView.swift */,
 			);
@@ -1043,28 +1045,10 @@
 			isa = PBXGroup;
 			children = (
 				D993363524406E4700AED4E6 /* Views */,
-				D99F684C21AAD538005EC865 /* InternalControllers */,
 				D9FD0E7121AFDF2200A77C8A /* ViewModels */,
 				D99F684A21AABDAD005EC865 /* HistoryViewController.swift */,
 			);
 			path = HistoryViewController;
-			sourceTree = "<group>";
-		};
-		D99F684C21AAD538005EC865 /* InternalControllers */ = {
-			isa = PBXGroup;
-			children = (
-				D99F684D21AAD559005EC865 /* HistoryTopViewController */,
-				D9FD0E7221AFDFB400A77C8A /* HistoryBottomViewController */,
-			);
-			path = InternalControllers;
-			sourceTree = "<group>";
-		};
-		D99F684D21AAD559005EC865 /* HistoryTopViewController */ = {
-			isa = PBXGroup;
-			children = (
-				D99F684E21AAD56C005EC865 /* HistoryTopViewController.swift */,
-			);
-			path = HistoryTopViewController;
 			sourceTree = "<group>";
 		};
 		D99F685621AB1C19005EC865 /* ViewModels */ = {
@@ -1296,13 +1280,13 @@
 			path = ActivityFlow;
 			sourceTree = "<group>";
 		};
-		D9FD0E6E21AFDA6700A77C8A /* HistoryFlow */ = {
+		D9FD0E6E21AFDA6700A77C8A /* History */ = {
 			isa = PBXGroup;
 			children = (
 				D97A0FF621B9CE20002BCA4C /* TransactionsHistoryListViewController */,
 				D99F684921AABD96005EC865 /* HistoryViewController */,
 			);
-			path = HistoryFlow;
+			path = History;
 			sourceTree = "<group>";
 		};
 		D9FD0E7121AFDF2200A77C8A /* ViewModels */ = {
@@ -1312,14 +1296,6 @@
 				D9FD0E7721AFE25000A77C8A /* HistorySortCategoryViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		D9FD0E7221AFDFB400A77C8A /* HistoryBottomViewController */ = {
-			isa = PBXGroup;
-			children = (
-				D9FD0E7321AFDFC900A77C8A /* HistoryBottomViewController.swift */,
-			);
-			path = HistoryBottomViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1392,7 +1368,6 @@
 				D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */,
 				D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */,
 				D98E335021B49D29004C66C3 /* EditTransactionDateView.xib in Resources */,
-				D95D154B22667D9D00B83AD6 /* HistoryFlow.storyboard in Resources */,
 				D95D154522667CA200B83AD6 /* Localizable.strings in Resources */,
 				D95D155422667E6600B83AD6 /* CategoryFlow.storyboard in Resources */,
 				D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */,
@@ -1485,6 +1460,7 @@
 				D9AB5DEE23D7813A002167D8 /* SettingsViewController.swift in Sources */,
 				D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */,
 				D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */,
+				D93625332446ED5F00CEB6D9 /* BalancePreviewView.swift in Sources */,
 				D95CF26521577826001BEF1F /* PinCircleView.swift in Sources */,
 				D911ED0621A804FF00C3A7B1 /* Typealiases.swift in Sources */,
 				D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */,
@@ -1521,15 +1497,16 @@
 				D953130223DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift in Sources */,
 				D99336392440819600AED4E6 /* HistoryDatePickerView.swift in Sources */,
 				D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */,
-				D993363724406E7100AED4E6 /* HistoryTitleView.swift in Sources */,
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
 				D97A0FF821B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift in Sources */,
 				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,
 				D95312FD23DA32BC00E26D1E /* SettingsLanguageViewModel.swift in Sources */,
 				D993363D24410F0500AED4E6 /* HistoryCalendarPickerView.swift in Sources */,
+				D9362538244702F100CEB6D9 /* InfoPreviewView.swift in Sources */,
 				D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */,
 				D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */,
 				D92E85B724439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift in Sources */,
+				D936252D24462C5300CEB6D9 /* WalletAddBalanceTableViewCell.swift in Sources */,
 				D98E335521B547C0004C66C3 /* ManageCategoriesViewController.swift in Sources */,
 				D973FA2D2444E86D007226DA /* WalletTableViewCell.swift in Sources */,
 				D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */,
@@ -1567,7 +1544,6 @@
 				D98E336321B56AAC004C66C3 /* ManageCategoriesViewViewModel.swift in Sources */,
 				D911ECFC21A7F7EB00C3A7B1 /* ActivityViewController.swift in Sources */,
 				D99F684521AAA462005EC865 /* TodayHistoryTableViewCell.swift in Sources */,
-				D9FD0E7421AFDFC900A77C8A /* HistoryBottomViewController.swift in Sources */,
 				D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */,
 				D922148021A97DCB00A71CDB /* UICollectionViewExtensions.swift in Sources */,
 				D9AB5DCB23D4D1CC002167D8 /* HistoryViewModel.swift in Sources */,
@@ -1581,7 +1557,6 @@
 				D99F686221AB1FEC005EC865 /* CategoryDB.swift in Sources */,
 				D98E333621B2BAD2004C66C3 /* RegularButton.swift in Sources */,
 				D93625182445997E00CEB6D9 /* WalletsService.swift in Sources */,
-				D99F684F21AAD56C005EC865 /* HistoryTopViewController.swift in Sources */,
 				D911ED0421A8025800C3A7B1 /* CheckButton.swift in Sources */,
 				D964831B216287BE00B2D880 /* Constants.swift in Sources */,
 				D973FA052444CC81007226DA /* Entity.swift in Sources */,
@@ -1632,19 +1607,6 @@
 				D973FA202444CE34007226DA /* ru */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		D95D154D22667D9D00B83AD6 /* HistoryFlow.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9AB5DE523D70B73002167D8 /* en */,
-				D973FA092444CE16007226DA /* en-GB */,
-				D973FA0E2444CE1B007226DA /* en-AU */,
-				D973FA132444CE20007226DA /* en-IN */,
-				D973FA182444CE28007226DA /* uk */,
-				D973FA1D2444CE33007226DA /* ru */,
-			);
-			name = HistoryFlow.storyboard;
 			sourceTree = "<group>";
 		};
 		D95D155622667E6600B83AD6 /* CategoryFlow.storyboard */ = {

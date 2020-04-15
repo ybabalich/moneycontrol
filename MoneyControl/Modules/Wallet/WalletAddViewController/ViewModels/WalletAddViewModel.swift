@@ -19,6 +19,7 @@ class WalletAddViewModel {
         enum SectionType {
             case name
             case currency
+            case startingBalance
         }
         
         let title: String?
@@ -35,7 +36,8 @@ class WalletAddViewModel {
     func loadData() {
         
         sections = [
-            Section(title: "Name", type: .name)
+            Section(title: "Name", type: .name),
+            Section(title: "Starting Balance", type: .startingBalance)
         ]
     }
     

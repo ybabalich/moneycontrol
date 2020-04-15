@@ -76,4 +76,11 @@ extension Transaction.TransactionType: Rawable {
         }
     }
     
+    var localizedTitle: String {
+        switch self {
+        case .incoming: return "Revenues".localized
+        case .outcoming: return "Spendings".localized
+        }
+    }
+    
 }

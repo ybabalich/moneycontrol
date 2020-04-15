@@ -53,8 +53,8 @@ class Router: NSObject {
     }
     
     func showHistoryScreen() {
-        let historyFlow = AppLaunch.StoryboardFlow.history(viewController: .base)
-        showScreen(historyFlow, animated: true)
+        let vc = HistoryViewController()
+        navigationViewController.pushViewController(vc, animated: true)
     }
     
     func showTransactionsList(_ historyVM: HistoryViewModel) {

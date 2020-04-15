@@ -30,6 +30,7 @@ class HistoryViewViewModel {
     }
     
     // MARK: - Public methods
+    
     func loadData() {
         sortCategories.onNext(getSortCategories())
         loadTransactions()
@@ -107,7 +108,12 @@ class HistoryViewViewModel {
         calculateStatisticsValues()
     }
     
+    func getCurrentWallet() -> Entity? {
+        WalletsService.instance.fetchCurrentWallet()
+    }
+    
     // MARK: - Private methods
+    
     private func getSortCategories() -> [HistorySortCategoryViewModel] {
         let dayCategory = HistorySortCategoryViewModel(sort: .day)
         let weakCategory = HistorySortCategoryViewModel(sort: .week)

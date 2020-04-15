@@ -48,4 +48,9 @@ class WalletsListViewModel {
             ]
         }
     }
+    
+    func selectWallet(_ wallet: Entity) {
+        settings.wallet = wallet.title
+    }
+    
 }

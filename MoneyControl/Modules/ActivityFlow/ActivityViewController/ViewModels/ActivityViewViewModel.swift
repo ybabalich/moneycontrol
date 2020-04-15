@@ -27,16 +27,15 @@ class ActivityViewViewModel {
     
     // MARK: - Variables public
     let value: PublishSubject<String> = PublishSubject<String>()
-    let totalValue: PublishSubject<Double> = PublishSubject<Double>()
     let isActiveDoneButton: PublishSubject<Bool> = PublishSubject<Bool>()
     let isHiddenField: PublishSubject<Bool> = PublishSubject<Bool>()
-    let categories: Variable<[CategoryViewModel]> = Variable<[CategoryViewModel]>([])
-    let selectedCategory: Variable<CategoryViewModel?> = Variable<CategoryViewModel?>(nil)
+    let categories = Variable<[CategoryViewModel]>([])
+    let selectedCategory = Variable<CategoryViewModel?>(nil)
     lazy var transactionType = Variable<Transaction.TransactionType>(_transactionType.value)
     
     // MARK: - Variables private
-    private let _transactionValue: Variable<String> = Variable<String>("")
-    private let _transactionType: Variable<Transaction.TransactionType> = Variable<Transaction.TransactionType>(.outcoming)
+    private let _transactionValue = Variable<String>("")
+    private let _transactionType = Variable<Transaction.TransactionType>(.outcoming)
     private let disposeBag = DisposeBag()
     
     // MARK: - Initializers
@@ -57,14 +56,13 @@ class ActivityViewViewModel {
     // MARK: - Public methods
     
     func getCurrentWallet() -> Entity? {
-        WalletsService.instance.fetchWallet(name: settings.wallet ?? "")
+        WalletsService.instance.fetchCurrentWallet()
     }
     
     func loadData() {
         _transactionValue.value = ""
         transactionType.value = _transactionType.value
         fetchCategories()
-        fetchTransactionsSum()
     }
     
     func changeTransactionType() {
@@ -75,7 +73,6 @@ class ActivityViewViewModel {
         }
         
         transactionType.value = _transactionType.value
-        fetchTransactionsSum()
         fetchCategories()
     }
     
@@ -113,11 +110,13 @@ class ActivityViewViewModel {
         transaction.category = category
         transaction.time = Date()
         
+        if let currentWallet = WalletsService.instance.fetchCurrentWallet() {
+            transaction.entity = currentWallet
+        }
+        
         TransactionService.instance.save(transaction)
         
         _transactionValue.value.removeAll()
-        
-        fetchTransactionsSum()
     }
     
     // MARK: - Private methods
@@ -129,13 +128,4 @@ class ActivityViewViewModel {
             strongSelf.selectedCategory.value = categories[0]
         }
     }
-    
-    func fetchTransactionsSum() {
-        TransactionService.instance.fetchTodayTransactionsSum(type: _transactionType.value) { [weak self] (sum) in
-            guard let strongSelf = self else { return }
-            
-            strongSelf.totalValue.onNext(sum)
-        }
-    }
-    
 }

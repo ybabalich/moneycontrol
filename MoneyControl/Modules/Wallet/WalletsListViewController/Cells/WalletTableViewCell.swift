@@ -31,6 +31,7 @@ class WalletTableViewCell: UITableViewCell {
     // MARK: - Public methods
     
     func apply(_ wallet: Entity) {
+        walletImage.image = wallet.title.initials().coverImage
         topLabel.text = wallet.title.uppercased()
         bottomLabel.text = TransactionService.instance.fetchBalance(for: wallet).currencyFormatted
         accessoryType = wallet.isActive ? .checkmark : .none
@@ -44,7 +45,7 @@ class WalletTableViewCell: UITableViewCell {
         backgroundColor = .mainElementBackground
         selectionStyle = .none
         
-        separatorInset = UIEdgeInsets(top: 0, left: 30 + 16, bottom: 0, right: 0)
+        separatorInset = UIEdgeInsets(top: 0, left: 30 + 16 + 16, bottom: 0, right: 0)
         
         walletImage = UIImageView().then { walletImage in
             

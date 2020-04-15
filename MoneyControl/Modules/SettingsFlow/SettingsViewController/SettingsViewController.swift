@@ -17,8 +17,6 @@ class SettingsViewController: BaseTableViewController {
     // MARK: - Variables private
     
     private let viewModel = SettingsViewModel()
-    private var topViewController: HistoryTopViewController!
-    private var bottomViewController: HistoryBottomViewController!
     
     // MARK: - Lifefycle
     

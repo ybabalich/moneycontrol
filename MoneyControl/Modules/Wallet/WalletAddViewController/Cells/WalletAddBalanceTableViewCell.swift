@@ -1,5 +1,5 @@
 //
-//  WalletAddNameTableViewCell.swift
+//  WalletAddBalanceTableViewCell.swift
 //  MoneyControl
 //
 //  Created by Yaroslav Babalich on 14.04.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WalletAddNameTableViewCell: UITableViewCell {
+class WalletAddBalanceTableViewCell: UITableViewCell {
     
     // MARK: - UI
     
@@ -44,7 +44,7 @@ class WalletAddNameTableViewCell: UITableViewCell {
         
         nameField = UITextField().then { topLabel in
             
-            topLabel.placeholder = "Name of wallet"
+            topLabel.placeholder = "Balance"
             topLabel.font = .systemFont(ofSize: 18, weight: .bold)
             topLabel.textColor = .primaryText
             

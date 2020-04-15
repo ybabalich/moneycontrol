@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol WalletsListViewControllerDelegate: class {
+    func didChooseNewWallet()
+}
+
 class WalletsListViewController: BaseTableViewController {
+    
+    // MARK: - Variables public
+    
+    weak var delegate: WalletsListViewControllerDelegate?
     
     // MARK: - Variables private
     
@@ -117,6 +125,18 @@ extension WalletsListViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         viewModel.sections[section].title
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = viewModel.sections[indexPath.section]
+        
+        switch section.type {
+        case .wallets(wallets: let wallets):
+            viewModel.selectWallet(wallets[indexPath.row])
+            tableView.reloadData()
+            delegate?.didChooseNewWallet()
+        default: print("Not needed")
+        }
     }
 
 }
