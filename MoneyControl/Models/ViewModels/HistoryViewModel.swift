@@ -11,12 +11,12 @@ import Foundation
 class HistoryViewModel {
     
     // MARK: - Variables public
-    let sortCategory: HistorySortCategoryViewModel
+    let sort: Sort
     let category: CategoryViewModel
     
     // MARK: - Initializers
-    init(sortCategory: HistorySortCategoryViewModel, category: CategoryViewModel) {
-        self.sortCategory = sortCategory
+    init(sort: Sort, category: CategoryViewModel) {
+        self.sort = sort
         self.category = category
     }
     

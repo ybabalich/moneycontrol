@@ -13,17 +13,24 @@ class HistoryViewViewModel {
     typealias StatisticsValues = (balance: Double, incomes: Double, outcomes: Double)
     
     // MARK: - Variables
+    
     let titles = PublishSubject<(String?, String?)>()
-    let selectedSortCategory = Variable<HistorySortCategoryViewModel>(HistorySortCategoryViewModel(sort: Sort.day))
+    let selectedSort = Variable<Sort>(.day)
+    let selectedSortEntity = Variable<SortEntity?>(nil)
     let transactions = Variable<[TransactionViewModel]>([])
     let statisticsValues = PublishSubject<StatisticsValues>()
     
     // MARK: - Variables private
+    
     private let disposeBag = DisposeBag()
     
     // MARK: - Initializers
     init() {
-        selectedSortCategory.asObservable().subscribe(onNext: { [unowned self] _ in
+        selectedSort.asObservable().subscribe(onNext: { [unowned self] _ in
+            self.loadTransactions()
+        }).disposed(by: disposeBag)
+        
+        selectedSortEntity.asObservable().subscribe(onNext: { [unowned self] _ in
             self.loadTransactions()
         }).disposed(by: disposeBag)
     }
@@ -44,11 +51,21 @@ class HistoryViewViewModel {
             }
         }
         
-        switch selectedSortCategory.value.sortType {
+        var fetchEntity: Entity? = nil
+        
+        if let selectedSortEntity = selectedSortEntity.value {
+            switch selectedSortEntity {
+            case .wallet(entity: let entity):
+                fetchEntity = entity
+            default: break
+            }
+        }
+
+        switch selectedSort.value {
         case .day:
             let dates = Calendar.current.currentDay()
             
-            service.fetchTransaction(dates: dates, type: nil, completion: operateWithTransactions)
+            service.fetchTransaction(entity: fetchEntity, dates: dates, type: nil, completion: operateWithTransactions)
             
             let title = dates.start.shortString
             
@@ -57,7 +74,7 @@ class HistoryViewViewModel {
         case .week:
             let dates = Calendar.current.currentWeek()
             
-            service.fetchTransaction(dates: dates, type: nil, completion: operateWithTransactions)
+            service.fetchTransaction(entity: fetchEntity, dates: dates, type: nil, completion: operateWithTransactions)
             
             let title = dates.start.shortString + " - " + dates.end.shortString
             
@@ -66,7 +83,7 @@ class HistoryViewViewModel {
         case .month:
             let dates = Calendar.current.currentMonth()
             
-            service.fetchTransaction(dates: dates, type: nil, completion: operateWithTransactions)
+            service.fetchTransaction(entity: fetchEntity, dates: dates, type: nil, completion: operateWithTransactions)
 
             let title = dates.start.shortString + " - " + dates.end.shortString
             
@@ -75,7 +92,7 @@ class HistoryViewViewModel {
         case .year:
             let dates = Calendar.current.currentYear()
             
-            service.fetchTransaction(dates: dates, type: nil, completion: operateWithTransactions)
+            service.fetchTransaction(entity: fetchEntity, dates: dates, type: nil, completion: operateWithTransactions)
             
             let title = dates.start.shortString + " - " + dates.end.shortString
             
@@ -92,7 +109,7 @@ class HistoryViewViewModel {
             print("End ->: \(endOfDay))")
             print("-----")
             
-            service.fetchTransaction(dates: (startOfDay, endOfDay), type: nil, completion: operateWithTransactions)
+            service.fetchTransaction(entity: fetchEntity, dates: (startOfDay, endOfDay), type: nil, completion: operateWithTransactions)
             
             let title = startOfDay.shortString + " - " + endOfDay.shortString
             
@@ -108,6 +125,16 @@ class HistoryViewViewModel {
     
     func getCurrentWallet() -> Entity? {
         WalletsService.instance.fetchCurrentWallet()
+    }
+    
+    func getCurrentSortEntity() -> SortEntity {
+        if let selectedSort = selectedSortEntity.value {
+            return selectedSort
+        } else if let wallet = getCurrentWallet() {
+            return .wallet(entity: wallet)
+        } else {
+            return .total
+        }
     }
     
     // MARK: - Private methods

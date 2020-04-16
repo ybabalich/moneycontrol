@@ -143,7 +143,6 @@
 		D9FC28F421623FBC00E57E1B /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC28F321623FBC00E57E1B /* Transaction.swift */; };
 		D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */; };
 		D9FD0E7621AFE19600A77C8A /* HistoryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD0E7521AFE19600A77C8A /* HistoryViewViewModel.swift */; };
-		D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD0E7721AFE25000A77C8A /* HistorySortCategoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -306,7 +305,6 @@
 		D9FC28F321623FBC00E57E1B /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		D9FD0E6B21AFC76500A77C8A /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
 		D9FD0E7521AFE19600A77C8A /* HistoryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewViewModel.swift; sourceTree = "<group>"; };
-		D9FD0E7721AFE25000A77C8A /* HistorySortCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySortCategoryViewModel.swift; sourceTree = "<group>"; };
 		F26E5E653816776DDD2835F9 /* Pods-MoneyControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1296,7 +1294,6 @@
 			isa = PBXGroup;
 			children = (
 				D9FD0E7521AFE19600A77C8A /* HistoryViewViewModel.swift */,
-				D9FD0E7721AFE25000A77C8A /* HistorySortCategoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1500,7 +1497,6 @@
 				D936253A24477B4600CEB6D9 /* DateSetView.swift in Sources */,
 				D953130223DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift in Sources */,
 				D99336392440819600AED4E6 /* HistoryDatePickerView.swift in Sources */,
-				D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */,
 				D95CF273215825A4001BEF1F /* BaseViewController.swift in Sources */,
 				D97A0FF821B9CE3C002BCA4C /* TransactionsHistoryListViewController.swift in Sources */,
 				D9DB3B2121A94BB100D8BADC /* UIBarButtonItemFabric.swift in Sources */,

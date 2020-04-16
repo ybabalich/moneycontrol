@@ -42,7 +42,7 @@ class HistoryViewController: BaseViewController {
         guard let wallet = viewModel.getCurrentWallet() else { return nil }
         
         return UIBarButtonItemFabric.wallet(wallet: wallet) { [unowned self] in
-//            self.showWalletsListVC()
+            self.showWalletsListVC()
         }
     }
     
@@ -67,7 +67,7 @@ class HistoryViewController: BaseViewController {
     
     private func setupViewModel() {
         
-        viewModel.selectedSortCategory.asObservable().subscribe(onNext: { [unowned self] _ in
+        viewModel.selectedSort.asObservable().subscribe(onNext: { [unowned self] _ in
             self.updateUI()
         }).disposed(by: disposeBag)
         
@@ -86,9 +86,9 @@ class HistoryViewController: BaseViewController {
             cell.onTap(completion: { [weak self] (transaction) in
                 guard let strongSelf = self else { return }
                 
-                let historyViewModel = HistoryViewModel(sortCategory: strongSelf.viewModel.selectedSortCategory.value,
-                                                        category: transaction.category)
-                Router.instance.showTransactionsList(historyViewModel)
+//                let historyViewModel = HistoryViewModel(sortCategory: strongSelf.viewModel.selectedSortCategory.value,
+//                                                        category: transaction.category)
+//                Router.instance.showTransactionsList(historyViewModel)
             })
             
             return cell
@@ -124,9 +124,9 @@ class HistoryViewController: BaseViewController {
         
         calendarPickerView = HistoryCalendarPickerView().then { calendarPickerView in
             
-            calendarPickerView.onChoose { [unowned self] sortCategory in
+            calendarPickerView.onChoose { [unowned self] sort in
                 
-                self.viewModel.selectedSortCategory.value = HistorySortCategoryViewModel(sort: sortCategory)
+                self.viewModel.selectedSort.value = sort
                 self.bottomOverlayVC.closeController()
             }
             
@@ -145,13 +145,13 @@ class HistoryViewController: BaseViewController {
                 self.bottomOverlayVC.closeController()
             }
             
-            datePickerView.onChoose { [unowned self] category in
+            datePickerView.onChoose { [unowned self] sort in
                 
-                switch category {
+                switch sort {
                 case .custom(from: _, to: _):
                     self.showCalendarPicker(selectedDates: nil)
                 default:
-                    self.viewModel.selectedSortCategory.value = HistorySortCategoryViewModel(sort: category)
+                    self.viewModel.selectedSort.value = sort
                     self.bottomOverlayVC.closeController()
                 }
             }
@@ -187,7 +187,7 @@ class HistoryViewController: BaseViewController {
             }
         }
         
-        datePickerView.selectedSort = viewModel.selectedSortCategory.value.sortType
+        datePickerView.selectedSort = viewModel.selectedSort.value
         
         bottomOverlayVC.showContentView(datePickerView)
         bottomOverlayVC.changeContentHeight(pickerHeight())
@@ -211,12 +211,19 @@ class HistoryViewController: BaseViewController {
         calendarPickerView.selectedDates = selectedDates
     }
     
+    private func showWalletsListVC() {
+        let vc = WalletsListViewController(mode: .select, selectedEntity: viewModel.getCurrentSortEntity())
+        vc.delegate = self
+        let navigation = UINavigationController(rootViewController: vc)
+        navigationController?.present(navigation, animated: true, completion: nil)
+    }
+    
     private func updateUI() {
         guard let wallet = viewModel.getCurrentWallet() else { return }
         
         setupNavigationBarItems()
         titleView.show(wallet: wallet)
-        balancePreviewView.apply(wallet, sort: viewModel.selectedSortCategory.value.sortType)
+        balancePreviewView.apply(wallet, sort: viewModel.selectedSort.value)
     }
 }
 
@@ -227,6 +234,13 @@ extension HistoryViewController: UITableViewDelegate {
             self.viewModel.removeInnerTransactions(transactionViewModel)
         }
         return [removeAction]
+    }
+}
+
+extension HistoryViewController: WalletsListViewControllerDelegate {
+    func didChoose(sortEntity: SortEntity) {
+        viewModel.selectedSortEntity.value = sortEntity
+        updateUI()
     }
 }
 

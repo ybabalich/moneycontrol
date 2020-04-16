@@ -32,39 +32,39 @@ class TransactionsHistoryListViewModel {
             }
         }
         
-        switch historyViewModel.sortCategory.sortType {
-        case .day:
-            service.fetchTodayTransactions(type: nil) {  (transactions) in
-                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
-                
-                makeSorted(transactions)
-            }
-        case .month:
-            service.fetchMonthTransactions(type: nil) {  (transactions) in
-                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
-                
-                makeSorted(transactions)
-            }
-        case .week:
-            service.fetchMonthTransactions(type: nil) {  (transactions) in
-                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
-                
-                makeSorted(transactions)
-            }
-        case .year:
-            let calendarYear = Calendar.current.currentYear()
-            service.fetchTransaction(dates: calendarYear, type: nil) { transactions in
-                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
-                
-                makeSorted(transactions)
-            }
-        case .custom(from: let fromDate, to: let toDate):
-            service.fetchTransaction(dates: (fromDate, toDate), type: nil) { transactions in
-                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
-                
-                makeSorted(transactions)
-            }
-        }
+//        switch historyViewModel.sortCategory.sortType {
+//        case .day:
+//            service.fetchTodayTransactions(type: nil) {  (transactions) in
+//                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
+//                
+//                makeSorted(transactions)
+//            }
+//        case .month:
+//            service.fetchMonthTransactions(type: nil) {  (transactions) in
+//                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
+//                
+//                makeSorted(transactions)
+//            }
+//        case .week:
+//            service.fetchMonthTransactions(type: nil) {  (transactions) in
+//                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
+//                
+//                makeSorted(transactions)
+//            }
+//        case .year:
+//            let calendarYear = Calendar.current.currentYear()
+//            service.fetchTransaction(dates: calendarYear, type: nil) { transactions in
+//                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
+//                
+//                makeSorted(transactions)
+//            }
+//        case .custom(from: let fromDate, to: let toDate):
+//            service.fetchTransaction(dates: (fromDate, toDate), type: nil) { transactions in
+//                let transactions = transactions.filter { $0.category.id == historyViewModel.category.id }
+//                
+//                makeSorted(transactions)
+//            }
+//        }
     }
     
 }

@@ -184,6 +184,5 @@ extension ActivityViewController: WalletsListViewControllerDelegate {
             updateNavigation()
         default: break
         }
-        
     }
 }

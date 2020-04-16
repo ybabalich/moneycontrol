@@ -69,8 +69,12 @@ class TransactionService {
         fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
     }
     
-    func fetchTransaction(dates: Calendar.StartEndDate, type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
-        fetchTransactions(from: dates.start, to: dates.end, type: type, completion: completion)
+    func fetchTransaction(entity: Entity? = nil,
+                          dates: Calendar.StartEndDate,
+                          type: Transaction.TransactionType?,
+                          completion: ([Transaction]) -> ()) {
+        
+        fetchTransactions(entity: entity, from: dates.start, to: dates.end, type: type, completion: completion)
     }
     
     // MARK: - Saving/Updating
