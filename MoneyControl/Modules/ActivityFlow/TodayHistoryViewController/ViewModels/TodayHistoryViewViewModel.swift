@@ -36,6 +36,10 @@ class TodayHistoryViewViewModel {
         }
     }
     
+    func getCurrentWallet() -> Entity? {
+        WalletsService.instance.fetchCurrentWallet()
+    }
+    
     func remove(_ transaction: TransactionViewModel) {
         TransactionService.instance.remove(id: transaction.id)
         transactions.value = transactions.value.filter({ $0.id != transaction.id })

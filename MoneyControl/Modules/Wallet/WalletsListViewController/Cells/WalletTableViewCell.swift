@@ -30,11 +30,11 @@ class WalletTableViewCell: UITableViewCell {
     
     // MARK: - Public methods
     
-    func apply(_ wallet: Entity) {
+    func apply(_ wallet: Entity, isSelected: Bool) {
         walletImage.image = wallet.title.initials().coverImage
         topLabel.text = wallet.title.uppercased()
-        bottomLabel.text = TransactionService.instance.fetchBalance(for: wallet).currencyFormatted
-        accessoryType = wallet.isActive ? .checkmark : .none
+        bottomLabel.text = TransactionService.instance.fetchBalance(for: wallet).currencyFormattedWithSymbol
+        accessoryType = isSelected ? .checkmark : .none
     }
     
     // MARK: - Private methods

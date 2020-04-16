@@ -62,13 +62,13 @@ class HistoryViewController: BaseViewController {
         
         viewModel.loadData()
         
-        updateNavigation()
+        updateUI()
     }
     
     private func setupViewModel() {
         
-        viewModel.titles.asObserver().subscribe(onNext: { [unowned self] values in
-            //self.historyTitleView.show(title: values.0) // dates
+        viewModel.selectedSortCategory.asObservable().subscribe(onNext: { [unowned self] _ in
+            self.updateUI()
         }).disposed(by: disposeBag)
         
         viewModel.statisticsValues.asObserver().subscribe(onNext: { [unowned self] (values) in
@@ -109,9 +109,9 @@ class HistoryViewController: BaseViewController {
         }
         
         balancePreviewView = BalancePreviewView().then { balancePreviewView in
-            
-            if let wallet = viewModel.getCurrentWallet() {
-                balancePreviewView.apply(wallet)
+
+            balancePreviewView.onTapChooseSort { [unowned self] in
+                self.showDatePicker()
             }
             
             view.addSubview(balancePreviewView)
@@ -211,11 +211,12 @@ class HistoryViewController: BaseViewController {
         calendarPickerView.selectedDates = selectedDates
     }
     
-    private func updateNavigation() {
+    private func updateUI() {
         guard let wallet = viewModel.getCurrentWallet() else { return }
         
         setupNavigationBarItems()
         titleView.show(wallet: wallet)
+        balancePreviewView.apply(wallet, sort: viewModel.selectedSortCategory.value.sortType)
     }
 }
 

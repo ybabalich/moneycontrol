@@ -29,8 +29,9 @@ class WalletsTotalTableViewCell: UITableViewCell {
     
     // MARK: - Public methods
     
-    func showBalance(_ balance: String) {
+    func showBalance(_ balance: String, isSelected: Bool) {
         bottomLabel.text = balance
+        accessoryType = isSelected ? .checkmark : .none
     }
     
     // MARK: - Private methods

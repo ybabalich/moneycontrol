@@ -169,15 +169,21 @@ class ActivityViewController: BaseViewController {
     }
     
     private func showWalletsListVC() {
-        let vc = WalletsListViewController()
+        let vc = WalletsListViewController(mode: .default, selectedEntity: viewModel.getCurrentSortEntity())
         vc.delegate = self
         let navigation = UINavigationController(rootViewController: vc)
-        self.navigationController?.present(navigation, animated: true, completion: nil)
+        navigationController?.present(navigation, animated: true, completion: nil)
     }
 }
 
 extension ActivityViewController: WalletsListViewControllerDelegate {
-    func didChooseNewWallet() {
-        updateNavigation()
+    func didChoose(sortEntity: SortEntity) {
+        switch sortEntity {
+        case .wallet(entity: let entity):
+            settings.wallet = entity.title
+            updateNavigation()
+        default: break
+        }
+        
     }
 }

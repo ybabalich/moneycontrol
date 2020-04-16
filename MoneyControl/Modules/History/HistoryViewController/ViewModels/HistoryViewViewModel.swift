@@ -14,7 +14,6 @@ class HistoryViewViewModel {
     
     // MARK: - Variables
     let titles = PublishSubject<(String?, String?)>()
-    let sortCategories = PublishSubject<[HistorySortCategoryViewModel]>()
     let selectedSortCategory = Variable<HistorySortCategoryViewModel>(HistorySortCategoryViewModel(sort: Sort.day))
     let transactions = Variable<[TransactionViewModel]>([])
     let statisticsValues = PublishSubject<StatisticsValues>()
@@ -32,7 +31,6 @@ class HistoryViewViewModel {
     // MARK: - Public methods
     
     func loadData() {
-        sortCategories.onNext(getSortCategories())
         loadTransactions()
     }
     
@@ -113,13 +111,6 @@ class HistoryViewViewModel {
     }
     
     // MARK: - Private methods
-    
-    private func getSortCategories() -> [HistorySortCategoryViewModel] {
-        let dayCategory = HistorySortCategoryViewModel(sort: .day)
-        let weakCategory = HistorySortCategoryViewModel(sort: .week)
-        let monthCategory = HistorySortCategoryViewModel(sort: .month)
-        return [dayCategory, weakCategory, monthCategory]
-    }
     
     private func calculateStatisticsValues() {
         var totalIncomes: Double = 0

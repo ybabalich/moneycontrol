@@ -18,6 +18,8 @@ class BalancePreviewView: UIView {
     private var incomeView: InfoPreviewView!
     private var spentView: InfoPreviewView!
     
+    private var dateSetView: DateSetView!
+    
     // MARK: - Initializers
     
     init() {
@@ -32,45 +34,52 @@ class BalancePreviewView: UIView {
     
     // MARK: - Public methods
     
-    func apply(_ entity: Entity) {
-        titleLabel.text = "Period".uppercased() //entity.title.uppercased()
-        dateLabel.text = "15.04.2020 - 21.04.2020" //entity.balance.currencyFormattedWithSymbol
+    func apply(_ entity: Entity, sort: Sort) {
+        let dates = sort.startEndDate
+        dateLabel.text = "\(dates.start.shortString) - \(dates.end.shortString)"
+        
+        dateSetView.apply(title: sort.stringValue.uppercased())
     }
     
     func showInfo(transactionType: Transaction.TransactionType, double: Double) {
         switch transactionType {
         case .incoming:
+            incomeView.backgroundColor = UIColor.income.withAlphaComponent(0.7)
             incomeView.apply(title: transactionType.localizedTitle, value: double, color: .green)
         case .outcoming:
+            spentView.backgroundColor = UIColor.outcome.withAlphaComponent(0.7)
             spentView.apply(title: transactionType.localizedTitle, value: double, color: .red)
         }
+    }
+    
+    func onTapChooseSort(completion: @escaping EmptyClosure) {
+        dateSetView.onTap(completion: completion)
     }
     
     // MARK: - Private methods
     
     private func setupUI() {
         
-        titleLabel = UILabel().then { titleLabel in
+        dateSetView = DateSetView().then { dateSetView in
             
-            titleLabel.font = .systemFont(ofSize: 19, weight: .regular)
-            titleLabel.textAlignment = .left
+            dateSetView.apply(title: "Today")
             
-            addSubview(titleLabel)
-            titleLabel.snp.makeConstraints {
-                $0.top.equalToSuperview().offset(22)
-                $0.left.equalToSuperview().offset(8)
+            addSubview(dateSetView)
+            dateSetView.snp.makeConstraints {
+                $0.right.equalToSuperview().inset(8)
+                $0.top.equalToSuperview().offset(12)
             }
         }
         
         dateLabel = UILabel().then { dateLabel in
             
             dateLabel.font = .systemFont(ofSize: 20, weight: .bold)
-            dateLabel.textAlignment = .center
+            dateLabel.textAlignment = .left
             
             addSubview(dateLabel)
             dateLabel.snp.makeConstraints {
-                $0.top.equalTo(titleLabel.snp.bottom).offset(8)
-                $0.centerX.equalToSuperview()
+                $0.centerY.equalTo(dateSetView)
+                $0.left.equalToSuperview().offset(8)
             }
         }
         

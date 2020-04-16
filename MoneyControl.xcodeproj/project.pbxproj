@@ -38,6 +38,7 @@
 		D936252D24462C5300CEB6D9 /* WalletAddBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D936252C24462C5300CEB6D9 /* WalletAddBalanceTableViewCell.swift */; };
 		D93625332446ED5F00CEB6D9 /* BalancePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93625322446ED5F00CEB6D9 /* BalancePreviewView.swift */; };
 		D9362538244702F100CEB6D9 /* InfoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9362537244702F100CEB6D9 /* InfoPreviewView.swift */; };
+		D936253A24477B4600CEB6D9 /* DateSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D936253924477B4600CEB6D9 /* DateSetView.swift */; };
 		D94513182444687E004DDC81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D94513172444687E004DDC81 /* GoogleService-Info.plist */; };
 		D9466CF024142E410048095A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9466CEF24142E410048095A /* Colors.xcassets */; };
 		D9466CF224142F1A0048095A /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9466CF124142F1A0048095A /* UIColor+Assets.swift */; };
@@ -179,6 +180,7 @@
 		D936252C24462C5300CEB6D9 /* WalletAddBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddBalanceTableViewCell.swift; sourceTree = "<group>"; };
 		D93625322446ED5F00CEB6D9 /* BalancePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePreviewView.swift; sourceTree = "<group>"; };
 		D9362537244702F100CEB6D9 /* InfoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPreviewView.swift; sourceTree = "<group>"; };
+		D936253924477B4600CEB6D9 /* DateSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSetView.swift; sourceTree = "<group>"; };
 		D94513172444687E004DDC81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9466CEF24142E410048095A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D9466CF124142F1A0048095A /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 			children = (
 				D93625322446ED5F00CEB6D9 /* BalancePreviewView.swift */,
 				D9362537244702F100CEB6D9 /* InfoPreviewView.swift */,
+				D936253924477B4600CEB6D9 /* DateSetView.swift */,
 			);
 			path = BalancePreviewView;
 			sourceTree = "<group>";
@@ -1494,6 +1497,7 @@
 				D973FA232444D71C007226DA /* ActivityTitleView.swift in Sources */,
 				D99045092444EB8B0057AA4F /* WalletsListViewModel.swift in Sources */,
 				D98E336521B58E06004C66C3 /* Settings.swift in Sources */,
+				D936253A24477B4600CEB6D9 /* DateSetView.swift in Sources */,
 				D953130223DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift in Sources */,
 				D99336392440819600AED4E6 /* HistoryDatePickerView.swift in Sources */,
 				D9FD0E7821AFE25000A77C8A /* HistorySortCategoryViewModel.swift in Sources */,

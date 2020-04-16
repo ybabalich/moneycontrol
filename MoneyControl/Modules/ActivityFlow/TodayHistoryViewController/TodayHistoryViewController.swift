@@ -21,6 +21,8 @@ class TodayHistoryViewController: BaseViewController {
     private var segmentControl: UISegmentedControl!
     private var emptyView: EmptyView!
     
+    private var titleView: ActivityTitleView!
+    
     // MARK: - Variables private
     
     private var initialSegment: Segment = .all
@@ -61,17 +63,17 @@ class TodayHistoryViewController: BaseViewController {
         }
     }
     
-    override func createRightNavButton() -> UIBarButtonItem? {
-        UIBarButtonItemFabric.titledBarButtonItem(title: "Activity".localized,
-                                                  fontSize: UIScreen.isSmallDevice ? 14 : 22)
-    }
-    
     // MARK: - Private methods
     private func setupUI() {
         
         //colors
         
         view.backgroundColor = .mainBackground
+        
+        titleView = ActivityTitleView().then { titleView in
+            
+            navigationItem.titleView = titleView
+        }
         
         segmentControl = UISegmentedControl(items: Segment.allCasesLocalized).then { segmentControl in
             view.addSubview(segmentControl)
@@ -115,10 +117,6 @@ class TodayHistoryViewController: BaseViewController {
     }
     
     private func subscribeToEvents() {
-//        closeBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
-//            Router.instance.goBack()
-//        }).disposed(by: disposeBag)
-        
         segmentControl.rx.controlEvent(.valueChanged).subscribe(onNext: { [unowned self] value in
 
             self.initialSegment = Segment(index: self.segmentControl.selectedSegmentIndex)
@@ -128,6 +126,8 @@ class TodayHistoryViewController: BaseViewController {
         viewModel.transactions.asObservable().map({ $0.count > 0 })
             .subscribe(onNext: { [unowned self] (haveTransactions) in
             
+                self.updateUI()
+                
                 if haveTransactions {
                     self.tableView.isHidden = false
                     self.emptyView.isHidden = true
@@ -161,6 +161,12 @@ class TodayHistoryViewController: BaseViewController {
             
             return cell
         }.disposed(by: disposeBag)
+    }
+    
+    private func updateUI() {
+        guard let wallet = viewModel.getCurrentWallet() else { return }
+        
+        titleView.show(wallet: wallet)
     }
 
 }

@@ -59,6 +59,12 @@ class ActivityViewViewModel {
         WalletsService.instance.fetchCurrentWallet()
     }
     
+    func getCurrentSortEntity() -> SortEntity? {
+        guard let wallet = getCurrentWallet() else { return nil }
+        
+        return .wallet(entity: wallet)
+    }
+    
     func loadData() {
         _transactionValue.value = ""
         transactionType.value = _transactionType.value

@@ -9,7 +9,7 @@
 import Foundation
 
 class Entity {
-    
+
     // MARK: - Variables
     
     let title: String
@@ -31,5 +31,11 @@ class Entity {
     init(db: EntityDB) {
         self.title = db.title
         self.currency = Currency(rawValue: db.currency)
+    }
+}
+
+extension Entity: Equatable {
+    static func == (lhs: Entity, rhs: Entity) -> Bool {
+        return lhs.title == rhs.title
     }
 }

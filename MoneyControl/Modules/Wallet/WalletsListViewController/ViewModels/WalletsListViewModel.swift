@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol WalletsListViewModelDelegate: class {
+    func didSelect(sortEntity: SortEntity)
+}
+
 class WalletsListViewModel {
     
     struct Section {
@@ -24,7 +28,9 @@ class WalletsListViewModel {
     
     // MARK: - Variables public
     
+    weak var delegate: WalletsListViewModelDelegate?
     var sections: [Section] = []
+    var selectedEntity: SortEntity?
     
     // MARK: - Initialziers
     
@@ -35,7 +41,7 @@ class WalletsListViewModel {
     // MARK: - Public methods
     
     func totalBalance() -> String {
-        TransactionService.instance.fetchBalance(for: nil).currencyFormatted
+        TransactionService.instance.fetchBalance(for: nil).currencyFormattedWithSymbol
     }
     
     func loadData() {
@@ -49,8 +55,32 @@ class WalletsListViewModel {
         }
     }
     
-    func selectWallet(_ wallet: Entity) {
-        settings.wallet = wallet.title
+    func isSelected(indexPath: IndexPath) -> Bool {
+        guard let selectedEntity = selectedEntity else { return false }
+        
+        let section = sections[indexPath.section]
+        
+        switch section.type {
+        case .total:
+            
+            if selectedEntity == .total {
+                return true
+            }
+            
+        case .wallets(wallets: let entities):
+            
+            switch selectedEntity {
+            case .wallet(entity: let entity):
+                
+                if entities[indexPath.row] == entity {
+                    return true
+                }
+                
+            default: print("Nothing")
+            }
+        }
+        
+        return false
     }
     
 }

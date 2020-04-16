@@ -9,10 +9,15 @@
 import UIKit
 
 protocol WalletsListViewControllerDelegate: class {
-    func didChooseNewWallet()
+    func didChoose(sortEntity: SortEntity)
 }
 
 class WalletsListViewController: BaseTableViewController {
+    
+    enum Mode {
+        case `default`
+        case select
+    }
     
     // MARK: - Variables public
     
@@ -21,19 +26,24 @@ class WalletsListViewController: BaseTableViewController {
     // MARK: - Variables private
     
     private let viewModel = WalletsListViewModel()
+    private let mode: Mode
     
-    // MARK: - Navigations
+    // MARK: - Initialiers
     
-    override func createLeftNavButton() -> UIBarButtonItem? {
-        UIBarButtonItemFabric.close { [unowned self] in
-            self.dismiss(animated: true, completion: nil)
+    init(mode: Mode, selectedEntity: SortEntity?) {
+        
+        self.mode = mode
+        self.viewModel.selectedEntity = selectedEntity
+        
+        if #available(iOS 13.0, *) {
+            super.init(style: .insetGrouped)
+        } else {
+            super.init(style: .grouped)
         }
     }
     
-    override func createRightNavButton() -> UIBarButtonItem? {
-        UIBarButtonItemFabric.add { [unowned self] in
-            self.navigationController?.pushViewController(WalletAddViewController(), animated: true)
-        }
+    required init?(coder: NSCoder) {
+        fatalError("WalletsListViewController")
     }
     
     // MARK: - Lifefycle
@@ -50,6 +60,20 @@ class WalletsListViewController: BaseTableViewController {
         // data
         
         loadData()
+    }
+    
+    // MARK: - Navigations
+    
+    override func createLeftNavButton() -> UIBarButtonItem? {
+        UIBarButtonItemFabric.close { [unowned self] in
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    override func createRightNavButton() -> UIBarButtonItem? {
+        UIBarButtonItemFabric.add { [unowned self] in
+            self.navigationController?.pushViewController(WalletAddViewController(), animated: true)
+        }
     }
     
     // MARK: - Private methods
@@ -109,7 +133,7 @@ extension WalletsListViewController {
         case .total:
             let cell: WalletsTotalTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-            cell.showBalance(viewModel.totalBalance())
+            cell.showBalance(viewModel.totalBalance(), isSelected: viewModel.isSelected(indexPath: indexPath))
             
             return cell
         case .wallets(wallets: let wallets):
@@ -117,7 +141,7 @@ extension WalletsListViewController {
             
             let wallet = wallets[indexPath.row]
             
-            cell.apply(wallet)
+            cell.apply(wallet, isSelected: viewModel.isSelected(indexPath: indexPath))
             
             return cell
         }
@@ -131,11 +155,18 @@ extension WalletsListViewController {
         let section = viewModel.sections[indexPath.section]
         
         switch section.type {
+        case .total:
+            
+            if mode == .select {
+                viewModel.selectedEntity = .total
+                tableView.reloadData()
+                delegate?.didChoose(sortEntity: .total)
+            }
+            
         case .wallets(wallets: let wallets):
-            viewModel.selectWallet(wallets[indexPath.row])
+            viewModel.selectedEntity = .wallet(entity: wallets[indexPath.row])
             tableView.reloadData()
-            delegate?.didChooseNewWallet()
-        default: print("Not needed")
+            delegate?.didChoose(sortEntity: .wallet(entity: wallets[indexPath.row]))
         }
     }
 
