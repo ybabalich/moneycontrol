@@ -10,6 +10,7 @@ import Foundation
 
 protocol WalletsListViewModelDelegate: class {
     func didSelect(sortEntity: SortEntity)
+    func didUpdate()
 }
 
 class WalletsListViewModel {
@@ -81,6 +82,11 @@ class WalletsListViewModel {
         }
         
         return false
+    }
+    
+    func delete(entity: Entity) {
+        WalletsService.instance.deleteWallet(entity)
+        delegate?.didUpdate()
     }
     
 }

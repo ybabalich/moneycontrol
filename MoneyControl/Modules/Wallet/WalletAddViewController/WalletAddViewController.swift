@@ -16,10 +16,39 @@ class WalletAddViewController: BaseTableViewController {
     
     // ui
     
-    private var nameField: UITextField! {
+    private var nameField: LimitedTextField! {
         didSet {
+            nameField?.initialText = viewModel.prefilledName
             nameField?.becomeFirstResponder()
+            
+            nameField?.onChanged { [unowned self] _ in
+                self.checkFieldsValidation()
+            }
         }
+    }
+    private var balanceField: LimitedTextField! {
+        didSet {
+            balanceField?.onChanged { [unowned self] _ in
+                self.checkFieldsValidation()
+            }
+        }
+    }
+    private var rightBarItem: UIBarButtonItem?
+    
+    // MARK: - Initializers
+    
+    init(state: WalletAddViewModel.State) {
+        if #available(iOS 13.0, *) {
+            super.init(style: .insetGrouped)
+        } else {
+            super.init(style: .grouped)
+        }
+        
+        viewModel.state = state
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("WalletAddViewController")
     }
     
     // MARK: - Lifefycle
@@ -41,15 +70,16 @@ class WalletAddViewController: BaseTableViewController {
     // navigation
     
     override func createRightNavButton() -> UIBarButtonItem? {
-        let barItem = UIBarButtonItemFabric.add { [unowned self] in
-            guard let name = self.nameField?.text else { return }
+        
+        rightBarItem = UIBarButtonItemFabric.save { [unowned self] in
             
-            self.viewModel.createWallet(name: name, currency: .uah, startBalance: 0)
+            switch self.viewModel.state {
+            case .add: self.viewModel.createWallet()
+            case .edit: self.viewModel.editWallet()
+            }
         }
-        
-//        barItem.isEnabled = false
-        
-        return barItem
+
+        return rightBarItem
     }
     
     
@@ -59,7 +89,10 @@ class WalletAddViewController: BaseTableViewController {
         
         // title
         
-        navigationItem.title = "Add Wallet"
+        switch viewModel.state {
+        case .add: navigationItem.title = "Add Wallet"
+        case .edit(entity: _): navigationItem.title = "Edit Wallet"
+        }
         
         // table view
         
@@ -78,6 +111,10 @@ class WalletAddViewController: BaseTableViewController {
         tableView.register(WalletAddBalanceTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    private func checkFieldsValidation() {
+        viewModel.checkValidation(name: nameField?.text, balance: balanceField?.text)
     }
 }
 
@@ -105,7 +142,7 @@ extension WalletAddViewController {
         case .startingBalance:
             let cell: WalletAddBalanceTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-//            nameField = cell.getNameField()
+            balanceField = cell.getBalanceField()
             
             return cell
         default: return UITableViewCell()
@@ -118,7 +155,11 @@ extension WalletAddViewController {
 }
 
 extension WalletAddViewController: WalletAddViewModelDelegate {
-    func didCreateWallet() {
+    func isValidFields(_ isValid: Bool) {
+        rightBarItem?.isEnabled = isValid
+    }
+    
+    func didSuccessFinish() {
         self.navigationController?.popViewController(animated: true)
     }
 }

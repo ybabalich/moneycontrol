@@ -71,7 +71,7 @@ class SettingsViewController: BaseTableViewController {
 
 extension SettingsViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooter(type: SettingsViewHeaderCell.self)
+        let view: SettingsViewHeaderCell = tableView.dequeueReusableHeaderFooter()
         view.titleLabel.text = viewModel.header(at: section).title
         return view
     }

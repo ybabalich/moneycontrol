@@ -64,6 +64,7 @@ class TodayHistoryViewController: BaseViewController {
     }
     
     // MARK: - Private methods
+    
     private func setupUI() {
         
         //colors
@@ -166,7 +167,7 @@ class TodayHistoryViewController: BaseViewController {
     private func updateUI() {
         guard let wallet = viewModel.getCurrentWallet() else { return }
         
-        titleView.show(wallet: wallet)
+        titleView.show(sortEntity: .wallet(entity: wallet))
     }
 
 }

@@ -7,17 +7,41 @@
 //
 
 import RxSwift
+import DeepDiff
 
-class HistoryViewViewModel {
+protocol HistoryViewModelDelegate: class {
+    func didReceiveUpdates(insertions: [IndexPath], removals: [IndexPath])
+    func didReceiveUpdatesForSections(insertions: IndexSet, removals: IndexSet)
+}
+
+class HistoryViewModel {
+    
+    struct Section {
+        let date: Date
+        var transactions: [TransactionViewModel] = []
+        
+        func sum() -> Double {
+            return transactions.compactMap {
+                if $0.type == .incoming {
+                    return $0.value
+                } else {
+                    return -($0.value)
+                }
+            }.reduce(0, +)
+        }
+    }
     
     typealias StatisticsValues = (balance: Double, incomes: Double, outcomes: Double)
     
     // MARK: - Variables
     
+    weak var delegate: HistoryViewModelDelegate?
+    
+    var sections: [Section] = []
+    
     let titles = PublishSubject<(String?, String?)>()
     let selectedSort = Variable<Sort>(.day)
     let selectedSortEntity = Variable<SortEntity?>(nil)
-    let transactions = Variable<[TransactionViewModel]>([])
     let statisticsValues = PublishSubject<StatisticsValues>()
     
     // MARK: - Variables private
@@ -45,10 +69,30 @@ class HistoryViewViewModel {
         let service = TransactionService.instance
         
         let operateWithTransactions: ([Transaction]) -> Void = { (transactions) in
-            service.sortedByGroups(transactions: transactions) { (transactionsViewModels) in
-                self.transactions.value = transactionsViewModels
-                self.calculateStatisticsValues()
+            
+            var sections: [Section] = []
+            
+            transactions.forEach { transaction in
+                if let dateDMY = transaction.time.createDMY() {
+                    var tempSection = Section(date: dateDMY)
+                    let transactionVM = TransactionViewModel(transaction: transaction)
+                    
+                    if let index = sections.index(of: tempSection) {
+                        sections[index].transactions.append(transactionVM)
+                    } else {
+                        tempSection.transactions.append(transactionVM)
+                        sections.append(tempSection)
+                    }
+                }
             }
+            
+            let changes = self.changes(oldSections: self.sections, newSections: sections)
+            
+            self.sections = sections
+            
+            self.delegate?.didReceiveUpdatesForSections(insertions: changes.0, removals: changes.1)
+            
+            self.calculateStatisticsValues()
         }
         
         var fetchEntity: Entity? = nil
@@ -119,18 +163,14 @@ class HistoryViewViewModel {
     
     func removeInnerTransactions(_ viewModel: TransactionViewModel) {
         TransactionService.instance.removeTransactions(viewModel.innerTransactions.map({ $0.id }))
-        transactions.value = transactions.value.filter({ $0.id != viewModel.id })
+//        transactions.value = transactions.value.filter({ $0.id != viewModel.id })
         calculateStatisticsValues()
-    }
-    
-    func getCurrentWallet() -> Entity? {
-        WalletsService.instance.fetchCurrentWallet()
     }
     
     func getCurrentSortEntity() -> SortEntity {
         if let selectedSort = selectedSortEntity.value {
             return selectedSort
-        } else if let wallet = getCurrentWallet() {
+        } else if let wallet = WalletsService.instance.fetchCurrentWallet() {
             return .wallet(entity: wallet)
         } else {
             return .total
@@ -144,15 +184,48 @@ class HistoryViewViewModel {
         var totalOutcomes: Double = 0
         let totalBalance: Double = TransactionService.instance.fetchBalance(for: nil)
         
-        transactions.value.forEach { (transaction) in
-            if transaction.type == .incoming {
-                totalIncomes += transaction.value
-            } else {
-                totalOutcomes += transaction.value
-            }
-        }
+//        transactions.value.forEach { (transaction) in
+//            if transaction.type == .incoming {
+//                totalIncomes += transaction.value
+//            } else {
+//                totalOutcomes += transaction.value
+//            }
+//        }
         
         statisticsValues.onNext((totalBalance, totalIncomes, totalOutcomes))
     }
     
+    private func changes(oldSections: [Section], newSections: [Section]) -> (IndexSet, IndexSet) {
+        
+        let changes = diff(old: oldSections, new: newSections)
+        
+        var inserted: [Int] = []
+        var removed: [Int] = []
+        
+        changes.forEach { change in
+            switch change {
+            case .insert(let insert):
+                inserted.append(insert.index)
+            case .delete(let delete):
+                removed.append(delete.index)
+            default: break
+            }
+        }
+
+        return (IndexSet(inserted), IndexSet(removed))
+    }
+}
+
+extension HistoryViewModel.Section: Equatable, DiffAware {
+    static func == (lhs: HistoryViewModel.Section, rhs: HistoryViewModel.Section) -> Bool {
+        return lhs.date.isDMYEqualTo(date: rhs.date)
+    }
+    
+    var diffId: Date {
+        return date
+    }
+    
+    static func compareContent(_ a: HistoryViewModel.Section, _ b: HistoryViewModel.Section) -> Bool {
+        return a.date.isDMYEqualTo(date: b.date)
+    }
 }

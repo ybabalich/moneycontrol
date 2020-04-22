@@ -66,6 +66,14 @@ extension UIColor {
         }
     }
 
+    static var controlTintEdit: UIColor {
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xE67E22)
+        }
+    }
+
     static var tableSeparator: UIColor {
         if #available(iOS 11.0, *) {
             return .assetColor(named: #function)
@@ -105,6 +113,7 @@ extension UIColor {
             return UIColor(hex: 0xE74C3C)
         }
     }
+    
 }
 
 private extension UIColor {

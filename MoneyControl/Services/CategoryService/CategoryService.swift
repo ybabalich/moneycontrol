@@ -14,9 +14,10 @@ class CategoryService {
     static let instance = CategoryService()
     
     // MARK: - Public methods
-    func fetchSavedCategories(type: Transaction.TransactionType, completion: ([CategoryViewModel]) -> ()) {
+    
+    func fetchSavedCategories(type: Transaction.TransactionType) -> [CategoryViewModel] {
         let filter = NSPredicate(format: "type == %d && isVisibleForUser == true", type.rawValue)
-        completion(db.objects(CategoryDB.self).filter(filter).map { CategoryViewModel(db: $0) } )
+        return db.objects(CategoryDB.self).filter(filter).map { CategoryViewModel(db: $0) }
     }
     
     func remove(id: Int) {

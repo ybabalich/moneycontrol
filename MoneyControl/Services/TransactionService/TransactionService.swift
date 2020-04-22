@@ -86,12 +86,13 @@ class TransactionService {
         
         var entityDB: EntityDB?
         
-        if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "title == %@", transaction.entity.title)).first {
+        let entityTitle = transaction.entity.title.lowercased()
+        if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "title == %@", entityTitle)).first {
             entityDB = entity
         } else {
             let dbEntity = EntityDB()
             dbEntity.currency = transaction.entity.currency.rawValue
-            dbEntity.title = transaction.entity.title
+            dbEntity.title = entityTitle
             entityDB = dbEntity
         }
         
@@ -122,6 +123,15 @@ class TransactionService {
     }
     
     // removing
+    
+    func remove(for entity: Entity) {
+        let objects = db.objects(TransactionDB.self).filter("entity.title == %@", entity.title.lowercased())
+        try! db.write {
+            print("TRANSACTIONS REMOVED \(objects.count) FOR ENTITY \(entity.title)")
+            db.delete(objects)
+        }
+    }
+    
     func remove(id: Int) {
         let removePredicate = NSPredicate(format: "id == %d", argumentArray: [id])
         
@@ -143,6 +153,7 @@ class TransactionService {
     }
     
     //sorting
+    
     func sortedByGroups(transactions: [Transaction], completion: ([TransactionViewModel]) -> Void) {
         let handler: ([Transaction]) -> [TransactionViewModel] = { (transactionsDb) in
             var transactions: [TransactionViewModel] = []

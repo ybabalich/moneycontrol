@@ -120,3 +120,9 @@ class CategoryViewModel {
         self.imageRaw = imageRaw
     }
 }
+ 
+extension CategoryViewModel: Equatable {
+    static func == (lhs: CategoryViewModel, rhs: CategoryViewModel) -> Bool {
+        lhs.id == rhs.id
+    }
+}

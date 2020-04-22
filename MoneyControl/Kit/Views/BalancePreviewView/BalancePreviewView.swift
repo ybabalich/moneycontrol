@@ -34,7 +34,7 @@ class BalancePreviewView: UIView {
     
     // MARK: - Public methods
     
-    func apply(_ entity: Entity, sort: Sort) {
+    func apply(sort: Sort) {
         let dates = sort.startEndDate
         dateLabel.text = "\(dates.start.shortString) - \(dates.end.shortString)"
         

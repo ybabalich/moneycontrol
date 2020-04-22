@@ -50,7 +50,7 @@ class ActivityViewViewModel {
             }
         }).disposed(by: disposeBag)
         
-        _transactionValue.asObservable().map { $0.numeric != 0.0 }.bind(to: isActiveDoneButton).disposed(by: disposeBag)
+        _transactionValue.asObservable().map { $0.double != 0.0 }.bind(to: isActiveDoneButton).disposed(by: disposeBag)
     }
     
     // MARK: - Public methods
@@ -111,7 +111,7 @@ class ActivityViewViewModel {
         let category = Category(viewModel: selectedCategory)
         
         let transaction = Transaction()
-        transaction.value = _transactionValue.value.numeric
+        transaction.value = _transactionValue.value.double
         transaction.type = _transactionType.value
         transaction.category = category
         transaction.time = Date()
@@ -127,11 +127,8 @@ class ActivityViewViewModel {
     
     // MARK: - Private methods
     private func fetchCategories() {
-        CategoryService.instance.fetchSavedCategories(type: _transactionType.value) { [weak self] (categories) in
-            guard let strongSelf = self else { return }
-            
-            strongSelf.categories.value = categories
-            strongSelf.selectedCategory.value = categories[0]
-        }
+        let fetchedCategories = CategoryService.instance.fetchSavedCategories(type: _transactionType.value)
+        categories.value = fetchedCategories
+        selectedCategory.value = fetchedCategories[0]
     }
 }

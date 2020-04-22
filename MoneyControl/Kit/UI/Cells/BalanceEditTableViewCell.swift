@@ -1,18 +1,18 @@
 //
-//  WalletAddNameTableViewCell.swift
+//  BalanceEditTableViewCell.swift
 //  MoneyControl
 //
-//  Created by Yaroslav Babalich on 14.04.2020.
+//  Created by Yaroslav Babalich on 21.04.2020.
 //  Copyright © 2020 PxToday. All rights reserved.
 //
 
 import UIKit
 
-class WalletAddNameTableViewCell: UITableViewCell {
+class BalanceEditTableViewCell: UITableViewCell {
     
     // MARK: - UI
     
-    private var nameField: LimitedTextField!
+    private var balanceField: LimitedTextField!
     
     // MARK: - Initializers
     
@@ -23,13 +23,17 @@ class WalletAddNameTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("WalletAddNameTableViewCell")
+        fatalError("BalanceEditTableViewCell")
     }
     
     // MARK: - Public methods
     
-    func getNameField() -> LimitedTextField {
-        return nameField
+    func getBalanceField() -> LimitedTextField {
+        return balanceField
+    }
+    
+    func apply(amount: String) {
+        balanceField.text = amount
     }
     
     // MARK: - Private methods
@@ -42,18 +46,18 @@ class WalletAddNameTableViewCell: UITableViewCell {
         
         separatorInset = UIEdgeInsets(top: 0, left: 30 + 16, bottom: 0, right: 0)
         
-        nameField = LimitedTextField().then { nameField in
+        balanceField = LimitedTextField().then { balanceField in
             
-            nameField.enterType = .charactersLimit(range: 0...15, isNumeric: false)
-            nameField.placeholder = "Name of wallet"
-            nameField.font = .systemFont(ofSize: 18, weight: .bold)
-            nameField.textColor = .primaryText
+            balanceField.enterType = .numbers(symbolsAfterDot: 2)
+            balanceField.placeholder = "Balance"
+            balanceField.font = .systemFont(ofSize: 16, weight: .bold)
+            balanceField.textColor = .primaryText
             
-            contentView.addSubview(nameField)
-            nameField.snp.makeConstraints {
+            contentView.addSubview(balanceField)
+            balanceField.snp.makeConstraints {
                 $0.left.equalToSuperview().offset(16)
                 $0.right.top.bottom.equalToSuperview()
-                $0.height.equalTo(60)
+                $0.height.equalTo(45)
             }
         }
     }

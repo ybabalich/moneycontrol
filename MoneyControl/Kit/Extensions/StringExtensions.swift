@@ -18,9 +18,14 @@ extension String {
         return ""
     }
     
-    var numeric: Double {
+    var double: Double {
         let replacedString = self.replacingOccurrences(of: ",", with: ".")
         return Double(replacedString) ?? 0.0
+    }
+    
+    var isDouble: Bool {
+        let replacedString = self.replacingOccurrences(of: ",", with: ".")
+        return Double(replacedString) != nil
     }
     
 }

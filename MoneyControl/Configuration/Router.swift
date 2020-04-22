@@ -57,16 +57,9 @@ class Router: NSObject {
         navigationViewController.pushViewController(vc, animated: true)
     }
     
-    func showTransactionsList(_ historyVM: HistoryViewModel) {
-        let transactionsList = AppLaunch.StoryboardFlow.history(viewController: .transactionsList)
-        let transactionsVC = showScreen(transactionsList, animated: true) as! TransactionsHistoryListViewController
-        transactionsVC.historyViewModel = historyVM
-    }
-    
     func showEditTransactionScreen(_ transaction: TransactionViewModel) {
-        let editTransactionFlow = AppLaunch.StoryboardFlow.activity(viewController: .editTransaction)
-        let transactionVC = showScreen(editTransactionFlow, animated: true) as! EditTransactionViewController
-        transactionVC.transactionViewModel = transaction
+        let vc = EditTransactionViewController(transaction: transaction)
+        navigationViewController.pushViewController(vc, animated: true)
     }
     
     // MARK: - Categories

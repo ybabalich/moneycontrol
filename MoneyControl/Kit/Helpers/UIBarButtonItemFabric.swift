@@ -109,11 +109,11 @@ class UIBarButtonItemFabric {
         return imagedBarButtonItem(image: image, size: size, onTap: onTap)
     }
     
-    class func wallet(wallet: Entity, onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+    class func entity(sortEntity: SortEntity, onTap: @escaping EmptyClosure) -> UIBarButtonItem {
         
         let walletButton = TappableButton(type: .system).then { v in
             
-            v.setBackgroundImage(wallet.title.initials().coverImage, for: .normal)
+            v.setBackgroundImage(sortEntity.stringValue.initials().coverImage, for: .normal)
             v.tintColor = .controlTintActive
             v.applyFullyRounded(15)
 
@@ -166,16 +166,43 @@ class UIBarButtonItemFabric {
     
     static func add(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
 
-        let button = TappableButton(type: .system).then { v in
+        let button = TappableButton(type: .system).then { button in
 
-            v.setTitle("Add".localized, for: .normal)
-            v.tintColor = .controlTintActive
-            v.titleLabel?.font = .systemFont(ofSize: 17)
+            button.setTitle("Add".localized, for: .normal)
+            button.tintColor = .controlTintActive
+            button.titleLabel?.font = .systemFont(ofSize: 17)
 
-            v.onTap(completion: onTap)
+            button.onTap(completion: onTap)
         }
 
         return UIBarButtonItem(customView: button)
     }
     
+    static func edit(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+
+        let button = TappableButton(type: .system).then { button in
+
+            button.setTitle("Edit".localized, for: .normal)
+            button.tintColor = .controlTintActive
+            button.titleLabel?.font = .systemFont(ofSize: 17)
+
+            button.onTap(completion: onTap)
+        }
+
+        return UIBarButtonItem(customView: button)
+    }
+    
+    static func save(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+
+        let button = TappableButton(type: .system).then { button in
+
+            button.setTitle("Save".localized, for: .normal)
+            button.tintColor = .controlTintActive
+            button.titleLabel?.font = .systemFont(ofSize: 17)
+
+            button.onTap(completion: onTap)
+        }
+
+        return UIBarButtonItem(customView: button)
+    }
 }

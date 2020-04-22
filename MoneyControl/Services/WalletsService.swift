@@ -56,4 +56,24 @@ class WalletsService {
         }
     }
     
+    func deleteWallet(_ entity: Entity) {
+        TransactionService.instance.remove(for: entity)
+
+        let objects = db.objects(EntityDB.self).filter("title == %@", entity.title.lowercased())
+        try! db.write {
+            print("ENTITY REMOVED \(entity.title)")
+            db.delete(objects)
+        }
+    }
+    
+    func editWallet(oldName: String, newName: String) {
+        
+        if let object = db.objects(EntityDB.self).filter("title == %@", oldName.lowercased()).first {
+            
+            try! db.write {
+                object.title = newName.lowercased()
+            }
+        }
+    }
+    
 }

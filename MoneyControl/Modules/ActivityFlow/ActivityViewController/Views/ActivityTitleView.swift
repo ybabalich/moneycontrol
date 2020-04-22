@@ -28,12 +28,19 @@ class ActivityTitleView: UIView {
     }
     
     // MARK: - Public methods
-    func show(wallet: Entity) {
+    func show(sortEntity: SortEntity) {
         
         //titles
         
-        firstLabel.text = wallet.title.uppercased()
-        secondLabel.text = wallet.balance.currencyFormattedWithSymbol
+        firstLabel.text = sortEntity.stringValue.uppercased()
+        
+        switch sortEntity {
+        case .total: break
+//            secondLabel.text = balance.currencyFormattedWithSymbol
+            
+        case .wallet(entity: let entity):
+            secondLabel.text = entity.balance.currencyFormattedWithSymbol
+        }
     }
     
     // MARK: - Private methods

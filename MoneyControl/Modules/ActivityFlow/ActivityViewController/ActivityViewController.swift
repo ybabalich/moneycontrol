@@ -56,7 +56,7 @@ class ActivityViewController: BaseViewController {
     override func createLeftNavButton() -> UIBarButtonItem? {
         guard let wallet = viewModel.getCurrentWallet() else { return nil }
         
-        return UIBarButtonItemFabric.wallet(wallet: wallet) { [unowned self] in
+        return UIBarButtonItemFabric.entity(sortEntity: .wallet(entity: wallet)) { [unowned self] in
             self.showWalletsListVC()
         }
     }
@@ -165,7 +165,7 @@ class ActivityViewController: BaseViewController {
         guard let wallet = viewModel.getCurrentWallet() else { return }
         
         setupNavigationBarItems()
-        titleView.show(wallet: wallet)
+        titleView.show(sortEntity: .wallet(entity: wallet))
     }
     
     private func showWalletsListVC() {

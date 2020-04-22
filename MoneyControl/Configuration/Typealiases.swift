@@ -151,7 +151,7 @@ enum SortEntity: StringRepresentable, Equatable {
     var stringValue: String {
         switch self {
         case .total: return "total"
-        case .wallet(entity: let entity): return entity.title
+        case .wallet(entity: let entity): return entity.title.lowercased()
         }
     }
     

@@ -73,5 +73,4 @@ extension TodayHistoryViewViewModel {
             }
         }
     }
-    
 }

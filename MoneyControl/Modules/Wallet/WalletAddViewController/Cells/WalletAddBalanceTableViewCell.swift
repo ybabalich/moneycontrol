@@ -12,7 +12,7 @@ class WalletAddBalanceTableViewCell: UITableViewCell {
     
     // MARK: - UI
     
-    private var nameField: UITextField!
+    private var balanceField: LimitedTextField!
     
     // MARK: - Initializers
     
@@ -28,8 +28,8 @@ class WalletAddBalanceTableViewCell: UITableViewCell {
     
     // MARK: - Public methods
     
-    func getNameField() -> UITextField {
-        return nameField
+    func getBalanceField() -> LimitedTextField {
+        return balanceField
     }
     
     // MARK: - Private methods
@@ -42,14 +42,15 @@ class WalletAddBalanceTableViewCell: UITableViewCell {
         
         separatorInset = UIEdgeInsets(top: 0, left: 30 + 16, bottom: 0, right: 0)
         
-        nameField = UITextField().then { topLabel in
+        balanceField = LimitedTextField().then { balanceField in
             
-            topLabel.placeholder = "Balance"
-            topLabel.font = .systemFont(ofSize: 18, weight: .bold)
-            topLabel.textColor = .primaryText
+            balanceField.enterType = .numbers(symbolsAfterDot: 2)
+            balanceField.placeholder = "Balance"
+            balanceField.font = .systemFont(ofSize: 18, weight: .bold)
+            balanceField.textColor = .primaryText
             
-            contentView.addSubview(topLabel)
-            topLabel.snp.makeConstraints {
+            contentView.addSubview(balanceField)
+            balanceField.snp.makeConstraints {
                 $0.left.equalToSuperview().offset(16)
                 $0.right.top.bottom.equalToSuperview()
                 $0.height.equalTo(60)

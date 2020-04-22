@@ -8,153 +8,205 @@
 
 import RxSwift
 
-class EditTransactionViewController: BaseViewController {
+class EditTransactionViewController: BaseTableViewController {
 
-    // MARK: - Outlets
-    @IBOutlet weak var firstContentView: UIView!
-    @IBOutlet weak var secondContentView: UIView!
-    @IBOutlet weak var thirdContentView: UIView!
-    @IBOutlet weak var deleteBtn: RemoveButton!
-    @IBOutlet weak var saveBtn: CheckButton! {
-        didSet {
-            saveBtn.colorType = .incoming
-        }
-    }
-    @IBOutlet weak var stackContentView: UIView!
+    // MARK: - UI
     
-    // MARK: - Variables public
-    var transactionViewModel: TransactionViewModel! {
-        didSet {
-            setupViewModel()
-            viewModel.applyTransaction(transactionViewModel)
-        }
-    }
+    private var dateTextField: UITextField!
+    private let datePicker = UIDatePicker()
+    private var saveBarItem: UIBarButtonItem?
     
     // MARK: - Variables private
-    private var viewModel = EditTransactionViewViewModel()
     
-    private let chooseCategoryViewController: ChooseCategoryViewController = UIViewController.by(flow: .category(viewController: .chooseCategory)) as! ChooseCategoryViewController
-    private let editAmountView = EditTransactionAmountView.view()
-    private let editCategoryView = EditTransactionCategoryView.view()
-    private let editDateView = EditTransactionDateView.view()
+    private var viewModel: EditTransactionViewModel!
     
-    private let datePicker = UIDatePicker()
+    
+    // MARK: - Initializers
+    
+    init(transaction: TransactionViewModel) {
+        
+        viewModel = EditTransactionViewModel(transaction: transaction)
+        
+        if #available(iOS 13.0, *) {
+            super.init(style: .insetGrouped)
+        } else {
+            super.init(style: .grouped)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("EditTransactionViewController")
+    }
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    // navigation
+    
+    override func createRightNavButton() -> UIBarButtonItem? {
+        saveBarItem = UIBarButtonItemFabric.save { [unowned self] in
+            self.viewModel.save()
+        }
         
-        stackContentView.applyFullyRounded(15)
+        return saveBarItem
     }
     
     // MARK: - Private methods
+    
     private func setup() {
-        //navigation
-        navigationItem.hidesBackButton = false
-        customizeBackBtn()
+        
+        // title
+        
+        title = "Edit category"
+        
+        // table view
+        
+        configureTableView()
         
         // colors
-//        stackContentView.backgroundColor = .mainElementBackground
+
         view.backgroundColor = .mainBackground
         
-        //views
-        setupSubviews()
-    }
-    
-    private func setupSubviews() {
-        // amount view
-        firstContentView.addSubview(editAmountView)
-        editAmountView.alignExpandToSuperview()
+        // view model
         
-        // category view
-        secondContentView.addSubview(editCategoryView)
-        editCategoryView.alignExpandToSuperview()
-        
-        //date view
-        thirdContentView.addSubview(editDateView)
-        editDateView.alignExpandToSuperview()
-        
-        //events
-        view.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
-            self.view.endEditing(true)
-        }).disposed(by: disposeBag)
-        
-        saveBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
-            self.viewModel.updateTransaction(value: self.editAmountView.text.numeric)
-        }).disposed(by: disposeBag)
-        
-        deleteBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
-            self.viewModel.removeTransaction()
-        }).disposed(by: disposeBag)
-        
-        editDateView.onTap { [unowned self] in
-            self.showDateChooseView()
-        }
-        
-        editCategoryView.onTap { [weak self] in
-            guard let strongSelf = self else { return }
-            
-            Router.instance.showController(strongSelf.chooseCategoryViewController)
-        }
-        
-        chooseCategoryViewController.onChooseCategory { [weak self] (category) in
-            guard let strongSelf = self else { return }
-            
-            strongSelf.viewModel.selectCategory(category)
-        }
-    }
-    
-    private func setupViewModel() {
-        viewModel.transaction.subscribe(onNext: { [unowned self] (transaction) in
-            self.title = "Edit".localized + " " + "\(transaction.type == .incoming ? "Incoming" : "Expense")".localized
-            
-            self.editAmountView.text = transaction.value.currencyFormatted
-            self.editCategoryView.category = transaction.category
-            self.editDateView.text = transaction.formattedTime
-            self.datePicker.date = transaction.createdTime
-        }).disposed(by: disposeBag)
-        
-        viewModel.isSuccess.subscribe(onNext: { (isSuccess) in
-            if isSuccess {
-                Router.instance.goBack()
-            }
-        }).disposed(by: disposeBag)
+        viewModel.delegate = self
+        viewModel.loadData()
     }
 
     private func showDateChooseView() {
-        
         datePicker.datePickerMode = .date
-        
+
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        
+
         //done button & cancel button
         let doneButton = UIBarButtonItem(title: "Done".localized, style: .done, target: self, action: #selector(dateChoosed))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel".localized, style: .plain, target: self, action: #selector(dateChoosingCancel))
+        let cancelButton = UIBarButtonItem(title: "Cancel".localized, style: .plain, target: self, action: #selector(dateChooseCancel))
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        
+
         // add toolbar to textField
-        editDateView.textField.inputAccessoryView = toolbar
-        
-        editDateView.textField.inputView = datePicker
-        editDateView.textField.becomeFirstResponder()
+        dateTextField?.inputAccessoryView = toolbar
+        dateTextField?.inputView = datePicker
+        dateTextField?.becomeFirstResponder()
+    }
+    
+    private func configureTableView() {
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.backgroundColor = .mainBackground
+    
+        tableView.separatorColor = .tableSeparator
+        tableView.register(BalanceEditTableViewCell.self)
+        tableView.register(CategoryEditTableViewCell.self)
+        tableView.register(DateEditTableViewCell.self)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    @objc private func dateChooseCancel() {
+        dateTextField?.endEditing(true)
     }
     
     @objc private func dateChoosed() {
-        editDateView.text = DateService.instance.convertDateToString(datePicker.date, format: DateService.dayMonthYearWithSpacesFormat)
-        viewModel.changeDate(to: datePicker.date)
-        
-        dateChoosingCancel()
+        viewModel.selectDate(datePicker.date)
     }
     
-    @objc private func dateChoosingCancel() {
-        editDateView.textField.resignFirstResponder()
+}
+
+extension EditTransactionViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let section = viewModel.sections[indexPath.section]
+        
+        switch section.type {
+        case .amount:
+            let cell: BalanceEditTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            
+            cell.getBalanceField().onChanged { [unowned self] text in
+                self.viewModel.selectAmount(text.double)
+            }
+            
+            cell.apply(amount: viewModel.filledAmount())
+            
+            return cell
+        
+        case .category:
+            let cell: CategoryEditTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            
+            cell.apply(category: viewModel.filledCategory())
+            
+            return cell
+            
+        case .date:
+            let cell: DateEditTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            
+            dateTextField = cell.getDateField()
+            cell.apply(date: viewModel.filledDate())
+            
+            return cell
+
+        default: return UITableViewCell()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        viewModel.sections[section].title
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let section = viewModel.sections[indexPath.section]
+        
+        switch section.type {
+        case .category:
+            let transaction = viewModel.transaction
+            let vc = ChooseCategoryViewController(category: viewModel.filledCategory(),
+                                                  selectedType: transaction.type)
+            vc.delegate = self
+            let nvc = UINavigationController(rootViewController: vc)
+            navigationController?.present(nvc, animated: true, completion: nil)
+            
+        case .date:
+            showDateChooseView()
+            
+        default: print("No need to consider")
+        }
+        
+        
+    }
+}
+
+extension EditTransactionViewController: ChooseCategoryViewControllerDelegate {
+    func didChooseCategory(from controller: ChooseCategoryViewController, category: CategoryViewModel) {
+        viewModel.selectCategory(category)
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension EditTransactionViewController: EditTransactionViewModelDelegate {
+    func didChangeSaveBtnStatus(isActive: Bool) {
+        saveBarItem?.isEnabled = isActive
+    }
+    
+    func didUpdateData() {
+        tableView.reloadData()
+    }
+    
+    func didSaveData() {
+        Router.instance.goBack()
     }
 }

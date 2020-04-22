@@ -26,9 +26,9 @@ class YourBalanceViewViewModel {
     // MARK: - Public methods
     func loadData(balanceObs: Observable<String>) {
         balanceObs.asObservable().subscribe(onNext: { (value) in
-            self.balanceValue = value.numeric
+            self.balanceValue = value.double
         }).disposed(by: disposeBag)
-        balanceObs.map { $0.numeric != 0 }.bind(to: isActiveSaveBtn).disposed(by: disposeBag)
+        balanceObs.map { $0.double != 0 }.bind(to: isActiveSaveBtn).disposed(by: disposeBag)
     }
     
     func currencySymbol() -> String {

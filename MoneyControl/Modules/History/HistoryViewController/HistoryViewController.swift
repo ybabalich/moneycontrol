@@ -13,7 +13,7 @@ class HistoryViewController: BaseViewController {
     
     // MARK: - Variables private
     
-    private let viewModel = HistoryViewViewModel()
+    private let viewModel = HistoryViewModel()
 
     // UI
     
@@ -39,9 +39,7 @@ class HistoryViewController: BaseViewController {
     // navbar preparаtion
     
     override func createRightNavButton() -> UIBarButtonItem? {
-        guard let wallet = viewModel.getCurrentWallet() else { return nil }
-        
-        return UIBarButtonItemFabric.wallet(wallet: wallet) { [unowned self] in
+        return UIBarButtonItemFabric.entity(sortEntity: viewModel.getCurrentSortEntity()) { [unowned self] in
             self.showWalletsListVC()
         }
     }
@@ -60,6 +58,7 @@ class HistoryViewController: BaseViewController {
         
         //load data
         
+        viewModel.delegate = self
         viewModel.loadData()
         
         updateUI()
@@ -77,22 +76,6 @@ class HistoryViewController: BaseViewController {
             self.balancePreviewView.showInfo(transactionType: .incoming, double: incomesValue)
             self.balancePreviewView.showInfo(transactionType: .outcoming, double: outcomesValue)
         }).disposed(by: disposeBag)
-        
-        viewModel.transactions.asObservable().bind(to: tableView.rx.items) { (tableView, row, viewModel) in
-            let cell = tableView.dequeueReusableCell(type: TodayHistoryTableViewCell.self,
-                                                     indexPath: IndexPath(row: row, section: 0))
-            
-            cell.apply(viewModel)
-            cell.onTap(completion: { [weak self] (transaction) in
-                guard let strongSelf = self else { return }
-                
-//                let historyViewModel = HistoryViewModel(sortCategory: strongSelf.viewModel.selectedSortCategory.value,
-//                                                        category: transaction.category)
-//                Router.instance.showTransactionsList(historyViewModel)
-            })
-            
-            return cell
-        }.disposed(by: disposeBag)
     }
     
     private func setupUI() {
@@ -164,8 +147,10 @@ class HistoryViewController: BaseViewController {
             tableView.backgroundColor = .mainElementBackground
             tableView.separatorColor = .tableSeparator
             tableView.registerNib(type: TodayHistoryTableViewCell.self)
+            tableView.registerHF(HistoryTableHeaderView.self)
             tableView.tableFooterView = UIView(frame: .zero)
-            tableView.rx.setDelegate(self).disposed(by: disposeBag)
+            tableView.delegate = self
+            tableView.dataSource = self
             
             tableView.snp.makeConstraints {
                 $0.left.right.bottom.equalToSuperview()
@@ -219,21 +204,11 @@ class HistoryViewController: BaseViewController {
     }
     
     private func updateUI() {
-        guard let wallet = viewModel.getCurrentWallet() else { return }
+        let entity = viewModel.getCurrentSortEntity()
         
         setupNavigationBarItems()
-        titleView.show(wallet: wallet)
-        balancePreviewView.apply(wallet, sort: viewModel.selectedSort.value)
-    }
-}
-
-extension HistoryViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let removeAction = UITableViewRowAction(style: .destructive, title: "Remove".localized) { [unowned self] (action, indexPath) in
-            let transactionViewModel = self.viewModel.transactions.value[indexPath.row]
-            self.viewModel.removeInnerTransactions(transactionViewModel)
-        }
-        return [removeAction]
+        titleView.show(sortEntity: entity)
+        balancePreviewView.apply(sort: viewModel.selectedSort.value)
     }
 }
 
@@ -241,6 +216,56 @@ extension HistoryViewController: WalletsListViewControllerDelegate {
     func didChoose(sortEntity: SortEntity) {
         viewModel.selectedSortEntity.value = sortEntity
         updateUI()
+    }
+}
+
+extension HistoryViewController: HistoryViewModelDelegate {
+    func didReceiveUpdates(insertions: [IndexPath], removals: [IndexPath]) {
+        
+    }
+    
+    func didReceiveUpdatesForSections(insertions: IndexSet, removals: IndexSet) {
+        if #available(iOS 11.0, *) {
+            tableView.performBatchUpdates({
+                tableView.insertSections(insertions, with: .automatic)
+                tableView.deleteSections(removals, with: .automatic)
+            }, completion: nil)
+        } else {
+            tableView.beginUpdates()
+            tableView.insertSections(insertions, with: .automatic)
+            tableView.deleteSections(removals, with: .automatic)
+            tableView.endUpdates()
+        }
+    }
+}
+
+extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel.sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.sections[section].transactions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell: TodayHistoryTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        
+        let transactionVM = viewModel.sections[indexPath.section].transactions[indexPath.row]
+        
+        cell.apply(transactionVM)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header: HistoryTableHeaderView = tableView.dequeueReusableHeaderFooter()
+        
+        header.apply(section: viewModel.sections[section])
+        
+        return header
     }
 }
 

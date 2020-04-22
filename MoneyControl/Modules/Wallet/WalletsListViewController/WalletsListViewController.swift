@@ -72,7 +72,8 @@ class WalletsListViewController: BaseTableViewController {
     
     override func createRightNavButton() -> UIBarButtonItem? {
         UIBarButtonItemFabric.add { [unowned self] in
-            self.navigationController?.pushViewController(WalletAddViewController(), animated: true)
+            let vc = WalletAddViewController(state: .add)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -91,6 +92,10 @@ class WalletsListViewController: BaseTableViewController {
         //table view
         
         configureTableView()
+        
+        // view model
+        
+        viewModel.delegate = self
     }
     
     private func configureTableView() {
@@ -107,6 +112,19 @@ class WalletsListViewController: BaseTableViewController {
     private func loadData() {
         viewModel.loadData()
         tableView.reloadData()
+    }
+    
+    private func showEditVC(for indexPath: IndexPath) {
+        let section = viewModel.sections[indexPath.section]
+        
+        switch section.type {
+        case .wallets(wallets: let wallets):
+            let wallet = wallets[indexPath.row]
+            
+            let vc = WalletAddViewController(state: .edit(entity: wallet))
+            navigationController?.pushViewController(vc, animated: true)
+        default: return
+        }
     }
 }
 
@@ -169,5 +187,111 @@ extension WalletsListViewController {
             delegate?.didChoose(sortEntity: .wallet(entity: wallets[indexPath.row]))
         }
     }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let section = viewModel.sections[indexPath.section]
+        
+        switch section.type {
+        case .total: return nil
+        case .wallets(wallets: let wallets):
+            let wallet = wallets[indexPath.row]
+            
+            let editAction = UITableViewRowAction(style: .default, title: "Edit") { [unowned self] action, indexPath in
+                self.showEditVC(for: indexPath)
+            }
+            
+            let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { [unowned self] action, indexPath in
+                self.viewModel.delete(entity: wallet)
+            }
+            
+            return [deleteAction, editAction]
+        }
+    }
+    
+    @available(iOS 11.0, *)
+    override func tableView(_ tableView: UITableView,
+                            trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let section = viewModel.sections[indexPath.section]
+        
+        switch section.type {
+        case .total: return nil
+        case .wallets(wallets: let wallets):
+            let wallet = wallets[indexPath.row]
+        
+            let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] _, _, completion in
+                self.viewModel.delete(entity: wallet)
+                completion(true)
+            }
+            deleteAction.backgroundColor = .controlTintDestructive
+            
+            if #available(iOS 13.0, *) {
+                deleteAction.image = UIImage(systemName: "trash.fill")
+            }
 
+            let editAction = UIContextualAction(style: .destructive, title: "Edit") { [unowned self] _, _, completion in
+                self.showEditVC(for: indexPath)
+                completion(true)
+            }
+            editAction.backgroundColor = .controlTintEdit
+            
+            if #available(iOS 13.0, *) {
+                editAction.image = UIImage(systemName: "pencil")
+            }
+
+            return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    override func tableView(_ tableView: UITableView,
+                            contextMenuConfigurationForRowAt indexPath: IndexPath,
+                            point: CGPoint) -> UIContextMenuConfiguration? {
+
+        let section = viewModel.sections[indexPath.section]
+        
+        switch section.type {
+        case .wallets(wallets: let wallets):
+            let wallet = wallets[indexPath.row]
+            
+            return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [unowned self] _ in
+
+                let delete = UIAction(
+                    title: "Confirm Delete",
+                    image: UIImage(systemName: "trash.fill"),
+                    attributes: .destructive) { [unowned self] _ in
+                        
+                        self.viewModel.delete(entity: wallet)
+                }
+                
+                let deleteMenu = UIMenu(
+                    title: "Delete",
+                    image: UIImage(systemName: "trash.fill"),
+                    options: .destructive,
+                    children: [delete]
+                )
+                
+                let edit = UIAction(
+                    title: "Edit",
+                    image: UIImage(systemName: "pencil")) { [unowned self] _ in
+                        
+                        self.showEditVC(for: indexPath)
+                }
+
+                return UIMenu(title: "", children: [edit, deleteMenu])
+            }
+        default: return nil
+        }
+    }
+}
+
+extension WalletsListViewController: WalletsListViewModelDelegate {
+    func didSelect(sortEntity: SortEntity) {
+        
+    }
+    
+    func didUpdate() {
+        loadData()
+    }
 }

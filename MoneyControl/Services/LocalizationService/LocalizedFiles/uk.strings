@@ -15,6 +15,11 @@
 "Back" = "Назад";
 "Remove" = "Видалити";
 "All" = "Усі";
+"Spendings" = "Витрати";
+"Revenues" = "Надходження";
+"Edit" = "Редагування";
+"Done" = "Готово";
+"Cancel" = "Відмінити";
 
 //setting
 "Settings" = "Налаштування";
@@ -51,13 +56,6 @@
 
 // transactions list screen
 "Transactions list" = "Список транзакцій";
-
-// general
-"Spendings" = "Витрати";
-"Revenues" = "Надходження";
-"Edit" = "Редагування";
-"Done" = "Готово";
-"Cancel" = "Відмінити";
 
 // categories
 "Choose Category" = "Виберіть Категорію";

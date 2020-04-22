@@ -17,4 +17,8 @@ extension Entity {
     var balance: Double {
         return TransactionService.instance.fetchBalance(for: self)
     }
+    
+    func changeName(_ newName: String) {
+        WalletsService.instance.editWallet(oldName: title, newName: newName)
+    }
 }
