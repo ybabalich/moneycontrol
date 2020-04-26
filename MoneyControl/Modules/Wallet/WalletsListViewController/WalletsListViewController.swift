@@ -81,9 +81,10 @@ class WalletsListViewController: BaseTableViewController {
     
     private func setup() {
         
-        // title
+        // navigation
         
-        navigationItem.title = "Select Wallet"
+        navigationItem.title = "wallets.list.title".localized
+        navigationController?.navigationBar.applyTitleStyle()
         
         // UI
         
@@ -102,6 +103,8 @@ class WalletsListViewController: BaseTableViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.backgroundColor = .mainBackground
     
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 50
         tableView.separatorColor = .tableSeparator
         tableView.register(WalletsTotalTableViewCell.self)
         tableView.register(WalletTableViewCell.self)
@@ -190,6 +193,8 @@ extension WalletsListViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        guard !viewModel.isSelected(indexPath: indexPath) else { return nil }
+        
         let section = viewModel.sections[indexPath.section]
         
         switch section.type {
@@ -197,11 +202,11 @@ extension WalletsListViewController {
         case .wallets(wallets: let wallets):
             let wallet = wallets[indexPath.row]
             
-            let editAction = UITableViewRowAction(style: .default, title: "Edit") { [unowned self] action, indexPath in
+            let editAction = UITableViewRowAction(style: .default, title: "general.edit".localized) { [unowned self] action, indexPath in
                 self.showEditVC(for: indexPath)
             }
             
-            let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { [unowned self] action, indexPath in
+            let deleteAction = UITableViewRowAction(style: .default, title: "general.delete".localized) { [unowned self] action, indexPath in
                 self.viewModel.delete(entity: wallet)
             }
             
@@ -213,6 +218,8 @@ extension WalletsListViewController {
     override func tableView(_ tableView: UITableView,
                             trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
+        guard !viewModel.isSelected(indexPath: indexPath) else { return nil }
+        
         let section = viewModel.sections[indexPath.section]
         
         switch section.type {
@@ -220,7 +227,7 @@ extension WalletsListViewController {
         case .wallets(wallets: let wallets):
             let wallet = wallets[indexPath.row]
         
-            let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] _, _, completion in
+            let deleteAction = UIContextualAction(style: .destructive, title: "general.delete".localized) { [unowned self] _, _, completion in
                 self.viewModel.delete(entity: wallet)
                 completion(true)
             }
@@ -230,7 +237,7 @@ extension WalletsListViewController {
                 deleteAction.image = UIImage(systemName: "trash.fill")
             }
 
-            let editAction = UIContextualAction(style: .destructive, title: "Edit") { [unowned self] _, _, completion in
+            let editAction = UIContextualAction(style: .destructive, title: "general.edit".localized) { [unowned self] _, _, completion in
                 self.showEditVC(for: indexPath)
                 completion(true)
             }
@@ -249,6 +256,8 @@ extension WalletsListViewController {
                             contextMenuConfigurationForRowAt indexPath: IndexPath,
                             point: CGPoint) -> UIContextMenuConfiguration? {
 
+        guard !viewModel.isSelected(indexPath: indexPath) else { return nil }
+        
         let section = viewModel.sections[indexPath.section]
         
         switch section.type {
@@ -258,7 +267,7 @@ extension WalletsListViewController {
             return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [unowned self] _ in
 
                 let delete = UIAction(
-                    title: "Confirm Delete",
+                    title: "general.confirmDelete".localized,
                     image: UIImage(systemName: "trash.fill"),
                     attributes: .destructive) { [unowned self] _ in
                         
@@ -266,14 +275,14 @@ extension WalletsListViewController {
                 }
                 
                 let deleteMenu = UIMenu(
-                    title: "Delete",
+                    title: "general.delete".localized,
                     image: UIImage(systemName: "trash.fill"),
                     options: .destructive,
                     children: [delete]
                 )
                 
                 let edit = UIAction(
-                    title: "Edit",
+                    title: "general.edit".localized,
                     image: UIImage(systemName: "pencil")) { [unowned self] _ in
                         
                         self.showEditVC(for: indexPath)

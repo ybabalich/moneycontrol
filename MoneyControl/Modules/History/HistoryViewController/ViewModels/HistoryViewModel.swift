@@ -6,12 +6,15 @@
 //  Copyright © 2018 PxToday. All rights reserved.
 //
 
-import RxSwift
+import Foundation
 import DeepDiff
 
 protocol HistoryViewModelDelegate: class {
-    func didReceiveUpdates(insertions: [IndexPath], removals: [IndexPath])
+    func didReceiveUpdates(insertions: [IndexPath], removals: [IndexPath], updates: [IndexPath])
     func didReceiveUpdatesForSections(insertions: IndexSet, removals: IndexSet)
+    func didCalculate(incomes: Double, outcomes: Double)
+    func didChooseDate(title: String)
+    func didSelectSort(selectedSort: Sort)
 }
 
 class HistoryViewModel {
@@ -31,44 +34,31 @@ class HistoryViewModel {
         }
     }
     
-    typealias StatisticsValues = (balance: Double, incomes: Double, outcomes: Double)
-    
     // MARK: - Variables
     
     weak var delegate: HistoryViewModelDelegate?
     
     var sections: [Section] = []
-    
-    let titles = PublishSubject<(String?, String?)>()
-    let selectedSort = Variable<Sort>(.day)
-    let selectedSortEntity = Variable<SortEntity?>(nil)
-    let statisticsValues = PublishSubject<StatisticsValues>()
+    var selectedSort: Sort = .day
+    var selectedSortEntity: SortEntity?
     
     // MARK: - Variables private
     
-    private let disposeBag = DisposeBag()
-    
     // MARK: - Initializers
-    init() {
-        selectedSort.asObservable().subscribe(onNext: { [unowned self] _ in
-            self.loadTransactions()
-        }).disposed(by: disposeBag)
-        
-        selectedSortEntity.asObservable().subscribe(onNext: { [unowned self] _ in
-            self.loadTransactions()
-        }).disposed(by: disposeBag)
-    }
+    init() { }
     
     // MARK: - Public methods
     
-    func loadData() {
+    func loadData(selectedSort: Sort) {
+        self.selectedSort = selectedSort
+        delegate?.didSelectSort(selectedSort: selectedSort)
         loadTransactions()
     }
     
     func loadTransactions() {
         let service = TransactionService.instance
         
-        let operateWithTransactions: ([Transaction]) -> Void = { (transactions) in
+        let operateWithTransactions: ([Transaction]) -> Void = { transactions in
             
             var sections: [Section] = []
             
@@ -86,89 +76,124 @@ class HistoryViewModel {
                 }
             }
             
+            // sections
+            
             let changes = self.changes(oldSections: self.sections, newSections: sections)
+
+            // transactions
             
-            self.sections = sections
+            sections.forEach { section in
+                if let index = self.sections.index(of: section) {
+                    let oldTransactions = self.sections[index].transactions
+                    let newTransactions = section.transactions
+                    
+//                    let (inserted, deleted) = self.changes(oldTransactions: oldTransactions,
+//                                                           newTransactions: newTransactions,
+//                                                           in: index)
+
+                    
+                    if oldTransactions.count == newTransactions.count { //means that need to just reload all items in section
+                        let updated = Array(0...oldTransactions.count - 1).compactMap { IndexPath(row: $0, section: index) }
+                        self.delegate?.didReceiveUpdates(insertions: [], removals: [], updates: updated)
+                    } else if oldTransactions.count < newTransactions.count { // need to insert new values and update old ones
+                        if !newTransactions.isEmpty {
+                            let inserted = Array(oldTransactions.count...newTransactions.count - 1)
+                                .compactMap { IndexPath(row: $0, section: index) }
+                            
+                            var updated: [IndexPath] = []
+                            
+                            if !oldTransactions.isEmpty {
+                                updated = Array(0...oldTransactions.count - 1).compactMap { IndexPath(row: $0, section: index) }
+                            }
+                            
+                            self.sections[index].transactions = newTransactions
+                            
+                            self.delegate?.didReceiveUpdates(insertions: inserted, removals: [], updates: updated)
+                        }
+                    } else if oldTransactions.count > newTransactions.count { // need to delete old values and update old ones
+                        let deleted = Array(newTransactions.count...oldTransactions.count - 1)
+                            .compactMap { IndexPath(row: $0, section: index) }
+                        
+                        var updated: [IndexPath] = []
+                        
+                        if !oldTransactions.isEmpty {
+                            updated = Array(0...newTransactions.count - 1).compactMap { IndexPath(row: $0, section: index) }
+                        }
+                        
+                        self.sections[index].transactions = newTransactions
+                        
+                        self.delegate?.didReceiveUpdates(insertions: [], removals: deleted, updates: updated)
+                    }
+                }
+            }
             
-            self.delegate?.didReceiveUpdatesForSections(insertions: changes.0, removals: changes.1)
+            if !changes.0.isEmpty || !changes.1.isEmpty {
+                self.sections = sections
+                self.delegate?.didReceiveUpdatesForSections(insertions: changes.0, removals: changes.1)
+            }
+//
+//            if !insertions.isEmpty || !removals.isEmpty {
+//                self.delegate?.didReceiveUpdates(insertions: insertions, removals: removals)
+//            }
             
-            self.calculateStatisticsValues()
+            self.calculateStatisticsValues(for: transactions.map { TransactionViewModel(transaction: $0) })
         }
         
-        var fetchEntity: Entity? = nil
+        let sortEntity: SortEntity = self.getCurrentSortEntity()
+        var entity: Entity? = nil
         
-        if let selectedSortEntity = selectedSortEntity.value {
-            switch selectedSortEntity {
-            case .wallet(entity: let entity):
-                fetchEntity = entity
-            default: break
-            }
+        switch sortEntity {
+        case .total: entity = nil
+            
+        case .wallet(entity: let walletEntity):
+            entity = walletEntity
         }
 
-        switch selectedSort.value {
+        let dates: Calendar.StartEndDate
+        let title: String
+        
+        switch selectedSort {
         case .day:
-            let dates = Calendar.current.currentDay()
-            
-            service.fetchTransaction(entity: fetchEntity, dates: dates, type: nil, completion: operateWithTransactions)
-            
-            let title = dates.start.shortString
-            
-            titles.onNext((title, nil))
+            dates = Calendar.current.currentDay()
+            title = dates.start.shortString
             
         case .week:
-            let dates = Calendar.current.currentWeek()
-            
-            service.fetchTransaction(entity: fetchEntity, dates: dates, type: nil, completion: operateWithTransactions)
-            
-            let title = dates.start.shortString + " - " + dates.end.shortString
-            
-            titles.onNext((title, nil))
+            dates = Calendar.current.currentWeek()
+            title = dates.start.shortString + " - " + dates.end.shortString
             
         case .month:
-            let dates = Calendar.current.currentMonth()
-            
-            service.fetchTransaction(entity: fetchEntity, dates: dates, type: nil, completion: operateWithTransactions)
+            dates = Calendar.current.currentMonth()
+            title = dates.start.shortString + " - " + dates.end.shortString
 
-            let title = dates.start.shortString + " - " + dates.end.shortString
-            
-            titles.onNext((title, nil))
-            
         case .year:
-            let dates = Calendar.current.currentYear()
-            
-            service.fetchTransaction(entity: fetchEntity, dates: dates, type: nil, completion: operateWithTransactions)
-            
-            let title = dates.start.shortString + " - " + dates.end.shortString
-            
-            titles.onNext((title, nil))
-            
+            dates = Calendar.current.currentYear()
+            title = dates.start.shortString + " - " + dates.end.shortString
+
         case .custom(from: let fromDate, to: let toDate):
+            let startOfDay = fromDate.startOfDay
+            let endOfDay = toDate.endOfDay
             
-            let dates: Calendar.StartEndDate = (fromDate, toDate)
-            
-            let startOfDay = dates.start.startOfDay
-            let endOfDay = dates.end.endOfDay
+            title = startOfDay.shortString + " - " + endOfDay.shortString
             
             print("Start ->: \(startOfDay)")
             print("End ->: \(endOfDay))")
             print("-----")
             
-            service.fetchTransaction(entity: fetchEntity, dates: (startOfDay, endOfDay), type: nil, completion: operateWithTransactions)
-            
-            let title = startOfDay.shortString + " - " + endOfDay.shortString
-            
-            titles.onNext((title, nil))
+            dates = (startOfDay, endOfDay)
         }
+        
+        service.fetchTransaction(entity: entity, dates: dates, type: nil, completion: operateWithTransactions)
+        delegate?.didChooseDate(title: title)
     }
     
     func removeInnerTransactions(_ viewModel: TransactionViewModel) {
         TransactionService.instance.removeTransactions(viewModel.innerTransactions.map({ $0.id }))
 //        transactions.value = transactions.value.filter({ $0.id != viewModel.id })
-        calculateStatisticsValues()
+//        calculateStatisticsValues()
     }
     
     func getCurrentSortEntity() -> SortEntity {
-        if let selectedSort = selectedSortEntity.value {
+        if let selectedSort = selectedSortEntity {
             return selectedSort
         } else if let wallet = WalletsService.instance.fetchCurrentWallet() {
             return .wallet(entity: wallet)
@@ -179,20 +204,19 @@ class HistoryViewModel {
     
     // MARK: - Private methods
     
-    private func calculateStatisticsValues() {
+    private func calculateStatisticsValues(for transactions: [TransactionViewModel]) {
         var totalIncomes: Double = 0
         var totalOutcomes: Double = 0
-        let totalBalance: Double = TransactionService.instance.fetchBalance(for: nil)
         
-//        transactions.value.forEach { (transaction) in
-//            if transaction.type == .incoming {
-//                totalIncomes += transaction.value
-//            } else {
-//                totalOutcomes += transaction.value
-//            }
-//        }
+        transactions.forEach { transaction in
+            if transaction.type == .incoming {
+                totalIncomes += transaction.value
+            } else {
+                totalOutcomes += transaction.value
+            }
+        }
         
-        statisticsValues.onNext((totalBalance, totalIncomes, totalOutcomes))
+        delegate?.didCalculate(incomes: totalIncomes, outcomes: totalOutcomes)
     }
     
     private func changes(oldSections: [Section], newSections: [Section]) -> (IndexSet, IndexSet) {
@@ -213,6 +237,33 @@ class HistoryViewModel {
         }
 
         return (IndexSet(inserted), IndexSet(removed))
+    }
+    
+    private func changes(oldTransactions: [TransactionViewModel],
+                         newTransactions: [TransactionViewModel],
+                         in section: Int) -> ([Int], [Int]) {
+        
+        let changes = diff(old: oldTransactions, new: newTransactions)
+        
+        var inserted: [Int] = []
+        var removed: [Int] = []
+        var moved: [IndexPath] = []
+        var replaced: [IndexPath] = []
+        
+        changes.forEach { change in
+            switch change {
+            case .insert(let insert):
+                inserted.append(insert.index)
+            case .delete(let delete):
+                removed.append(delete.index)
+            case .move(let move):
+                moved.append(IndexPath(row: move.fromIndex, section: section))
+            case .replace(let replace):
+                replaced.append(IndexPath(row: replace.index, section: section))
+            }
+        }
+
+        return (inserted, removed)
     }
 }
 

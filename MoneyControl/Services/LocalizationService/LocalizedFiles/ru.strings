@@ -16,6 +16,14 @@
 "Remove" = "Удалить";
 "All" = "Все";
 
+"general.total" = "Всего";
+"general.edit" = "Редактировать";
+"general.delete" = "Удалить";
+"general.confirmDelete" = "Подтвердить удаление";
+"general.name" = "Имя";
+"general.save" = "Сохранить";
+"general.balance" = "Баланс";
+
 //setting
 "Settings" = "Настройки";
 "General" = "Общие";
@@ -34,7 +42,7 @@
 "Week" = "Неделя";
 "Month" = "Месяц";
 "Year" = "Год";
-"Custom" = "Выбрать период";
+"Custom" = "Период";
 "Choose" = "Выбрать";
 "Close" = "Закрыть";
 "Add" = "Добавить";
@@ -45,9 +53,11 @@
 "Haven't activities today" = "Активности отсутствуют";
 
 // edit expense screen
-"Amount" = "Сумма";
-"Category" = "Категория";
-"Date" = "Дата";
+
+"transaction.edit.title" = "Редактировать транзакцию";
+"transaction.edit.amount" = "Сумма";
+"transaction.edit.category" = "Категория";
+"transaction.edit.date" = "Дата";
 
 // transactions list screen
 "Transactions list" = "Список транзакций";
@@ -82,3 +92,13 @@
 "Start Balance" = "Стартовый баланс";
 "Transfer" = "Трансфер";
 "Deposit" = "Депозит";
+
+// Multi-wallets
+
+"wallets.defaultName.title" = "Наличные";
+"wallets.list.title" = "Выберите кошелек";
+"wallets.add.title" = "Добавить кошелек";
+"wallets.edit.title" = "Редактировать кошелек";
+"wallets.title" = "Кошельки";
+"wallets.add.startingBalance.title" = "Начальный баланс";
+"wallets.add.nameField.placeholder" = "Название кошелька";

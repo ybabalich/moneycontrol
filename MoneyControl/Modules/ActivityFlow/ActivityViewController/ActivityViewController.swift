@@ -115,6 +115,11 @@ class ActivityViewController: BaseViewController {
         
         titleView = ActivityTitleView().then { titleView in
             
+            if !isLessThenIOS11() {
+                titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+                titleView.sizeToFit()
+            }
+            
             navigationItem.titleView = titleView
         }
     }

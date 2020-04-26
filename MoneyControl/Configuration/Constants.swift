@@ -8,4 +8,4 @@
 
 import Foundation
 
-let EntityBaseNamePrefix = "cash"
+let EntityBaseNamePrefix = "wallets.defaultName.title".localized.lowercased()

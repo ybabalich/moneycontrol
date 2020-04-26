@@ -115,10 +115,9 @@ class UIBarButtonItemFabric {
             
             v.setBackgroundImage(sortEntity.stringValue.initials().coverImage, for: .normal)
             v.tintColor = .controlTintActive
-            v.applyFullyRounded(15)
 
             v.onTap(completion: onTap)
-            
+  
             v.snp.makeConstraints {
                 $0.width.height.equalTo(30)
             }
@@ -147,6 +146,16 @@ class UIBarButtonItemFabric {
             stackView.addArrangedSubview(downImage)
         }
         
+        
+        if #available(iOS 11, *) {
+            walletButton.applyFullyRounded(15)
+        } else {
+            walletButton.layer.cornerRadius = 15
+            walletButton.layer.masksToBounds = true
+            stackView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            stackView.sizeToFit()
+        }
+
         return UIBarButtonItem(customView: stackView)
     }
     
@@ -157,7 +166,8 @@ class UIBarButtonItemFabric {
             v.setTitle("Close".localized, for: .normal)
             v.tintColor = .controlTintActive
             v.titleLabel?.font = .systemFont(ofSize: 17)
-
+            v.sizeToFit()
+            
             v.onTap(completion: onTap)
         }
 
@@ -171,6 +181,7 @@ class UIBarButtonItemFabric {
             button.setTitle("Add".localized, for: .normal)
             button.tintColor = .controlTintActive
             button.titleLabel?.font = .systemFont(ofSize: 17)
+            button.sizeToFit()
 
             button.onTap(completion: onTap)
         }
@@ -182,9 +193,10 @@ class UIBarButtonItemFabric {
 
         let button = TappableButton(type: .system).then { button in
 
-            button.setTitle("Edit".localized, for: .normal)
+            button.setTitle("general.edit".localized, for: .normal)
             button.tintColor = .controlTintActive
             button.titleLabel?.font = .systemFont(ofSize: 17)
+            button.sizeToFit()
 
             button.onTap(completion: onTap)
         }
@@ -196,9 +208,10 @@ class UIBarButtonItemFabric {
 
         let button = TappableButton(type: .system).then { button in
 
-            button.setTitle("Save".localized, for: .normal)
+            button.setTitle("general.save".localized, for: .normal)
             button.tintColor = .controlTintActive
             button.titleLabel?.font = .systemFont(ofSize: 17)
+            button.sizeToFit()
 
             button.onTap(completion: onTap)
         }

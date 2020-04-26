@@ -47,8 +47,8 @@ class CategoryEditTableViewCell: UITableViewCell {
         
         categoryImageView = UIImageView().then { categoryImageView in
             
-            categoryImageView.applyFullyRounded(15)
-            categoryImageView.backgroundColor = .red
+            categoryImageView.layer.cornerRadius = 15
+            categoryImageView.layer.masksToBounds = true
             
             contentView.addSubview(categoryImageView)
             categoryImageView.snp.makeConstraints {
@@ -61,7 +61,6 @@ class CategoryEditTableViewCell: UITableViewCell {
         titleLabel = UILabel().then { titleLabel in
             
             titleLabel.numberOfLines = 1
-            titleLabel.text = "Cash"
             titleLabel.font = .systemFont(ofSize: 14)
             titleLabel.textColor = .primaryText
             

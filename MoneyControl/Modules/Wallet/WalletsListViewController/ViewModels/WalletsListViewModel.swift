@@ -51,7 +51,7 @@ class WalletsListViewModel {
             
             strongSelf.sections = [
                 Section(title: nil, type: .total),
-                Section(title: "Wallets", type: .wallets(wallets: entities))
+                Section(title: "wallets.title".localized, type: .wallets(wallets: entities))
             ]
         }
     }

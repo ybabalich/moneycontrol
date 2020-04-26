@@ -62,7 +62,7 @@ class EditTransactionViewController: BaseTableViewController {
         
         // title
         
-        title = "Edit category"
+        title = "transaction.edit.title".localized
         
         // table view
         
@@ -80,6 +80,7 @@ class EditTransactionViewController: BaseTableViewController {
 
     private func showDateChooseView() {
         datePicker.datePickerMode = .date
+        datePicker.locale = Locale(identifier: LocalizationService.instance.preferredLanguage())
 
         let toolbar = UIToolbar()
         toolbar.sizeToFit()

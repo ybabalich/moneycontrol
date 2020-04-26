@@ -53,12 +53,13 @@ class InfoPreviewView: UIView {
         
         backgroundColor = .mainElementBackground
         
-        titleLabel = UILabel().then { entityLabel in
+        titleLabel = UILabel().then { titleLabel in
             
-            entityLabel.font = .systemFont(ofSize: 14, weight: .regular)
+            titleLabel.font = .systemFont(ofSize: 14, weight: .regular)
+            titleLabel.textColor = .primaryText
             
-            addSubview(entityLabel)
-            entityLabel.snp.makeConstraints {
+            addSubview(titleLabel)
+            titleLabel.snp.makeConstraints {
                 $0.top.equalToSuperview().offset(16)
                 $0.centerX.equalToSuperview()
             }
@@ -68,6 +69,7 @@ class InfoPreviewView: UIView {
             
             balanceLabel.font = .systemFont(ofSize: 20, weight: .medium)
             balanceLabel.textAlignment = .center
+            balanceLabel.textColor = .primaryText
             
             addSubview(balanceLabel)
             balanceLabel.snp.makeConstraints {

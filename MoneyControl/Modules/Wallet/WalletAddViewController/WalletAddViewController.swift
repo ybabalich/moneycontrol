@@ -90,8 +90,8 @@ class WalletAddViewController: BaseTableViewController {
         // title
         
         switch viewModel.state {
-        case .add: navigationItem.title = "Add Wallet"
-        case .edit(entity: _): navigationItem.title = "Edit Wallet"
+        case .add: navigationItem.title = "wallets.add.title".localized
+        case .edit(entity: _): navigationItem.title = "wallets.edit.title".localized
         }
         
         // table view

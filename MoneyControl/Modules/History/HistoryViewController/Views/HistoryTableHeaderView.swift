@@ -58,7 +58,7 @@ class HistoryTableHeaderView: UITableViewHeaderFooterView {
             contentView.addSubview(dayNumberLabel)
             dayNumberLabel.snp.makeConstraints {
                 $0.left.equalToSuperview().offset(16)
-                $0.top.bottom.equalToSuperview().inset(4)
+                $0.centerY.equalToSuperview()
             }
         }
         

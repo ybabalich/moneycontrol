@@ -12,6 +12,7 @@ protocol AppSettings {
     //general
     var launchCount: Int { get set }
     var baseCategoriesAdded: Bool { get set }
+    var firstTimeEnterWithWallets: Bool { get set }
     
     //settings
     var currency: Currency? { get set }
@@ -25,6 +26,7 @@ class Settings {
     private struct Keys {
         static let kAppLaunchCount = "kAppLaunchCount"
         static let kBaseCategoriesAdded = "kBaseCategoriesAdded"
+        static let kFirstTimeEnterWithWallets = "kFirstTimeEnterWithWallets"
         static let kCurrency = "kCurrency"
         static let kPreferredLanguageCodeKey = "kPreferredLanguageCodeKey"
         static let kWalletKey = "kWalletKey"
@@ -57,6 +59,15 @@ extension Settings: AppSettings {
         }
         set {
             Settings.set(value: newValue, for: Keys.kBaseCategoriesAdded)
+        }
+    }
+    
+    var firstTimeEnterWithWallets: Bool {
+        get {
+            return Settings.value(for: Keys.kFirstTimeEnterWithWallets) ?? true
+        }
+        set {
+            Settings.set(value: newValue, for: Keys.kFirstTimeEnterWithWallets)
         }
     }
     

@@ -47,7 +47,7 @@ class WalletsTotalTableViewCell: UITableViewCell {
         topLabel = UILabel().then { topLabel in
             
             topLabel.numberOfLines = 1
-            topLabel.text = "Total"
+            topLabel.text = "general.total".localized
             topLabel.font = .systemFont(ofSize: 18, weight: .bold)
             topLabel.textColor = .primaryText
             

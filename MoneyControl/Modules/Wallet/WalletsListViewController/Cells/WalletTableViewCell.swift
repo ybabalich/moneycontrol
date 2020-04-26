@@ -49,8 +49,8 @@ class WalletTableViewCell: UITableViewCell {
         
         walletImage = UIImageView().then { walletImage in
             
-            walletImage.applyFullyRounded(15)
-            walletImage.backgroundColor = .red
+            walletImage.layer.cornerRadius = 15
+            walletImage.layer.masksToBounds = true
             
             contentView.addSubview(walletImage)
             walletImage.snp.makeConstraints {
@@ -63,7 +63,6 @@ class WalletTableViewCell: UITableViewCell {
         topLabel = UILabel().then { topLabel in
             
             topLabel.numberOfLines = 1
-            topLabel.text = "Cash"
             topLabel.font = .systemFont(ofSize: 14)
             topLabel.textColor = .primaryText
             
@@ -76,7 +75,6 @@ class WalletTableViewCell: UITableViewCell {
         
         bottomLabel = UILabel().then { bottomLabel in
             
-            bottomLabel.text = "$ 40.000"
             bottomLabel.numberOfLines = 1
             bottomLabel.font = .systemFont(ofSize: 14, weight: .bold)
             bottomLabel.textColor = .primaryText

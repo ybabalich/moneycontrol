@@ -53,6 +53,7 @@ class ActivityTitleView: UIView {
             $0.textColor = .secondaryText
             $0.font = .systemFont(ofSize: 12)
             $0.textAlignment = .center
+            $0.sizeToFit()
         }
         
         secondLabel = UILabel().then {
@@ -61,6 +62,7 @@ class ActivityTitleView: UIView {
             $0.textColor = .primaryText
             $0.font = .systemFont(ofSize: 16, weight: .bold)
             $0.textAlignment = .center
+            $0.sizeToFit()
         }
         
         let _ = UIStackView().then { stackView in
@@ -69,13 +71,12 @@ class ActivityTitleView: UIView {
             stackView.addArrangedSubview(secondLabel)
             stackView.axis = .vertical
             stackView.alignment = .fill
+            stackView.sizeToFit()
             
             addSubview(stackView)
             stackView.snp.makeConstraints {
                 $0.edges.equalToSuperview()
             }
         }
-        
     }
-    
 }

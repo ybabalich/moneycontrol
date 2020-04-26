@@ -47,24 +47,34 @@ class ChooseCategoryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // title
+        // navigation
         
         title = "Choose Category".localized
+        navigationController?.navigationBar.applyTitleStyle()
+        
+        // view model
+        
+        viewModel.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         // UI
         
         setupUI()
         
-        // view model
+        // load data
         
-        viewModel.delegate = self
         viewModel.loadData()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        tableView.applyCornerRadius(15, topLeft: true, topRight: true, bottomRight: false, bottomLeft: false)
+    // navigation
+    
+    override func createLeftNavButton() -> UIBarButtonItem? {
+        UIBarButtonItemFabric.close { [unowned self] in
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - Private methods
@@ -75,23 +85,9 @@ class ChooseCategoryViewController: BaseViewController {
         
         view.backgroundColor = .mainBackground
         
-        segmentControl = UISegmentedControl(items: Segment.allCasesLocalized).then { segmentControl in
-            view.addSubview(segmentControl)
-            
-            segmentControl.selectedSegmentIndex = viewModel.selectedSegmentType().index
-            segmentControl.applyStyle()
-            segmentControl.addTarget(self, action: #selector(didChangeSegmentControl), for: .valueChanged)
-            
-            segmentControl.snp.makeConstraints {
-                $0.topMargin.equalToSuperview().offset(24)
-                $0.centerX.equalToSuperview()
-            }
-        }
-        
         tableView = UITableView().then { tableView in
             view.addSubview(tableView)
             
-            tableView.applyCornerRadius(15, topLeft: true, topRight: true, bottomRight: false, bottomLeft: false)
             tableView.backgroundColor = .mainElementBackground
             tableView.separatorColor = .tableSeparator
             tableView.registerNib(type: ChooseCategoryTableViewCell.self)
@@ -100,14 +96,9 @@ class ChooseCategoryViewController: BaseViewController {
             tableView.dataSource = self
             
             tableView.snp.makeConstraints {
-                $0.top.equalTo(segmentControl.snp.bottom).offset(24)
-                $0.left.right.bottom.equalToSuperview()
+                $0.edges.equalToSuperview()
             }
         }
-    }
-    
-    @objc private func didChangeSegmentControl() {
-        viewModel.selectAndFetch(for: Segment(index: segmentControl.selectedSegmentIndex))
     }
 }
 

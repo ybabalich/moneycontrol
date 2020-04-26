@@ -45,7 +45,7 @@ class WalletAddNameTableViewCell: UITableViewCell {
         nameField = LimitedTextField().then { nameField in
             
             nameField.enterType = .charactersLimit(range: 0...15, isNumeric: false)
-            nameField.placeholder = "Name of wallet"
+            nameField.placeholder = "wallets.add.nameField.placeholder".localized
             nameField.font = .systemFont(ofSize: 18, weight: .bold)
             nameField.textColor = .primaryText
             

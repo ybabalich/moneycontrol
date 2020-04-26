@@ -37,16 +37,20 @@ class TransactionService {
         return currentBalance
     }
     
-    // today
-    
-    func fetchTodayTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
-        let calendar = Calendar.current
-        let (dateFrom, dateTo) = calendar.currentDay()
-        fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
+    func fetchAllTransactions() -> [Transaction] {
+        db.objects(TransactionDB.self).compactMap { Transaction(db: $0) } 
     }
     
-    func fetchTodayTransactionsSum(type: Transaction.TransactionType, completion: (Double) -> ()) {
-        fetchTodayTransactions(type: type) { (transactions) in
+    // today
+    
+    func fetchTodayTransactions(for entity: Entity?, type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
+        let calendar = Calendar.current
+        let (dateFrom, dateTo) = calendar.currentDay()
+        fetchTransactions(entity: entity, from: dateFrom, to: dateTo, type: type, completion: completion)
+    }
+    
+    func fetchTodayTransactionsSum(for entity: Entity?, type: Transaction.TransactionType, completion: (Double) -> ()) {
+        fetchTodayTransactions(for: entity, type: type) { (transactions) in
             completion(transactions.map({ $0.value }).reduce(0, +))
         }
     }
@@ -115,6 +119,20 @@ class TransactionService {
         
         if let transactionDb = objects.first {
             try! db.write {
+                
+                var entityDB: EntityDB?
+                
+                let entityTitle = transaction.entity.title.lowercased()
+                if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "title == %@", entityTitle)).first {
+                    entityDB = entity
+                } else {
+                    let dbEntity = EntityDB()
+                    dbEntity.currency = transaction.entity.currency.rawValue
+                    dbEntity.title = entityTitle
+                    entityDB = dbEntity
+                }
+                
+                transactionDb.entity = entityDB
                 transactionDb.categoryId = transaction.category.id
                 transactionDb.value = transaction.value
                 transactionDb.time = transaction.time

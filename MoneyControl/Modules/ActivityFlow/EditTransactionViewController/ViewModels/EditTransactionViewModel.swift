@@ -51,9 +51,9 @@ class EditTransactionViewModel {
     
     func loadData() {
         sections = [
-            Section(title: "Amount", type: .amount),
-            Section(title: "Category", type: .category),
-            Section(title: "Date", type: .date)
+            Section(title: "transaction.edit.amount".localized, type: .amount),
+            Section(title: "transaction.edit.category".localized, type: .category),
+            Section(title: "transaction.edit.date".localized, type: .date)
         ]
         
         compareFilledData()

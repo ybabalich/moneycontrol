@@ -27,7 +27,7 @@ class TodayHistoryViewViewModel {
         default: transactionType = nil
         }
         
-        TransactionService.instance.fetchTodayTransactions(type: transactionType) { (transactions) in
+        TransactionService.instance.fetchTodayTransactions(for: getCurrentWallet(), type: transactionType) { (transactions) in
             let transactions = transactions.map({ (transaction) -> TransactionViewModel in
                 return TransactionViewModel(transaction: transaction)
             })

@@ -21,6 +21,14 @@
 "Done" = "Готово";
 "Cancel" = "Відмінити";
 
+"general.total" = "Усього";
+"general.edit" = "Редагувати";
+"general.delete" = "Видалити";
+"general.confirmDelete" = "Підтвердити видалення";
+"general.name" = "Ім'я";
+"general.save" = "Зберегти";
+"general.balance" = "Баланс";
+
 //setting
 "Settings" = "Налаштування";
 "General" = "Загальні";
@@ -42,17 +50,19 @@
 "Week" = "Неділя";
 "Month" = "Місяць";
 "Year" = "Рік";
-"Custom" = "Вибрати період";
+"Custom" = "Період";
 
 // activity screen
 "Activity" = "Активність";
 "Add new activity" = "Додати нову активність";
 "Haven't activities today" = "Сьогодні немає активності";
 
-// edit expense screen
-"Amount" = "Сума";
-"Category" = "Категорія";
-"Date" = "Дата";
+// edit transaction screen
+
+"transaction.edit.title" = "Редагувати транзакцію";
+"transaction.edit.amount" = "Сума";
+"transaction.edit.category" = "Категорія";
+"transaction.edit.date" = "Дата";
 
 // transactions list screen
 "Transactions list" = "Список транзакцій";
@@ -80,3 +90,13 @@
 "Start Balance" = "Стартовый баланс";
 "Transfer" = "Переведення";
 "Deposit" = "Депозит";
+
+// Multi-wallets
+
+"wallets.defaultName.title" = "Готівка";
+"wallets.list.title" = "Виберіть гаманець";
+"wallets.add.title" = "Додати гаманець";
+"wallets.edit.title" = "Редагувати гаманець";
+"wallets.title" = "Гаманці";
+"wallets.add.startingBalance.title" = "Початковий баланс";
+"wallets.add.nameField.placeholder" = "Назва гаманця";

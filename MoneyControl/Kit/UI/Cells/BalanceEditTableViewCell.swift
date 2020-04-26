@@ -49,7 +49,7 @@ class BalanceEditTableViewCell: UITableViewCell {
         balanceField = LimitedTextField().then { balanceField in
             
             balanceField.enterType = .numbers(symbolsAfterDot: 2)
-            balanceField.placeholder = "Balance"
+            balanceField.placeholder = "general.balance".localized
             balanceField.font = .systemFont(ofSize: 16, weight: .bold)
             balanceField.textColor = .primaryText
             

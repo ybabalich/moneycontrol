@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DeepDiff
 
 class TransactionViewModel {
     
@@ -31,5 +32,18 @@ class TransactionViewModel {
         formattedTime = DateService.instance.convertDateToString(transaction.time, format: DateService.dayMonthYearWithSpacesFormat)
         createdTime = transaction.time
     }
+}
+
+extension TransactionViewModel: Equatable, DiffAware {
+    static func == (lhs: TransactionViewModel, rhs: TransactionViewModel) -> Bool {
+        return lhs.id == rhs.id
+    }
     
+    var diffId: Int {
+        return id
+    }
+    
+    static func compareContent(_ a: TransactionViewModel, _ b: TransactionViewModel) -> Bool {
+        return a == b
+    }
 }

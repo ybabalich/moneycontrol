@@ -21,6 +21,8 @@ class HistoryViewController: BaseViewController {
     private var balancePreviewView: BalancePreviewView!
     private var tableView: UITableView!
     
+    private var oldTableFrame: CGRect = .zero
+    
     // pickers
     
     private var bottomOverlayVC: BottomOverlayViewController!
@@ -34,6 +36,23 @@ class HistoryViewController: BaseViewController {
         super.viewDidLoad()
 
         setup()
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    
+        viewModel.loadData(selectedSort: viewModel.selectedSort)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if oldTableFrame != tableView.frame {
+            tableView.applyCornerRadius(15, topLeft: true, topRight: true, bottomRight: false, bottomLeft: false)
+            oldTableFrame = tableView.frame
+        }
     }
     
     // navbar preparаtion
@@ -52,30 +71,11 @@ class HistoryViewController: BaseViewController {
         
         setupUI()
         
-        // view model
-        
-        setupViewModel()
-        
         //load data
         
         viewModel.delegate = self
-        viewModel.loadData()
         
         updateUI()
-    }
-    
-    private func setupViewModel() {
-        
-        viewModel.selectedSort.asObservable().subscribe(onNext: { [unowned self] _ in
-            self.updateUI()
-        }).disposed(by: disposeBag)
-        
-        viewModel.statisticsValues.asObserver().subscribe(onNext: { [unowned self] (values) in
-            let (balance, incomesValue, outcomesValue) = values
-            
-            self.balancePreviewView.showInfo(transactionType: .incoming, double: incomesValue)
-            self.balancePreviewView.showInfo(transactionType: .outcoming, double: outcomesValue)
-        }).disposed(by: disposeBag)
     }
     
     private func setupUI() {
@@ -87,6 +87,11 @@ class HistoryViewController: BaseViewController {
         // UI
         
         titleView = ActivityTitleView().then { titleView in
+            
+            if !isLessThenIOS11() {
+                titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+                titleView.sizeToFit()
+            }
             
             navigationItem.titleView = titleView
         }
@@ -109,7 +114,7 @@ class HistoryViewController: BaseViewController {
             
             calendarPickerView.onChoose { [unowned self] sort in
                 
-                self.viewModel.selectedSort.value = sort
+                self.viewModel.loadData(selectedSort: sort)
                 self.bottomOverlayVC.closeController()
             }
             
@@ -134,7 +139,7 @@ class HistoryViewController: BaseViewController {
                 case .custom(from: _, to: _):
                     self.showCalendarPicker(selectedDates: nil)
                 default:
-                    self.viewModel.selectedSort.value = sort
+                    self.viewModel.loadData(selectedSort: sort)
                     self.bottomOverlayVC.closeController()
                 }
             }
@@ -143,7 +148,8 @@ class HistoryViewController: BaseViewController {
         tableView = UITableView().then { tableView in
             view.addSubview(tableView)
             
-            tableView.applyCornerRadius(15, topLeft: true, topRight: true, bottomRight: false, bottomLeft: false)
+            tableView.rowHeight = UITableView.automaticDimension
+            tableView.estimatedRowHeight = 51
             tableView.backgroundColor = .mainElementBackground
             tableView.separatorColor = .tableSeparator
             tableView.registerNib(type: TodayHistoryTableViewCell.self)
@@ -172,7 +178,7 @@ class HistoryViewController: BaseViewController {
             }
         }
         
-        datePickerView.selectedSort = viewModel.selectedSort.value
+        datePickerView.selectedSort = viewModel.selectedSort
         
         bottomOverlayVC.showContentView(datePickerView)
         bottomOverlayVC.changeContentHeight(pickerHeight())
@@ -208,34 +214,81 @@ class HistoryViewController: BaseViewController {
         
         setupNavigationBarItems()
         titleView.show(sortEntity: entity)
-        balancePreviewView.apply(sort: viewModel.selectedSort.value)
+        balancePreviewView.apply(sort: viewModel.selectedSort)
     }
 }
 
 extension HistoryViewController: WalletsListViewControllerDelegate {
     func didChoose(sortEntity: SortEntity) {
-        viewModel.selectedSortEntity.value = sortEntity
+        viewModel.selectedSortEntity = sortEntity
+        viewModel.loadData(selectedSort: viewModel.selectedSort)
         updateUI()
     }
 }
 
 extension HistoryViewController: HistoryViewModelDelegate {
-    func didReceiveUpdates(insertions: [IndexPath], removals: [IndexPath]) {
+    func didChooseDate(title: String) {
         
     }
     
-    func didReceiveUpdatesForSections(insertions: IndexSet, removals: IndexSet) {
+    func didReceiveUpdates(insertions: [IndexPath], removals: [IndexPath], updates: [IndexPath]) {
+        
+        func performUpdates() {
+            if !removals.isEmpty {
+                tableView.deleteRows(at: removals, with: .fade)
+            }
+            
+            if !insertions.isEmpty {
+                tableView.insertRows(at: insertions, with: .fade)
+            }
+            
+            if !updates.isEmpty {
+                tableView.reloadRows(at: updates, with: .fade)
+            }
+            
+        }
+        
         if #available(iOS 11.0, *) {
             tableView.performBatchUpdates({
-                tableView.insertSections(insertions, with: .automatic)
-                tableView.deleteSections(removals, with: .automatic)
+                performUpdates()
             }, completion: nil)
         } else {
             tableView.beginUpdates()
-            tableView.insertSections(insertions, with: .automatic)
-            tableView.deleteSections(removals, with: .automatic)
+            performUpdates()
             tableView.endUpdates()
         }
+    }
+    
+    func didReceiveUpdatesForSections(insertions: IndexSet, removals: IndexSet) {
+        
+        func performUpdates() {
+            if insertions.count > 0 {
+                self.tableView.insertSections(insertions, with: .fade)
+            }
+            
+            if removals.count > 0 {
+                self.tableView.deleteSections(removals, with: .fade)
+            }
+        }
+        
+        if #available(iOS 11.0, *) {
+            tableView.performBatchUpdates({
+                performUpdates()
+            }, completion: nil)
+        } else {
+            tableView.beginUpdates()
+            performUpdates()
+            tableView.endUpdates()
+        }
+    }
+    
+    func didCalculate(incomes: Double, outcomes: Double) {
+        balancePreviewView.showInfo(transactionType: .incoming, double: incomes)
+        balancePreviewView.showInfo(transactionType: .outcoming, double: outcomes)
+    }
+    
+    func didSelectSort(selectedSort: Sort) {
+        updateUI()
     }
 }
 
@@ -266,6 +319,10 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         header.apply(section: viewModel.sections[section])
         
         return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        50
     }
 }
 

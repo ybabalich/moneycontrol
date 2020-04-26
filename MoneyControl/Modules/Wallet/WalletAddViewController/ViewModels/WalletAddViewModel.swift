@@ -55,11 +55,11 @@ class WalletAddViewModel {
     func loadData() {
         
         sections = [
-            Section(title: "Name", type: .name),
+            Section(title: "general.name".localized, type: .name),
         ]
         
         switch state {
-        case .add: sections.append(Section(title: "Starting Balance", type: .startingBalance))
+        case .add: sections.append(Section(title: "wallets.add.startingBalance.title".localized, type: .startingBalance))
         default: print("No need to add anything")
         }
         

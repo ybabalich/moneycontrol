@@ -26,14 +26,6 @@ class AppDelegate: UIResponder {
     {
         settings.launchCount += 1
         
-        // TODO: need to remove and apply better logic for old users
-        if !settings.baseCategoriesAdded { // first time launch
-            WalletsService.instance.saveFirstTimeWallets()
-            CategoryService.instance.saveBaseCategories()
-            
-            settings.baseCategoriesAdded = true
-        }
-        
         //controller for showing
         
         setupStoryboardForStart()
@@ -68,6 +60,28 @@ class AppDelegate: UIResponder {
         
         Realm.Configuration.defaultConfiguration = config
         
+        // TODO: need to remove and apply better logic for old users
+        if !settings.baseCategoriesAdded { // first time launch
+            CategoryService.instance.saveBaseCategories()
+            
+            settings.baseCategoriesAdded = true
+        }
+        
+        if settings.firstTimeEnterWithWallets {
+            WalletsService.instance.saveFirstTimeWallets()
+            
+            if let currentEntity = WalletsService.instance.fetchCurrentWallet() {
+                let transactions = TransactionService.instance.fetchAllTransactions()
+                
+                transactions.forEach { transaction in
+                    transaction.entity = currentEntity
+                    TransactionService.instance.update(transaction)
+                }
+            }
+            
+            settings.firstTimeEnterWithWallets = false
+        }
+        
         FirebaseApp.configure()
         
         return true
@@ -80,10 +94,7 @@ class AppDelegate: UIResponder {
         let navigationController = UINavigationController(rootViewController: controller)
         
         navigationController.navigationBar.applyMainBackground()
-        
-        navigationController.navigationBar.titleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.primaryText,
-             NSAttributedString.Key.font: App.Font.main(size: 16, type: .bold).rawValue,]
+        navigationController.navigationBar.applyTitleStyle()
         
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.classForCoder() as! UIAppearanceContainer.Type])
             .setTitleTextAttributes([NSAttributedString.Key.font: App.Font.main(size: 17, type: .light).rawValue,

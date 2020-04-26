@@ -60,7 +60,6 @@ class DateEditTableViewCell: UITableViewCell {
         titleLabel = UILabel().then { titleLabel in
             
             titleLabel.numberOfLines = 1
-            titleLabel.text = "21.04.2020"
             titleLabel.font = .systemFont(ofSize: 14, weight: .bold)
             titleLabel.textColor = .primaryText
             

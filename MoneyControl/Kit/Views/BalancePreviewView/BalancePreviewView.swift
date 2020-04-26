@@ -73,8 +73,9 @@ class BalancePreviewView: UIView {
         
         dateLabel = UILabel().then { dateLabel in
             
-            dateLabel.font = .systemFont(ofSize: 20, weight: .bold)
+            dateLabel.font = .systemFont(ofSize: UIScreen.isSmallDevice ? 15 : 19, weight: .bold)
             dateLabel.textAlignment = .left
+            dateLabel.textColor = .primaryText
             
             addSubview(dateLabel)
             dateLabel.snp.makeConstraints {

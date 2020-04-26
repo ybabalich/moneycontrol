@@ -213,3 +213,11 @@ protocol Rawable {
 protocol StringRepresentable {
     var stringValue: String { get }
 }
+
+func isLessThenIOS11() -> Bool {
+    if #available(iOS 11, *) {
+        return true
+    } else {
+        return false
+    }
+}
