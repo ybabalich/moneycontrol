@@ -47,7 +47,8 @@ class WalletsService {
         return fetchWallet(id: walletId)
     }
     
-    func createWallet(name: String, currency: Currency) {
+    @discardableResult
+    func createWallet(name: String, currency: Currency) -> Entity {
         let cashEntity = EntityDB()
         cashEntity.id = Int.generateID()
         cashEntity.title = name.lowercased()
@@ -56,6 +57,8 @@ class WalletsService {
         try! db.write {
             db.add(cashEntity)
         }
+        
+        return Entity(db: cashEntity)
     }
     
     func deleteWallet(_ entity: Entity) {

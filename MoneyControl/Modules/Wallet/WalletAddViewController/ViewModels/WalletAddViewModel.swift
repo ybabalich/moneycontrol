@@ -87,12 +87,12 @@ class WalletAddViewModel {
         
         switch state {
         case .add:
-            WalletsService.instance.createWallet(name: name, currency: .uah)
+            let createdWallet = WalletsService.instance.createWallet(name: name, currency: .uah)
             
             if let balance = newBalance?.trimmed.nullable, balance.double > 0 {
                 let transaction = Transaction()
                 transaction.value = balance.double
-                transaction.entity = Entity(id: Int.generateID(), title: name, currency: .uah)
+                transaction.entity = createdWallet
                 transaction.category = Category(viewModel: CategoriesFabric.startBalanceCategory())
                 
                 TransactionService.instance.save(transaction)
