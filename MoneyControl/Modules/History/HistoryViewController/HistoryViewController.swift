@@ -99,7 +99,11 @@ class HistoryViewController: BaseViewController {
         balancePreviewView = BalancePreviewView().then { balancePreviewView in
 
             balancePreviewView.onTapChooseSort { [unowned self] in
-                self.showDatePicker()
+                switch self.viewModel.selectedSort {
+                case .custom(from: let fromDate, to: let toDate):
+                    self.showCalendarPicker(selectedDates: (fromDate, toDate))
+                default: self.showDatePicker()
+                }
             }
             
             view.addSubview(balancePreviewView)

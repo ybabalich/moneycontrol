@@ -40,15 +40,6 @@ class AppDelegate: UIResponder {
             migrationBlock: { migration, oldSchemaVersion in
                 // We haven’t migrated anything yet, so oldSchemaVersion == 0
                 switch oldSchemaVersion {
-                case 1:
-                    migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
-                        newObject!["id"] = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
-                    })
-                    break
-                case 2, 3:
-                    migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
-                        newObject!["categoryId"] = 0
-                    })
                 case 4:
                     migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
                         newObject!["entity"] = nil

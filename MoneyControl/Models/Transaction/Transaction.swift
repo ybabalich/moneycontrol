@@ -38,7 +38,7 @@ class Transaction {
         self.id = db.id
         self.value = db.value
         self.type = TransactionType(rawValue: db.type)
-        self.category = Category.emptyCategory()
+        self.category = Category(id: db.categoryId)
         
         if let dbEntity = db.entity {
             self.entity = Entity(db: dbEntity)

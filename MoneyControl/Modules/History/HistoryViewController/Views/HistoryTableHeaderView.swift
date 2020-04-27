@@ -47,7 +47,8 @@ class HistoryTableHeaderView: UITableViewHeaderFooterView {
     // MARK: - Private methods
     
     private func setupUI() {
-        
+
+//        contentView.backgroundColor = .mainElementBackground
         tintColor = UIColor.controlTintActive.withAlphaComponent(0.1)
         
         dayNumberLabel = UILabel().then { dayNumberLabel in
