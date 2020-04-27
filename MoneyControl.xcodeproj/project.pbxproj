@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		874C9214D46A2969E42A48B2 /* Pods_MoneyControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97D8B7FB287C9B7A662C78 /* Pods_MoneyControl.framework */; };
+		D902D3192456C3E4007D7B30 /* Int+MoneyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D902D3182456C3E4007D7B30 /* Int+MoneyControl.swift */; };
 		D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90EDB88214FD93900012383 /* AppDelegate.swift */; };
 		D90EDB93214FD93A00012383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB91214FD93A00012383 /* LaunchScreen.storyboard */; };
 		D90EDB9B214FE53900012383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90EDB9A214FE53900012383 /* Assets.xcassets */; };
@@ -145,6 +146,7 @@
 /* Begin PBXFileReference section */
 		6CFAAB9EC7B78DE15D776C6B /* Pods-MoneyControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyControl/Pods-MoneyControl.release.xcconfig"; sourceTree = "<group>"; };
 		BE97D8B7FB287C9B7A662C78 /* Pods_MoneyControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D902D3182456C3E4007D7B30 /* Int+MoneyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+MoneyControl.swift"; sourceTree = "<group>"; };
 		D90EDB85214FD93900012383 /* Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Money.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90EDB88214FD93900012383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90EDB94214FD93A00012383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				D92E85B4244321ED003EB2CB /* UIApplication+SafeAreas.swift */,
 				D92E85B624439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift */,
 				D93625222445CBDF00CEB6D9 /* UIFont+MoneyControl.swift */,
+				D902D3182456C3E4007D7B30 /* Int+MoneyControl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1424,6 +1427,7 @@
 				D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */,
 				D96CE21421ADC8D10085664A /* TransactionDB.swift in Sources */,
 				D973FA232444D71C007226DA /* ActivityTitleView.swift in Sources */,
+				D902D3192456C3E4007D7B30 /* Int+MoneyControl.swift in Sources */,
 				D99045092444EB8B0057AA4F /* WalletsListViewModel.swift in Sources */,
 				D98E336521B58E06004C66C3 /* Settings.swift in Sources */,
 				D936253A24477B4600CEB6D9 /* DateSetView.swift in Sources */,

@@ -17,7 +17,7 @@ protocol AppSettings {
     //settings
     var currency: Currency? { get set }
     var languageCode: String? { get set }
-    var wallet: String? { get set }
+    var wallet: Int? { get set }
 }
 
 class Settings {
@@ -94,7 +94,7 @@ extension Settings: AppSettings {
         }
     }
     
-    var wallet: String? {
+    var wallet: Int? {
         get {
             return Settings.value(for: Keys.kWalletKey)
         }

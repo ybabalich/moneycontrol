@@ -18,10 +18,11 @@ class WalletsService {
     
     func saveFirstTimeWallets() {
         let cashEntity = EntityDB()
+        cashEntity.id = Int.generateID()
         cashEntity.title = EntityBaseNamePrefix
         cashEntity.currency = Currency.uah.rawValue
         
-        settings.wallet = cashEntity.title
+        settings.wallet = cashEntity.id
         
         try! db.write {
             db.add(cashEntity)
@@ -32,8 +33,8 @@ class WalletsService {
         completion( db.objects(EntityDB.self).compactMap { Entity(db: $0) } )
     }
     
-    func fetchWallet(name: String) -> Entity? {
-        guard let entityDB = db.objects(EntityDB.self).filter("title == %@", name.lowercased()).first else {
+    func fetchWallet(id: Int) -> Entity? {
+        guard let entityDB = db.objects(EntityDB.self).filter("id == %d", id).first else {
             return nil
         }
         
@@ -41,13 +42,14 @@ class WalletsService {
     }
     
     func fetchCurrentWallet() -> Entity? {
-        guard let walletName = settings.wallet else { return nil }
+        guard let walletId = settings.wallet else { return nil }
         
-        return fetchWallet(name: walletName)
+        return fetchWallet(id: walletId)
     }
     
     func createWallet(name: String, currency: Currency) {
         let cashEntity = EntityDB()
+        cashEntity.id = Int.generateID()
         cashEntity.title = name.lowercased()
         cashEntity.currency = currency.rawValue
         
@@ -59,16 +61,16 @@ class WalletsService {
     func deleteWallet(_ entity: Entity) {
         TransactionService.instance.remove(for: entity)
 
-        let objects = db.objects(EntityDB.self).filter("title == %@", entity.title.lowercased())
+        let objects = db.objects(EntityDB.self).filter("id == %d", entity.id)
         try! db.write {
             print("ENTITY REMOVED \(entity.title)")
             db.delete(objects)
         }
     }
     
-    func editWallet(oldName: String, newName: String) {
+    func editWallet(id: Int, newName: String) {
         
-        if let object = db.objects(EntityDB.self).filter("title == %@", oldName.lowercased()).first {
+        if let object = db.objects(EntityDB.self).filter("id == %d", id).first {
             
             try! db.write {
                 object.title = newName.lowercased()

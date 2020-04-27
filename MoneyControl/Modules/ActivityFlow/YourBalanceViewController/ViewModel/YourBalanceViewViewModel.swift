@@ -50,6 +50,10 @@ class YourBalanceViewViewModel {
         transaction.category = category
         transaction.time = Date()
         
+        if let entity = WalletsService.instance.fetchCurrentWallet() {
+            transaction.entity = entity
+        }
+        
         TransactionService.instance.save(transaction)
     }
     

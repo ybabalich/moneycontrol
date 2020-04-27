@@ -11,7 +11,7 @@ import Foundation
 extension Entity {
     
     var isActive: Bool {
-        return settings.wallet?.lowercased() == title.lowercased()
+        return settings.wallet == id
     }
     
     var balance: Double {
@@ -19,6 +19,6 @@ extension Entity {
     }
     
     func changeName(_ newName: String) {
-        WalletsService.instance.editWallet(oldName: title, newName: newName)
+        WalletsService.instance.editWallet(id: id, newName: newName)
     }
 }

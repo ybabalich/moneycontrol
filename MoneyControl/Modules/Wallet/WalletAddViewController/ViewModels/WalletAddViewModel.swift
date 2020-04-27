@@ -92,7 +92,7 @@ class WalletAddViewModel {
             if let balance = newBalance?.trimmed.nullable, balance.double > 0 {
                 let transaction = Transaction()
                 transaction.value = balance.double
-                transaction.entity = Entity(title: name, currency: .uah)
+                transaction.entity = Entity(id: Int.generateID(), title: name, currency: .uah)
                 transaction.category = Category(viewModel: CategoriesFabric.startBalanceCategory())
                 
                 TransactionService.instance.save(transaction)

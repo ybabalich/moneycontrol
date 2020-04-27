@@ -185,7 +185,7 @@ extension ActivityViewController: WalletsListViewControllerDelegate {
     func didChoose(sortEntity: SortEntity) {
         switch sortEntity {
         case .wallet(entity: let entity):
-            settings.wallet = entity.title
+            settings.wallet = entity.id
             updateNavigation()
         default: break
         }

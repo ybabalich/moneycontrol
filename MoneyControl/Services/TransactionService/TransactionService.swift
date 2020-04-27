@@ -23,7 +23,7 @@ class TransactionService {
         var currentBalance: Double = 0.0
         
         if let entity = entity {
-            db.objects(TransactionDB.self).filter("entity.title == %@", entity.title).forEach { (transactionDb) in
+            db.objects(TransactionDB.self).filter("entity.id == %d", entity.id).forEach { (transactionDb) in
                 let value = transactionDb.value
                 currentBalance += (transactionDb.type == Transaction.TransactionType.incoming.rawValue) ? value : -(value)
             }
@@ -85,16 +85,17 @@ class TransactionService {
     
     func save(_ transaction: Transaction) {
         let dbTransaction = TransactionDB()
-        dbTransaction.id = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
+        dbTransaction.id = Int.generateID()
         dbTransaction.value = transaction.value
         
         var entityDB: EntityDB?
         
         let entityTitle = transaction.entity.title.lowercased()
-        if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "title == %@", entityTitle)).first {
+        if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "id == %d", transaction.entity.id)).first {
             entityDB = entity
         } else {
             let dbEntity = EntityDB()
+            dbEntity.id = Int.generateID()
             dbEntity.currency = transaction.entity.currency.rawValue
             dbEntity.title = entityTitle
             entityDB = dbEntity
@@ -123,10 +124,11 @@ class TransactionService {
                 var entityDB: EntityDB?
                 
                 let entityTitle = transaction.entity.title.lowercased()
-                if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "title == %@", entityTitle)).first {
+                if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "id == %d", transaction.entity.id)).first {
                     entityDB = entity
                 } else {
                     let dbEntity = EntityDB()
+                    dbEntity.id = Int.generateID()
                     dbEntity.currency = transaction.entity.currency.rawValue
                     dbEntity.title = entityTitle
                     entityDB = dbEntity
@@ -143,7 +145,7 @@ class TransactionService {
     // removing
     
     func remove(for entity: Entity) {
-        let objects = db.objects(TransactionDB.self).filter("entity.title == %@", entity.title.lowercased())
+        let objects = db.objects(TransactionDB.self).filter("entity.id == %d", entity.id)
         try! db.write {
             print("TRANSACTIONS REMOVED \(objects.count) FOR ENTITY \(entity.title)")
             db.delete(objects)
@@ -245,8 +247,8 @@ class TransactionService {
             predicates.append(NSPredicate(format: "type == %d", type!.rawValue))
         }
         
-        if entity != nil {
-            predicates.append(NSPredicate(format: "entity.title == %@", entity!.title.lowercased()))
+        if let entity = entity {
+            predicates.append(NSPredicate(format: "entity.id == %d", entity.id))
         }
         
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
