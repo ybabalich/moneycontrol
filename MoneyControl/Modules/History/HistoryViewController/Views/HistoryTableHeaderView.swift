@@ -100,6 +100,4 @@ class HistoryTableHeaderView: UITableViewHeaderFooterView {
         }
         
     }
-    
-    
 }

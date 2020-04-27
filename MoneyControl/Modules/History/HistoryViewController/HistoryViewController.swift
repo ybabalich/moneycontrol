@@ -250,6 +250,11 @@ extension HistoryViewController: HistoryViewModelDelegate {
                 tableView.reloadRows(at: updates, with: .fade)
             }
             
+            Set((insertions + removals + updates).compactMap { $0.section }).forEach { section in
+                guard let header = tableView.headerView(forSection: section) as? HistoryTableHeaderView else { return }
+                
+                header.apply(section: viewModel.sections[section])
+            }
         }
         
         if #available(iOS 11.0, *) {

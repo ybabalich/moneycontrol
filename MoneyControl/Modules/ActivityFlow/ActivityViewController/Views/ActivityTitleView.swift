@@ -35,8 +35,8 @@ class ActivityTitleView: UIView {
         firstLabel.text = sortEntity.stringValue.uppercased()
         
         switch sortEntity {
-        case .total: break
-//            secondLabel.text = balance.currencyFormattedWithSymbol
+        case .total:
+            secondLabel.text = TransactionService.instance.fetchBalance(for: nil).currencyFormattedWithSymbol
             
         case .wallet(entity: let entity):
             secondLabel.text = entity.balance.currencyFormattedWithSymbol
