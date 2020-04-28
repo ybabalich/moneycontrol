@@ -66,6 +66,14 @@ extension UIColor {
         }
     }
 
+    static var controlTintEdit: UIColor {
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xE67E22)
+        }
+    }
+
     static var tableSeparator: UIColor {
         if #available(iOS 11.0, *) {
             return .assetColor(named: #function)
@@ -81,7 +89,31 @@ extension UIColor {
             return UIColor(hex: 0x2A5093)
         }
     }
-
+    
+    static var walletPlaceholderBackground: UIColor {
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xbadc58)
+        }
+    }
+    
+    static var income: UIColor {
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0x27AE60)
+        }
+    }
+    
+    static var outcome: UIColor {
+        if #available(iOS 11.0, *) {
+            return .assetColor(named: #function)
+        } else {
+            return UIColor(hex: 0xE74C3C)
+        }
+    }
+    
 }
 
 private extension UIColor {

@@ -16,6 +16,17 @@
 "Remove" = "Remove";
 "All" = "All";
 "Choose" = "Choose";
+"Close" = "Close";
+"Add" = "Add";
+"Save" = "Save";
+
+"general.total" = "Total";
+"general.edit" = "Edit";
+"general.delete" = "Delete";
+"general.confirmDelete" = "Confirm Deletion";
+"general.name" = "Name";
+"general.save" = "Save";
+"general.balance" = "Balance";
 
 //setting
 "Settings" = "Settings";
@@ -42,10 +53,12 @@
 "Add new activity" = "Add new activity";
 "Haven't activities today" = "Haven't activities today";
 
-// edit expense screen
-"Amount" = "Amount";
-"Category" = "Category";
-"Date" = "Date";
+// edit transaction screen
+
+"transaction.edit.title" = "Edit transaction";
+"transaction.edit.amount" = "Amount";
+"transaction.edit.category" = "Category";
+"transaction.edit.date" = "Date";
 
 // transactions list screen
 "Transactions list" = "Transactions list";
@@ -80,3 +93,15 @@
 "Start Balance" = "Start Balance";
 "Transfer" = "Transfer";
 "Deposit" = "Deposit";
+
+
+// Multi-wallets
+
+"wallets.defaultName.title" = "Cash";
+"wallets.list.title" = "Select Wallet";
+"wallets.list.title" = "Select Wallet";
+"wallets.add.title" = "Add Wallet";
+"wallets.edit.title" = "Edit Wallet";
+"wallets.title" = "Wallets";
+"wallets.add.startingBalance.title" = "Starting Balance";
+"wallets.add.nameField.placeholder" = "Name of Wallet";

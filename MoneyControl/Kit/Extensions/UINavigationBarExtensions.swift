@@ -23,5 +23,13 @@ extension UINavigationBar {
         setBackgroundImage(UIImage(), for: .default)
         shadowImage = UIImage()
     }
+    
+    func applyTitleStyle() {
+        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.primaryText,
+                                                         .font: App.Font.main(size: 16, type: .bold).rawValue]
+        
+        titleTextAttributes = attributes
+    }
+    
 }
 

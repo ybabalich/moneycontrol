@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import DeepDiff
 
 class TransactionViewModel {
     
     // MARK: - Variables
     var id: Int
     var value: Double
+    var entity: Entity
     var type: Transaction.TransactionType
     var category: CategoryViewModel
     var innerTransactions: [TransactionViewModel]
@@ -24,10 +26,24 @@ class TransactionViewModel {
         id = transaction.id
         value = transaction.value
         type = transaction.type
+        entity = transaction.entity
         category = CategoryViewModel(category: transaction.category)
         innerTransactions = transaction.innerTransactions?.map({ TransactionViewModel(transaction: $0) }) ?? []
         formattedTime = DateService.instance.convertDateToString(transaction.time, format: DateService.dayMonthYearWithSpacesFormat)
         createdTime = transaction.time
     }
+}
+
+extension TransactionViewModel: Equatable, DiffAware {
+    static func == (lhs: TransactionViewModel, rhs: TransactionViewModel) -> Bool {
+        return lhs.id == rhs.id
+    }
     
+    var diffId: Int {
+        return id
+    }
+    
+    static func compareContent(_ a: TransactionViewModel, _ b: TransactionViewModel) -> Bool {
+        return a == b
+    }
 }

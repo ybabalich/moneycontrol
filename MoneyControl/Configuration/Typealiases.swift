@@ -143,6 +143,23 @@ extension Currency: Rawable {
     
 }
 
+enum SortEntity: StringRepresentable, Equatable {
+
+    case total
+    case wallet(entity: Entity)
+    
+    var stringValue: String {
+        switch self {
+        case .total: return "total"
+        case .wallet(entity: let entity): return entity.title.lowercased()
+        }
+    }
+    
+    static func == (lhs: SortEntity, rhs: SortEntity) -> Bool {
+        return lhs.stringValue == rhs.stringValue
+    }
+}
+
 enum Sort: StringRepresentable, Equatable {
     
     case day
@@ -171,6 +188,17 @@ enum Sort: StringRepresentable, Equatable {
         case .custom(from: _, to: _): return "Custom".localized
         }
     }
+    
+    var startEndDate: Calendar.StartEndDate {
+        switch self {
+        case .day: return Calendar.current.currentDay()
+        case .week: return Calendar.current.currentWeek()
+        case .month: return Calendar.current.currentMonth()
+        case .year: return Calendar.current.currentYear()
+        case .custom(from: let fromDate, to: let toDate): return (fromDate, toDate)
+        }
+    }
+    
 }
 
 
@@ -184,4 +212,12 @@ protocol Rawable {
 
 protocol StringRepresentable {
     var stringValue: String { get }
+}
+
+func isLessThenIOS11() -> Bool {
+    if #available(iOS 11, *) {
+        return true
+    } else {
+        return false
+    }
 }

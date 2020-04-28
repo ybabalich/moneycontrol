@@ -16,12 +16,24 @@ extension UITableView {
         register(cellType.self, forCellReuseIdentifier: cellType.reuseIdentifier)
     }
     
+    func registerHF<C: UITableViewHeaderFooterView>(_ viewType: C.Type) {
+        register(viewType.self, forHeaderFooterViewReuseIdentifier: viewType.reuseIdentifier)
+    }
+    
     func dequeueReusableCell<C: UITableViewCell>(for inexPath: IndexPath) -> C {
         guard let cell = dequeueReusableCell(withIdentifier: C.reuseIdentifier, for: inexPath) as? C else {
             fatalError("Could not dequeue cwhere C: ReusableViewell: \(C.reuseIdentifier)")
         }
         
         return cell
+    }
+    
+    func dequeueReusableHeaderFooter<C: UITableViewHeaderFooterView>() -> C {
+        guard let view = dequeueReusableHeaderFooterView(withIdentifier: C.reuseIdentifier) as? C else {
+            fatalError("Could not dequeue cwhere C: ReusableViewell: \(C.reuseIdentifier)")
+        }
+
+        return view
     }
     
     func registerNib<N>(type: N.Type) {
@@ -48,11 +60,6 @@ extension UITableView {
         
         let sourceNib = UINib(nibName: className, bundle: Bundle.main)
         register(sourceNib, forHeaderFooterViewReuseIdentifier: String(describing: type))
-    }
-    
-    func dequeueReusableHeaderFooter<C>(type: C.Type) -> C {
-        let className = String(describing: type)
-        return dequeueReusableHeaderFooterView(withIdentifier: className) as! C
     }
     
 }

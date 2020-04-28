@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import Firebase
 
+var db = try! Realm()
 var appLauncher: AppLaunch = AppLaunch()
 var settings = Settings()
 
@@ -26,36 +27,51 @@ class AppDelegate: UIResponder {
         settings.launchCount += 1
         
         //controller for showing
+        
         setupStoryboardForStart()
         
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: 3,
+            schemaVersion: 4,
             
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above
             migrationBlock: { migration, oldSchemaVersion in
                 // We haven’t migrated anything yet, so oldSchemaVersion == 0
                 switch oldSchemaVersion {
-                case 1:
+                case 4:
                     migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
-                        newObject!["id"] = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
+                        newObject!["entity"] = nil
                     })
-                    break
-                case 2, 3:
-                    migration.enumerateObjects(ofType: TransactionDB.className(), { (oldObject, newObject) in
-                        newObject!["categoryId"] = 0
-                    })
-                default:
-                    migration.enumerateObjects(ofType: CategoryDB.className(), { (oldObject, newObject) in
-                        newObject!["type"] = 0
-                    })
+                default: print("Exception")
                 }
             }
         )
         
         Realm.Configuration.defaultConfiguration = config
+        
+        // TODO: need to remove and apply better logic for old users
+        if !settings.baseCategoriesAdded { // first time launch
+            CategoryService.instance.saveBaseCategories()
+            
+            settings.baseCategoriesAdded = true
+        }
+        
+        if settings.firstTimeEnterWithWallets {
+            WalletsService.instance.saveFirstTimeWallets()
+            
+            if let currentEntity = WalletsService.instance.fetchCurrentWallet() {
+                let transactions = TransactionService.instance.fetchAllTransactions()
+                
+                transactions.forEach { transaction in
+                    transaction.entity = currentEntity
+                    TransactionService.instance.update(transaction)
+                }
+            }
+            
+            settings.firstTimeEnterWithWallets = false
+        }
         
         FirebaseApp.configure()
         
@@ -69,10 +85,7 @@ class AppDelegate: UIResponder {
         let navigationController = UINavigationController(rootViewController: controller)
         
         navigationController.navigationBar.applyMainBackground()
-        
-        navigationController.navigationBar.titleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.primaryText,
-             NSAttributedString.Key.font: App.Font.main(size: 16, type: .bold).rawValue,]
+        navigationController.navigationBar.applyTitleStyle()
         
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.classForCoder() as! UIAppearanceContainer.Type])
             .setTitleTextAttributes([NSAttributedString.Key.font: App.Font.main(size: 17, type: .light).rawValue,

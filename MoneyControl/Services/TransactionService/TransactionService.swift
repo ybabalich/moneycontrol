@@ -8,32 +8,49 @@
 
 import Foundation
 
-class TransactionService: RealmBasedService {
+class TransactionService {
     
     // MARK: - Singleton
     static let instance = TransactionService()
     
     // MARK: - Public methods
-    func fetchBalanceFromAllTransactions(completion: (Double) -> ()) {
+    
+    /// Fetch balance for entitites
+    /// - Parameters:
+    ///   - entity: Entity for which need fetch balance, nil means that need to fetch for all entities
+    /// - Returns: Total balance
+    func fetchBalance(for entity: Entity?) -> Double {
         var currentBalance: Double = 0.0
         
-        db.objects(TransactionDB.self).forEach { (transactionDb) in
-            let value = transactionDb.value
-            currentBalance += (transactionDb.type == Transaction.TransactionType.incoming.rawValue) ? value : -(value)
+        if let entity = entity {
+            db.objects(TransactionDB.self).filter("entity.id == %d", entity.id).forEach { (transactionDb) in
+                let value = transactionDb.value
+                currentBalance += (transactionDb.type == Transaction.TransactionType.incoming.rawValue) ? value : -(value)
+            }
+        } else {
+            db.objects(TransactionDB.self).forEach { (transactionDb) in
+                let value = transactionDb.value
+                currentBalance += (transactionDb.type == Transaction.TransactionType.incoming.rawValue) ? value : -(value)
+            }
         }
-        
-        completion(currentBalance)
+
+        return currentBalance
+    }
+    
+    func fetchAllTransactions() -> [Transaction] {
+        db.objects(TransactionDB.self).compactMap { Transaction(db: $0) } 
     }
     
     // today
-    func fetchTodayTransactions(type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
+    
+    func fetchTodayTransactions(for entity: Entity?, type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
         let calendar = Calendar.current
         let (dateFrom, dateTo) = calendar.currentDay()
-        fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
+        fetchTransactions(entity: entity, from: dateFrom, to: dateTo, type: type, completion: completion)
     }
     
-    func fetchTodayTransactionsSum(type: Transaction.TransactionType, completion: (Double) -> ()) {
-        fetchTodayTransactions(type: type) { (transactions) in
+    func fetchTodayTransactionsSum(for entity: Entity?, type: Transaction.TransactionType, completion: (Double) -> ()) {
+        fetchTodayTransactions(for: entity, type: type) { (transactions) in
             completion(transactions.map({ $0.value }).reduce(0, +))
         }
     }
@@ -56,17 +73,35 @@ class TransactionService: RealmBasedService {
         fetchTransactions(from: dateFrom, to: dateTo, type: type, completion: completion)
     }
     
-    func fetchTransaction(dates: Calendar.StartEndDate, type: Transaction.TransactionType?, completion: ([Transaction]) -> ()) {
-        fetchTransactions(from: dates.start, to: dates.end, type: type, completion: completion)
+    func fetchTransaction(entity: Entity? = nil,
+                          dates: Calendar.StartEndDate,
+                          type: Transaction.TransactionType?,
+                          completion: ([Transaction]) -> ()) {
+        
+        fetchTransactions(entity: entity, from: dates.start, to: dates.end, type: type, completion: completion)
     }
     
     // MARK: - Saving/Updating
     
     func save(_ transaction: Transaction) {
         let dbTransaction = TransactionDB()
-        dbTransaction.id = Int(Int(Date().timeIntervalSince1970) + Int.random(in: 0...1000000))
+        dbTransaction.id = Int.generateID()
         dbTransaction.value = transaction.value
-        dbTransaction.currency = transaction.currency.rawValue
+        
+        var entityDB: EntityDB?
+        
+        let entityTitle = transaction.entity.title.lowercased()
+        if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "id == %d", transaction.entity.id)).first {
+            entityDB = entity
+        } else {
+            let dbEntity = EntityDB()
+            dbEntity.id = Int.generateID()
+            dbEntity.currency = transaction.entity.currency.rawValue
+            dbEntity.title = entityTitle
+            entityDB = dbEntity
+        }
+        
+        dbTransaction.entity = entityDB
         dbTransaction.type = transaction.type.rawValue
         dbTransaction.time = transaction.time
         
@@ -85,6 +120,21 @@ class TransactionService: RealmBasedService {
         
         if let transactionDb = objects.first {
             try! db.write {
+                
+                var entityDB: EntityDB?
+                
+                let entityTitle = transaction.entity.title.lowercased()
+                if let entity = db.objects(EntityDB.self).filter(NSPredicate(format: "id == %d", transaction.entity.id)).first {
+                    entityDB = entity
+                } else {
+                    let dbEntity = EntityDB()
+                    dbEntity.id = Int.generateID()
+                    dbEntity.currency = transaction.entity.currency.rawValue
+                    dbEntity.title = entityTitle
+                    entityDB = dbEntity
+                }
+                
+                transactionDb.entity = entityDB
                 transactionDb.categoryId = transaction.category.id
                 transactionDb.value = transaction.value
                 transactionDb.time = transaction.time
@@ -93,6 +143,15 @@ class TransactionService: RealmBasedService {
     }
     
     // removing
+    
+    func remove(for entity: Entity) {
+        let objects = db.objects(TransactionDB.self).filter("entity.id == %d", entity.id)
+        try! db.write {
+            print("TRANSACTIONS REMOVED \(objects.count) FOR ENTITY \(entity.title)")
+            db.delete(objects)
+        }
+    }
+    
     func remove(id: Int) {
         let removePredicate = NSPredicate(format: "id == %d", argumentArray: [id])
         
@@ -114,6 +173,7 @@ class TransactionService: RealmBasedService {
     }
     
     //sorting
+    
     func sortedByGroups(transactions: [Transaction], completion: ([TransactionViewModel]) -> Void) {
         let handler: ([Transaction]) -> [TransactionViewModel] = { (transactionsDb) in
             var transactions: [TransactionViewModel] = []
@@ -172,22 +232,23 @@ class TransactionService: RealmBasedService {
     }
     
     // MARK: - Private methods
-    private func fetchTransactions(from date1: Date,
+    private func fetchTransactions(entity: Entity? = nil,
+                                   from date1: Date,
                                    to date2: Date,
                                    type: Transaction.TransactionType?,
                                    completion: ([Transaction]) -> ())
     {
         let predicateFromDate = NSPredicate(format: "time >= %@", argumentArray: [date1])
         let predicateToDate = NSPredicate(format: "time <= %@", argumentArray: [date2])
-        var predicateTransactionType: NSPredicate?
-        if type != nil {
-            predicateTransactionType = NSPredicate(format: "type == %d", type!.rawValue)
-        }
         
         var predicates: [NSPredicate] = [predicateFromDate, predicateToDate]
-
-        if predicateTransactionType != nil {
-            predicates.append(predicateTransactionType!)
+        
+        if type != nil {
+            predicates.append(NSPredicate(format: "type == %d", type!.rawValue))
+        }
+        
+        if let entity = entity {
+            predicates.append(NSPredicate(format: "entity.id == %d", entity.id))
         }
         
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
@@ -195,10 +256,9 @@ class TransactionService: RealmBasedService {
         completion( db.objects(TransactionDB.self).filter(predicate).map({ (transactionDb) -> Transaction in
             let transaction = Transaction(db: transactionDb)
             let categoryPredicate = NSPredicate(format: "id == %d", argumentArray: [transactionDb.categoryId])
-            let categoryDb = self.db.objects(CategoryDB.self).filter(categoryPredicate)[0]
+            let categoryDb = db.objects(CategoryDB.self).filter(categoryPredicate)[0]
             transaction.category = Category(db: categoryDb)
             return transaction
         }).sorted { $0.time > $1.time } )
     }
-    
 }

@@ -8,21 +8,16 @@
 
 import Foundation
 
-class CategoryService: RealmBasedService {
+class CategoryService {
     
     // MARK: - Singleton
     static let instance = CategoryService()
     
     // MARK: - Public methods
-    func fetchSavedCategories(type: Transaction.TransactionType, completion: ([CategoryViewModel]) -> ()) {
-        
-        if !settings.baseCategoriesAdded { //first time app launched
-            saveBaseCategories()
-            settings.baseCategoriesAdded = true
-        }
-        
-        let filter = NSPredicate(format: "type == %d && isVisibleForUser == true", argumentArray: [type.rawValue])
-        completion(db.objects(CategoryDB.self).filter(filter).map({ CategoryViewModel(db: $0) }))
+    
+    func fetchSavedCategories(type: Transaction.TransactionType) -> [CategoryViewModel] {
+        let filter = NSPredicate(format: "type == %d && isVisibleForUser == true", type.rawValue)
+        return db.objects(CategoryDB.self).filter(filter).map { CategoryViewModel(db: $0) }
     }
     
     func remove(id: Int) {
@@ -32,8 +27,7 @@ class CategoryService: RealmBasedService {
         }
     }
     
-    // MARK: - Private methods
-    private func saveBaseCategories() {
+    func saveBaseCategories() {
         var categories = CategoriesFabric.incomeCategories()
         categories.append(CategoriesFabric.startBalanceCategory())
         
@@ -57,9 +51,10 @@ class CategoryService: RealmBasedService {
             return categoryDb
         }
         
+        let allCategories: [CategoryDB] = incomingCategoriesDB + outcomingCategoriesDB
+        
         try! db.write {
-            db.add(incomingCategoriesDB)
-            db.add(outcomingCategoriesDB)
+            db.add(allCategories)
         }
     }
     

@@ -23,3 +23,6 @@ extension UITableViewCell: ReusableView {
 
 extension UICollectionViewCell: ReusableView {
 }
+
+extension UITableViewHeaderFooterView: ReusableView {
+}

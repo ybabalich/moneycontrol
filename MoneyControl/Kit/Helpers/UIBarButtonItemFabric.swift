@@ -75,7 +75,7 @@ class UIBarButtonItemFabric {
         
         if #available(iOS 13, *) {
             image = UIImage(systemName: "chart.pie.fill")
-            size = CGSize(width: 27, height: 27)
+            size = CGSize(width: 30, height: 30)
         }
         
         return imagedBarButtonItem(image: image, size: size, onTap: onTap)
@@ -109,4 +109,113 @@ class UIBarButtonItemFabric {
         return imagedBarButtonItem(image: image, size: size, onTap: onTap)
     }
     
+    class func entity(sortEntity: SortEntity, onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+        
+        let walletButton = TappableButton(type: .system).then { v in
+            
+            v.setBackgroundImage(sortEntity.stringValue.initials().coverImage, for: .normal)
+            v.tintColor = .controlTintActive
+
+            v.onTap(completion: onTap)
+  
+            v.snp.makeConstraints {
+                $0.width.height.equalTo(30)
+            }
+        }
+        
+        let downImage = TappableButton(type: .system).then { v in
+
+            let image = UIImage(named: "ic_down_arrow")
+
+            v.setBackgroundImage(image, for: .normal)
+            v.tintColor = .controlTintActive
+            
+            v.snp.makeConstraints {
+                $0.width.equalTo(10)
+                $0.height.equalTo(9)
+            }
+        }
+        
+        let stackView = UIStackView().then { stackView in
+            stackView.distribution = .equalSpacing
+            stackView.spacing = 6
+            stackView.axis = .horizontal
+            stackView.alignment = .center
+            
+            stackView.addArrangedSubview(walletButton)
+            stackView.addArrangedSubview(downImage)
+        }
+        
+        
+        if #available(iOS 11, *) {
+            walletButton.applyFullyRounded(15)
+        } else {
+            walletButton.layer.cornerRadius = 15
+            walletButton.layer.masksToBounds = true
+            stackView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            stackView.sizeToFit()
+        }
+
+        return UIBarButtonItem(customView: stackView)
+    }
+    
+    static func close(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+
+        let button = TappableButton(type: .system).then { v in
+
+            v.setTitle("Close".localized, for: .normal)
+            v.tintColor = .controlTintActive
+            v.titleLabel?.font = .systemFont(ofSize: 17)
+            v.sizeToFit()
+            
+            v.onTap(completion: onTap)
+        }
+
+        return UIBarButtonItem(customView: button)
+    }
+    
+    static func add(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+
+        let button = TappableButton(type: .system).then { button in
+
+            button.setTitle("Add".localized, for: .normal)
+            button.tintColor = .controlTintActive
+            button.titleLabel?.font = .systemFont(ofSize: 17)
+            button.sizeToFit()
+
+            button.onTap(completion: onTap)
+        }
+
+        return UIBarButtonItem(customView: button)
+    }
+    
+    static func edit(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+
+        let button = TappableButton(type: .system).then { button in
+
+            button.setTitle("general.edit".localized, for: .normal)
+            button.tintColor = .controlTintActive
+            button.titleLabel?.font = .systemFont(ofSize: 17)
+            button.sizeToFit()
+
+            button.onTap(completion: onTap)
+        }
+
+        return UIBarButtonItem(customView: button)
+    }
+    
+    static func save(onTap: @escaping EmptyClosure) -> UIBarButtonItem {
+
+        let button = TappableButton(type: .system).then { button in
+
+            button.setTitle("general.save".localized, for: .normal)
+            button.tintColor = .controlTintActive
+            button.titleLabel?.font = .systemFont(ofSize: 17)
+            button.sizeToFit()
+
+            button.onTap(completion: onTap)
+        }
+
+        return UIBarButtonItem(customView: button)
+    }
 }

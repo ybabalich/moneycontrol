@@ -18,4 +18,16 @@ extension Double {
         return formatter.string(for: self)?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) ?? ""
     }
     
+    var currencyFormattedWithSymbol: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        if let currency = settings.currency {
+            formatter.currencySymbol = currency.symbol
+        }
+        
+        formatter.locale = Locale.current
+        return formatter.string(for: self)?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) ?? ""
+    }
+    
 }
