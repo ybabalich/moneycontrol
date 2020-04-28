@@ -94,6 +94,9 @@ class HistoryViewModel {
                     
                     if oldTransactions.count == newTransactions.count { //means that need to just reload all items in section
                         let updated = Array(0...oldTransactions.count - 1).compactMap { IndexPath(row: $0, section: index) }
+                        
+                        self.sections[index].transactions = newTransactions
+                        
                         self.delegate?.didReceiveUpdates(insertions: [], removals: [], updates: updated)
                     } else if oldTransactions.count < newTransactions.count { // need to insert new values and update old ones
                         if !newTransactions.isEmpty {
