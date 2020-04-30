@@ -36,8 +36,6 @@ class HistoryViewController: BaseViewController {
         super.viewDidLoad()
 
         setup()
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -220,6 +218,34 @@ class HistoryViewController: BaseViewController {
         titleView.show(sortEntity: entity)
         balancePreviewView.apply(sort: viewModel.selectedSort)
     }
+    
+    private func showEditScreen(for indexPath: IndexPath) {
+        let transactionVM = viewModel.sections[indexPath.section].transactions[indexPath.row]
+        Router.instance.showEditTransactionScreen(transactionVM)
+    }
+    
+    private func removeTransaction(for indexPath: IndexPath, withConfirmFlow: Bool) {
+        let transactionVM = viewModel.sections[indexPath.section].transactions[indexPath.row]
+        
+        if !withConfirmFlow {
+            viewModel.removeTransaction(transactionVM)
+            updateUI()
+        } else {
+            
+            let yesAction = AlertAction(title: "Yes", style: .destructive)
+            let noAction = AlertAction(title: "No", style: .default)
+            
+            Alert.show(title: "Remove transaction",
+                       message: nil, actions: [yesAction, noAction],
+                       in: self) { [unowned self] alert in
+                        
+                        if alert == yesAction {
+                            self.removeTransaction(for: indexPath, withConfirmFlow: false)
+                        }
+            }
+            
+        }
+    }
 }
 
 extension HistoryViewController: WalletsListViewControllerDelegate {
@@ -332,6 +358,85 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        let editAction = UITableViewRowAction(style: .default,
+                                              title: "general.edit".localized) { [unowned self] action, indexPath in
+                                                
+                                                self.showEditScreen(for: indexPath)
+        }
+        
+        let deleteAction = UITableViewRowAction(style: .default,
+                                                title: "general.delete".localized) { [unowned self] action, indexPath in
+                                                    
+                                                self.removeTransaction(for: indexPath, withConfirmFlow: true)
+        }
+        
+        return [deleteAction, editAction]
+    }
+    
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive,
+                                              title: "general.delete".localized) { [unowned self] _, _, completion in
+                                                
+                                                self.removeTransaction(for: indexPath, withConfirmFlow: true)
+                                                completion(true)
+        }
+        deleteAction.backgroundColor = .controlTintDestructive
+        
+        if #available(iOS 13.0, *) {
+            deleteAction.image = UIImage(systemName: "trash.fill")
+        }
+
+        let editAction = UIContextualAction(style: .destructive, title: "general.edit".localized) { [unowned self] _, _, completion in
+            self.showEditScreen(for: indexPath)
+            completion(true)
+        }
+        editAction.backgroundColor = .controlTintEdit
+        
+        if #available(iOS 13.0, *) {
+            editAction.image = UIImage(systemName: "pencil")
+        }
+
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+    }
+    
+    @available(iOS 13.0, *)
+    func tableView(_ tableView: UITableView,
+                   contextMenuConfigurationForRowAt indexPath: IndexPath,
+                   point: CGPoint) -> UIContextMenuConfiguration? {
+
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [unowned self] _ in
+
+            let delete = UIAction(
+                title: "general.confirmDelete".localized,
+                image: UIImage(systemName: "trash.fill"),
+                attributes: .destructive) { [unowned self] _ in
+                    
+                    self.removeTransaction(for: indexPath, withConfirmFlow: false)
+            }
+            
+            let deleteMenu = UIMenu(
+                title: "general.delete".localized,
+                image: UIImage(systemName: "trash.fill"),
+                options: .destructive,
+                children: [delete]
+            )
+            
+            let edit = UIAction(
+                title: "general.edit".localized,
+                image: UIImage(systemName: "pencil")) { [unowned self] _ in
+                    
+                    self.showEditScreen(for: indexPath)
+            }
+
+            return UIMenu(title: "", children: [edit, deleteMenu])
+        }
     }
 }
 

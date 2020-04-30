@@ -10,6 +10,16 @@ import UIKit
 
 extension UIViewController {
     
+    static var topController: UIViewController? {
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            return topController
+        }
+        return nil
+    }
+    
     // MARK: - Class methods
     class func by(flow: AppLaunch.StoryboardFlow) -> UIViewController {
         let flowData = flow.rawValue
@@ -26,16 +36,6 @@ extension UIViewController {
         var className = NSStringFromClass(self)
         className = className.split{$0 == "."}.map(String.init)[1]
         return T(nibName: className, bundle: Bundle.main)
-    }
-    
-    class func topController() -> UIViewController? {
-        if var topController = UIApplication.shared.keyWindow?.rootViewController {
-            while let presentedViewController = topController.presentedViewController {
-                topController = presentedViewController
-            }
-            return topController
-        }
-        return nil
     }
     
     // MARK: - Public methods
