@@ -23,6 +23,8 @@
 "general.name" = "Имя";
 "general.save" = "Сохранить";
 "general.balance" = "Баланс";
+"general.yes" = "Да";
+"general.no" = "Нет";
 
 //setting
 "Settings" = "Настройки";

@@ -232,11 +232,11 @@ class HistoryViewController: BaseViewController {
             updateUI()
         } else {
             
-            let yesAction = AlertAction(title: "Yes", style: .destructive)
-            let noAction = AlertAction(title: "No", style: .default)
+            let yesAction = AlertAction(title: "general.yes".localized, style: .destructive)
+            let noAction = AlertAction(title: "general.no".localized, style: .default)
             
-            Alert.show(title: "Remove transaction",
-                       message: nil, actions: [yesAction, noAction],
+            Alert.show(title: "general.confirmDelete".localized,
+                       message: nil, actions: [noAction, yesAction],
                        in: self) { [unowned self] alert in
                         
                         if alert == yesAction {
@@ -367,6 +367,7 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
                                                 
                                                 self.showEditScreen(for: indexPath)
         }
+        editAction.backgroundColor = .controlTintEdit
         
         let deleteAction = UITableViewRowAction(style: .default,
                                                 title: "general.delete".localized) { [unowned self] action, indexPath in
