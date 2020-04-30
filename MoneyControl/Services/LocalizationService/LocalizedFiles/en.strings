@@ -27,6 +27,8 @@
 "general.name" = "Name";
 "general.save" = "Save";
 "general.balance" = "Balance";
+"general.yes" = "Yes";
+"general.no" = "No";
 
 //setting
 "Settings" = "Settings";

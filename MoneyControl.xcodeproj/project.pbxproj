@@ -17,6 +17,7 @@
 		D911ED0021A7FC5500C3A7B1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911ECFF21A7FC5500C3A7B1 /* Router.swift */; };
 		D911ED0421A8025800C3A7B1 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911ED0321A8025800C3A7B1 /* CheckButton.swift */; };
 		D911ED0621A804FF00C3A7B1 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911ED0521A804FF00C3A7B1 /* Typealiases.swift */; };
+		D91C41B1245B2D530042F2E8 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41B0245B2D530042F2E8 /* Alert.swift */; };
 		D920A09B21562F8100ECA806 /* BottomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A09921562F8100ECA806 /* BottomPopupViewController.swift */; };
 		D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D920A09A21562F8100ECA806 /* BottomPopupViewController.xib */; };
 		D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A02156306A00ECA806 /* UIViewExtensions.swift */; };
@@ -156,6 +157,7 @@
 		D911ECFF21A7FC5500C3A7B1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D911ED0321A8025800C3A7B1 /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		D911ED0521A804FF00C3A7B1 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		D91C41B0245B2D530042F2E8 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		D920A09921562F8100ECA806 /* BottomPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupViewController.swift; sourceTree = "<group>"; };
 		D920A09A21562F8100ECA806 /* BottomPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomPopupViewController.xib; sourceTree = "<group>"; };
 		D920A0A02156306A00ECA806 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 		D920A09721562F3400ECA806 /* Popup's */ = {
 			isa = PBXGroup;
 			children = (
+				D91C41B0245B2D530042F2E8 /* Alert.swift */,
 				D920A09821562F5A00ECA806 /* BottomPopupViewController */,
 			);
 			path = "Popup's";
@@ -1398,6 +1401,7 @@
 				D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */,
 				D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */,
 				D93625332446ED5F00CEB6D9 /* BalancePreviewView.swift in Sources */,
+				D91C41B1245B2D530042F2E8 /* Alert.swift in Sources */,
 				D95CF26521577826001BEF1F /* PinCircleView.swift in Sources */,
 				D911ED0621A804FF00C3A7B1 /* Typealiases.swift in Sources */,
 				D92EEDF921A9515A00A9C233 /* CategoryCollectionViewCell.swift in Sources */,
@@ -1670,7 +1674,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1678,7 +1682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1694,7 +1698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1702,7 +1706,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -86,12 +86,7 @@ class HistoryViewModel {
                 if let index = self.sections.index(of: section) {
                     let oldTransactions = self.sections[index].transactions
                     let newTransactions = section.transactions
-                    
-//                    let (inserted, deleted) = self.changes(oldTransactions: oldTransactions,
-//                                                           newTransactions: newTransactions,
-//                                                           in: index)
 
-                    
                     if oldTransactions.count == newTransactions.count { //means that need to just reload all items in section
                         let updated = Array(0...oldTransactions.count - 1).compactMap { IndexPath(row: $0, section: index) }
                         
@@ -189,10 +184,9 @@ class HistoryViewModel {
         delegate?.didChooseDate(title: title)
     }
     
-    func removeInnerTransactions(_ viewModel: TransactionViewModel) {
-        TransactionService.instance.removeTransactions(viewModel.innerTransactions.map({ $0.id }))
-//        transactions.value = transactions.value.filter({ $0.id != viewModel.id })
-//        calculateStatisticsValues()
+    func removeTransaction(_ viewModel: TransactionViewModel) {
+        TransactionService.instance.remove(id: viewModel.id)
+        loadTransactions()
     }
     
     func getCurrentSortEntity() -> SortEntity {

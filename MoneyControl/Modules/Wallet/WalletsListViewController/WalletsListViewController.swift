@@ -205,6 +205,7 @@ extension WalletsListViewController {
             let editAction = UITableViewRowAction(style: .default, title: "general.edit".localized) { [unowned self] action, indexPath in
                 self.showEditVC(for: indexPath)
             }
+            editAction.backgroundColor = .controlTintEdit
             
             let deleteAction = UITableViewRowAction(style: .default, title: "general.delete".localized) { [unowned self] action, indexPath in
                 self.viewModel.delete(entity: wallet)
