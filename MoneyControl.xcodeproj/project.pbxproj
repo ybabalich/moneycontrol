@@ -18,6 +18,10 @@
 		D911ED0421A8025800C3A7B1 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911ED0321A8025800C3A7B1 /* CheckButton.swift */; };
 		D911ED0621A804FF00C3A7B1 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911ED0521A804FF00C3A7B1 /* Typealiases.swift */; };
 		D91C41B1245B2D530042F2E8 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41B0245B2D530042F2E8 /* Alert.swift */; };
+		D91C41B4245B62840042F2E8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41B3245B62840042F2E8 /* AppCoordinator.swift */; };
+		D91C41B6245B62A40042F2E8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41B5245B62A40042F2E8 /* Coordinator.swift */; };
+		D91C41B8245B62F40042F2E8 /* BlurCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41B7245B62F40042F2E8 /* BlurCoordinator.swift */; };
+		D91C41BA245D69E30042F2E8 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41B9245D69E30042F2E8 /* MainFlowCoordinator.swift */; };
 		D920A09B21562F8100ECA806 /* BottomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A09921562F8100ECA806 /* BottomPopupViewController.swift */; };
 		D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D920A09A21562F8100ECA806 /* BottomPopupViewController.xib */; };
 		D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A02156306A00ECA806 /* UIViewExtensions.swift */; };
@@ -52,11 +56,7 @@
 		D95312FB23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312FA23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift */; };
 		D95312FD23DA32BC00E26D1E /* SettingsLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95312FC23DA32BC00E26D1E /* SettingsLanguageViewModel.swift */; };
 		D953130223DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953130023DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift */; };
-		D959B6D723D8F70F0050756E /* SettingsViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */; };
-		D959B6D923D8F8F10050756E /* SettingsViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */; };
 		D959B6DB23D8FBF90050756E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */; };
-		D959B6DD23D8FC340050756E /* SettingsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DC23D8FC340050756E /* SettingsHeaderViewModel.swift */; };
-		D959B6DF23D8FC420050756E /* SettingsSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6DE23D8FC420050756E /* SettingsSectionViewModel.swift */; };
 		D959B6E323D9038E0050756E /* SettingsViewTitledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959B6E123D9038E0050756E /* SettingsViewTitledCell.swift */; };
 		D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CF25C2156523D001BEF1F /* LockViewController.swift */; };
 		D95CF25F2156523D001BEF1F /* LockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D95CF25D2156523D001BEF1F /* LockViewController.xib */; };
@@ -158,6 +158,10 @@
 		D911ED0321A8025800C3A7B1 /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		D911ED0521A804FF00C3A7B1 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		D91C41B0245B2D530042F2E8 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		D91C41B3245B62840042F2E8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D91C41B5245B62A40042F2E8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D91C41B7245B62F40042F2E8 /* BlurCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurCoordinator.swift; sourceTree = "<group>"; };
+		D91C41B9245D69E30042F2E8 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		D920A09921562F8100ECA806 /* BottomPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupViewController.swift; sourceTree = "<group>"; };
 		D920A09A21562F8100ECA806 /* BottomPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomPopupViewController.xib; sourceTree = "<group>"; };
 		D920A0A02156306A00ECA806 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -192,11 +196,7 @@
 		D95312FA23DA31FC00E26D1E /* SettingsChooseLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChooseLanguageViewModel.swift; sourceTree = "<group>"; };
 		D95312FC23DA32BC00E26D1E /* SettingsLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLanguageViewModel.swift; sourceTree = "<group>"; };
 		D953130023DA3B7200E26D1E /* SettingsChooseLanguageTitledCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChooseLanguageTitledCell.swift; sourceTree = "<group>"; };
-		D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewHeaderCell.swift; sourceTree = "<group>"; };
-		D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewHeaderCell.xib; sourceTree = "<group>"; };
 		D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		D959B6DC23D8FC340050756E /* SettingsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderViewModel.swift; sourceTree = "<group>"; };
-		D959B6DE23D8FC420050756E /* SettingsSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionViewModel.swift; sourceTree = "<group>"; };
 		D959B6E123D9038E0050756E /* SettingsViewTitledCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewTitledCell.swift; sourceTree = "<group>"; };
 		D95CF25C2156523D001BEF1F /* LockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 		D95CF25D2156523D001BEF1F /* LockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockViewController.xib; sourceTree = "<group>"; };
@@ -351,6 +351,7 @@
 		D90EDB87214FD93900012383 /* MoneyControl */ = {
 			isa = PBXGroup;
 			children = (
+				D91C41B2245B62760042F2E8 /* Coordinators */,
 				D99F686321AB233B005EC865 /* Helpers */,
 				D99F685821AB1C24005EC865 /* Services */,
 				D9FC28EF21623F5100E57E1B /* Models */,
@@ -405,6 +406,17 @@
 				D911ED0321A8025800C3A7B1 /* CheckButton.swift */,
 			);
 			path = CheckButton;
+			sourceTree = "<group>";
+		};
+		D91C41B2245B62760042F2E8 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41B5245B62A40042F2E8 /* Coordinator.swift */,
+				D91C41B3245B62840042F2E8 /* AppCoordinator.swift */,
+				D91C41B7245B62F40042F2E8 /* BlurCoordinator.swift */,
+				D91C41B9245D69E30042F2E8 /* MainFlowCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		D920A09521562F1900ECA806 /* Kit */ = {
@@ -616,19 +628,9 @@
 		D959B6D423D8F6EB0050756E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D959B6D523D8F6F50050756E /* SettingsViewHeaderCell */,
 				D959B6E023D903730050756E /* SettingsViewTitledCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		D959B6D523D8F6F50050756E /* SettingsViewHeaderCell */ = {
-			isa = PBXGroup;
-			children = (
-				D959B6D623D8F70F0050756E /* SettingsViewHeaderCell.swift */,
-				D959B6D823D8F8F10050756E /* SettingsViewHeaderCell.xib */,
-			);
-			path = SettingsViewHeaderCell;
 			sourceTree = "<group>";
 		};
 		D959B6E023D903730050756E /* SettingsViewTitledCell */ = {
@@ -1103,8 +1105,6 @@
 			isa = PBXGroup;
 			children = (
 				D959B6DA23D8FBF90050756E /* SettingsViewModel.swift */,
-				D959B6DC23D8FC340050756E /* SettingsHeaderViewModel.swift */,
-				D959B6DE23D8FC420050756E /* SettingsSectionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1320,7 +1320,6 @@
 				D98E334621B46E56004C66C3 /* EditTransactionAmountView.xib in Resources */,
 				D98E334B21B470DB004C66C3 /* EditTransactionCategoryView.xib in Resources */,
 				D9AB5DE123D64F9A002167D8 /* ru.strings in Resources */,
-				D959B6D923D8F8F10050756E /* SettingsViewHeaderCell.xib in Resources */,
 				D9AB5DDA23D64D75002167D8 /* en.strings in Resources */,
 				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
 				D95D153C22667B4A00B83AD6 /* ActivityFlow.storyboard in Resources */,
@@ -1395,7 +1394,6 @@
 			files = (
 				D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */,
 				D9BDE1C3244C795B00B10A02 /* HistoryTableHeaderView.swift in Sources */,
-				D959B6D723D8F70F0050756E /* SettingsViewHeaderCell.swift in Sources */,
 				D94ADB2C21B186A700D94F0F /* EmptyView.swift in Sources */,
 				D9AB5DEE23D7813A002167D8 /* SettingsViewController.swift in Sources */,
 				D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */,
@@ -1421,7 +1419,6 @@
 				D973FA2B2444E85A007226DA /* WalletsTotalTableViewCell.swift in Sources */,
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
 				D9EC66CE242418B00030CADC /* BaseTableViewController.swift in Sources */,
-				D959B6DD23D8FC340050756E /* SettingsHeaderViewModel.swift in Sources */,
 				D95312F523DA1CAB00E26D1E /* DoubleExtensions.swift in Sources */,
 				D93625232445CBDF00CEB6D9 /* UIFont+MoneyControl.swift in Sources */,
 				D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */,
@@ -1430,6 +1427,7 @@
 				D92EEDF321A94F0E00A9C233 /* ActivityTopViewController.swift in Sources */,
 				D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */,
 				D96CE21421ADC8D10085664A /* TransactionDB.swift in Sources */,
+				D91C41B6245B62A40042F2E8 /* Coordinator.swift in Sources */,
 				D973FA232444D71C007226DA /* ActivityTitleView.swift in Sources */,
 				D902D3192456C3E4007D7B30 /* Int+MoneyControl.swift in Sources */,
 				D99045092444EB8B0057AA4F /* WalletsListViewModel.swift in Sources */,
@@ -1455,6 +1453,7 @@
 				D95D156E2267CBB500B83AD6 /* ChooseCurrencyViewViewModel.swift in Sources */,
 				D95D156A2267C6DD00B83AD6 /* ChooseCurrencyTableViewCell.swift in Sources */,
 				D95CF2682157796E001BEF1F /* App.swift in Sources */,
+				D91C41B4245B62840042F2E8 /* AppCoordinator.swift in Sources */,
 				D93251EE244F8EF400AFFD50 /* BalanceEditTableViewCell.swift in Sources */,
 				D96CE21721ADC9500085664A /* Category.swift in Sources */,
 				D9B6754B226B38D400CC204A /* ChooseCategoryViewModel.swift in Sources */,
@@ -1474,7 +1473,6 @@
 				D9466CF224142F1A0048095A /* UIColor+Assets.swift in Sources */,
 				D96483102162439400B2D880 /* CategoryViewModel.swift in Sources */,
 				D98E334E21B49D20004C66C3 /* EditTransactionDateView.swift in Sources */,
-				D959B6DF23D8FC420050756E /* SettingsSectionViewModel.swift in Sources */,
 				D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */,
 				D9933633243F208400AED4E6 /* BottomOverlayViewController.swift in Sources */,
 				D9BDE1C7244DC31C00B10A02 /* DateEditTableViewCell.swift in Sources */,
@@ -1495,10 +1493,12 @@
 				D9AB5DF423D783A0002167D8 /* BiggerAreaButton.swift in Sources */,
 				D99F686221AB1FEC005EC865 /* CategoryDB.swift in Sources */,
 				D98E333621B2BAD2004C66C3 /* RegularButton.swift in Sources */,
+				D91C41BA245D69E30042F2E8 /* MainFlowCoordinator.swift in Sources */,
 				D93625182445997E00CEB6D9 /* WalletsService.swift in Sources */,
 				D911ED0421A8025800C3A7B1 /* CheckButton.swift in Sources */,
 				D964831B216287BE00B2D880 /* Constants.swift in Sources */,
 				D973FA052444CC81007226DA /* Entity.swift in Sources */,
+				D91C41B8245B62F40042F2E8 /* BlurCoordinator.swift in Sources */,
 				D93625252445D15200CEB6D9 /* Entity+DB.swift in Sources */,
 				D9C8BCEE2269A81100289CDC /* YourBalanceViewViewModel.swift in Sources */,
 				D95D15712268F2FA00B83AD6 /* YourBalanceViewController.swift in Sources */,

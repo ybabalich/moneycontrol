@@ -62,7 +62,6 @@ class SettingsViewController: BaseTableViewController {
     
         tableView.separatorColor = .tableSeparator
         tableView.register(SettingsViewTitledCell.self)
-        tableView.registerHeaderFooterNib(type: SettingsViewHeaderCell.self)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -70,37 +69,29 @@ class SettingsViewController: BaseTableViewController {
 }
 
 extension SettingsViewController {
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view: SettingsViewHeaderCell = tableView.dequeueReusableHeaderFooter()
-        view.titleLabel.text = viewModel.header(at: section).title
-        return view
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.sections[section].title?.uppercased()
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.rowsCount(for: section)
+        return viewModel.sections[section].rows.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SettingsViewTitledCell = tableView.dequeueReusableCell(for: indexPath)
         
-        let cellViewModel = viewModel.viewModelForRow(at: indexPath.section, for: indexPath.row)
+        let row = viewModel.sections[indexPath.section].rows[indexPath.row]
         
-        cell.apply(title: cellViewModel.title)
+        cell.apply(title: row.title)
         
         return cell
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.headersCount()
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellViewModel = viewModel.viewModelForRow(at: indexPath.section, for: indexPath.row)
         
-        switch cellViewModel.type {
-        case .changeLanguage:
-            Router.instance.showSettingsChangeLanguageScreen()
-        default: return
-        }
     }
 }

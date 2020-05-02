@@ -35,6 +35,8 @@
 "Leave feedback" = "Оставить отзыв";
 "Write to Developers" = "Написать разработчикам";
 "Choose language" = "Выберите язык";
+"settings.tabs.header.title.privacyAndSecurity" = "Конфиденциальность и безопасность";
+"settings.tab.title.pinCode" = "PIN код";
 
 // history screen
 "History" = "История";
