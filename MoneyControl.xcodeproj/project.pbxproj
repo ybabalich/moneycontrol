@@ -22,6 +22,28 @@
 		D91C41B6245B62A40042F2E8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41B5245B62A40042F2E8 /* Coordinator.swift */; };
 		D91C41B8245B62F40042F2E8 /* BlurCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41B7245B62F40042F2E8 /* BlurCoordinator.swift */; };
 		D91C41BA245D69E30042F2E8 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41B9245D69E30042F2E8 /* MainFlowCoordinator.swift */; };
+		D91C41BD245DB53D0042F2E8 /* PasscodeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41BC245DB53D0042F2E8 /* PasscodeSettingsViewController.swift */; };
+		D91C41C0245DB5540042F2E8 /* PasscodeSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41BF245DB5540042F2E8 /* PasscodeSettingsViewModel.swift */; };
+		D91C41C7245EABDA0042F2E8 /* PasscodeLockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91C41C6245EABDA0042F2E8 /* PasscodeLockView.xib */; };
+		D91C41C9245EC3E50042F2E8 /* PasscodeLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41C8245EC3E50042F2E8 /* PasscodeLockViewController.swift */; };
+		D91C41CC245ECF9E0042F2E8 /* PasscodeLockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41CB245ECF9E0042F2E8 /* PasscodeLockType.swift */; };
+		D91C41CE245ECFB60042F2E8 /* PasscodeLockConfigurationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41CD245ECFB60042F2E8 /* PasscodeLockConfigurationType.swift */; };
+		D91C41D0245ECFCD0042F2E8 /* PasscodeRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41CF245ECFCD0042F2E8 /* PasscodeRepositoryType.swift */; };
+		D91C41D2245ECFF00042F2E8 /* PasscodeLockStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41D1245ECFF00042F2E8 /* PasscodeLockStateType.swift */; };
+		D91C41D4245ED08B0042F2E8 /* PasscodeSignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41D3245ED08B0042F2E8 /* PasscodeSignButton.swift */; };
+		D91C41D7245ED0CF0042F2E8 /* PasscodeLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41D6245ED0CF0042F2E8 /* PasscodeLock.swift */; };
+		D91C41D9245ED0E60042F2E8 /* PasscodeLockConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41D8245ED0E60042F2E8 /* PasscodeLockConfiguration.swift */; };
+		D91C41DB245ED1F10042F2E8 /* PasscodeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41DA245ED1F10042F2E8 /* PasscodeCoordinator.swift */; };
+		D91C41DE245ED3C90042F2E8 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41DD245ED3C90042F2E8 /* Money.swift */; };
+		D91C41E0245ED63C0042F2E8 /* PasscodeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41DF245ED63C0042F2E8 /* PasscodeSettings.swift */; };
+		D91C41E2245ED7320042F2E8 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41E1245ED7320042F2E8 /* KeychainManager.swift */; };
+		D91C41E5245ED8060042F2E8 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D91C41E4245ED8060042F2E8 /* KeychainAccess */; };
+		D91C41E8245ED8DC0042F2E8 /* EnterPasscodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41E7245ED8DC0042F2E8 /* EnterPasscodeState.swift */; };
+		D91C41EA245ED9160042F2E8 /* SetPasscodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41E9245ED9160042F2E8 /* SetPasscodeState.swift */; };
+		D91C41EC245ED94E0042F2E8 /* ConfirmPasscodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41EB245ED94E0042F2E8 /* ConfirmPasscodeState.swift */; };
+		D91C41EE245ED9D30042F2E8 /* PasscodeSignPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41ED245ED9D30042F2E8 /* PasscodeSignPlaceholderView.swift */; };
+		D91C41F1245EDAA80042F2E8 /* UpdatePasscodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41F0245EDAA80042F2E8 /* UpdatePasscodeRepository.swift */; };
+		D91C41F3245EE0EF0042F2E8 /* VerifyPasscodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C41F2245EE0EF0042F2E8 /* VerifyPasscodeRepository.swift */; };
 		D920A09B21562F8100ECA806 /* BottomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A09921562F8100ECA806 /* BottomPopupViewController.swift */; };
 		D920A09C21562F8100ECA806 /* BottomPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D920A09A21562F8100ECA806 /* BottomPopupViewController.xib */; };
 		D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D920A0A02156306A00ECA806 /* UIViewExtensions.swift */; };
@@ -162,6 +184,27 @@
 		D91C41B5245B62A40042F2E8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D91C41B7245B62F40042F2E8 /* BlurCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurCoordinator.swift; sourceTree = "<group>"; };
 		D91C41B9245D69E30042F2E8 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
+		D91C41BC245DB53D0042F2E8 /* PasscodeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeSettingsViewController.swift; sourceTree = "<group>"; };
+		D91C41BF245DB5540042F2E8 /* PasscodeSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeSettingsViewModel.swift; sourceTree = "<group>"; };
+		D91C41C6245EABDA0042F2E8 /* PasscodeLockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasscodeLockView.xib; sourceTree = "<group>"; };
+		D91C41C8245EC3E50042F2E8 /* PasscodeLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeLockViewController.swift; sourceTree = "<group>"; };
+		D91C41CB245ECF9E0042F2E8 /* PasscodeLockType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeLockType.swift; sourceTree = "<group>"; };
+		D91C41CD245ECFB60042F2E8 /* PasscodeLockConfigurationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeLockConfigurationType.swift; sourceTree = "<group>"; };
+		D91C41CF245ECFCD0042F2E8 /* PasscodeRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRepositoryType.swift; sourceTree = "<group>"; };
+		D91C41D1245ECFF00042F2E8 /* PasscodeLockStateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeLockStateType.swift; sourceTree = "<group>"; };
+		D91C41D3245ED08B0042F2E8 /* PasscodeSignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeSignButton.swift; sourceTree = "<group>"; };
+		D91C41D6245ED0CF0042F2E8 /* PasscodeLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeLock.swift; sourceTree = "<group>"; };
+		D91C41D8245ED0E60042F2E8 /* PasscodeLockConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeLockConfiguration.swift; sourceTree = "<group>"; };
+		D91C41DA245ED1F10042F2E8 /* PasscodeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeCoordinator.swift; sourceTree = "<group>"; };
+		D91C41DD245ED3C90042F2E8 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		D91C41DF245ED63C0042F2E8 /* PasscodeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeSettings.swift; sourceTree = "<group>"; };
+		D91C41E1245ED7320042F2E8 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		D91C41E7245ED8DC0042F2E8 /* EnterPasscodeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPasscodeState.swift; sourceTree = "<group>"; };
+		D91C41E9245ED9160042F2E8 /* SetPasscodeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasscodeState.swift; sourceTree = "<group>"; };
+		D91C41EB245ED94E0042F2E8 /* ConfirmPasscodeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasscodeState.swift; sourceTree = "<group>"; };
+		D91C41ED245ED9D30042F2E8 /* PasscodeSignPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeSignPlaceholderView.swift; sourceTree = "<group>"; };
+		D91C41F0245EDAA80042F2E8 /* UpdatePasscodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasscodeRepository.swift; sourceTree = "<group>"; };
+		D91C41F2245EE0EF0042F2E8 /* VerifyPasscodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPasscodeRepository.swift; sourceTree = "<group>"; };
 		D920A09921562F8100ECA806 /* BottomPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupViewController.swift; sourceTree = "<group>"; };
 		D920A09A21562F8100ECA806 /* BottomPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomPopupViewController.xib; sourceTree = "<group>"; };
 		D920A0A02156306A00ECA806 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -305,6 +348,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D91C41E5245ED8060042F2E8 /* KeychainAccess in Frameworks */,
 				874C9214D46A2969E42A48B2 /* Pods_MoneyControl.framework in Frameworks */,
 				D9AE0DB7244C70A00080C1DD /* DeepDiff in Frameworks */,
 			);
@@ -415,8 +459,97 @@
 				D91C41B3245B62840042F2E8 /* AppCoordinator.swift */,
 				D91C41B7245B62F40042F2E8 /* BlurCoordinator.swift */,
 				D91C41B9245D69E30042F2E8 /* MainFlowCoordinator.swift */,
+				D91C41DA245ED1F10042F2E8 /* PasscodeCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		D91C41BB245DB51F0042F2E8 /* PasscodeSettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41BE245DB5450042F2E8 /* ViewModel */,
+				D91C41BC245DB53D0042F2E8 /* PasscodeSettingsViewController.swift */,
+			);
+			path = PasscodeSettingsViewController;
+			sourceTree = "<group>";
+		};
+		D91C41BE245DB5450042F2E8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41BF245DB5540042F2E8 /* PasscodeSettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D91C41C4245EAB630042F2E8 /* Passcode */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41D5245ED0C10042F2E8 /* Classes */,
+				D91C41CA245EC40D0042F2E8 /* Protocols */,
+				D91C41C5245EAB7B0042F2E8 /* Views */,
+				D91C41C8245EC3E50042F2E8 /* PasscodeLockViewController.swift */,
+			);
+			path = Passcode;
+			sourceTree = "<group>";
+		};
+		D91C41C5245EAB7B0042F2E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41C6245EABDA0042F2E8 /* PasscodeLockView.xib */,
+				D91C41D3245ED08B0042F2E8 /* PasscodeSignButton.swift */,
+				D91C41ED245ED9D30042F2E8 /* PasscodeSignPlaceholderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D91C41CA245EC40D0042F2E8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41CB245ECF9E0042F2E8 /* PasscodeLockType.swift */,
+				D91C41CD245ECFB60042F2E8 /* PasscodeLockConfigurationType.swift */,
+				D91C41CF245ECFCD0042F2E8 /* PasscodeRepositoryType.swift */,
+				D91C41D1245ECFF00042F2E8 /* PasscodeLockStateType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D91C41D5245ED0C10042F2E8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41D6245ED0CF0042F2E8 /* PasscodeLock.swift */,
+				D91C41D8245ED0E60042F2E8 /* PasscodeLockConfiguration.swift */,
+				D91C41E6245ED8CD0042F2E8 /* States */,
+				D91C41EF245EDA990042F2E8 /* Repositories */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D91C41DC245ED3BA0042F2E8 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41DF245ED63C0042F2E8 /* PasscodeSettings.swift */,
+				D91C41DD245ED3C90042F2E8 /* Money.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		D91C41E6245ED8CD0042F2E8 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41E7245ED8DC0042F2E8 /* EnterPasscodeState.swift */,
+				D91C41E9245ED9160042F2E8 /* SetPasscodeState.swift */,
+				D91C41EB245ED94E0042F2E8 /* ConfirmPasscodeState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		D91C41EF245EDA990042F2E8 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D91C41F0245EDAA80042F2E8 /* UpdatePasscodeRepository.swift */,
+				D91C41F2245EE0EF0042F2E8 /* VerifyPasscodeRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		D920A09521562F1900ECA806 /* Kit */ = {
@@ -700,12 +833,13 @@
 		D95CF26F21582554001BEF1F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D91C41C4245EAB630042F2E8 /* Passcode */,
 				D95CF27021582562001BEF1F /* BaseViewController */,
 				D973FA252444E7C8007226DA /* Wallet */,
 				D9FD0E6E21AFDA6700A77C8A /* History */,
-				D9FD0E6D21AFDA5A00A77C8A /* ActivityFlow */,
+				D9FD0E6D21AFDA5A00A77C8A /* Activity */,
 				D98E335121B546B5004C66C3 /* Category */,
-				D9AB5DE923D77FB8002167D8 /* SettingsFlow */,
+				D9AB5DE923D77FB8002167D8 /* Settings */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1004,6 +1138,8 @@
 			isa = PBXGroup;
 			children = (
 				D93625172445997E00CEB6D9 /* WalletsService.swift */,
+				D91C41E1245ED7320042F2E8 /* KeychainManager.swift */,
+				D91C41DC245ED3BA0042F2E8 /* Global */,
 				D99F685921AB1D8C005EC865 /* CategoryService */,
 				D96CE21821ADCDBF0085664A /* TransactionService */,
 				D9F87B5222651994005CCFD5 /* DateService */,
@@ -1065,13 +1201,14 @@
 			path = LocalizedFiles;
 			sourceTree = "<group>";
 		};
-		D9AB5DE923D77FB8002167D8 /* SettingsFlow */ = {
+		D9AB5DE923D77FB8002167D8 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				D91C41BB245DB51F0042F2E8 /* PasscodeSettingsViewController */,
 				D9AB5DEC23D78127002167D8 /* SettingsViewController */,
 				D95312F623DA2EDE00E26D1E /* SettingsChooseLanguageViewController */,
 			);
-			path = SettingsFlow;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		D9AB5DEC23D78127002167D8 /* SettingsViewController */ = {
@@ -1205,7 +1342,7 @@
 			path = Transaction;
 			sourceTree = "<group>";
 		};
-		D9FD0E6D21AFDA5A00A77C8A /* ActivityFlow */ = {
+		D9FD0E6D21AFDA5A00A77C8A /* Activity */ = {
 			isa = PBXGroup;
 			children = (
 				D95D156F2268F2E200B83AD6 /* YourBalanceViewController */,
@@ -1214,7 +1351,7 @@
 				D99F683E21AA9C70005EC865 /* TodayHistoryViewController */,
 				D911ECFA21A7F7B700C3A7B1 /* ActivityViewController */,
 			);
-			path = ActivityFlow;
+			path = Activity;
 			sourceTree = "<group>";
 		};
 		D9FD0E6E21AFDA6700A77C8A /* History */ = {
@@ -1254,6 +1391,7 @@
 			name = MoneyControl;
 			packageProductDependencies = (
 				D9AE0DB6244C70A00080C1DD /* DeepDiff */,
+				D91C41E4245ED8060042F2E8 /* KeychainAccess */,
 			);
 			productName = MoneyControl;
 			productReference = D90EDB85214FD93900012383 /* Money.app */;
@@ -1289,6 +1427,7 @@
 			mainGroup = D90EDB7C214FD93900012383;
 			packageReferences = (
 				D9AE0DB5244C70A00080C1DD /* XCRemoteSwiftPackageReference "DeepDiff" */,
+				D91C41E3245ED8060042F2E8 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = D90EDB86214FD93900012383 /* Products */;
 			projectDirPath = "";
@@ -1324,6 +1463,7 @@
 				D95F3FD8215435420039D714 /* Lato-Bold.ttf in Resources */,
 				D95D153C22667B4A00B83AD6 /* ActivityFlow.storyboard in Resources */,
 				D92EEDFB21A9518100A9C233 /* CategoryCollectionViewCell.xib in Resources */,
+				D91C41C7245EABDA0042F2E8 /* PasscodeLockView.xib in Resources */,
 				D99F684621AAA462005EC865 /* TodayHistoryTableViewCell.xib in Resources */,
 				D95CF261215775FF001BEF1F /* Lato-Light.ttf in Resources */,
 			);
@@ -1395,6 +1535,7 @@
 				D99F684021AA9C87005EC865 /* TodayHistoryViewController.swift in Sources */,
 				D9BDE1C3244C795B00B10A02 /* HistoryTableHeaderView.swift in Sources */,
 				D94ADB2C21B186A700D94F0F /* EmptyView.swift in Sources */,
+				D91C41F3245EE0EF0042F2E8 /* VerifyPasscodeRepository.swift in Sources */,
 				D9AB5DEE23D7813A002167D8 /* SettingsViewController.swift in Sources */,
 				D99F686621AB2356005EC865 /* CategoriesFabric.swift in Sources */,
 				D90EDB89214FD93900012383 /* AppDelegate.swift in Sources */,
@@ -1420,6 +1561,7 @@
 				D911ECFE21A7F9E400C3A7B1 /* AppLaunch.swift in Sources */,
 				D9EC66CE242418B00030CADC /* BaseTableViewController.swift in Sources */,
 				D95312F523DA1CAB00E26D1E /* DoubleExtensions.swift in Sources */,
+				D91C41DB245ED1F10042F2E8 /* PasscodeCoordinator.swift in Sources */,
 				D93625232445CBDF00CEB6D9 /* UIFont+MoneyControl.swift in Sources */,
 				D96CE21A21ADCDD30085664A /* TransactionService.swift in Sources */,
 				D920A0A22156306A00ECA806 /* UIViewExtensions.swift in Sources */,
@@ -1427,7 +1569,10 @@
 				D92EEDF321A94F0E00A9C233 /* ActivityTopViewController.swift in Sources */,
 				D9B67550226B397A00CC204A /* ChooseCategoryTableViewCell.swift in Sources */,
 				D96CE21421ADC8D10085664A /* TransactionDB.swift in Sources */,
+				D91C41E8245ED8DC0042F2E8 /* EnterPasscodeState.swift in Sources */,
 				D91C41B6245B62A40042F2E8 /* Coordinator.swift in Sources */,
+				D91C41F1245EDAA80042F2E8 /* UpdatePasscodeRepository.swift in Sources */,
+				D91C41D2245ECFF00042F2E8 /* PasscodeLockStateType.swift in Sources */,
 				D973FA232444D71C007226DA /* ActivityTitleView.swift in Sources */,
 				D902D3192456C3E4007D7B30 /* Int+MoneyControl.swift in Sources */,
 				D99045092444EB8B0057AA4F /* WalletsListViewModel.swift in Sources */,
@@ -1441,16 +1586,22 @@
 				D993363D24410F0500AED4E6 /* HistoryCalendarPickerView.swift in Sources */,
 				D9362538244702F100CEB6D9 /* InfoPreviewView.swift in Sources */,
 				D9FD0E6C21AFC76500A77C8A /* CalendarExtensions.swift in Sources */,
+				D91C41D4245ED08B0042F2E8 /* PasscodeSignButton.swift in Sources */,
 				D98E334921B470D0004C66C3 /* EditTransactionCategoryView.swift in Sources */,
 				D92E85B724439EDD003EB2CB /* UISegmentedControl+MoneyControl.swift in Sources */,
+				D91C41E2245ED7320042F2E8 /* KeychainManager.swift in Sources */,
 				D936252D24462C5300CEB6D9 /* WalletAddBalanceTableViewCell.swift in Sources */,
+				D91C41C0245DB5540042F2E8 /* PasscodeSettingsViewModel.swift in Sources */,
 				D973FA2D2444E86D007226DA /* WalletTableViewCell.swift in Sources */,
+				D91C41BD245DB53D0042F2E8 /* PasscodeSettingsViewController.swift in Sources */,
 				D98E333A21B4528A004C66C3 /* EditTransactionViewController.swift in Sources */,
 				D985471123D26E5700949C4E /* UINavigationBarExtensions.swift in Sources */,
 				D993363B24409E1100AED4E6 /* Date+MoneyControl.swift in Sources */,
 				D911ED0021A7FC5500C3A7B1 /* Router.swift in Sources */,
+				D91C41CE245ECFB60042F2E8 /* PasscodeLockConfigurationType.swift in Sources */,
 				D96CE21D21ADD2B80085664A /* TodayHistoryViewViewModel.swift in Sources */,
 				D95D156E2267CBB500B83AD6 /* ChooseCurrencyViewViewModel.swift in Sources */,
+				D91C41D9245ED0E60042F2E8 /* PasscodeLockConfiguration.swift in Sources */,
 				D95D156A2267C6DD00B83AD6 /* ChooseCurrencyTableViewCell.swift in Sources */,
 				D95CF2682157796E001BEF1F /* App.swift in Sources */,
 				D91C41B4245B62840042F2E8 /* AppCoordinator.swift in Sources */,
@@ -1459,6 +1610,7 @@
 				D9B6754B226B38D400CC204A /* ChooseCategoryViewModel.swift in Sources */,
 				D9B67548226B225500CC204A /* ChooseCategoryViewController.swift in Sources */,
 				D920A09B21562F8100ECA806 /* BottomPopupViewController.swift in Sources */,
+				D91C41D0245ECFCD0042F2E8 /* PasscodeRepositoryType.swift in Sources */,
 				D9FD0E7621AFE19600A77C8A /* HistoryViewModel.swift in Sources */,
 				D92295F621ADEF4E002AF881 /* ActivityViewViewModel.swift in Sources */,
 				D98E334021B46B80004C66C3 /* RemoveButton.swift in Sources */,
@@ -1476,28 +1628,36 @@
 				D99F685B21AB1DA2005EC865 /* CategoryService.swift in Sources */,
 				D9933633243F208400AED4E6 /* BottomOverlayViewController.swift in Sources */,
 				D9BDE1C7244DC31C00B10A02 /* DateEditTableViewCell.swift in Sources */,
+				D91C41EE245ED9D30042F2E8 /* PasscodeSignPlaceholderView.swift in Sources */,
 				D95CF25E2156523D001BEF1F /* LockViewController.swift in Sources */,
 				D96F46EF242254090092C277 /* ReusableView.swift in Sources */,
 				D920A0A62156427300ECA806 /* UIWindowExtensions.swift in Sources */,
 				D911ECFC21A7F7EB00C3A7B1 /* ActivityViewController.swift in Sources */,
 				D9BDE1C5244DBF8C00B10A02 /* CategoryEditTableViewCell.swift in Sources */,
 				D99F684521AAA462005EC865 /* TodayHistoryTableViewCell.swift in Sources */,
+				D91C41D7245ED0CF0042F2E8 /* PasscodeLock.swift in Sources */,
 				D92EEDF621A94F4700A9C233 /* ActivityBottomViewController.swift in Sources */,
+				D91C41E0245ED63C0042F2E8 /* PasscodeSettings.swift in Sources */,
 				D922148021A97DCB00A71CDB /* UICollectionViewExtensions.swift in Sources */,
 				D973FA072444CD92007226DA /* EntityDB.swift in Sources */,
 				D95D156022672F1600B83AD6 /* UIScreenExtensions.swift in Sources */,
 				D9AB5DF623D78533002167D8 /* UIImageExtensions.swift in Sources */,
 				D95CF26A21577A9A001BEF1F /* UIColorExtensions.swift in Sources */,
+				D91C41C9245EC3E50042F2E8 /* PasscodeLockViewController.swift in Sources */,
 				D95D155E2266823600B83AD6 /* StringExtensions.swift in Sources */,
 				D9F87B54226519A2005CCFD5 /* DateService.swift in Sources */,
 				D9AB5DF423D783A0002167D8 /* BiggerAreaButton.swift in Sources */,
 				D99F686221AB1FEC005EC865 /* CategoryDB.swift in Sources */,
 				D98E333621B2BAD2004C66C3 /* RegularButton.swift in Sources */,
 				D91C41BA245D69E30042F2E8 /* MainFlowCoordinator.swift in Sources */,
+				D91C41EA245ED9160042F2E8 /* SetPasscodeState.swift in Sources */,
 				D93625182445997E00CEB6D9 /* WalletsService.swift in Sources */,
+				D91C41CC245ECF9E0042F2E8 /* PasscodeLockType.swift in Sources */,
+				D91C41EC245ED94E0042F2E8 /* ConfirmPasscodeState.swift in Sources */,
 				D911ED0421A8025800C3A7B1 /* CheckButton.swift in Sources */,
 				D964831B216287BE00B2D880 /* Constants.swift in Sources */,
 				D973FA052444CC81007226DA /* Entity.swift in Sources */,
+				D91C41DE245ED3C90042F2E8 /* Money.swift in Sources */,
 				D91C41B8245B62F40042F2E8 /* BlurCoordinator.swift in Sources */,
 				D93625252445D15200CEB6D9 /* Entity+DB.swift in Sources */,
 				D9C8BCEE2269A81100289CDC /* YourBalanceViewViewModel.swift in Sources */,
@@ -1674,7 +1834,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1682,7 +1842,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1698,7 +1858,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 64LSU2S2FL;
 				INFOPLIST_FILE = MoneyControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1706,7 +1866,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = bundle.solutions.money;
 				PRODUCT_NAME = Money;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1739,6 +1899,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D91C41E3245ED8060042F2E8 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 		D9AE0DB5244C70A00080C1DD /* XCRemoteSwiftPackageReference "DeepDiff" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onmyway133/DeepDiff";
@@ -1750,6 +1918,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D91C41E4245ED8060042F2E8 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D91C41E3245ED8060042F2E8 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
 		D9AE0DB6244C70A00080C1DD /* DeepDiff */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D9AE0DB5244C70A00080C1DD /* XCRemoteSwiftPackageReference "DeepDiff" */;

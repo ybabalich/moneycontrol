@@ -149,6 +149,9 @@ class Router: NSObject {
         return flowOfController
     }
     
+    private func pushScreen(_ controller: UIViewController, animated: Bool) {
+        navigationViewController.pushViewController(controller, animated: animated)
+    }
 }
 
 extension Router: UINavigationControllerDelegate {
@@ -163,4 +166,32 @@ extension Router: UINavigationControllerDelegate {
         )
         navigationController.navigationBar.topItem?.backBarButtonItem = backButton
     }
+}
+
+// MARK: - Passcode
+
+extension Router {
+    
+    func presentPasscodeVC(mode: PasscodeLockViewController.LockState) {
+
+        let configuration = PasscodeLockConfiguration(repository: UpdatePasscodeRepository())
+        
+        let vc = PasscodeLockViewController(state: mode, configuration: configuration)
+        vc.hidesBottomBarWhenPushed = true
+
+        vc.successCallback = {
+
+//            let image = UIImage(systemName: "checkmark.shield.fill")?
+//                .withTintColor(.white, renderingMode: .alwaysOriginal)
+//
+//            appCoordinator.showToast(
+//                title: "PIN Updated!",
+//                message: "You've successfully changed your PIN.",
+//                image: image
+//            )
+        }
+        
+        pushScreen(vc, animated: true)
+    }
+    
 }

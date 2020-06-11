@@ -15,6 +15,7 @@ class AppCoordinator {
 
     private let blurCoordinator: BlurCoordinator
     private let mainFlowCoordinator: MainFlowCoordinator
+    private let passcodeCoordinator: PasscodeCoordinator
     
     private let contentWindow: UIWindow
     
@@ -43,12 +44,43 @@ class AppCoordinator {
 
             blurCoordinator = BlurCoordinator(window: window)
         }
+        
+        do {
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.windowLevel = .init(UIWindow.Level.alert.rawValue + 3)
+            window.backgroundColor = .clear
+
+            passcodeCoordinator = PasscodeCoordinator(window: window)
+        }
     }
     
     // MARK: - Public methods
     
     func start() {
+        
+        if Money.instance.settings.isPINCodeProtected {
+            
+            print("*Flow: Protected with a PIN*")
+            
+            showPasscodeCoordinator()
+            return
+        }
+        
         mainFlowCoordinator.start()
+    }
+    
+}
+
+extension AppCoordinator {
+    
+    func showPasscodeCoordinator() {
+        
+        passcodeCoordinator.whenConfirmed = { [unowned self] in
+            Money.instance.settings.isPINCodeProtected = false
+            self.start()
+        }
+        
+        passcodeCoordinator.start(length: 4)
     }
     
 }
