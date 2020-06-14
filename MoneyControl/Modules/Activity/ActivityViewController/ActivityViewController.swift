@@ -71,7 +71,7 @@ class ActivityViewController: BaseViewController {
 //        let settingsBtn = UIBarButtonItemFabric.settingsBarItem {
 //            Router.instance.showSettingsScreen()
 //        }
-//
+
 //        return [settingsBtn]
         
         return nil

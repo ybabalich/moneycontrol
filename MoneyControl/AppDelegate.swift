@@ -13,6 +13,7 @@ import Firebase
 var db = try! Realm()
 var appLauncher: AppLaunch = AppLaunch()
 var settings = Settings()
+var appCoordinator: AppCoordinator!
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
@@ -26,9 +27,12 @@ class AppDelegate: UIResponder {
     {
         settings.launchCount += 1
         
-        //controller for showing
+        // application startup
         
-        setupStoryboardForStart()
+        appCoordinator = AppCoordinator()
+        appCoordinator.start()
+        
+        // Realm setup
         
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
@@ -51,7 +55,6 @@ class AppDelegate: UIResponder {
         
         Realm.Configuration.defaultConfiguration = config
         
-        // TODO: need to remove and apply better logic for old users
         if !settings.baseCategoriesAdded { // first time launch
             CategoryService.instance.saveBaseCategories()
             
@@ -76,27 +79,6 @@ class AppDelegate: UIResponder {
         FirebaseApp.configure()
         
         return true
-    }
-    
-    fileprivate func setupStoryboardForStart() {
-        let flowDataToShow = appLauncher.flowDataToShow()
-
-        let controller = UIViewController.by(flow: flowDataToShow)
-        let navigationController = UINavigationController(rootViewController: controller)
-        
-        navigationController.navigationBar.applyMainBackground()
-        navigationController.navigationBar.applyTitleStyle()
-        
-        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.classForCoder() as! UIAppearanceContainer.Type])
-            .setTitleTextAttributes([NSAttributedString.Key.font: App.Font.main(size: 17, type: .light).rawValue,
-                                     NSAttributedString.Key.foregroundColor: UIColor.primaryText], for: .normal)
-        
-        Router.instance.navigationViewController = navigationController
-        Router.instance.navigationViewController.isNavigationBarHidden = flowDataToShow == .activity(viewController: .chooseCurrency)
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
     }
 }
 

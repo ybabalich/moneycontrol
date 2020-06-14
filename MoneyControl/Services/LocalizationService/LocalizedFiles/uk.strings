@@ -43,6 +43,8 @@
 "Choose" = "Обрати";
 "Close" = "Закрити";
 "Add" = "Додати";
+"settings.tabs.header.title.privacyAndSecurity" = "Конфіденційність та безпека";
+"settings.tab.title.pinCode" = "PIN код";
 
 // history screen
 "History" = "Історія";

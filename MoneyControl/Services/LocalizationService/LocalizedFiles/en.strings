@@ -39,6 +39,8 @@
 "Leave feedback" = "Leave feedback";
 "Write to Developers" = "Write to Developers";
 "Choose language" = "Choose language";
+"settings.tabs.header.title.privacyAndSecurity" = "Privacy and security";
+"settings.tab.title.pinCode" = "PIN Code";
 
 // history screen
 "History" = "History";
