@@ -15,6 +15,7 @@ class SettingsViewTitledCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -22,6 +23,8 @@ class SettingsViewTitledCell: UITableViewCell {
     }
     
     // MARK: - Lifecycle
+    
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -38,25 +41,19 @@ class SettingsViewTitledCell: UITableViewCell {
     
     private func setupUI() {
 
+        selectedBackgroundView = UIView().then { $0.backgroundColor = UIColor.tableSeparator.withAlphaComponent(0.3) }
+        
         accessoryType = .disclosureIndicator
         selectionStyle = .default
 
         textLabel?.textColor = .primaryText
         textLabel?.numberOfLines = 1
+
+        backgroundColor = .mainElementBackground
     }
     
     private func clearUI() {
         
-    }
-    
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-        
-        if highlighted {
-            contentView.backgroundColor = UIColor.tableSeparator.withAlphaComponent(0.3)
-        } else {
-            contentView.backgroundColor = .white
-        }
     }
     
 }

@@ -68,13 +68,11 @@ class ActivityViewController: BaseViewController {
     }
     
     override func createRightNavButtonsAdditionals() -> [UIBarButtonItem]? {
-//        let settingsBtn = UIBarButtonItemFabric.settingsBarItem {
-//            Router.instance.showSettingsScreen()
-//        }
+        let settingsBtn = UIBarButtonItemFabric.settingsBarItem {
+            Router.instance.showSettingsScreen()
+        }
 
-//        return [settingsBtn]
-        
-        return nil
+        return [settingsBtn]
     }
     
     // MARK: - Private methods

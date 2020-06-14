@@ -58,13 +58,13 @@ class AppCoordinator {
     
     func start() {
         
-        /*if Money.instance.settings.isPINCodeProtected {
+        if Money.instance.settings.isPINCodeProtected {
             
             print("*Flow: Protected with a PIN*")
             
             showPasscodeCoordinator()
             return
-        }*/
+        }
         
         mainFlowCoordinator.start()
     }
